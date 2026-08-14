@@ -29,13 +29,10 @@ export default function Contact() {
             <div className={styles.infoItems}>
               <div>
                 <span className={styles.infoLabel}>E-mail address</span>
-                <a href="mailto:contact@thewhiteguava.in" className={styles.infoValue}>contact@thewhiteguava.in</a>
-              </div>
-              <div>
-                <span className={styles.infoLabel}>Phone number</span>
-                <div className={styles.phoneList}>
-                  <a href="tel:+916374702575" className={styles.infoValue}>+91 63747 02575</a>
-                  <a href="tel:+917892850922" className={styles.infoValue}>+91 78928 50922</a>
+                <div className={styles.emailList}>
+                  <a href="mailto:admin@thewhiteguava.in" className={styles.infoValue}>admin@thewhiteguava.in</a>
+                  <a href="mailto:nithin@thewhiteguava.in" className={styles.infoValue}>nithin@thewhiteguava.in</a>
+                  <a href="mailto:saravana@thewhiteguava.in" className={styles.infoValue}>saravana@thewhiteguava.in</a>
                 </div>
               </div>
             </div>

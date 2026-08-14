@@ -48,7 +48,7 @@
 
 .infoValue:hover { color: var(--accent); }
 
-.phoneList {
+.emailList {
   display: flex;
   flex-direction: column;
   gap: 6px;

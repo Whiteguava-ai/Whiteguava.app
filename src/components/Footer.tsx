@@ -19,7 +19,7 @@ export default function Footer() {
           <p className={styles.socialSubtitle}>Don&apos;t miss our new updates!</p>
 
           <div className={styles.socialGrid}>
-            <a href="https://x.com" className={styles.socialBtn} target="_blank" rel="noreferrer">
+            <a href="https://x.com/wearewhiteguava" className={styles.socialBtn} target="_blank" rel="noreferrer">
               <span>Twitter / X</span>
               <span className={styles.socialCircle}>
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="white">
@@ -27,7 +27,7 @@ export default function Footer() {
                 </svg>
               </span>
             </a>
-            <a href="https://facebook.com" className={styles.socialBtn} target="_blank" rel="noreferrer">
+            <a href="https://www.facebook.com/profile.php?id=61593178927500" className={styles.socialBtn} target="_blank" rel="noreferrer">
               <span>Facebook</span>
               <span className={styles.socialCircle}>
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="white">
@@ -35,7 +35,7 @@ export default function Footer() {
                 </svg>
               </span>
             </a>
-            <a href="https://instagram.com" className={styles.socialBtn} target="_blank" rel="noreferrer">
+            <a href="https://www.instagram.com/whiteguava.ai" className={styles.socialBtn} target="_blank" rel="noreferrer">
               <span>Instagram</span>
               <span className={styles.socialCircle}>
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="white">
@@ -43,7 +43,7 @@ export default function Footer() {
                 </svg>
               </span>
             </a>
-            <a href="https://linkedin.com" className={styles.socialBtn} target="_blank" rel="noreferrer">
+            <a href="https://www.linkedin.com/company/whiteguava/about/" className={styles.socialBtn} target="_blank" rel="noreferrer">
               <span>LinkedIn</span>
               <span className={styles.socialCircle}>
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="white">
