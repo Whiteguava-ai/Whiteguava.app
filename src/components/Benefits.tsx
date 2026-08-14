@@ -1,0 +1,121 @@
+'use client';
+import SectionStage from '@/components/visual/SectionStage';
+import styles from './Benefits.module.css';
+
+export default function Benefits() {
+  return (
+    <section className={styles.benefits}>
+      <SectionStage>
+      <div className="container">
+        <div className={`${styles.top} reveal`}>
+          <div className="section-badge">
+            <span className="section-badge-dot" />
+            Benefits
+          </div>
+          <h2 className={`${styles.headline} reveal reveal-delay-1`}>Why Choose Us</h2>
+        </div>
+
+        <div className={styles.grid}>
+          {/* Card 1 */}
+          <div className={`${styles.card} reveal reveal-delay-1`}>
+            <div className={styles.cardIllustration}>
+              <div className={styles.metricsViz}>
+                {['Accuracy','Latency','Safety','Cost'].map((label, i) => (
+                  <div key={i} className={styles.metricRow}>
+                    <div className={styles.metricBar}>
+                      <div className={styles.metricFill} style={{ width: `${[65,85,50,75][i]}%` }} />
+                    </div>
+                    <span className={styles.metricLabel}>
+                      <span className={styles.metricIcon}>{['◎','⊙','🛡','💰'][i]}</span>
+                      {label}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <h3 className={styles.cardTitle}>Outcome over Output</h3>
+            <p className={styles.cardDesc}>
+              We measure what matters – accuracy, latency, safety, and cost – so every sprint ships business value, not just features.
+            </p>
+          </div>
+
+          {/* Card 2 */}
+          <div className={`${styles.card} reveal reveal-delay-2`}>
+            <div className={styles.cardIllustration}>
+              <div className={styles.checkGrid}>
+                {[1,2,3,4,5,6].map(i => (
+                  <div key={i} className={`${styles.checkBox} ${i <= 3 ? styles.checkBoxActive : ''}`}>
+                    {i <= 3 && (
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1A1A1A" strokeWidth="3">
+                        <path d="M5 12l5 5L20 7"/>
+                      </svg>
+                    )}
+                  </div>
+                ))}
+              </div>
+            </div>
+            <h3 className={styles.cardTitle}>Eval-First Reliability</h3>
+            <p className={styles.cardDesc}>
+              From day one, we run offline/online evals, canary tests, and tracing. You see how models perform – and why.
+            </p>
+          </div>
+
+          {/* Card 3 */}
+          <div className={`${styles.card} reveal reveal-delay-3`}>
+            <div className={styles.cardIllustration}>
+              <div className={styles.shieldWrap}>
+                <svg width="110" height="110" viewBox="0 0 100 110" fill="none">
+                  <path d="M50 5L10 20V55C10 75 28 93 50 100C72 93 90 75 90 55V20L50 5Z" fill="#F0F0F0" stroke="#DDD" strokeWidth="1"/>
+                  <path d="M50 15L18 28V55C18 71 32 86 50 93C68 86 82 71 82 55V28L50 15Z" fill="#E8E8E8"/>
+                </svg>
+                <div className={styles.lockIcon}>
+                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#1A1A1A" strokeWidth="2">
+                    <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+                    <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+                  </svg>
+                </div>
+              </div>
+            </div>
+            <h3 className={styles.cardTitle}>Secure by Design</h3>
+            <p className={styles.cardDesc}>
+              PII handling, SSO/SAML, RBAC, encryption, and audit trails – built in, not bolted on. Enterprise-ready from the start.
+            </p>
+          </div>
+
+          {/* Card 4 */}
+          <div className={`${styles.card} reveal reveal-delay-4`}>
+            <div className={styles.cardIllustration}>
+              <div className={styles.uiMockup}>
+                <div className={styles.chatBubble}>
+                  <div className={styles.chatLine} />
+                  <div className={styles.chatLine} style={{ width: '70%' }} />
+                </div>
+                <div className={styles.uiCard}>
+                  <div className={styles.uiAvatar}>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="#1A1A1A">
+                      <circle cx="8" cy="12" r="4" /><circle cx="16" cy="12" r="4" opacity="0.5"/>
+                    </svg>
+                  </div>
+                  <div className={styles.uiLines}>
+                    <div className={styles.uiLine} />
+                    <div className={styles.uiLine} style={{ width: '60%' }} />
+                  </div>
+                </div>
+                <div className={styles.checkMark}>
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1A1A1A" strokeWidth="3">
+                    <path d="M5 12l5 5L20 7"/>
+                  </svg>
+                </div>
+              </div>
+            </div>
+            <h3 className={styles.cardTitle}>Design-Led AI Experiences</h3>
+            <p className={styles.cardDesc}>
+              We craft prompts, interfaces, and guardrails that feel intuitive – so adoption rises and support tickets fall.
+            </p>
+          </div>
+        </div>
+      </div>
+      </SectionStage>
+    </section>
+  );
+}

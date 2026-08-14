@@ -1,0 +1,198 @@
+.works {
+  background: transparent;
+  padding: 72px 0;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 40px;
+}
+
+.headline {
+  font-size: clamp(40px, 5vw, 64px);
+  font-weight: 800;
+  letter-spacing: -2px;
+  color: #1A1A1A;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Individual work card */
+.workCard {
+  display: block;
+  background: linear-gradient(180deg, rgba(255,255,255,0.86) 0%, rgba(244,244,244,0.7) 100%);
+  border: 1px solid rgba(255,255,255,0.95);
+  border-radius: 28px;
+  overflow: hidden;
+  padding: 28px;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  box-shadow:
+    0 1px 0 rgba(255,255,255,0.95) inset,
+    0 12px 32px rgba(0,0,0,0.06);
+}
+
+.workCard:hover {
+  transform: translateY(-8px);
+  box-shadow:
+    0 1px 0 rgba(255,255,255,1) inset,
+    0 24px 50px rgba(0,0,0,0.12);
+}
+
+.imageArea {
+  position: relative;
+  border-radius: 18px;
+  overflow: hidden;
+  aspect-ratio: 16/7;
+  background: #DDD;
+  transform-style: preserve-3d;
+  transition: transform 0.25s ease;
+  box-shadow:
+    0 18px 40px rgba(0,0,0,0.14),
+    0 2px 0 rgba(255,255,255,0.5) inset;
+}
+
+.workImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  animation: fadeIn 0.35s ease;
+}
+
+.viewBtn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  overflow: hidden;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 18px;
+  background: linear-gradient(180deg, #2c2c2c 0%, #111 100%);
+  color: white;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+  opacity: 0;
+  transform: translateY(-4px);
+  transition: opacity 0.25s, transform 0.25s, box-shadow 0.25s;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.26),
+    0 10px 22px rgba(0,0,0,0.28);
+}
+.viewBtn::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 52%;
+  background: linear-gradient(180deg, rgba(255,255,255,0.26), rgba(255,255,255,0.04));
+  pointer-events: none;
+  border-radius: inherit;
+}
+.viewBtn::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 42%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+  transform: translateX(-180%) skewX(-22deg);
+  pointer-events: none;
+  animation: worksShine 3.4s ease-in-out infinite;
+}
+.viewBtn svg { position: relative; z-index: 1; }
+.viewBtn span { position: relative; z-index: 1; }
+
+.imageArea:hover .viewBtn {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@keyframes worksShine {
+  0% { transform: translateX(-180%) skewX(-22deg); }
+  55%, 100% { transform: translateX(280%) skewX(-22deg); }
+}
+
+/* Dots */
+.dotsRow {
+  display: flex;
+  gap: 7px;
+  padding: 16px 0 0;
+}
+
+.dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(0,0,0,0.15);
+  cursor: pointer;
+  padding: 0;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.dotActive {
+  background: var(--accent);
+  transform: scale(1.25);
+}
+
+/* Info row */
+.infoRow {
+  display: grid;
+  grid-template-columns: 1.4fr 1.8fr 1.5fr 0.8fr;
+  gap: 0;
+  padding-top: 20px;
+  border-top: 1px solid rgba(0,0,0,0.08);
+  margin-top: 12px;
+  align-items: start;
+}
+
+.infoTitle {
+  font-size: 20px;
+  font-weight: 800;
+  color: #1A1A1A;
+  letter-spacing: -0.5px;
+  line-height: 1.25;
+  padding-right: 20px;
+}
+
+.infoCol {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 0 20px;
+  border-left: 1px solid rgba(0,0,0,0.08);
+}
+
+.infoLabel {
+  font-size: 11px;
+  font-weight: 700;
+  color: #AAA;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+.infoVal {
+  font-size: 13px;
+  color: #444;
+  line-height: 1.5;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(1.01); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@media (max-width: 768px) {
+  .infoRow { grid-template-columns: 1fr; gap: 16px; }
+  .infoCol { border-left: none; border-top: 1px solid rgba(0,0,0,0.08); padding: 16px 0 0; }
+}

@@ -1,0 +1,83 @@
+.tile {
+  --rot: -12deg;
+  --depth: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 22px;
+  background:
+    linear-gradient(160deg, #ffffff 0%, #f6f6f6 55%, #ececec 100%);
+  box-shadow:
+    0 1px 0 rgba(255,255,255,0.95) inset,
+    0 -1px 0 rgba(0,0,0,0.04) inset,
+    0 8px 16px rgba(0,0,0,0.08),
+    0 18px 40px rgba(0,0,0,0.14),
+    0 2px 4px rgba(0,0,0,0.06);
+  transform:
+    rotateX(18deg)
+    rotateY(-16deg)
+    rotate(var(--rot))
+    translate3d(
+      calc(var(--mx, 0) * var(--depth) * 18px),
+      calc(var(--my, 0) * var(--depth) * 12px),
+      40px
+    );
+  transform-style: preserve-3d;
+  animation: bob 4.2s ease-in-out infinite;
+  will-change: transform;
+  position: relative;
+}
+
+.tile::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(135deg, rgba(255,255,255,0.7), transparent 50%);
+  pointer-events: none;
+}
+
+.tile::after {
+  content: '';
+  position: absolute;
+  left: 12%;
+  right: 12%;
+  bottom: -18px;
+  height: 18px;
+  background: radial-gradient(ellipse at center, rgba(0,0,0,0.22), transparent 70%);
+  filter: blur(6px);
+  transform: translateZ(-20px);
+  pointer-events: none;
+}
+
+.face {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translateZ(12px);
+}
+
+@keyframes bob {
+  0%, 100% {
+    transform:
+      rotateX(18deg)
+      rotateY(-16deg)
+      rotate(var(--rot))
+      translate3d(
+        calc(var(--mx, 0) * var(--depth) * 18px),
+        calc(var(--my, 0) * var(--depth) * 12px),
+        40px
+      );
+  }
+  50% {
+    transform:
+      rotateX(12deg)
+      rotateY(-10deg)
+      rotate(calc(var(--rot) + 6deg))
+      translate3d(
+        calc(var(--mx, 0) * var(--depth) * 18px),
+        calc(var(--my, 0) * var(--depth) * 12px - 14px),
+        52px
+      );
+  }
+}

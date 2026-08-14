@@ -1,0 +1,235 @@
+.benefits {
+  background: transparent;
+  padding: 0;
+}
+
+.top {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 60px;
+  text-align: center;
+}
+
+.headline {
+  font-size: clamp(40px, 5vw, 64px);
+  font-weight: 800;
+  letter-spacing: -2px;
+  color: #1A1A1A;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.card {
+  background: linear-gradient(180deg, rgba(255,255,255,0.82) 0%, rgba(240,240,240,0.7) 100%);
+  border: 1px solid rgba(255,255,255,0.9);
+  border-radius: 28px;
+  padding: 36px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  transform-style: preserve-3d;
+  box-shadow:
+    0 1px 0 rgba(255,255,255,0.95) inset,
+    0 14px 32px rgba(0,0,0,0.06);
+}
+
+.card:hover {
+  transform: translateY(-8px) rotateX(3deg);
+  box-shadow: 0 24px 56px rgba(0,0,0,0.12);
+}
+
+.cardIllustration {
+  height: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Metrics viz */
+.metricsViz {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+  max-width: 340px;
+}
+
+.metricRow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.metricBar {
+  flex: 1;
+  height: 8px;
+  background: rgba(0,0,0,0.08);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.metricFill {
+  height: 100%;
+  background: linear-gradient(90deg, #d8d8d8, #a8a8a8);
+  border-radius: 999px;
+  transform-origin: left;
+  animation: fillSlide 1.6s ease forwards;
+}
+
+@keyframes fillSlide {
+  from { transform: scaleX(0.2); }
+  to { transform: scaleX(1); }
+}
+
+.metricLabel {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #555;
+  background: rgba(255,255,255,0.7);
+  padding: 4px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(0,0,0,0.08);
+  white-space: nowrap;
+}
+
+.metricIcon { font-size: 11px; }
+
+/* Check grid */
+.checkGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.checkBox {
+  width: 56px;
+  height: 56px;
+  border-radius: 14px;
+  background: rgba(255,255,255,0.5);
+  border: 1px solid rgba(0,0,0,0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+}
+
+.checkBoxActive {
+  background: rgba(255,255,255,0.9);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+/* Shield */
+.shieldWrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lockIcon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -55%);
+  width: 52px;
+  height: 52px;
+  background: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+}
+
+/* UI mockup */
+.uiMockup {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 200px;
+}
+
+.chatBubble {
+  background: rgba(255,255,255,0.8);
+  border-radius: 16px 16px 16px 4px;
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+
+.chatLine {
+  height: 7px;
+  background: rgba(0,0,0,0.1);
+  border-radius: 999px;
+  width: 100%;
+}
+
+.uiCard {
+  background: rgba(255,255,255,0.9);
+  border-radius: 14px;
+  padding: 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+
+.uiAvatar {
+  width: 36px;
+  height: 36px;
+  background: #E7E7E7;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.uiLines { display: flex; flex-direction: column; gap: 6px; flex: 1; }
+.uiLine {
+  height: 6px;
+  background: rgba(0,0,0,0.1);
+  border-radius: 999px;
+  width: 100%;
+}
+
+.checkMark {
+  align-self: flex-end;
+  width: 44px;
+  height: 44px;
+  background: rgba(255,255,255,0.9);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.cardTitle {
+  font-size: 22px;
+  font-weight: 700;
+  color: #1A1A1A;
+  letter-spacing: -0.5px;
+}
+
+.cardDesc {
+  font-size: 15px;
+  line-height: 1.7;
+  color: #666;
+}
+
+@media (max-width: 768px) {
+  .grid { grid-template-columns: 1fr; }
+}

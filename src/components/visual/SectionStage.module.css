@@ -1,0 +1,70 @@
+.stage {
+  margin: 0 14px 14px;
+  border-radius: 40px;
+  position: relative;
+  overflow: hidden;
+  background: #EFEFEF;
+  box-shadow:
+    0 1px 0 rgba(255,255,255,0.7) inset,
+    0 18px 50px rgba(0,0,0,0.06);
+}
+
+.dark {
+  background: #111111;
+  box-shadow: 0 24px 60px rgba(0,0,0,0.22);
+}
+
+.tall { min-height: 520px; }
+
+.ambience {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.blobA, .blobB, .blobC {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(50px);
+  animation: blobDrift 16s ease-in-out infinite;
+}
+
+.blobA {
+  width: 420px;
+  height: 420px;
+  top: -140px;
+  left: -80px;
+  background: radial-gradient(circle, rgba(210,210,220,0.9), transparent 70%);
+}
+
+.blobB {
+  width: 380px;
+  height: 380px;
+  right: -100px;
+  bottom: -120px;
+  background: radial-gradient(circle, rgba(255,255,255,0.95), transparent 68%);
+  animation-delay: -6s;
+}
+
+.blobC {
+  width: 240px;
+  height: 240px;
+  right: 18%;
+  top: 12%;
+  background: radial-gradient(circle, rgba(230,59,46,0.12), transparent 70%);
+  animation-delay: -10s;
+}
+
+.body {
+  position: relative;
+  z-index: 1;
+  padding: 88px 0;
+}
+
+.dark .body { padding: 88px 0 40px; }
+
+@media (max-width: 768px) {
+  .stage { margin: 0 8px 8px; border-radius: 24px; }
+  .body { padding: 64px 0; }
+}

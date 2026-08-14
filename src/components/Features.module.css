@@ -1,0 +1,171 @@
+.features {
+  background: transparent;
+  padding: 0;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.headline {
+  font-size: clamp(42px, 5.5vw, 72px);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  color: #161616;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.card, .brandCard {
+  background: linear-gradient(180deg, rgba(255,255,255,0.86) 0%, rgba(242,242,242,0.72) 100%);
+  border: 1px solid rgba(255,255,255,0.95);
+  border-radius: 28px;
+  padding: 28px;
+  min-height: 280px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow:
+    0 1px 0 rgba(255,255,255,0.95) inset,
+    0 14px 32px rgba(0,0,0,0.06);
+}
+
+.card:hover {
+  transform: translateY(-8px) rotateX(4deg);
+  box-shadow:
+    0 1px 0 rgba(255,255,255,1) inset,
+    0 24px 50px rgba(0,0,0,0.12);
+}
+
+.brandCard {
+  background: #161616;
+  color: white;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  box-shadow: 0 24px 50px rgba(0,0,0,0.2);
+}
+
+.brandIcon {
+  width: 64px;
+  height: 64px;
+  border-radius: 18px;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 12px 28px rgba(0,0,0,0.35);
+  overflow: hidden;
+  padding: 6px;
+}
+
+.brandIcon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.brandCard span {
+  font-size: 22px;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+}
+
+.cardTitle {
+  font-size: 22px;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  margin-top: auto;
+}
+
+.cardDesc {
+  font-size: 14px;
+  line-height: 1.65;
+  color: #666;
+}
+
+.viz, .vizBars, .vizStack, .vizGrid, .shield {
+  height: 92px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  position: relative;
+}
+
+.viz { align-items: center; }
+
+.node {
+  width: 22px;
+  height: 22px;
+  border-radius: 8px;
+  background: white;
+  box-shadow: 0 8px 18px rgba(0,0,0,0.12);
+  position: absolute;
+  animation: bobTiny 3s ease-in-out infinite;
+}
+.n1 { left: 18%; top: 18%; }
+.n2 { left: 46%; top: 48%; animation-delay: 0.4s; }
+.n3 { right: 18%; top: 12%; animation-delay: 0.8s; }
+
+.line {
+  width: 62%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #ccc, transparent);
+}
+
+.bar {
+  width: 14px;
+  margin: 0 5px;
+  border-radius: 8px 8px 4px 4px;
+  background: linear-gradient(180deg, #fff, #d9d9d9);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.08);
+  animation: grow 1.8s ease-in-out infinite alternate;
+}
+
+.vizStack span {
+  display: block;
+  width: 120px;
+  height: 18px;
+  border-radius: 8px;
+  background: white;
+  box-shadow: 0 8px 18px rgba(0,0,0,0.08);
+  margin: 6px 0;
+  transform: rotateX(18deg);
+}
+
+.vizGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 28px);
+  gap: 10px;
+  align-content: center;
+}
+.vizGrid span {
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  background: white;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.08);
+}
+
+@keyframes bobTiny {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+@keyframes grow {
+  from { transform: scaleY(0.7); }
+  to { transform: scaleY(1); }
+}
+
+@media (max-width: 900px) {
+  .grid { grid-template-columns: 1fr; }
+}
