@@ -6,10 +6,22 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   return [
     {
-      url: SITE_URL,
+      url: `${SITE_URL}/`,
       lastModified,
       changeFrequency: 'weekly',
       priority: 1,
+    },
+    {
+      url: `${SITE_URL}/about`,
+      lastModified,
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
+    {
+      url: `${SITE_URL}/contact`,
+      lastModified,
+      changeFrequency: 'monthly',
+      priority: 0.7,
     },
     ...SERVICE_LINKS.map((service) => ({
       url: `${SITE_URL}${service.href}`,

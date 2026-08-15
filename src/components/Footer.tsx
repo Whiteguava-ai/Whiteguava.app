@@ -11,9 +11,9 @@ export default function Footer() {
 
       <div className={styles.inner}>
         <div className={styles.socialSection}>
-          <div className={styles.logoIcon}>
+          <a href="/" className={styles.logoIcon} aria-label="WhiteGuava home">
             <img src="/brand/whiteguava-mark-square.png" alt="WhiteGuava — AI software development company" />
-          </div>
+          </a>
           <h3 className={styles.socialTitle}>
             AI + Software + Automation<br />
             <span style={{ fontSize: '0.75em', fontWeight: 400, opacity: 0.6 }}>Build Smarter. With AI.</span>
@@ -21,7 +21,7 @@ export default function Footer() {
           <p className={styles.socialSubtitle}>Get connected with WhiteGuava on social</p>
 
           <div className={styles.socialGrid}>
-            <a href="https://www.linkedin.com/company/whiteguava/about/" className={styles.socialBtn} target="_blank" rel="noreferrer">
+            <a href="https://www.linkedin.com/company/whiteguava" className={styles.socialBtn} target="_blank" rel="me noopener noreferrer">
               <span>LinkedIn</span>
               <span className={styles.socialCircle}>
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="white">
@@ -29,7 +29,7 @@ export default function Footer() {
                 </svg>
               </span>
             </a>
-            <a href="https://www.instagram.com/whiteguava.ai" className={styles.socialBtn} target="_blank" rel="noreferrer">
+            <a href="https://www.instagram.com/whiteguava.ai" className={styles.socialBtn} target="_blank" rel="me noopener noreferrer">
               <span>Instagram</span>
               <span className={styles.socialCircle}>
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="white">
@@ -37,7 +37,7 @@ export default function Footer() {
                 </svg>
               </span>
             </a>
-            <a href="https://x.com/wearewhiteguava" className={styles.socialBtn} target="_blank" rel="noreferrer">
+            <a href="https://x.com/wearewhiteguava" className={styles.socialBtn} target="_blank" rel="me noopener noreferrer">
               <span>Twitter / X</span>
               <span className={styles.socialCircle}>
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="white">
@@ -45,7 +45,7 @@ export default function Footer() {
                 </svg>
               </span>
             </a>
-            <a href="https://www.facebook.com/profile.php?id=61593178927500" className={styles.socialBtn} target="_blank" rel="noreferrer">
+            <a href="https://www.facebook.com/profile.php?id=61593178927500" className={styles.socialBtn} target="_blank" rel="me noopener noreferrer">
               <span>Facebook</span>
               <span className={styles.socialCircle}>
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="white">

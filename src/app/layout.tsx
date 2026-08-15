@@ -2,7 +2,7 @@ import type { Metadata, Viewport } from 'next';
 import JsonLd from '@/components/JsonLd';
 import RevealObserver from '@/components/RevealObserver';
 import { siteGraph } from '@/lib/schema';
-import { SITE_NAME, SITE_URL } from '@/lib/site';
+import { SITE_DESCRIPTION, SITE_NAME, SITE_URL } from '@/lib/site';
 import './globals.css';
 
 export const viewport: Viewport = {
@@ -11,9 +11,7 @@ export const viewport: Viewport = {
   maximumScale: 5,
 };
 
-const defaultTitle = 'WhiteGuava — AI Software Development Company | Bengaluru';
-const defaultDescription =
-  'Bengaluru-based AI software development company. We build AI agents, automation systems, WhatsApp AI, and custom business software for teams worldwide.';
+const defaultTitle = 'WhiteGuava | AI Agents, Automation & Software';
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -21,11 +19,12 @@ export const metadata: Metadata = {
     default: defaultTitle,
     template: `%s | ${SITE_NAME}`,
   },
-  description: defaultDescription,
+  description: SITE_DESCRIPTION,
   applicationName: SITE_NAME,
   authors: [{ name: SITE_NAME, url: SITE_URL }],
   creator: SITE_NAME,
   publisher: SITE_NAME,
+  category: 'technology',
   robots: {
     index: true,
     follow: true,
@@ -36,7 +35,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: defaultTitle,
-    description: defaultDescription,
+    description: SITE_DESCRIPTION,
     url: SITE_URL,
     siteName: SITE_NAME,
     locale: 'en_IN',
@@ -45,7 +44,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: defaultTitle,
-    description: defaultDescription,
+    description: SITE_DESCRIPTION,
     site: '@wearewhiteguava',
   },
   icons: {

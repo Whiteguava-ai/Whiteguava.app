@@ -3,17 +3,15 @@ import HomePage from '@/components/HomePage';
 import JsonLd from '@/components/JsonLd';
 import { homepageFaqs } from '@/data/faqs';
 import { faqPageSchema } from '@/lib/schema';
-import { SITE_URL } from '@/lib/site';
+import { SITE_DESCRIPTION, SITE_URL } from '@/lib/site';
 
-const title = 'WhiteGuava — AI Software Development Company | Bengaluru';
-const description =
-  'Bengaluru-based AI software development company. We build AI agents, automation systems, WhatsApp AI, and custom business software for teams worldwide.';
+const title = 'WhiteGuava | AI Agents, Automation & Software';
 
 export const metadata: Metadata = {
   title: {
     absolute: title,
   },
-  description,
+  description: SITE_DESCRIPTION,
   alternates: {
     canonical: '/',
   },
@@ -23,15 +21,16 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title,
-    description,
-    url: SITE_URL,
+    description: SITE_DESCRIPTION,
+    url: `${SITE_URL}/`,
+    siteName: 'WhiteGuava',
     type: 'website',
     locale: 'en_IN',
   },
   twitter: {
     card: 'summary_large_image',
     title,
-    description,
+    description: SITE_DESCRIPTION,
   },
 };
 

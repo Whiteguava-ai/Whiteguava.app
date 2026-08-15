@@ -1,5 +1,13 @@
 export const homepageFaqs = [
   {
+    q: 'Who is WhiteGuava?',
+    a: 'WhiteGuava is an AI software development company based in Bengaluru, India. We build AI agents, automation systems, WhatsApp AI, document AI, and custom business software for teams worldwide.',
+  },
+  {
+    q: 'Is WhiteGuava the same as other companies named Guava?',
+    a: 'No. WhiteGuava is an independent AI development company at thewhiteguava.in. We are not affiliated with other products or businesses that use Guava in their name.',
+  },
+  {
     q: 'What type of businesses do you work with?',
     a: 'We work with businesses of all sizes — from startups building their first product to established companies looking to automate processes or integrate AI into existing systems. If you have a real problem worth solving, we can help.',
   },

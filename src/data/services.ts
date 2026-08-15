@@ -35,7 +35,7 @@ export const services: Record<string, ServiceContent> = {
     slug: 'ai-software-development',
     path: SERVICE_PATHS.software,
     name: 'AI Software Development',
-    title: 'AI Software Development Services',
+    title: 'AI Software Development',
     description:
       'Custom AI software development for web apps, portals, and internal tools — from architecture to production, built by WhiteGuava in Bengaluru.',
     badge: 'AI Software',
@@ -43,7 +43,7 @@ export const services: Record<string, ServiceContent> = {
     h1Line2: 'Development',
     highlight: 'AI',
     subtitle:
-      'We design and build business software with AI where it creates value — applications, portals, and platforms that hold up in production.',
+      'WhiteGuava designs and builds business software with AI where it creates value — applications, portals, and platforms that hold up in production.',
     overviewTitle: 'Software built around how you work',
     overview: [
       'WhiteGuava is an AI software development company based in Bengaluru. We build complete products: the interface, the backend, the data layer, and the AI capabilities that sit inside them.',
@@ -92,15 +92,15 @@ export const services: Record<string, ServiceContent> = {
     slug: 'ai-agents',
     path: SERVICE_PATHS.agents,
     name: 'Custom AI Agents',
-    title: 'Custom AI Agents for Business',
+    title: 'AI Agent Development',
     description:
-      'We design AI agents that use your tools and data to complete real workflows — support, operations, and internal assistants, in production.',
+      'AI agent development by WhiteGuava. We design agents that use your tools and data to complete real workflows — support, operations, and internal assistants.',
     badge: 'AI Agents',
     h1Line1: 'Custom',
     h1Line2: 'AI Agents',
     highlight: 'AI',
     subtitle:
-      'Agents that reason, use tools, and finish the job — connected to your business systems, not stuck in a chat window.',
+      'AI agents by WhiteGuava that reason, use tools, and finish the job — connected to your business systems, not stuck in a chat window.',
     overviewTitle: 'What an AI agent actually is',
     overview: [
       'An AI agent is not a FAQ script. It can read a request, decide which tools or data it needs, take steps, and hand off to a person when it should. We build that behaviour around your workflows, permissions, and source systems.',
@@ -149,9 +149,9 @@ export const services: Record<string, ServiceContent> = {
     slug: 'ai-automation',
     path: SERVICE_PATHS.automation,
     name: 'AI and Automation',
-    title: 'AI Automation Services',
+    title: 'AI Automation',
     description:
-      'Replace repetitive work with AI-powered workflows — document handling, reporting, lead ops, and system-to-system automation.',
+      'AI automation by WhiteGuava. Replace repetitive work with reliable workflows — document handling, reporting, lead ops, and system-to-system automation.',
     badge: 'Automation',
     h1Line1: 'AI and',
     h1Line2: 'Automation',
@@ -161,7 +161,7 @@ export const services: Record<string, ServiceContent> = {
     overviewTitle: 'Automation that respects the real process',
     overview: [
       'AI and automation work best together. Some steps should stay deterministic: approvals, notifications, CRM updates. Other steps need judgment: reading a document, classifying an email, deciding whether to escalate.',
-      'We design those workflows around how your team already operates — lead capture, reporting, document handling, and ops handoffs — then connect them to the tools you use. When a platform like n8n is the right fit, we use it. When the process needs custom software, we build that instead.',
+      'WhiteGuava designs those workflows around how your team already operates — lead capture, reporting, document handling, and ops handoffs — then connects them to the tools you use. When a platform like n8n is the right fit, we use it. When the process needs custom software, we build that instead.',
     ],
     topicsTitle: 'Where this shows up in a business',
     topics: [
@@ -206,9 +206,9 @@ export const services: Record<string, ServiceContent> = {
     slug: 'whatsapp-ai',
     path: SERVICE_PATHS.whatsapp,
     name: 'WhatsApp AI Chatbots',
-    title: 'WhatsApp AI Chatbot & Business API Integration',
+    title: 'WhatsApp AI Chatbots',
     description:
-      'WhatsApp AI agents that answer customers, use your business data, and escalate to humans — built on the WhatsApp Business API.',
+      'WhatsApp AI chatbots by WhiteGuava. Agents that answer customers, use your business data, and escalate to humans — built on the WhatsApp Business API.',
     badge: 'WhatsApp AI',
     h1Line1: 'WhatsApp',
     h1Line2: 'AI Chatbots',
@@ -263,9 +263,9 @@ export const services: Record<string, ServiceContent> = {
     slug: 'document-ai',
     path: SERVICE_PATHS.document,
     name: 'Document AI',
-    title: 'Document AI & Intelligent Document Processing',
+    title: 'Document AI',
     description:
-      'Custom document AI for extraction, classification, and review workflows — built around your documents, not a generic OCR tool.',
+      'Document AI by WhiteGuava. Custom extraction, classification, and review workflows — built around your documents, not a generic OCR tool.',
     badge: 'Document AI',
     h1Line1: 'Document',
     h1Line2: 'AI',
@@ -274,8 +274,8 @@ export const services: Record<string, ServiceContent> = {
       'Extract, classify, and route documents so teams stop retyping what is already on the page.',
     overviewTitle: 'Beyond scanning into a folder',
     overview: [
-      'Intelligent document processing is useful when people spend hours reading invoices, forms, contracts, or KYC packs and typing the same fields into another system. We build pipelines that extract those fields, classify the document, and push structured data into your workflow.',
-      'That can use a specialised engine such as Google Document AI or Azure Document Intelligence when it fits, or a custom model and LLM extraction layer when your layouts are messy. The product is the workflow — not a logo on a vendor page.',
+      'Intelligent document processing is useful when people spend hours reading invoices, forms, contracts, or KYC packs and typing the same fields into another system.',
+      'WhiteGuava builds pipelines that extract those fields, classify the document, and push structured data into your workflow. That can use a specialised engine such as Google Document AI or Azure Document Intelligence when it fits, or a custom model and LLM extraction layer when your layouts are messy.',
     ],
     topicsTitle: 'What the system does',
     topics: [

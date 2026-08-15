@@ -27,7 +27,7 @@ export default function Hero() {
           </h1>
 
           <p className={`${styles.sub} reveal reveal-delay-2`}>
-            We build AI agents, intelligent software, automation systems,
+            WhiteGuava builds AI agents, intelligent software, automation systems,
             <br />
             and custom digital solutions that turn real business problems into working products.
           </p>

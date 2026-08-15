@@ -6,6 +6,7 @@ export function serviceMetadata(service: ServiceContent): Metadata {
   const url = `${SITE_URL}${service.path}`;
   const title = service.title;
   const description = service.description;
+  const ogTitle = `${title} | ${SITE_NAME}`;
 
   return {
     title,
@@ -18,7 +19,7 @@ export function serviceMetadata(service: ServiceContent): Metadata {
       follow: true,
     },
     openGraph: {
-      title: `${title} | ${SITE_NAME}`,
+      title: ogTitle,
       description,
       url,
       siteName: SITE_NAME,
@@ -27,7 +28,7 @@ export function serviceMetadata(service: ServiceContent): Metadata {
     },
     twitter: {
       card: 'summary_large_image',
-      title: `${title} | ${SITE_NAME}`,
+      title: ogTitle,
       description,
     },
   };

@@ -109,7 +109,7 @@ export default function ServicePage({ service }: { service: ServiceContent }) {
                 <span className="section-badge-dot" />
                 Related
               </div>
-              <h2 className={styles.headline}>Related services</h2>
+              <h2 className={styles.headline}>More from WhiteGuava</h2>
             </div>
             <div className={styles.related}>
               {service.related.map((item, i) => (

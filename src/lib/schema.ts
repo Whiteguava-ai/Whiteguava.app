@@ -1,73 +1,77 @@
 import type { ServiceContent } from '@/data/services';
 import {
+  BRAND_KNOWS_ABOUT,
   CONTACT_EMAILS,
   SERVICE_LINKS,
+  SITE_DESCRIPTION,
   SITE_NAME,
   SITE_URL,
   SOCIAL_LINKS,
 } from '@/lib/site';
 
+const ORG_ID = `${SITE_URL}/#organization`;
+const WEBSITE_ID = `${SITE_URL}/#website`;
+const LOGO_URL = `${SITE_URL}/brand/whiteguava-logo.png`;
+
 export function organizationSchema() {
   return {
-    '@type': 'Organization',
-    '@id': `${SITE_URL}/#organization`,
+    '@type': ['Organization', 'ProfessionalService'],
+    '@id': ORG_ID,
     name: SITE_NAME,
-    url: SITE_URL,
+    url: `${SITE_URL}/`,
+    description: SITE_DESCRIPTION,
+    email: CONTACT_EMAILS[0],
+    image: LOGO_URL,
     logo: {
       '@type': 'ImageObject',
-      url: `${SITE_URL}/brand/whiteguava-logo.png`,
+      url: LOGO_URL,
+      contentUrl: LOGO_URL,
+      caption: SITE_NAME,
     },
-    email: CONTACT_EMAILS[0],
     address: {
       '@type': 'PostalAddress',
       addressLocality: 'Bengaluru',
       addressRegion: 'Karnataka',
       addressCountry: 'IN',
+    },
+    areaServed: {
+      '@type': 'Place',
+      name: 'Worldwide',
+    },
+    contactPoint: {
+      '@type': 'ContactPoint',
+      contactType: 'sales',
+      email: CONTACT_EMAILS[0],
+      url: `${SITE_URL}/contact`,
+      availableLanguage: ['English'],
     },
     sameAs: [...SOCIAL_LINKS],
-  };
-}
-
-export function websiteSchema() {
-  return {
-    '@type': 'WebSite',
-    '@id': `${SITE_URL}/#website`,
-    url: SITE_URL,
-    name: SITE_NAME,
-    publisher: { '@id': `${SITE_URL}/#organization` },
-    inLanguage: 'en-IN',
-  };
-}
-
-export function professionalServiceSchema() {
-  return {
-    '@type': 'ProfessionalService',
-    '@id': `${SITE_URL}/#business`,
-    name: SITE_NAME,
-    url: SITE_URL,
-    image: `${SITE_URL}/brand/whiteguava-logo.png`,
-    email: CONTACT_EMAILS[0],
-    description:
-      'Bengaluru-based AI software development company building AI agents, automation systems, WhatsApp AI, and custom business software.',
-    areaServed: 'Worldwide',
-    address: {
-      '@type': 'PostalAddress',
-      addressLocality: 'Bengaluru',
-      addressRegion: 'Karnataka',
-      addressCountry: 'IN',
-    },
+    knowsAbout: [...BRAND_KNOWS_ABOUT],
     hasOfferCatalog: {
       '@type': 'OfferCatalog',
-      name: 'WhiteGuava services',
+      name: `${SITE_NAME} services`,
       itemListElement: SERVICE_LINKS.map((service) => ({
         '@type': 'Offer',
         itemOffered: {
           '@type': 'Service',
           name: service.label,
           url: `${SITE_URL}${service.href}`,
+          provider: { '@id': ORG_ID },
         },
       })),
     },
+  };
+}
+
+export function websiteSchema() {
+  return {
+    '@type': 'WebSite',
+    '@id': WEBSITE_ID,
+    name: SITE_NAME,
+    url: `${SITE_URL}/`,
+    description: SITE_DESCRIPTION,
+    inLanguage: 'en-IN',
+    publisher: { '@id': ORG_ID },
   };
 }
 
@@ -93,7 +97,7 @@ export function breadcrumbSchema(items: { name: string; path: string }[]) {
       '@type': 'ListItem',
       position: index + 1,
       name: item.name,
-      item: `${SITE_URL}${item.path}`,
+      item: item.path === '/' ? `${SITE_URL}/` : `${SITE_URL}${item.path}`,
     })),
   };
 }
@@ -108,8 +112,38 @@ export function serviceSchema(input: {
     name: input.name,
     description: input.description,
     url: `${SITE_URL}${input.path}`,
-    provider: { '@id': `${SITE_URL}/#organization` },
-    areaServed: 'Worldwide',
+    provider: { '@id': ORG_ID },
+    brand: {
+      '@type': 'Brand',
+      name: SITE_NAME,
+    },
+    areaServed: {
+      '@type': 'Place',
+      name: 'Worldwide',
+    },
+  };
+}
+
+export function aboutPageSchema() {
+  return {
+    '@type': 'AboutPage',
+    '@id': `${SITE_URL}/about#page`,
+    url: `${SITE_URL}/about`,
+    name: `About ${SITE_NAME}`,
+    description: SITE_DESCRIPTION,
+    isPartOf: { '@id': WEBSITE_ID },
+    about: { '@id': ORG_ID },
+  };
+}
+
+export function contactPageSchema() {
+  return {
+    '@type': 'ContactPage',
+    '@id': `${SITE_URL}/contact#page`,
+    url: `${SITE_URL}/contact`,
+    name: `Contact ${SITE_NAME}`,
+    isPartOf: { '@id': WEBSITE_ID },
+    about: { '@id': ORG_ID },
   };
 }
 
@@ -123,7 +157,7 @@ export function servicePageGraph(service: ServiceContent) {
         path: service.path,
       }),
       breadcrumbSchema([
-        { name: 'Home', path: '/' },
+        { name: SITE_NAME, path: '/' },
         { name: service.name, path: service.path },
       ]),
       faqPageSchema(service.faqs, `${SITE_URL}${service.path}#faq`),
@@ -137,7 +171,6 @@ export function siteGraph(extra: Record<string, unknown>[] = []) {
     '@graph': [
       organizationSchema(),
       websiteSchema(),
-      professionalServiceSchema(),
       ...extra,
     ],
   };
