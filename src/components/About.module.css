@@ -258,11 +258,32 @@
 .quoteRole { font-weight: 400; color: #888; }
 
 @media (max-width: 900px) {
+  .about { padding: 48px 0 12px; }
   .bottomGrid { grid-template-columns: 1fr; }
-  .statsCard, .quoteCard { padding: 28px; }
-  .darkCard { height: 620px; }
-  .globeArea {
-    width: min(720px, 140%);
-    top: 38%;
+  .statsCard, .quoteCard { padding: 24px; }
+  .darkCard {
+    height: auto;
+    border-radius: 28px;
+    display: flex;
+    flex-direction: column;
   }
+  .darkCardInner { padding: 36px 16px 8px; }
+  .globeArea {
+    position: relative;
+    left: auto;
+    top: auto;
+    transform: none;
+    width: min(420px, 100%);
+    margin: 0 auto -24px;
+    pointer-events: auto;
+  }
+  .quoteCard { flex-direction: column; }
+  .availablePill { text-align: center; }
+}
+
+@media (max-width: 480px) {
+  .statsText { font-size: 17px; }
+  .statsText br { display: none; }
+  .quoteAvatar { width: 72px; height: 92px; }
+  .locationTitle { padding: 0 8px; }
 }

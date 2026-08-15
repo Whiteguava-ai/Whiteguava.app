@@ -283,9 +283,12 @@
   .plans {
     grid-template-columns: 1fr;
     padding: 0;
+    gap: 16px;
   }
+  .planLight,
   .planDark {
-    padding: 36px;
+    padding: 28px 20px;
   }
-  .header { max-width: 100%; }
+  .header { max-width: 100%; margin-bottom: 32px; }
+  .priceAmt { font-size: clamp(36px, 12vw, 52px); }
 }

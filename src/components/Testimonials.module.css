@@ -137,4 +137,6 @@
 @media (max-width: 700px) {
   .stage { grid-template-columns: 1fr; }
   .nav { flex-direction: row; }
+  .card { padding: 24px 20px; min-height: 0; }
+  .counter { right: 20px; bottom: 20px; font-size: 22px; }
 }

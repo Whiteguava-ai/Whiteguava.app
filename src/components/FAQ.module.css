@@ -78,6 +78,11 @@
 }
 
 .open .a {
-  max-height: 160px;
+  max-height: 280px;
   margin-top: 12px;
+}
+
+@media (max-width: 600px) {
+  .item { padding: 18px 16px; border-radius: 18px; }
+  .q { font-size: 15px; gap: 10px; }
 }

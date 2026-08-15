@@ -18,15 +18,15 @@ export default function Tools() {
           <div className={`${styles.content} reveal`}>
             <div className="section-badge">
               <span className="section-badge-dot" />
-              Tools
+              Technology
             </div>
             <h2 className={styles.headline}>
-              We work with powerful<br />AI tools
+              Built With<br />Modern Technology
             </h2>
             <p className={styles.desc}>
-              We design, build, and evaluate with a modern AI stack—LLMs, vector search, orchestration, and observability—so your features are fast, reliable, and secure.
+              Python, TypeScript, React, Next.js, FastAPI, Node.js — combined with OpenAI, Anthropic, Google AI, LangChain, vector databases, AWS, and Azure to build reliable, production-grade AI and software solutions.
             </p>
-            <a href="#contact" className="btn-dark"><span>Get Started</span></a>
+            <a href="#contact" className="btn-dark"><span>Start a Project</span></a>
           </div>
         </div>
       </SectionStage>

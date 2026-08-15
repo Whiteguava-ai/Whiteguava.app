@@ -193,6 +193,22 @@
 }
 
 @media (max-width: 768px) {
+  .works { padding: 48px 0; }
+  .workCard { padding: 16px; border-radius: 22px; }
+  .imageArea { aspect-ratio: 16 / 10; }
   .infoRow { grid-template-columns: 1fr; gap: 16px; }
   .infoCol { border-left: none; border-top: 1px solid rgba(0,0,0,0.08); padding: 16px 0 0; }
+  .infoTitle { padding-right: 0; font-size: 18px; }
+  .viewBtn {
+    opacity: 1;
+    transform: none;
+    top: 12px;
+    right: 12px;
+    padding: 8px 14px;
+    font-size: 12px;
+  }
+}
+
+@media (hover: none) {
+  .viewBtn { opacity: 1; transform: none; }
 }

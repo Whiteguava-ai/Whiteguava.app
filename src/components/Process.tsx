@@ -6,25 +6,43 @@ import styles from './Process.module.css';
 const steps = [
   {
     num: '01',
-    title: 'Discover & Scope',
-    desc: 'Align on problems, data reality, and success metrics. Opportunity brief, KPI model, phased roadmap, effort/cost ranges.',
-    duration: '3-7 DAYS',
+    title: 'Understand',
+    desc: 'We understand your business, users, workflow, data, and the problem worth solving.',
+    duration: 'DISCOVERY',
   },
   {
     num: '02',
-    title: 'Prototype',
-    desc: 'De-risk unknowns and validate value quickly. Clickable UX, tech spike repo, initial eval rubric, demo.',
-    duration: '1-2 WEEKS',
+    title: 'Design',
+    desc: 'We define the product experience, architecture, AI approach, and implementation plan.',
+    duration: 'PLANNING',
   },
   {
     num: '03',
-    title: 'Validate & Evals',
-    desc: 'Prove accuracy, usability, safety, and cost. Eval dashboard, acceptance thresholds, decision to iterate/ship.',
-    duration: '1 WEEKS',
+    title: 'Build',
+    desc: 'We develop the application, AI system, integrations, and automation workflows.',
+    duration: 'DEVELOPMENT',
+  },
+  {
+    num: '04',
+    title: 'Integrate',
+    desc: 'We connect the solution with your existing tools, systems, data, and workflows.',
+    duration: 'INTEGRATION',
+  },
+  {
+    num: '05',
+    title: 'Launch',
+    desc: 'We test, deploy, monitor, and move the solution into production.',
+    duration: 'DEPLOYMENT',
+  },
+  {
+    num: '06',
+    title: 'Improve',
+    desc: 'We continuously improve performance, reliability, usability, and intelligence.',
+    duration: 'ONGOING',
   },
 ];
 
-function StepCard({ step, delay }: { step: typeof steps[0]; delay: number }) {
+function StepCard({ step, delay, total }: { step: typeof steps[0]; delay: number; total: number }) {
   const tilt = useTilt(7);
   return (
     <div
@@ -40,7 +58,7 @@ function StepCard({ step, delay }: { step: typeof steps[0]; delay: number }) {
       </div>
       <div className={styles.numRow}>
         <span className={styles.num}>{step.num}</span>
-        <span className={styles.den}>/03</span>
+        <span className={styles.den}>/{String(total).padStart(2, '0')}</span>
       </div>
     </div>
   );
@@ -48,20 +66,20 @@ function StepCard({ step, delay }: { step: typeof steps[0]; delay: number }) {
 
 export default function Process() {
   return (
-    <section className={styles.process}>
+    <section id="process" className={styles.process}>
       <SectionStage>
       <div className="container">
         <div className={`${styles.top} reveal`}>
           <div className="section-badge">
             <span className="section-badge-dot" />
-            Process
+            How We Build
           </div>
-          <h2 className={styles.headline}>From Idea to Production</h2>
+          <h2 className={styles.headline}>How We Build</h2>
         </div>
 
         <div className={styles.grid}>
           {steps.map((s, i) => (
-            <StepCard key={s.num} step={s} delay={i + 1} />
+            <StepCard key={s.num} step={s} delay={Math.min(i + 1, 6)} total={steps.length} />
           ))}
         </div>
       </div>

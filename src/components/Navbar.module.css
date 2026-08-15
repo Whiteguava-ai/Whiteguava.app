@@ -124,15 +124,123 @@
     0 14px 30px rgba(0,0,0,0.28);
 }
 
+.menuBtn {
+  display: none;
+  width: 42px;
+  height: 42px;
+  border: none;
+  border-radius: 50%;
+  background: rgba(0,0,0,0.06);
+  cursor: pointer;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  padding: 0;
+  flex-shrink: 0;
+}
+
+.menuBar {
+  display: block;
+  width: 16px;
+  height: 2px;
+  background: #161616;
+  border-radius: 2px;
+  transition: transform 0.25s ease, opacity 0.2s ease;
+}
+
+.menuOpen .menuBar:first-child {
+  transform: translateY(3.5px) rotate(45deg);
+}
+.menuOpen .menuBar:last-child {
+  transform: translateY(-3.5px) rotate(-45deg);
+}
+
+.mobilePanel {
+  display: none;
+}
+
 @keyframes navShine {
   0% { transform: translateX(-180%) skewX(-22deg); }
   55%, 100% { transform: translateX(280%) skewX(-22deg); }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1100px) {
+  .header { padding: 14px 20px; }
+  .header.scrolled { padding: 10px 20px; }
+  .links,
+  .cta { display: none; }
+  .menuBtn { display: flex; }
+  .nav {
+    width: 100%;
+    max-width: 560px;
+    justify-content: space-between;
+    gap: 8px;
+  }
+  .logoFull { height: 30px; }
+
+  .mobilePanel {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    position: absolute;
+    top: calc(100% - 4px);
+    left: 12px;
+    right: 12px;
+    max-width: 560px;
+    margin: 0 auto;
+    padding: 16px 14px 18px;
+    background: rgba(255,255,255,0.96);
+    backdrop-filter: blur(22px);
+    -webkit-backdrop-filter: blur(22px);
+    border-radius: 24px;
+    border: 1px solid rgba(255,255,255,0.95);
+    box-shadow: 0 18px 50px rgba(0,0,0,0.14);
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-8px);
+    transition: opacity 0.22s ease, transform 0.22s ease;
+  }
+  .mobilePanelOpen {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+  }
+  .mobileLinks {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+  }
+  .mobileLinks a {
+    display: block;
+    padding: 13px 14px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #161616;
+    text-decoration: none;
+    border-radius: 14px;
+  }
+  .mobileLinks a:hover,
+  .mobileLinks a:active {
+    background: rgba(0,0,0,0.05);
+  }
+  .mobileCta {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 6px;
+    padding: 14px 18px;
+    background: #161616;
+    color: white;
+    border-radius: 999px;
+    font-size: 15px;
+    font-weight: 700;
+    text-decoration: none;
+  }
+}
+
+@media (max-width: 900px) {
   .header { padding: 10px 12px; }
-  .links { display: none; }
-  .nav { gap: 12px; }
   .logoFull { height: 28px; }
 }
 

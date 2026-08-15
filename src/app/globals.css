@@ -32,6 +32,7 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: clip;
 }
 
 body {
@@ -40,11 +41,23 @@ body {
   color: var(--text-primary);
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
+  max-width: 100%;
 }
 
 a { color: inherit; }
 
-img { max-width: 100%; }
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+svg, video {
+  max-width: 100%;
+}
+
+button, input, select, textarea {
+  max-width: 100%;
+}
 
 /* ===================== UTILITY ANIMATIONS ===================== */
 
@@ -297,6 +310,22 @@ img { max-width: 100%; }
     0 40px 70px rgba(0,0,0,0.12);
 }
 
+@media (max-width: 1100px) {
+  .container { padding: 0 28px; }
+}
+
 @media (max-width: 768px) {
-  .container { padding: 0 20px; }
+  .container { padding: 0 18px; }
+  .btn-dark,
+  .btn-outline,
+  .btn-accent {
+    padding: 13px 22px;
+    font-size: 14px;
+    white-space: normal;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .container { padding: 0 16px; }
 }

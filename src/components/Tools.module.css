@@ -105,6 +105,11 @@
 }
 
 @media (max-width: 900px) {
-  .inner { padding: 10px 24px 20px; min-height: auto; }
+  .inner { padding: 10px 20px 20px; min-height: auto; }
   .scene { display: none; }
+  .headline br { display: none; }
+}
+
+@media (max-width: 480px) {
+  .inner { padding: 4px 16px 12px; }
 }

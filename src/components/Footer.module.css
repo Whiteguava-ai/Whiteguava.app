@@ -244,12 +244,12 @@
 .backTop:hover { color: var(--accent); }
 
 @media (max-width: 900px) {
-  .inner { padding: 0 24px; }
+  .inner { padding: 0 20px; }
   .bottomBar {
     grid-template-columns: 1fr;
     justify-items: center;
     text-align: center;
-    padding: 20px 20px 24px;
+    padding: 20px 16px 24px;
     gap: 12px;
   }
   .bottomNav,
@@ -263,7 +263,9 @@
 }
 
 @media (max-width: 560px) {
-  .footer { margin: 0 8px 8px; border-radius: 24px; padding-top: 56px; }
+  .footer { margin: 0 6px 8px; border-radius: 20px; padding-top: 48px; }
   .socialGrid { grid-template-columns: 1fr; max-width: 100%; }
   .copyright { white-space: normal; }
+  .socialBtn { padding: 14px 14px; font-size: 14px; }
+  .watermark { font-size: clamp(48px, 18vw, 90px); }
 }

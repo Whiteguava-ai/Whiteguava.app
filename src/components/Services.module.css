@@ -113,5 +113,10 @@
 }
 
 @media (max-width: 900px) {
-  .layout { grid-template-columns: 1fr; gap: 40px; }
+  .layout { grid-template-columns: 1fr; gap: 32px; }
+  .desc { max-width: 100%; }
+  .itemHeader { padding: 20px 20px; }
+  .itemTitle { font-size: 16px; }
+  .itemDesc, .tags { padding-left: 20px; padding-right: 20px; }
+  .active .itemBody { max-height: 320px; }
 }

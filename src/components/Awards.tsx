@@ -3,18 +3,20 @@ import { useState } from 'react';
 import SectionStage from '@/components/visual/SectionStage';
 import styles from './Awards.module.css';
 
-const awards = [
-  { title: 'Innovation in AI', project: 'Underwriting Risk Copilot (Fintech)', year: '2026' },
-  { title: 'Best AI Product Design', project: 'Support Copilot (SaaS)', year: '2026' },
-  { title: 'Data & AI Excellence', project: 'Clinical Note Summarizer (Healthcare)', year: '2026' },
-  { title: 'Risk Intelligence', project: 'Underwriting Risk Copilot (Fintech)', year: '2026' },
+const capabilities = [
+  { title: 'AI Agents & Automation', project: 'Custom agents with tools, memory, and business integrations', year: 'Core' },
+  { title: 'Generative AI & RAG', project: 'LLM systems connected to your private business knowledge', year: 'Core' },
+  { title: 'Business Software', project: 'Web apps, portals, dashboards, and platforms built to scale', year: 'Core' },
+  { title: 'Data & Analytics', project: 'Pipelines, dashboards, and AI-ready data infrastructure', year: 'Core' },
+  { title: 'Cloud & Deployment', project: 'AWS, Azure, infrastructure, monitoring, and production deployment', year: 'Core' },
+  { title: 'AI Integration', project: 'Connecting AI to CRM, ERP, WhatsApp, APIs, and internal systems', year: 'Core' },
 ];
 
 export default function Awards() {
   const [i, setI] = useState(0);
-  const prev = () => setI(v => (v - 1 + awards.length) % awards.length);
-  const next = () => setI(v => (v + 1) % awards.length);
-  const visible = [0, 1, 2].map(offset => awards[(i + offset) % awards.length]);
+  const prev = () => setI(v => (v - 1 + capabilities.length) % capabilities.length);
+  const next = () => setI(v => (v + 1) % capabilities.length);
+  const visible = [0, 1, 2].map(offset => capabilities[(i + offset) % capabilities.length]);
 
   return (
     <section className={styles.awards}>
@@ -23,7 +25,7 @@ export default function Awards() {
         <div className={`${styles.top} reveal`}>
           <div className="section-badge">
             <span className="section-badge-dot" />
-            Awards
+            What We Do
           </div>
           <div className={styles.nav}>
             <button onClick={prev} aria-label="Previous" className={styles.navBtn}><span>←</span></button>
@@ -34,13 +36,13 @@ export default function Awards() {
           {visible.map((a, idx) => (
             <a
               key={`${a.title}-${idx}`}
-              href="#works"
+              href="#services"
               className={`${styles.card} reveal reveal-delay-${idx + 1}`}
             >
               <div className={styles.medal}>
                 <svg width="36" height="36" viewBox="0 0 24 24" fill="none">
                   <circle cx="12" cy="12" r="8" stroke="#161616" strokeWidth="1.6"/>
-                  <path d="M12 8l1.2 2.6 2.8.3-2.1 1.9.6 2.8L12 14.4 9.5 15.6l.6-2.8-2.1-1.9 2.8-.3L12 8z" fill="#161616"/>
+                  <path d="M9 12l2 2 4-4" stroke="#161616" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
               </div>
               <h3>{a.title}</h3>

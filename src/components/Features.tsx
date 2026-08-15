@@ -4,23 +4,23 @@ import styles from './Features.module.css';
 
 const features = [
   {
-    title: 'Agent-Powered Workflows',
-    desc: 'Turn repetitive tasks into autonomous flows—agents plan, execute, and report with guardrails, audit trails, and clear handoff to humans.',
+    title: 'AI Agents',
+    desc: 'Agents that reason, use tools, access information, and complete tasks end-to-end without constant human intervention.',
     visual: 'flow',
   },
   {
-    title: 'Eval-First Quality',
-    desc: 'Measure accuracy, latency, safety, and cost from day one. Our evals and dashboards keep models reliable and budgets predictable.',
-    visual: 'eval',
-  },
-  {
-    title: 'Private Knowledge RAG',
-    desc: 'Make your docs, tickets, and wikis instantly useful with retrieval augmented generation—freshness, citations, and explainability built in.',
+    title: 'Private Knowledge',
+    desc: 'Connect business documents, databases, and internal knowledge to AI — so it answers from your data, not the internet.',
     visual: 'rag',
   },
   {
-    title: 'Human-Centered AI UX',
-    desc: 'Interfaces, prompts, and error states designed for trust and adoption—so the smart thing is also the obvious thing to do.',
+    title: 'Business Automation',
+    desc: 'Turn repetitive workflows into intelligent automated processes — from document handling to approvals and reporting.',
+    visual: 'eval',
+  },
+  {
+    title: 'AI Applications',
+    desc: 'Put intelligent capabilities directly inside your customer or employee applications as native product features.',
     visual: 'ux',
   },
   {
@@ -29,13 +29,13 @@ const features = [
     visual: 'brand',
   },
   {
-    title: 'Secure by Design',
-    desc: 'PII handling, SSO/SAML, RBAC, secrets management, and compliance workflows—ship AI that’s safe, auditable, and enterprise-ready.',
+    title: 'Predictive Intelligence',
+    desc: 'Use machine learning to forecast demand, classify data, detect anomalies, and power recommendation systems.',
     visual: 'secure',
   },
   {
-    title: 'Seamless Integrations',
-    desc: 'Plug into your stack (CRM, helpdesk, ERP, data warehouse) with webhooks and APIs to turn insights into action—fast.',
+    title: 'Integrations',
+    desc: 'Connect AI to CRM, ERP, WhatsApp, APIs, databases, and cloud platforms — where your business already operates.',
     visual: 'integrations',
   },
 ];
@@ -91,9 +91,9 @@ export default function Features() {
         <div className={`${styles.header} reveal`}>
           <div className="section-badge">
             <span className="section-badge-dot" />
-            Features
+            Capabilities
           </div>
-          <h2 className={styles.headline}>All Features in One</h2>
+          <h2 className={styles.headline}>Intelligence Built Into Your Workflow</h2>
         </div>
 
         <div className={styles.grid}>

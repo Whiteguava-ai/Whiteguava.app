@@ -1,34 +1,34 @@
 'use client';
-import { useState } from 'react';
 import SectionStage from '@/components/visual/SectionStage';
 import styles from './Pricing.module.css';
 
-const starterFeatures = [
-  'Discovery workshop',
-  'Opportunity brief',
-  'Clickable UX',
-  '1 data source & 1 integration',
-  'LLM prototype',
-  'Evaluation report',
+const discoveryFeatures = [
+  'Business problem discovery',
+  'Use-case identification',
+  'AI opportunity mapping',
+  'Technical recommendation',
+  'Project roadmap',
+];
+
+const buildFeatures = [
+  'Custom AI systems',
+  'Application development',
+  'Automation workflows',
+  'System integrations',
+  'Cloud deployment',
+  'Testing & QA',
 ];
 
 const enterpriseFeatures = [
-  'Everything in Starter',
-  'CI/CD, tracing, alerts, guardrails',
-  'Full eval dashboard',
-  '3 data sources & 3 integrations',
-  'Custom agent framework',
-  'Dedicated ML engineer',
-  'Priority support & SLA',
+  'Custom architecture design',
+  'Advanced AI systems',
+  'Multiple system integrations',
+  'Cloud infrastructure setup',
+  'Ongoing development support',
+  'Priority engagement',
 ];
 
 export default function Pricing() {
-  const [annual, setAnnual] = useState(true);
-
-  const starterPrice  = annual ? '$9,900'  : '$990';
-  const enterprisePrice = annual ? '$19,900' : '$1,990';
-  const period = annual ? '/ year' : '/ month';
-
   return (
     <section id="pricing" className={styles.pricing}>
       <SectionStage>
@@ -36,49 +36,37 @@ export default function Pricing() {
         <div className={`${styles.header} reveal`}>
           <div className="section-badge">
             <span className="section-badge-dot" />
-            Pricing Plans
+            Solutions
           </div>
           <h2 className={styles.headline}>
-            From pilot to enterprise
+            Solutions That Fit
             <br />
-            clear scope, transparent costs
+            Your Needs
           </h2>
-          <div className={styles.toggleRow}>
-            <button
-              className={`${styles.toggle} ${annual ? styles.toggleOn : ''}`}
-              onClick={() => setAnnual(a => !a)}
-              aria-label="Toggle billing period"
-            >
-              <span className={styles.toggleThumb} />
-            </button>
-            <span className={styles.toggleLabel}>{annual ? 'annually' : 'monthly'}</span>
-          </div>
         </div>
 
         <div className={`${styles.plans} reveal reveal-delay-2`}>
-          {/* Starter */}
+          {/* AI Discovery */}
           <div className={styles.planLight}>
             <div className={styles.planHeader}>
               <div className={styles.planIcon}>
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/>
-                  <path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                  <circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/>
                 </svg>
               </div>
-              <span className={styles.planName}>Starter Plan</span>
-              <span className={styles.planFor}>For startups</span>
+              <span className={styles.planName}>AI Discovery</span>
+              <span className={styles.planFor}>Explore where AI creates value</span>
             </div>
             <div className={styles.planPrice}>
-              <span className={styles.priceAmt}>{starterPrice}</span>
-              <span className={styles.pricePeriod}>{period}</span>
+              <span className={styles.priceAmt}>Let&apos;s Talk</span>
             </div>
-            <a href="#contact" className={`${styles.planBtn} btn-dark`}><span>Get Started</span></a>
+            <a href="#contact" className={`${styles.planBtn} btn-dark`}><span>Discuss Your Project</span></a>
             <div className={styles.included}>
               <p className={styles.includedLabel}>What&apos;s included</p>
-              <p className={styles.includedDesc}>Prove value in two weeks with a clickable UX, tech spike, and a clear go/no-go roadmap.</p>
+              <p className={styles.includedDesc}>For businesses exploring where AI can create real, measurable value in their operations.</p>
             </div>
             <ul className={styles.featureList}>
-              {starterFeatures.map((f, i) => (
+              {discoveryFeatures.map((f, i) => (
                 <li key={i} className={styles.featureItem}>
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#1A1A1A" strokeWidth="2.5"><path d="M5 12l5 5L20 7"/></svg>
                   {f}
@@ -87,28 +75,27 @@ export default function Pricing() {
             </ul>
           </div>
 
-          {/* Enterprise */}
+          {/* Custom Build */}
           <div className={styles.planDark}>
             <div className={styles.planHeader}>
               <div className={`${styles.planIcon} ${styles.planIconDark}`}>
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/>
+                  <polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/>
                 </svg>
               </div>
-              <span className={styles.planNameDark}>Enterprise Plan</span>
-              <span className={styles.planForDark}>For organisations</span>
+              <span className={styles.planNameDark}>Custom Build</span>
+              <span className={styles.planForDark}>For businesses ready to build</span>
             </div>
             <div className={styles.planPrice}>
-              <span className={`${styles.priceAmt} ${styles.priceAmtDark}`}>{enterprisePrice}</span>
-              <span className={`${styles.pricePeriod} ${styles.pricePeriodDark}`}>{period}</span>
+              <span className={`${styles.priceAmt} ${styles.priceAmtDark}`}>Let&apos;s Talk</span>
             </div>
-            <a href="#contact" className={`${styles.planBtnDark}`}><span>Get Started</span></a>
+            <a href="#contact" className={`${styles.planBtnDark}`}><span>Discuss Your Project</span></a>
             <div className={styles.includedDark}>
               <p className={styles.includedLabelDark}>What&apos;s included</p>
-              <p className={styles.includedDescDark}>Compliance-ready delivery for complex orgs—multi-env releases, canaries, and change management.</p>
+              <p className={styles.includedDescDark}>Full-cycle development — AI systems, applications, automation, integrations, and deployment.</p>
             </div>
             <ul className={styles.featureListDark}>
-              {enterpriseFeatures.map((f, i) => (
+              {buildFeatures.map((f, i) => (
                 <li key={i} className={styles.featureItemDark}>
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.8)" strokeWidth="2.5"><path d="M5 12l5 5L20 7"/></svg>
                   {f}
@@ -117,6 +104,34 @@ export default function Pricing() {
             </ul>
           </div>
         </div>
+
+        {/* Enterprise card below */}
+        <div className={`reveal reveal-delay-3`} style={{ marginTop: '16px' }}>
+          <div className={styles.planLight} style={{ maxWidth: '100%' }}>
+            <div className={styles.planHeader}>
+              <div className={styles.planIcon}>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/>
+                </svg>
+              </div>
+              <span className={styles.planName}>Enterprise / Custom</span>
+              <span className={styles.planFor}>For complex business requirements</span>
+            </div>
+            <div className={styles.planPrice}>
+              <span className={styles.priceAmt}>Let&apos;s Talk</span>
+            </div>
+            <a href="#contact" className={`${styles.planBtn} btn-dark`}><span>Discuss Your Project</span></a>
+            <ul className={styles.featureList} style={{ marginTop: '16px' }}>
+              {enterpriseFeatures.map((f, i) => (
+                <li key={i} className={styles.featureItem}>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#1A1A1A" strokeWidth="2.5"><path d="M5 12l5 5L20 7"/></svg>
+                  {f}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+
       </div>
       </SectionStage>
     </section>

@@ -3,44 +3,26 @@ import type { ReactNode } from 'react';
 import SectionStage from '@/components/visual/SectionStage';
 import styles from './Team.module.css';
 
-const members = [
+const capabilities = [
   {
-    name: 'Ava Collins',
-    role: "AgenAI's Design Lead",
-    img: 'https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=400&q=80',
-    featured: true,
-    socials: ['twitter', 'linkedin', 'github'],
+    area: 'AI & Machine Learning',
+    desc: 'Building AI agents, RAG systems, generative AI, and machine learning solutions around real business data and workflows.',
   },
   {
-    name: 'Noah Reed',
-    role: 'ML/Agent Lead. Builds domain agents',
-    img: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&q=80',
-    socials: ['linkedin', 'github'],
+    area: 'Software Engineering',
+    desc: 'Full-stack web and mobile application development — from architecture to production-ready code.',
   },
   {
-    name: 'Jordan Brooks',
-    role: 'Data Engineer. Secure access policies',
-    img: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=400&q=80',
-    socials: ['linkedin', 'github'],
+    area: 'Automation & Integrations',
+    desc: 'Workflow automation, API integrations, and system connectors that link AI to the tools businesses already use.',
   },
   {
-    name: 'Lucas Hayes',
-    role: 'Solutions Architect. Connects AI to your stack',
-    img: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&q=80',
-    socials: ['linkedin', 'github'],
-  },
-  {
-    name: 'Erin Park',
-    role: 'MLOps Engineer. Productionizes with CI/CD',
-    img: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=80',
-    socials: ['linkedin', 'github'],
+    area: 'Data & Cloud',
+    desc: 'Data pipelines, analytics, cloud infrastructure, deployment, and monitoring on AWS and Azure.',
   },
 ];
 
 export default function Team() {
-  const featured = members[0];
-  const rest = members.slice(1);
-
   return (
     <section className={styles.team}>
       <SectionStage dark>
@@ -48,41 +30,54 @@ export default function Team() {
         <div className={`${styles.top} reveal`}>
           <div className={`section-badge section-badge-dark`}>
             <span className="section-badge-dot" />
-            Team Members
+            Our Team
           </div>
           <h2 className={styles.headline}>
-            The Squad Shipping<br />Your AI
+            The People Behind<br />WhiteGuava
           </h2>
         </div>
 
         <div className={styles.grid}>
-          {/* Featured card */}
+          {/* Featured — brand statement */}
           <div className={`${styles.featuredCard} reveal reveal-delay-1`}>
-            <img src={featured.img} alt={featured.name} className={styles.featuredImg} />
-            <div className={styles.featuredInfo}>
-              <h3 className={styles.featuredName}>{featured.name}</h3>
-              <p className={styles.featuredRole}>{featured.role}</p>
-              <div className={styles.socials}>
-                <SocialBtn type="twitter" />
+            <div className={styles.featuredInfo} style={{ padding: '40px 36px', minHeight: '360px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+              <div>
+                <p style={{ fontSize: '13px', fontWeight: 600, letterSpacing: '0.08em', color: 'rgba(255,255,255,0.4)', textTransform: 'uppercase', marginBottom: '20px' }}>
+                  Bengaluru, Karnataka, India
+                </p>
+                <h3 className={styles.featuredName} style={{ fontSize: '28px', lineHeight: 1.3 }}>
+                  A team of engineers, AI specialists, and product builders.
+                </h3>
+              </div>
+              <p className={styles.featuredRole} style={{ fontSize: '15px', lineHeight: 1.65, color: 'rgba(255,255,255,0.55)', marginTop: '20px' }}>
+                We combine deep technical expertise with practical business thinking to build AI and software solutions that actually work — not just in demos, but in production.
+              </p>
+              <div className={styles.socials} style={{ marginTop: '24px' }}>
                 <SocialBtn type="linkedin" />
+                <SocialBtn type="twitter" />
                 <SocialBtn type="github" />
               </div>
             </div>
           </div>
 
-          {/* Grid of 4 */}
+          {/* Capability grid */}
           <div className={styles.subGrid}>
-            {rest.map((m, i) => (
+            {capabilities.map((c, i) => (
               <div key={i} className={`${styles.memberCard} reveal reveal-delay-${i + 2}`}>
                 <div className={styles.memberTop}>
-                  <img src={m.img} alt={m.name} className={styles.memberImg} />
                   <div className={styles.socials}>
-                    <SocialBtn type="linkedin" small />
-                    <SocialBtn type="github" small />
+                    <span style={{
+                      width: 40, height: 40, borderRadius: '50%',
+                      background: 'linear-gradient(180deg, rgba(255,255,255,0.18) 0%, rgba(255,255,255,0.06) 100%)',
+                      display: 'flex', alignItems: 'center', justifyContent: 'center',
+                      fontSize: '14px', fontWeight: 700, color: 'rgba(255,255,255,0.7)',
+                    }}>
+                      {String(i + 1).padStart(2, '0')}
+                    </span>
                   </div>
                 </div>
-                <h4 className={styles.memberName}>{m.name}</h4>
-                <p className={styles.memberRole}>{m.role}</p>
+                <h4 className={styles.memberName}>{c.area}</h4>
+                <p className={styles.memberRole}>{c.desc}</p>
               </div>
             ))}
           </div>

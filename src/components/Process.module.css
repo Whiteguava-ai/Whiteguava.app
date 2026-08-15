@@ -97,7 +97,7 @@
   color: rgba(0,0,0,0.18);
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1024px) {
   .grid { grid-template-columns: 1fr; }
-  .card { min-height: 260px; }
+  .card { min-height: 240px; }
 }

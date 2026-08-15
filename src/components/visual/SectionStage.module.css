@@ -66,5 +66,11 @@
 
 @media (max-width: 768px) {
   .stage { margin: 0 8px 8px; border-radius: 24px; }
-  .body { padding: 64px 0; }
+  .body { padding: 56px 0; }
+  .tall { min-height: 0; }
+}
+
+@media (max-width: 480px) {
+  .stage { margin: 0 6px 8px; border-radius: 20px; }
+  .body { padding: 44px 0; }
 }

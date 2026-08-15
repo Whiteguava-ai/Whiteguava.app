@@ -44,6 +44,8 @@
   font-weight: 700;
   color: #161616;
   text-decoration: none;
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 
 .infoValue:hover { color: var(--accent); }
@@ -124,4 +126,13 @@
 @media (max-width: 900px) {
   .layout { grid-template-columns: 1fr; gap: 36px; }
   .row { grid-template-columns: 1fr; }
+  .form { padding: 24px 18px; border-radius: 24px; }
+  .submitBtn { align-self: stretch; width: 100%; }
+  .infoValue { font-size: 16px; }
+  .left p br { display: none; }
+  .input { font-size: 16px; }
+}
+
+@media (max-width: 480px) {
+  .headline { font-size: clamp(30px, 9vw, 40px); }
 }

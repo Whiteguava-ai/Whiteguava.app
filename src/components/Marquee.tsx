@@ -1,31 +1,37 @@
 'use client';
 import styles from './Marquee.module.css';
 
-const logos = [
-  { name: 'LOGOIPSUM', icon: 'L' },
-  { name: 'Brandify', icon: 'B' },
-  { name: 'NexGen', icon: 'N' },
-  { name: 'Logoipsum', icon: 'G' },
-  { name: 'TechStack', icon: 'T' },
-  { name: 'CloudBase', icon: 'C' },
-  { name: 'DataFlow', icon: 'D' },
-  { name: 'QuantAI', icon: 'Q' },
-  { name: 'SyncOps', icon: 'S' },
-  { name: 'VentureX', icon: 'V' },
+const techs = [
+  { name: 'Python', icon: 'Py' },
+  { name: 'TypeScript', icon: 'TS' },
+  { name: 'React', icon: 'Re' },
+  { name: 'Next.js', icon: 'Nx' },
+  { name: 'FastAPI', icon: 'FA' },
+  { name: 'Node.js', icon: 'No' },
+  { name: 'OpenAI', icon: 'OA' },
+  { name: 'Anthropic', icon: 'An' },
+  { name: 'LangChain', icon: 'LC' },
+  { name: 'PostgreSQL', icon: 'PG' },
+  { name: 'MongoDB', icon: 'MG' },
+  { name: 'Docker', icon: 'Do' },
+  { name: 'AWS', icon: 'AW' },
+  { name: 'Azure', icon: 'Az' },
+  { name: 'Hugging Face', icon: 'HF' },
+  { name: 'Vector DB', icon: 'VD' },
 ];
 
 export default function Marquee() {
-  const items = [...logos, ...logos];
+  const items = [...techs, ...techs];
   return (
     <div className={styles.section}>
       <div className={styles.labelCol}>
-        <p className={styles.label}>Trusted by 100+<br />top-tier brands</p>
+        <p className={styles.label}>Technologies<br />We Work With</p>
       </div>
       <div className={styles.track}>
         <div className={styles.inner}>
-          {items.map((logo, i) => (
+          {items.map((tech, i) => (
             <div key={i} className={styles.logoItem}>
-              <LogoMark name={logo.name} icon={logo.icon} />
+              <TechMark name={tech.name} icon={tech.icon} />
             </div>
           ))}
         </div>
@@ -34,7 +40,7 @@ export default function Marquee() {
   );
 }
 
-function LogoMark({ name, icon }: { name: string; icon: string }) {
+function TechMark({ name, icon }: { name: string; icon: string }) {
   return (
     <span className={styles.logoInner}>
       <span className={styles.logoIcon}>{icon}</span>

@@ -179,7 +179,9 @@
 
 @media (max-width: 900px) {
   .grid { grid-template-columns: 1fr; }
+  .top { margin-bottom: 36px; }
 }
 @media (max-width: 600px) {
   .subGrid { grid-template-columns: 1fr; }
+  .featuredInfo, .memberCard { padding: 20px; }
 }

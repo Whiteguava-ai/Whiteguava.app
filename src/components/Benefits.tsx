@@ -10,9 +10,9 @@ export default function Benefits() {
         <div className={`${styles.top} reveal`}>
           <div className="section-badge">
             <span className="section-badge-dot" />
-            Benefits
+            Why WhiteGuava
           </div>
-          <h2 className={`${styles.headline} reveal reveal-delay-1`}>Why Choose Us</h2>
+          <h2 className={`${styles.headline} reveal reveal-delay-1`}>Why WhiteGuava</h2>
         </div>
 
         <div className={styles.grid}>
@@ -20,22 +20,22 @@ export default function Benefits() {
           <div className={`${styles.card} reveal reveal-delay-1`}>
             <div className={styles.cardIllustration}>
               <div className={styles.metricsViz}>
-                {['Accuracy','Latency','Safety','Cost'].map((label, i) => (
+                {['Business','AI','Software','Outcome'].map((label, i) => (
                   <div key={i} className={styles.metricRow}>
                     <div className={styles.metricBar}>
-                      <div className={styles.metricFill} style={{ width: `${[65,85,50,75][i]}%` }} />
+                      <div className={styles.metricFill} style={{ width: `${[60,80,90,100][i]}%` }} />
                     </div>
                     <span className={styles.metricLabel}>
-                      <span className={styles.metricIcon}>{['◎','⊙','🛡','💰'][i]}</span>
+                      <span className={styles.metricIcon}>{['◎','⊙','▣','✓'][i]}</span>
                       {label}
                     </span>
                   </div>
                 ))}
               </div>
             </div>
-            <h3 className={styles.cardTitle}>Outcome over Output</h3>
+            <h3 className={styles.cardTitle}>Built Around Your Business</h3>
             <p className={styles.cardDesc}>
-              We measure what matters – accuracy, latency, safety, and cost – so every sprint ships business value, not just features.
+              We don&apos;t force your workflow into a generic product. Every solution is shaped around how your business actually operates.
             </p>
           </div>
 
@@ -44,8 +44,8 @@ export default function Benefits() {
             <div className={styles.cardIllustration}>
               <div className={styles.checkGrid}>
                 {[1,2,3,4,5,6].map(i => (
-                  <div key={i} className={`${styles.checkBox} ${i <= 3 ? styles.checkBoxActive : ''}`}>
-                    {i <= 3 && (
+                  <div key={i} className={`${styles.checkBox} ${i <= 4 ? styles.checkBoxActive : ''}`}>
+                    {i <= 4 && (
                       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1A1A1A" strokeWidth="3">
                         <path d="M5 12l5 5L20 7"/>
                       </svg>
@@ -54,9 +54,9 @@ export default function Benefits() {
                 ))}
               </div>
             </div>
-            <h3 className={styles.cardTitle}>Eval-First Reliability</h3>
+            <h3 className={styles.cardTitle}>AI Where It Matters</h3>
             <p className={styles.cardDesc}>
-              From day one, we run offline/online evals, canary tests, and tracing. You see how models perform – and why.
+              We use AI where it creates measurable value — not simply because it is trendy. Practical application over hype.
             </p>
           </div>
 
@@ -76,9 +76,9 @@ export default function Benefits() {
                 </div>
               </div>
             </div>
-            <h3 className={styles.cardTitle}>Secure by Design</h3>
+            <h3 className={styles.cardTitle}>From Idea to Production</h3>
             <p className={styles.cardDesc}>
-              PII handling, SSO/SAML, RBAC, encryption, and audit trails – built in, not bolted on. Enterprise-ready from the start.
+              Strategy, design, engineering, integration, and deployment under one team — no handoffs between agencies.
             </p>
           </div>
 
@@ -108,9 +108,9 @@ export default function Benefits() {
                 </div>
               </div>
             </div>
-            <h3 className={styles.cardTitle}>Design-Led AI Experiences</h3>
+            <h3 className={styles.cardTitle}>Software + AI</h3>
             <p className={styles.cardDesc}>
-              We craft prompts, interfaces, and guardrails that feel intuitive – so adoption rises and support tickets fall.
+              We don&apos;t just build the AI layer. We build the complete product around it — from interface to infrastructure.
             </p>
           </div>
         </div>

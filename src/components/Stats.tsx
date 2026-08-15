@@ -3,9 +3,11 @@ import SectionStage from '@/components/visual/SectionStage';
 import styles from './Stats.module.css';
 
 const items = [
-  { label: 'OUR GROWTH', value: '230', suffix: 'K' },
-  { label: 'UPTIME FOR KEY FLOWS', value: '95', suffix: '%' },
-  { label: 'ON TIME DELIVERY', value: '99', suffix: '%' },
+  { label: 'AI', value: 'Agents' },
+  { label: 'SOFTWARE', value: 'Engineering' },
+  { label: 'AUTOMATION', value: 'Systems' },
+  { label: 'DATA', value: 'Pipelines' },
+  { label: 'CLOUD', value: 'Deployment' },
 ];
 
 export default function Stats() {
@@ -17,11 +19,11 @@ export default function Stats() {
         <div className={`${styles.top} reveal`}>
           <div className="section-badge section-badge-dark">
             <span className="section-badge-dot" />
-            Statistic
+            Capabilities
           </div>
-          <h2 className={styles.headline}>Human-centered AI, built for production</h2>
+          <h2 className={styles.headline}>One Team. Multiple Capabilities.</h2>
           <p className={styles.sub}>
-            We shipped our first copilot in 7 weeks and cut support tickets by 31%. The eval dashboards made every decision obvious.
+            We combine AI, software engineering, automation, data, and cloud to build practical solutions that work in production — not just in demos.
           </p>
         </div>
       </div>
@@ -32,7 +34,6 @@ export default function Stats() {
               <span className={styles.label}>{item.label}</span>
               <span className={styles.value}>
                 {item.value}
-                <em>{item.suffix}</em>
               </span>
             </div>
           ))}
