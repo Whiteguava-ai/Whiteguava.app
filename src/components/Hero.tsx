@@ -33,12 +33,12 @@ export default function Hero() {
           </p>
 
           <div className={`${styles.ctas} reveal reveal-delay-3`}>
-            <a href="#contact" className={styles.btnDark}><span>Start a Project</span></a>
-            <a href="#works" className={styles.btnLight}><span>Explore Our Work</span></a>
+            <a href="/#contact" className={styles.btnDark}><span>Start a Project</span></a>
+            <a href="/#works" className={styles.btnLight}><span>Explore Our Work</span></a>
           </div>
         </div>
 
-        <a href="#about" className={styles.scrollCue}>
+        <a href="/#about" className={styles.scrollCue}>
           Scroll for more
           <span className={styles.scrollArrow}>↓</span>
         </a>

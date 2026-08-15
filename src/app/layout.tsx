@@ -1,25 +1,56 @@
-import type { Metadata, Viewport } from "next";
-import "./globals.css";
+import type { Metadata, Viewport } from 'next';
+import JsonLd from '@/components/JsonLd';
+import RevealObserver from '@/components/RevealObserver';
+import { siteGraph } from '@/lib/schema';
+import { SITE_NAME, SITE_URL } from '@/lib/site';
+import './globals.css';
 
 export const viewport: Viewport = {
-  width: "device-width",
+  width: 'device-width',
   initialScale: 1,
   maximumScale: 5,
 };
 
+const defaultTitle = 'WhiteGuava — AI Software Development Company | Bengaluru';
+const defaultDescription =
+  'Bengaluru-based AI software development company. We build AI agents, automation systems, WhatsApp AI, and custom business software for teams worldwide.';
+
 export const metadata: Metadata = {
-  title: "WhiteGuava — AI, Software & Automation Company | Bengaluru, India",
-  description: "WhiteGuava is a Bengaluru-based AI and software solutions company. We build AI agents, intelligent software, automation systems, and custom digital solutions for businesses worldwide.",
-  keywords: "AI solutions, AI agents, AI automation, AI software development, custom AI solutions, AI development company, AI automation company, custom software development, machine learning solutions, business automation, AI integration, AI application development, Bengaluru, Karnataka, India",
+  metadataBase: new URL(SITE_URL),
+  title: {
+    default: defaultTitle,
+    template: `%s | ${SITE_NAME}`,
+  },
+  description: defaultDescription,
+  applicationName: SITE_NAME,
+  authors: [{ name: SITE_NAME, url: SITE_URL }],
+  creator: SITE_NAME,
+  publisher: SITE_NAME,
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+    },
+  },
   openGraph: {
-    title: "WhiteGuava — AI, Software & Automation",
-    description: "We build AI agents, intelligent software, automation systems, and custom digital solutions that turn real business problems into working products.",
-    type: "website",
-    locale: "en_IN",
+    title: defaultTitle,
+    description: defaultDescription,
+    url: SITE_URL,
+    siteName: SITE_NAME,
+    locale: 'en_IN',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: defaultTitle,
+    description: defaultDescription,
+    site: '@wearewhiteguava',
   },
   icons: {
-    icon: "/favicon.png",
-    apple: "/favicon.png",
+    icon: '/favicon.png',
+    apple: '/favicon.png',
   },
 };
 
@@ -29,7 +60,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="en-IN">
       <head>
         <script
           src="https://analytics.ahrefs.com/analytics.js"
@@ -39,7 +70,11 @@ export default function RootLayout({
       </head>
       {/* suppressHydrationWarning prevents false alarms from browser extensions
           injecting attributes (e.g. password managers) into <body> */}
-      <body suppressHydrationWarning>{children}</body>
+      <body suppressHydrationWarning>
+        <JsonLd data={siteGraph()} />
+        <RevealObserver />
+        {children}
+      </body>
     </html>
   );
 }

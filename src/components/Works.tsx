@@ -51,7 +51,7 @@ function WorkCard({ work }: { work: typeof works[0] }) {
   const tilt = useTilt(4);
 
   return (
-    <a href="#contact" className={styles.workCard}>
+    <a href="/#contact" className={styles.workCard}>
       <div
         className={styles.imageArea}
         ref={tilt.ref}
@@ -61,7 +61,7 @@ function WorkCard({ work }: { work: typeof works[0] }) {
         <img
           key={active}
           src={work.images[active]}
-          alt={work.title}
+          alt={`${work.title} — ${work.industry} project by WhiteGuava`}
           className={styles.workImg}
         />
         <span className={styles.viewBtn}>

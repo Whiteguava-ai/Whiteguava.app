@@ -60,7 +60,7 @@ export default function Pricing() {
             <div className={styles.planPrice}>
               <span className={styles.priceAmt}>Let&apos;s Talk</span>
             </div>
-            <a href="#contact" className={`${styles.planBtn} btn-dark`}><span>Discuss Your Project</span></a>
+            <a href="/#contact" className={`${styles.planBtn} btn-dark`}><span>Discuss Your Project</span></a>
             <div className={styles.included}>
               <p className={styles.includedLabel}>What&apos;s included</p>
               <p className={styles.includedDesc}>For businesses exploring where AI can create real, measurable value in their operations.</p>
@@ -89,7 +89,7 @@ export default function Pricing() {
             <div className={styles.planPrice}>
               <span className={`${styles.priceAmt} ${styles.priceAmtDark}`}>Let&apos;s Talk</span>
             </div>
-            <a href="#contact" className={`${styles.planBtnDark}`}><span>Discuss Your Project</span></a>
+            <a href="/#contact" className={`${styles.planBtnDark}`}><span>Discuss Your Project</span></a>
             <div className={styles.includedDark}>
               <p className={styles.includedLabelDark}>What&apos;s included</p>
               <p className={styles.includedDescDark}>Full-cycle development — AI systems, applications, automation, integrations, and deployment.</p>
@@ -120,7 +120,7 @@ export default function Pricing() {
             <div className={styles.planPrice}>
               <span className={styles.priceAmt}>Let&apos;s Talk</span>
             </div>
-            <a href="#contact" className={`${styles.planBtn} btn-dark`}><span>Discuss Your Project</span></a>
+            <a href="/#contact" className={`${styles.planBtn} btn-dark`}><span>Discuss Your Project</span></a>
             <ul className={styles.featureList} style={{ marginTop: '16px' }}>
               {enterpriseFeatures.map((f, i) => (
                 <li key={i} className={styles.featureItem}>

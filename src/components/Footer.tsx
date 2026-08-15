@@ -1,4 +1,5 @@
 'use client';
+import { FOOTER_LINKS, SERVICE_LINKS } from '@/lib/site';
 import styles from './Footer.module.css';
 
 export default function Footer() {
@@ -11,7 +12,7 @@ export default function Footer() {
       <div className={styles.inner}>
         <div className={styles.socialSection}>
           <div className={styles.logoIcon}>
-            <img src="/brand/whiteguava-mark-square.png" alt="WhiteGuava" />
+            <img src="/brand/whiteguava-mark-square.png" alt="WhiteGuava — AI software development company" />
           </div>
           <h3 className={styles.socialTitle}>
             AI + Software + Automation<br />
@@ -53,17 +54,20 @@ export default function Footer() {
               </span>
             </a>
           </div>
+
+          <nav className={styles.serviceNav} aria-label="Services">
+            {SERVICE_LINKS.map((link) => (
+              <a key={link.href} href={link.href}>{link.label}</a>
+            ))}
+          </nav>
         </div>
       </div>
 
       <div className={styles.bottomBar}>
         <nav className={styles.bottomNav}>
-          <a href="#about">About</a>
-          <a href="#services">Services</a>
-          <a href="#works">Works</a>
-          <a href="#process">Process</a>
-          <a href="#pricing">Pricing</a>
-          <a href="#contact">Contact</a>
+          {FOOTER_LINKS.map((link) => (
+            <a key={link.href} href={link.href}>{link.label}</a>
+          ))}
         </nav>
         <p className={styles.copyright}>© 2026 WhiteGuava. All Rights Reserved.</p>
         <button onClick={scrollToTop} className={styles.backTop}>Back To Top</button>

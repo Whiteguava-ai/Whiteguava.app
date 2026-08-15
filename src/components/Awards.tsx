@@ -1,15 +1,16 @@
 'use client';
 import { useState } from 'react';
 import SectionStage from '@/components/visual/SectionStage';
+import { SERVICE_PATHS } from '@/lib/site';
 import styles from './Awards.module.css';
 
 const capabilities = [
-  { title: 'AI Agents & Automation', project: 'Custom agents with tools, memory, and business integrations', year: 'Core' },
-  { title: 'Generative AI & RAG', project: 'LLM systems connected to your private business knowledge', year: 'Core' },
-  { title: 'Business Software', project: 'Web apps, portals, dashboards, and platforms built to scale', year: 'Core' },
-  { title: 'Data & Analytics', project: 'Pipelines, dashboards, and AI-ready data infrastructure', year: 'Core' },
-  { title: 'Cloud & Deployment', project: 'AWS, Azure, infrastructure, monitoring, and production deployment', year: 'Core' },
-  { title: 'AI Integration', project: 'Connecting AI to CRM, ERP, WhatsApp, APIs, and internal systems', year: 'Core' },
+  { title: 'AI Agents & Automation', project: 'Custom agents with tools, memory, and business integrations', year: 'Core', href: SERVICE_PATHS.agents },
+  { title: 'Generative AI & RAG', project: 'LLM systems connected to your private business knowledge', year: 'Core', href: SERVICE_PATHS.agents },
+  { title: 'Business Software', project: 'Web apps, portals, dashboards, and platforms built to scale', year: 'Core', href: SERVICE_PATHS.software },
+  { title: 'Data & Analytics', project: 'Pipelines, dashboards, and AI-ready data infrastructure', year: 'Core', href: '/#services' },
+  { title: 'Cloud & Deployment', project: 'AWS, Azure, infrastructure, monitoring, and production deployment', year: 'Core', href: '/#services' },
+  { title: 'AI Integration', project: 'Connecting AI to CRM, ERP, WhatsApp, APIs, and internal systems', year: 'Core', href: SERVICE_PATHS.whatsapp },
 ];
 
 export default function Awards() {
@@ -36,7 +37,7 @@ export default function Awards() {
           {visible.map((a, idx) => (
             <a
               key={`${a.title}-${idx}`}
-              href="#services"
+              href={a.href}
               className={`${styles.card} reveal reveal-delay-${idx + 1}`}
             >
               <div className={styles.medal}>

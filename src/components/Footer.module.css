@@ -187,6 +187,28 @@
   55%, 100% { left: 130%; }
 }
 
+.serviceNav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 4px 2px;
+  margin-top: 28px;
+}
+
+.serviceNav a {
+  padding: 6px 10px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #333;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  text-decoration-thickness: 1px;
+  transition: color 0.2s;
+  white-space: nowrap;
+}
+
+.serviceNav a:hover { color: var(--accent); }
+
 .bottomBar {
   position: relative;
   z-index: 2;

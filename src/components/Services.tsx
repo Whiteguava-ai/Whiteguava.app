@@ -1,6 +1,7 @@
 'use client';
 import { useState } from 'react';
 import SectionStage from '@/components/visual/SectionStage';
+import { SERVICE_PATHS } from '@/lib/site';
 import styles from './Services.module.css';
 
 const services = [
@@ -9,30 +10,40 @@ const services = [
     title: 'AI Agents & Automation',
     desc: 'Build intelligent agents that understand context, use tools, access business data, and execute workflows end-to-end.',
     tags: ['Customer support agents', 'WhatsApp AI agents', 'Workflow automation', 'MCP/tool-enabled agents', 'Internal AI assistants'],
+    href: SERVICE_PATHS.agents,
+    more: 'Explore AI agents',
   },
   {
     num: '02',
     title: 'Custom AI & Machine Learning',
-    desc: 'Build intelligent systems around your data and business requirements — from generative AI to prediction and classification.',
+    desc: 'Build intelligent systems around your data and business requirements — from generative AI and RAG to prediction and classification.',
     tags: ['Generative AI', 'RAG systems', 'NLP & computer vision', 'Prediction & recommendation', 'Fine-tuning'],
+    href: SERVICE_PATHS.agents,
+    more: 'Explore custom AI systems',
   },
   {
     num: '03',
     title: 'Business Software Development',
     desc: 'Custom software built around how your business actually operates — from web apps to portals, dashboards, and platforms.',
     tags: ['Web applications', 'Mobile applications', 'Admin dashboards', 'Customer portals', 'ERP & CRM systems'],
+    href: SERVICE_PATHS.software,
+    more: 'Explore AI software development',
   },
   {
     num: '04',
     title: 'AI Integration',
     desc: 'Bring AI into the systems your business already uses — CRM, ERP, WhatsApp, APIs, databases, and cloud platforms.',
     tags: ['CRM & ERP integrations', 'WhatsApp & messaging', 'API & database connectors', 'Third-party AI models', 'Internal system integration'],
+    href: SERVICE_PATHS.whatsapp,
+    more: 'Explore WhatsApp AI & integrations',
   },
   {
     num: '05',
     title: 'Automation & Digital Transformation',
     desc: 'Replace repetitive manual processes with intelligent, reliable workflows — from document processing to approval flows.',
     tags: ['Document processing', 'Data extraction', 'Reporting automation', 'Lead & ops automation', 'Approval workflows'],
+    href: SERVICE_PATHS.automation,
+    more: 'Explore AI automation',
   },
   {
     num: '06',
@@ -51,6 +62,8 @@ const services = [
     title: 'AI-Powered Digital Experiences',
     desc: 'Build better customer and employee experiences with AI — intelligent search, assistants, and personalized interfaces.',
     tags: ['AI search', 'Conversational interfaces', 'Intelligent websites', 'AI-powered portals', 'Personalized experiences'],
+    href: SERVICE_PATHS.agents,
+    more: 'Explore conversational AI',
   },
 ];
 
@@ -72,7 +85,7 @@ export default function Services() {
               What We<br />Build
             </h2>
             <p className={`${styles.desc} reveal reveal-delay-2`}>
-              AI, software and automation built around your business — from idea to production.
+              AI software development, agents, and automation built around your business — from idea to production.
             </p>
           </div>
 
@@ -95,6 +108,15 @@ export default function Services() {
                       <span key={j} className={styles.tag}>{t}</span>
                     ))}
                   </div>
+                  {s.href && (
+                    <a
+                      href={s.href}
+                      className={styles.more}
+                      onClick={(e) => e.stopPropagation()}
+                    >
+                      {s.more} →
+                    </a>
+                  )}
                 </div>
               </div>
             ))}

@@ -1,67 +1,45 @@
-'use client';
-import { useEffect } from 'react';
-import Navbar from '@/components/Navbar';
-import Hero from '@/components/Hero';
-import About from '@/components/About';
-import Marquee from '@/components/Marquee';
-import Services from '@/components/Services';
-import Works from '@/components/Works';
-import Process from '@/components/Process';
-import Benefits from '@/components/Benefits';
-import Features from '@/components/Features';
-import Tools from '@/components/Tools';
-import Team from '@/components/Team';
-import Stats from '@/components/Stats';
-import Awards from '@/components/Awards';
-import Testimonials from '@/components/Testimonials';
-import Pricing from '@/components/Pricing';
-import FAQ from '@/components/FAQ';
-import Contact from '@/components/Contact';
-import Footer from '@/components/Footer';
+import type { Metadata } from 'next';
+import HomePage from '@/components/HomePage';
+import JsonLd from '@/components/JsonLd';
+import { homepageFaqs } from '@/data/faqs';
+import { faqPageSchema } from '@/lib/schema';
+import { SITE_URL } from '@/lib/site';
 
-export default function Home() {
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-          }
-        });
-      },
-      { threshold: 0.08, rootMargin: '0px 0px -40px 0px' }
-    );
+const title = 'WhiteGuava — AI Software Development Company | Bengaluru';
+const description =
+  'Bengaluru-based AI software development company. We build AI agents, automation systems, WhatsApp AI, and custom business software for teams worldwide.';
 
-    const observe = () => document.querySelectorAll('.reveal:not(.visible)').forEach(el => observer.observe(el));
-    observe();
-    const mo = new MutationObserver(observe);
-    mo.observe(document.body, { childList: true, subtree: true });
-    return () => {
-      observer.disconnect();
-      mo.disconnect();
-    };
-  }, []);
+export const metadata: Metadata = {
+  title: {
+    absolute: title,
+  },
+  description,
+  alternates: {
+    canonical: '/',
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+  openGraph: {
+    title,
+    description,
+    url: SITE_URL,
+    type: 'website',
+    locale: 'en_IN',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title,
+    description,
+  },
+};
 
+export default function Page() {
   return (
-    <main>
-      <Navbar />
-      <Hero />
-      <About />
-      <Marquee />
-      <Services />
-      <Works />
-      <Process />
-      <Benefits />
-      <Features />
-      <Tools />
-      <Team />
-      <Stats />
-      <Awards />
-      <Testimonials />
-      <Pricing />
-      <FAQ />
-      <Contact />
-      <Footer />
-    </main>
+    <>
+      <JsonLd data={{ '@context': 'https://schema.org', ...faqPageSchema(homepageFaqs) }} />
+      <HomePage />
+    </>
   );
 }

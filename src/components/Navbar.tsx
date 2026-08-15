@@ -1,16 +1,7 @@
 'use client';
 import { useEffect, useState } from 'react';
+import { NAV_LINKS } from '@/lib/site';
 import styles from './Navbar.module.css';
-
-const links = [
-  { href: '#home', label: 'Home' },
-  { href: '#about', label: 'About' },
-  { href: '#services', label: 'Services' },
-  { href: '#works', label: 'Works' },
-  { href: '#process', label: 'Process' },
-  { href: '#pricing', label: 'Pricing' },
-  { href: '#contact', label: 'Contact' },
-];
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -40,10 +31,10 @@ export default function Navbar() {
   return (
     <header className={`${styles.header} ${scrolled ? styles.scrolled : ''} ${open ? styles.menuOpen : ''}`}>
       <nav className={styles.nav}>
-        <a href="#home" className={styles.logo} aria-label="WhiteGuava home" onClick={close}>
+        <a href="/" className={styles.logo} aria-label="WhiteGuava home" onClick={close}>
           <img
             src="/brand/whiteguava-logo.png"
-            alt="WhiteGuava"
+            alt="WhiteGuava — AI software development company"
             className={styles.logoFull}
           />
           <img
@@ -53,7 +44,7 @@ export default function Navbar() {
           />
         </a>
         <ul className={styles.links}>
-          {links.map((l) => (
+          {NAV_LINKS.map((l) => (
             <li key={l.href}><a href={l.href}>{l.label}</a></li>
           ))}
         </ul>
@@ -72,7 +63,7 @@ export default function Navbar() {
 
       <div className={`${styles.mobilePanel} ${open ? styles.mobilePanelOpen : ''}`}>
         <ul className={styles.mobileLinks}>
-          {links.map((l) => (
+          {NAV_LINKS.map((l) => (
             <li key={l.href}><a href={l.href} onClick={close}>{l.label}</a></li>
           ))}
         </ul>

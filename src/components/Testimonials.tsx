@@ -25,7 +25,7 @@ export default function Testimonials() {
               <span>AI + Software + Automation · Bengaluru, India</span>
             </div>
             <div className={styles.counter}>
-              <a href="#contact" style={{
+              <a href="/#contact" style={{
                 display: 'inline-flex',
                 alignItems: 'center',
                 gap: '8px',
@@ -43,7 +43,7 @@ export default function Testimonials() {
             </div>
           </div>
           <div className={styles.nav}>
-            <a href="#contact" className={styles.navBtn} aria-label="Start a project"><span>→</span></a>
+            <a href="/#contact" className={styles.navBtn} aria-label="Start a project"><span>→</span></a>
           </div>
         </div>
       </div>

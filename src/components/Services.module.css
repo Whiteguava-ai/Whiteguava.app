@@ -84,7 +84,7 @@
 }
 
 .active .itemBody {
-  max-height: 240px;
+  max-height: 280px;
   padding-bottom: 28px;
 }
 
@@ -112,11 +112,27 @@
   font-weight: 500;
 }
 
+.more {
+  display: inline-block;
+  margin: 14px 28px 0;
+  font-size: 13px;
+  font-weight: 600;
+  color: rgba(255,255,255,0.88);
+  text-decoration: none;
+}
+
+.more:hover {
+  color: #fff;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
 @media (max-width: 900px) {
   .layout { grid-template-columns: 1fr; gap: 32px; }
   .desc { max-width: 100%; }
   .itemHeader { padding: 20px 20px; }
   .itemTitle { font-size: 16px; }
   .itemDesc, .tags { padding-left: 20px; padding-right: 20px; }
-  .active .itemBody { max-height: 320px; }
+  .more { margin-left: 20px; margin-right: 20px; }
+  .active .itemBody { max-height: 360px; }
 }

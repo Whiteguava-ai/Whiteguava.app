@@ -27,7 +27,7 @@ export default function About() {
             <h3 className={styles.locationTitle}>
               Based in <span className={styles.red}>Bengaluru, Karnataka, India</span>
             </h3>
-            <a href="#contact" className={styles.startBtn}><span>Start a Project</span></a>
+            <a href="/#contact" className={styles.startBtn}><span>Start a Project</span></a>
           </div>
           <div className={styles.globeArea}>
             <Globe3D />
@@ -38,7 +38,7 @@ export default function About() {
           <div className={`${styles.statsCard} reveal reveal-delay-2`}>
             <div className={styles.statsLeft}>
               <p className={styles.statsText}>
-                WhiteGuava combines AI, software engineering, automation,<br />
+                WhiteGuava is an AI software development company in Bengaluru, India. We combine AI, software engineering, automation,<br />
                 data, and cloud to build solutions that actually work in production.
               </p>
               <div className={styles.trustpilotRow}>
