@@ -30,6 +30,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <head>
+        <script
+          src="https://analytics.ahrefs.com/analytics.js"
+          data-key="tNeak0Hwphy6NdHcrfQFBQ"
+          async
+        />
+      </head>
       {/* suppressHydrationWarning prevents false alarms from browser extensions
           injecting attributes (e.g. password managers) into <body> */}
       <body suppressHydrationWarning>{children}</body>
