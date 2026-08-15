@@ -1,27 +1,54 @@
 'use client';
 import { useState } from 'react';
 import SectionStage from '@/components/visual/SectionStage';
+import { CONTACT_EMAILS } from '@/lib/site';
 import styles from './Contact.module.css';
 
+const emptyForm = {
+  name: '',
+  email: '',
+  company: '',
+  phone: '',
+  service: '',
+  info: '',
+  budget: '',
+  timeline: '',
+  website: '',
+};
+
 export default function Contact() {
-  const [form, setForm] = useState({
-    name: '',
-    email: '',
-    company: '',
-    phone: '',
-    service: '',
-    info: '',
-    budget: '',
-    timeline: '',
-  });
+  const [form, setForm] = useState(emptyForm);
+  const [status, setStatus] = useState<'idle' | 'sending' | 'sent' | 'error'>('idle');
+  const [error, setError] = useState('');
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) =>
     setForm(f => ({ ...f, [e.target.name]: e.target.value }));
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    alert("Message sent! We'll get back to you within 24 hours.");
-    setForm({ name: '', email: '', company: '', phone: '', service: '', info: '', budget: '', timeline: '' });
+    setStatus('sending');
+    setError('');
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(form),
+      });
+      const data = await response.json().catch(() => ({}));
+      if (!response.ok) {
+        throw new Error(data.error || 'Could not send the message.');
+      }
+      setStatus('sent');
+      setForm(emptyForm);
+    } catch (err) {
+      setStatus('error');
+      setError(
+        err instanceof Error
+          ? err.message
+          : `Could not send the message. Please email ${CONTACT_EMAILS[0]}.`
+      );
+    }
   };
 
   return (
@@ -54,6 +81,18 @@ export default function Contact() {
 
           <form className={`${styles.form} reveal reveal-delay-2`} onSubmit={handleSubmit}>
             <p className={styles.formTitle}>Tell us about your project</p>
+            <div className={styles.honeypot} aria-hidden="true">
+              <label htmlFor="website">Website</label>
+              <input
+                id="website"
+                name="website"
+                type="text"
+                tabIndex={-1}
+                autoComplete="off"
+                value={form.website}
+                onChange={handleChange}
+              />
+            </div>
 
             <div className={styles.row}>
               <div className={styles.field}>
@@ -184,9 +223,19 @@ export default function Contact() {
               />
             </div>
 
-            <button type="submit" className={`${styles.submitBtn} btn-dark`}>
-              <span>Start a Conversation</span>
+            <button type="submit" className={`${styles.submitBtn} btn-dark`} disabled={status === 'sending'}>
+              <span>{status === 'sending' ? 'Sending…' : 'Start a Conversation'}</span>
             </button>
+            {status === 'sent' && (
+              <p className={`${styles.status} ${styles.statusOk}`} role="status">
+                Message sent. We&apos;ll get back to you at your email.
+              </p>
+            )}
+            {status === 'error' && (
+              <p className={`${styles.status} ${styles.statusErr}`} role="alert">
+                {error}
+              </p>
+            )}
           </form>
         </div>
       </div>
