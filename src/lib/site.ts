@@ -51,8 +51,6 @@ export const SOCIAL_LINKS = SOCIAL_PROFILES.map((profile) => profile.href);
 
 export const CONTACT_EMAILS = [
   'admin@thewhiteguava.in',
-  'nithin@thewhiteguava.in',
-  'saravana@thewhiteguava.in',
   'murugavelj@thewhiteguava.in',
 ] as const;
 

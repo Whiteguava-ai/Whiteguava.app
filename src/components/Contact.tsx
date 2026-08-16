@@ -70,10 +70,11 @@ export default function Contact() {
               <div>
                 <span className={styles.infoLabel}>E-mail address</span>
                 <div className={styles.emailList}>
-                  <a href="mailto:admin@thewhiteguava.in" className={styles.infoValue}>admin@thewhiteguava.in</a>
-                  <a href="mailto:nithin@thewhiteguava.in" className={styles.infoValue}>nithin@thewhiteguava.in</a>
-                  <a href="mailto:saravana@thewhiteguava.in" className={styles.infoValue}>saravana@thewhiteguava.in</a>
-                  <a href="mailto:murugavelj@thewhiteguava.in" className={styles.infoValue}>murugavelj@thewhiteguava.in</a>
+                  {CONTACT_EMAILS.map((email) => (
+                    <a key={email} href={`mailto:${email}`} className={styles.infoValue}>
+                      {email}
+                    </a>
+                  ))}
                 </div>
               </div>
             </div>
