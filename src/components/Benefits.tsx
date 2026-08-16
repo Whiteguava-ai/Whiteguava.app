@@ -1,4 +1,3 @@
-'use client';
 import SectionStage from '@/components/visual/SectionStage';
 import styles from './Benefits.module.css';
 

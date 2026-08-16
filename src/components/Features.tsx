@@ -1,4 +1,3 @@
-'use client';
 import SectionStage from '@/components/visual/SectionStage';
 import styles from './Features.module.css';
 
@@ -101,7 +100,7 @@ export default function Features() {
             f.visual === 'brand' ? (
               <div key="brand" className={`${styles.brandCard} reveal reveal-delay-3`}>
                 <div className={styles.brandIcon}>
-                  <img src="/brand/whiteguava-mark-square.png" alt="" />
+                  <img src="/brand/whiteguava-mark-square.png" alt="" width={472} height={472} loading="lazy" decoding="async" />
                 </div>
                 <span>WhiteGuava</span>
               </div>

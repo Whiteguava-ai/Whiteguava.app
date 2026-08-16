@@ -5,12 +5,17 @@
 
 .layout {
   display: grid;
-  grid-template-columns: 1fr 1.4fr;
-  gap: 80px;
-  align-items: start;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.35fr);
+  gap: 56px;
+  align-items: stretch;
 }
 
-.left { display: flex; flex-direction: column; gap: 20px; }
+.left {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  min-height: 100%;
+}
 
 .headline {
   font-size: clamp(38px, 4.5vw, 58px);
@@ -27,7 +32,53 @@
   max-width: 360px;
 }
 
-/* Accordion */
+.films {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex: 1 1 auto;
+  width: 100%;
+  min-height: 0;
+}
+
+.film {
+  position: relative;
+  flex: 1 1 0;
+  width: 100%;
+  min-height: 180px;
+  border-radius: 24px;
+  overflow: hidden;
+  background: #161616;
+  border: 1px solid rgba(255,255,255,0.95);
+  box-shadow:
+    0 1px 0 rgba(255,255,255,0.9) inset,
+    0 14px 32px rgba(0,0,0,0.1);
+}
+
+.film::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 120px;
+  height: 78px;
+  background:
+    radial-gradient(ellipse 90px 58px at 100% 100%, #111 0 46%, rgba(17,17,17,0.92) 58%, transparent 78%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.video {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 40% 38%;
+  transform: scale(1.14);
+  transform-origin: center;
+  background: #111;
+}
+
 .accordion {
   display: flex;
   flex-direction: column;
@@ -129,7 +180,14 @@
 
 @media (max-width: 900px) {
   .layout { grid-template-columns: 1fr; gap: 32px; }
+  .left { min-height: 0; }
   .desc { max-width: 100%; }
+  .films { flex: none; }
+  .film {
+    flex: none;
+    min-height: 0;
+    aspect-ratio: 16 / 10;
+  }
   .itemHeader { padding: 20px 20px; }
   .itemTitle { font-size: 16px; }
   .itemDesc, .tags { padding-left: 20px; padding-right: 20px; }

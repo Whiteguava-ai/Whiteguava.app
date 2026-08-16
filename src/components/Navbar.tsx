@@ -36,11 +36,17 @@ export default function Navbar() {
             src="/brand/whiteguava-logo.png"
             alt="WhiteGuava — AI software development company"
             className={styles.logoFull}
+            width={890}
+            height={206}
+            decoding="async"
           />
           <img
             src="/brand/whiteguava-mark.png"
             alt=""
             className={styles.logoMark}
+            width={448}
+            height={272}
+            decoding="async"
           />
         </a>
         <ul className={styles.links}>

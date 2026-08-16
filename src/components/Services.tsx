@@ -1,6 +1,7 @@
 'use client';
 import { useState } from 'react';
 import SectionStage from '@/components/visual/SectionStage';
+import { useInViewVideos } from '@/hooks/useScrollVideo';
 import { SERVICE_PATHS } from '@/lib/site';
 import styles from './Services.module.css';
 
@@ -69,15 +70,15 @@ const services = [
 
 export default function Services() {
   const [active, setActive] = useState(0);
+  const stackRef = useInViewVideos();
 
   return (
     <section id="services" className={styles.services}>
       <SectionStage>
       <div className="container">
         <div className={styles.layout}>
-          {/* Left */}
           <div className={styles.left}>
-            <div className={`section-badge reveal`}>
+            <div className="section-badge reveal">
               <span className="section-badge-dot" />
               What We Build
             </div>
@@ -87,9 +88,32 @@ export default function Services() {
             <p className={`${styles.desc} reveal reveal-delay-2`}>
               AI software development, agents, and automation built around your business — from idea to production.
             </p>
+            <div className={`${styles.films} reveal reveal-delay-3`} ref={stackRef}>
+              <div className={styles.film}>
+                <video
+                  className={styles.video}
+                  data-src="/media/agent-assemble.mp4"
+                  muted
+                  loop
+                  playsInline
+                  preload="none"
+                  aria-hidden="true"
+                />
+              </div>
+              <div className={styles.film}>
+                <video
+                  className={styles.video}
+                  data-src="/media/agent-stack.mp4"
+                  muted
+                  loop
+                  playsInline
+                  preload="none"
+                  aria-hidden="true"
+                />
+              </div>
+            </div>
           </div>
 
-          {/* Right: Accordion */}
           <div className={`${styles.accordion} reveal reveal-delay-2`}>
             {services.map((s, i) => (
               <div

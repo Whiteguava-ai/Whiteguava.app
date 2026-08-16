@@ -1,5 +1,4 @@
-'use client';
-import Globe3D from '@/components/visual/Globe3D';
+import LazyGlobe from '@/components/visual/LazyGlobe';
 import styles from './About.module.css';
 
 export default function About() {
@@ -30,7 +29,7 @@ export default function About() {
             <a href="/#contact" className={styles.startBtn}><span>Start a Project</span></a>
           </div>
           <div className={styles.globeArea}>
-            <Globe3D />
+            <LazyGlobe />
           </div>
         </div>
 

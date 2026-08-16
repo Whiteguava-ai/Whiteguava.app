@@ -1,4 +1,3 @@
-'use client';
 import type { ReactNode } from 'react';
 import SectionStage from '@/components/visual/SectionStage';
 import styles from './Team.module.css';

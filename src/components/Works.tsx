@@ -10,8 +10,8 @@ const works = [
     deliverables: 'AI agent, WhatsApp integration, RAG, business system API',
     industry: 'Retail / E-commerce',
     images: [
-      'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1600&q=80',
-      'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1600&q=80',
+      'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=960&q=70&auto=format',
+      'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=960&q=70&auto=format',
     ],
   },
   {
@@ -20,8 +20,8 @@ const works = [
     deliverables: 'Document AI pipeline, classification model, admin dashboard',
     industry: 'Financial Services',
     images: [
-      'https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=1600&q=80',
-      'https://images.unsplash.com/photo-1563986768609-322da13575f3?w=1600&q=80',
+      'https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=960&q=70&auto=format',
+      'https://images.unsplash.com/photo-1563986768609-322da13575f3?w=960&q=70&auto=format',
     ],
   },
   {
@@ -30,8 +30,8 @@ const works = [
     deliverables: 'RAG system, vector database, web application, authentication',
     industry: 'Enterprise',
     images: [
-      'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=1600&q=80',
-      'https://images.unsplash.com/photo-1518770660439-4636190af475?w=1600&q=80',
+      'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=960&q=70&auto=format',
+      'https://images.unsplash.com/photo-1518770660439-4636190af475?w=960&q=70&auto=format',
     ],
   },
   {
@@ -40,8 +40,8 @@ const works = [
     deliverables: 'Workflow automation, CRM integration, data pipelines, dashboard',
     industry: 'B2B Services',
     images: [
-      'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=1600&q=80',
-      'https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=1600&q=80',
+      'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=960&q=70&auto=format',
+      'https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=960&q=70&auto=format',
     ],
   },
 ];
@@ -63,6 +63,10 @@ function WorkCard({ work }: { work: typeof works[0] }) {
           src={work.images[active]}
           alt={`${work.title} — ${work.industry} project by WhiteGuava`}
           className={styles.workImg}
+          width={960}
+          height={640}
+          loading="lazy"
+          decoding="async"
         />
         <span className={styles.viewBtn}>
           <span>Discuss Project</span>

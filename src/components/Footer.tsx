@@ -1,10 +1,7 @@
-'use client';
 import { FOOTER_LINKS, SERVICE_LINKS } from '@/lib/site';
 import styles from './Footer.module.css';
 
 export default function Footer() {
-  const scrollToTop = () => window.scrollTo({ top: 0, behavior: 'smooth' });
-
   return (
     <footer className={styles.footer}>
       <div className={styles.watermark} aria-hidden="true">WHITEGUAVA</div>
@@ -12,7 +9,7 @@ export default function Footer() {
       <div className={styles.inner}>
         <div className={styles.socialSection}>
           <a href="/" className={styles.logoIcon} aria-label="WhiteGuava home">
-            <img src="/brand/whiteguava-mark-square.png" alt="WhiteGuava — AI software development company" />
+            <img src="/brand/whiteguava-mark-square.png" alt="" width={472} height={472} loading="lazy" decoding="async" />
           </a>
           <h3 className={styles.socialTitle}>
             AI + Software + Automation<br />
@@ -66,11 +63,23 @@ export default function Footer() {
       <div className={styles.bottomBar}>
         <nav className={styles.bottomNav}>
           {FOOTER_LINKS.map((link) => (
-            <a key={link.href} href={link.href}>{link.label}</a>
+            <a
+              key={link.href}
+              href={link.href}
+              aria-label={
+                link.label === 'About'
+                  ? 'About WhiteGuava'
+                  : link.label === 'Contact'
+                    ? 'Contact WhiteGuava'
+                    : undefined
+              }
+            >
+              {link.label}
+            </a>
           ))}
         </nav>
         <p className={styles.copyright}>© 2026 WhiteGuava. All Rights Reserved.</p>
-        <button onClick={scrollToTop} className={styles.backTop}>Back To Top</button>
+        <a href="#home" className={styles.backTop}>Back To Top</a>
       </div>
     </footer>
   );
