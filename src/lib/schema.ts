@@ -1,3 +1,4 @@
+import type { BlogPost } from '@/data/blog';
 import type { ServiceContent } from '@/data/services';
 import {
   BRAND_KNOWS_ABOUT,
@@ -161,6 +162,38 @@ export function servicePageGraph(service: ServiceContent) {
         { name: service.name, path: service.path },
       ]),
       faqPageSchema(service.faqs, `${SITE_URL}${service.path}#faq`),
+    ],
+  };
+}
+
+export function articleSchema(post: BlogPost) {
+  return {
+    '@type': 'BlogPosting',
+    '@id': `${SITE_URL}${post.path}#article`,
+    headline: post.title,
+    description: post.metaDescription,
+    url: `${SITE_URL}${post.path}`,
+    datePublished: post.publishedAt,
+    dateModified: post.updatedAt,
+    inLanguage: 'en-IN',
+    author: { '@id': ORG_ID },
+    publisher: { '@id': ORG_ID },
+    isPartOf: { '@id': WEBSITE_ID },
+    keywords: post.tags.join(', '),
+  };
+}
+
+export function blogPostGraph(post: BlogPost) {
+  return {
+    '@context': 'https://schema.org',
+    '@graph': [
+      articleSchema(post),
+      breadcrumbSchema([
+        { name: SITE_NAME, path: '/' },
+        { name: 'Blog', path: '/blog' },
+        { name: post.title, path: post.path },
+      ]),
+      faqPageSchema(post.faqs, `${SITE_URL}${post.path}#faq`),
     ],
   };
 }

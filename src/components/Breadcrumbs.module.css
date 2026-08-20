@@ -1,0 +1,38 @@
+.nav {
+  padding: 18px 0 0;
+}
+
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  list-style: none;
+  font-size: 13px;
+  font-weight: 600;
+  color: #888;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.item a {
+  color: #888;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.item a:hover {
+  color: #E63B2E;
+}
+
+.item span[aria-current='page'] {
+  color: #161616;
+}
+
+.sep {
+  color: #ccc;
+}
