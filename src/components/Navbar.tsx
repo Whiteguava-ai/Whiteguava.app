@@ -1,5 +1,6 @@
 'use client';
 import { useEffect, useState } from 'react';
+import Image from 'next/image';
 import { NAV_LINKS } from '@/lib/site';
 import styles from './Navbar.module.css';
 
@@ -32,21 +33,21 @@ export default function Navbar() {
     <header className={`${styles.header} ${scrolled ? styles.scrolled : ''} ${open ? styles.menuOpen : ''}`}>
       <nav className={styles.nav}>
         <a href="/" className={styles.logo} aria-label="WhiteGuava home" onClick={close}>
-          <img
+          <Image
             src="/brand/whiteguava-logo.png"
             alt="WhiteGuava — AI software development company"
             className={styles.logoFull}
             width={890}
             height={206}
-            decoding="async"
+            priority
           />
-          <img
+          <Image
             src="/brand/whiteguava-mark.png"
             alt=""
             className={styles.logoMark}
             width={448}
             height={272}
-            decoding="async"
+            priority
           />
         </a>
         <ul className={styles.links}>

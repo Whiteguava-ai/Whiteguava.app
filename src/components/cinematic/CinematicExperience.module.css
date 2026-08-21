@@ -1,0 +1,12 @@
+.canvasLayer {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.overlayLayer {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+}

@@ -136,7 +136,7 @@ export const aiAgentsForBusiness: BlogPost = {
     },
     {
       type: 'h2',
-      text: 'Build In-House, Buy a Tool, or Work With an Agency?',
+      text: 'Build In‑House, Buy a Tool, or Work With an Agency?',
       id: 'build-vs-buy',
     },
     {

@@ -1,10 +1,5 @@
 import Navbar from '@/components/Navbar';
-import Hero from '@/components/Hero';
-import About from '@/components/About';
-import Marquee from '@/components/Marquee';
-import Services from '@/components/Services';
-import Works from '@/components/Works';
-import Process from '@/components/Process';
+import CinematicExperience from '@/components/cinematic/CinematicExperience';
 import Benefits from '@/components/Benefits';
 import Features from '@/components/Features';
 import Tools from '@/components/Tools';
@@ -22,12 +17,7 @@ export default function HomePage() {
   return (
     <main>
       <Navbar />
-      <Hero />
-      <About />
-      <Marquee />
-      <Services />
-      <Works />
-      <Process />
+      <CinematicExperience />
       <Benefits />
       <Features />
       <Tools />
