@@ -8,7 +8,7 @@ import InnerHero from '@/components/InnerHero';
 import JsonLd from '@/components/JsonLd';
 import Navbar from '@/components/Navbar';
 import Team from '@/components/Team';
-import { homepageFaqs } from '@/data/faqs';
+import { aboutFaqs } from '@/data/faqs';
 import { aboutPageSchema, breadcrumbSchema, faqPageSchema } from '@/lib/schema';
 import { SITE_DESCRIPTION, SITE_NAME, SITE_URL } from '@/lib/site';
 
@@ -48,7 +48,7 @@ export default function AboutPage() {
               { name: SITE_NAME, path: '/' },
               { name: 'About', path: '/about' },
             ]),
-            faqPageSchema(homepageFaqs, `${SITE_URL}/about#faq`),
+            faqPageSchema(aboutFaqs, `${SITE_URL}/about#faq`),
           ],
         }}
       />
@@ -66,7 +66,7 @@ export default function AboutPage() {
         <About />
         <Benefits />
         <Team />
-        <FAQ items={homepageFaqs} />
+        <FAQ items={aboutFaqs} />
         <Contact />
         <Footer />
       </main>

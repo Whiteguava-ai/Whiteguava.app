@@ -1,5 +1,6 @@
 'use client';
 import { useState } from 'react';
+import { CardHoverEffect, type HoverCardItem } from '@/components/ui/card-hover-effect';
 import { useTilt } from '@/hooks/useParallax';
 import styles from './Works.module.css';
 
@@ -105,6 +106,15 @@ function WorkCard({ work }: { work: typeof works[0] }) {
 }
 
 export default function Works() {
+  const items: HoverCardItem[] = works.map((w, i) => ({
+    key: w.title,
+    content: (
+      <div className={`reveal reveal-delay-${Math.min(i + 1, 6)}`}>
+        <WorkCard work={w} />
+      </div>
+    ),
+  }));
+
   return (
     <section id="works" className={styles.works}>
       <div className="container">
@@ -116,13 +126,7 @@ export default function Works() {
           <h2 className={styles.headline}>Real Solutions. Real Business Problems.</h2>
         </div>
 
-        <div className={styles.list}>
-          {works.map((w, i) => (
-            <div key={w.title} className={`reveal reveal-delay-${Math.min(i + 1, 6)}`}>
-              <WorkCard work={w} />
-            </div>
-          ))}
-        </div>
+        <CardHoverEffect items={items} className="grid-cols-1 gap-5" />
       </div>
     </section>
   );

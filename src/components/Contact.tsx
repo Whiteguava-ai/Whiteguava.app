@@ -1,5 +1,7 @@
 'use client';
 import { useState } from 'react';
+import { CardBody, CardContainer } from '@/components/ui/card-3d';
+import { Spotlight } from '@/components/ui/spotlight';
 import SectionStage from '@/components/visual/SectionStage';
 import { CONTACT_EMAILS } from '@/lib/site';
 import styles from './Contact.module.css';
@@ -54,6 +56,7 @@ export default function Contact() {
   return (
     <section id="contact" className={styles.contact}>
       <SectionStage>
+      <Spotlight className="opacity-50" color="rgba(230,59,46,0.25)" />
       <div className="container">
         <div className={styles.layout}>
           <div className={`${styles.left} reveal`}>
@@ -80,7 +83,9 @@ export default function Contact() {
             </div>
           </div>
 
-          <form className={`${styles.form} reveal reveal-delay-2`} onSubmit={handleSubmit}>
+          <CardContainer containerClassName="reveal reveal-delay-2">
+          <CardBody>
+          <form className={styles.form} onSubmit={handleSubmit}>
             <p className={styles.formTitle}>Tell us about your project</p>
             <div className={styles.honeypot} aria-hidden="true">
               <label htmlFor="website">Website</label>
@@ -238,6 +243,8 @@ export default function Contact() {
               </p>
             )}
           </form>
+          </CardBody>
+          </CardContainer>
         </div>
       </div>
       </SectionStage>

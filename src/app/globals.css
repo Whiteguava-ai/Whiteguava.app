@@ -1,7 +1,18 @@
-*, *::before, *::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+@import "tailwindcss";
+
+/*
+ * Tailwind's utilities live inside CSS cascade layers, and an unlayered rule
+ * always wins over a layered one regardless of specificity or source order.
+ * This reset must be layered too (into Tailwind's own "base" layer) or it
+ * silently zeroes out every Tailwind padding/margin utility (pt-*, mb-*, ...)
+ * used anywhere in the app.
+ */
+@layer base {
+  *, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
 }
 
 :root {
@@ -24,7 +35,7 @@
   --radius-md: 20px;
   --radius-lg: 32px;
   --radius-pill: 9999px;
-  --font: 'Satoshi', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font: var(--font-satoshi), 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
 html {
@@ -37,7 +48,6 @@ body {
   background: var(--bg-light);
   color: var(--text-primary);
   -webkit-font-smoothing: antialiased;
-  overflow-x: hidden;
   max-width: 100%;
 }
 
@@ -97,6 +107,17 @@ button, input, select, textarea {
 @keyframes shineSweep {
   0% { transform: translateX(-180%) skewX(-22deg); }
   55%, 100% { transform: translateX(280%) skewX(-22deg); }
+}
+
+@keyframes meteor {
+  0% { transform: rotate(35deg) translateX(0); opacity: 1; }
+  75% { opacity: 1; }
+  100% { transform: rotate(35deg) translateX(-620px); opacity: 0; }
+}
+
+@keyframes pulseRing {
+  0% { transform: scale(0.75); opacity: 0.5; }
+  80%, 100% { transform: scale(1.9); opacity: 0; }
 }
 
 /* ===================== SCROLL REVEAL ===================== */

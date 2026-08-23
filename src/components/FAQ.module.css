@@ -36,17 +36,19 @@
   background: rgba(255,255,255,0.5);
   border: 1px solid rgba(255,255,255,0.9);
   border-radius: 22px;
-  padding: 22px 26px;
+  padding: 0 26px;
   font-family: inherit;
   transition: background 0.25s, box-shadow 0.25s;
 }
 
 .trigger {
-  display: block;
+  display: flex;
+  align-items: center;
   width: 100%;
+  min-height: 48px;
   background: none;
   border: none;
-  padding: 0;
+  padding: 22px 0;
   margin: 0;
   cursor: pointer;
   font-family: inherit;
@@ -81,6 +83,7 @@
 .a {
   max-height: 0;
   overflow: hidden;
+  padding-bottom: 22px;
   color: rgba(255,255,255,0.6);
   font-size: 14px;
   line-height: 1.7;
@@ -93,6 +96,8 @@
 }
 
 @media (max-width: 600px) {
-  .item { padding: 18px 16px; border-radius: 18px; }
+  .item { padding: 0 16px; border-radius: 18px; }
+  .trigger { padding: 18px 0; }
+  .a { padding-bottom: 18px; }
   .q { font-size: 15px; gap: 10px; }
 }

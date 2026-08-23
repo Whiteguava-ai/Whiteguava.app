@@ -51,12 +51,16 @@ const services = [
     title: 'Data & Analytics',
     desc: 'Turn raw business data into useful intelligence — dashboards, pipelines, and AI-ready data infrastructure.',
     tags: ['Data pipelines', 'Analytics dashboards', 'Business intelligence', 'AI-ready infrastructure', 'Predictive analytics'],
+    href: SERVICE_PATHS.dataAnalytics,
+    more: 'Explore data & analytics',
   },
   {
     num: '07',
     title: 'Cloud & Deployment',
     desc: 'Take your product from development to production on AWS, Azure, or your preferred cloud platform.',
     tags: ['AWS & Azure', 'Backend infrastructure', 'APIs & databases', 'Monitoring & scaling', 'CI/CD pipelines'],
+    href: SERVICE_PATHS.cloud,
+    more: 'Explore cloud & deployment',
   },
   {
     num: '08',

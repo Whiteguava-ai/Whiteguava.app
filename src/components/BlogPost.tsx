@@ -6,6 +6,8 @@ import Contact from '@/components/Contact';
 import FAQ from '@/components/FAQ';
 import Footer from '@/components/Footer';
 import Navbar from '@/components/Navbar';
+import { CardHoverEffect, type HoverCardItem } from '@/components/ui/card-hover-effect';
+import { TracingBeam } from '@/components/ui/tracing-beam';
 import SectionStage from '@/components/visual/SectionStage';
 import type { BlogPost as BlogPostType } from '@/data/blog';
 import type { PexelsImage } from '@/lib/pexels';
@@ -97,6 +99,7 @@ export default function BlogPost({
         <SectionStage>
           <div className="container">
             <div className={styles.layout}>
+              <TracingBeam className="max-w-none">
               <div className={styles.prose}>
                 {post.body.map((block, i) => {
                   if (block.type === 'p') {
@@ -181,6 +184,7 @@ export default function BlogPost({
                   return null;
                 })}
               </div>
+              </TracingBeam>
 
               <aside className={styles.toc}>
                 <p className={styles.tocTitle}>On this page</p>
@@ -229,19 +233,22 @@ export default function BlogPost({
               </div>
               <h2 className={styles.headline2}>More from WhiteGuava</h2>
             </div>
-            <div className={styles.related}>
-              {post.related.map((item, i) => (
-                <a
-                  key={item.href}
-                  href={item.href}
-                  className={`${styles.relatedCard} reveal reveal-delay-${Math.min(i + 1, 6)}`}
-                >
-                  <h3>{item.title}</h3>
-                  <p>{item.desc}</p>
-                  <span>Learn more →</span>
-                </a>
-              ))}
-            </div>
+            <CardHoverEffect
+              className="md:grid-cols-3"
+              items={post.related.map<HoverCardItem>((item, i) => ({
+                key: item.href,
+                content: (
+                  <a
+                    href={item.href}
+                    className={`${styles.relatedCard} reveal reveal-delay-${Math.min(i + 1, 6)}`}
+                  >
+                    <h3>{item.title}</h3>
+                    <p>{item.desc}</p>
+                    <span>Learn more →</span>
+                  </a>
+                ),
+              }))}
+            />
           </div>
         </SectionStage>
       </section>

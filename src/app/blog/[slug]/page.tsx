@@ -38,7 +38,7 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
 
   return (
     <>
-      <JsonLd data={blogPostGraph(post)} />
+      <JsonLd data={blogPostGraph(post, cover)} />
       <BlogPost post={post} cover={cover} sectionImages={sectionImages} />
     </>
   );

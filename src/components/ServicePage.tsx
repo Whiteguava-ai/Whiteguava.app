@@ -1,64 +1,77 @@
 'use client';
 
+import Image from 'next/image';
 import Contact from '@/components/Contact';
 import FAQ from '@/components/FAQ';
 import Footer from '@/components/Footer';
+import InnerHero from '@/components/InnerHero';
 import Navbar from '@/components/Navbar';
+import { CardHoverEffect, type HoverCardItem } from '@/components/ui/card-hover-effect';
+import { CardBody, CardContainer, CardItem } from '@/components/ui/card-3d';
 import SectionStage from '@/components/visual/SectionStage';
 import type { ServiceContent } from '@/data/services';
-import hero from './Hero.module.css';
+import type { PexelsImage } from '@/lib/pexels';
 import styles from './ServicePage.module.css';
 
-function Highlighted({
-  text,
-  highlight,
-}: {
-  text: string;
-  highlight: string;
-}) {
-  const idx = text.indexOf(highlight);
-  if (idx === -1) return <>{text}</>;
-  return (
-    <>
-      {text.slice(0, idx)}
-      <span className={hero.demand}>{text.slice(idx, idx + highlight.length)}</span>
-      {text.slice(idx + highlight.length)}
-    </>
-  );
-}
+export default function ServicePage({ service, cover }: { service: ServiceContent; cover: PexelsImage | null }) {
+  const relatedItems: HoverCardItem[] = service.related.map((item, i) => ({
+    key: item.href,
+    content: (
+      <a href={item.href} className={`${styles.relatedCard} reveal reveal-delay-${Math.min(i + 1, 6)}`}>
+        <h3>{item.title}</h3>
+        <p>{item.desc}</p>
+        <span>Learn more →</span>
+      </a>
+    ),
+  }));
 
-export default function ServicePage({ service }: { service: ServiceContent }) {
+  const useCaseItems: HoverCardItem[] = service.useCases.map((useCase, i) => ({
+    key: useCase.title,
+    content: (
+      <div className={`${styles.card} reveal reveal-delay-${Math.min(i + 1, 6)}`}>
+        <h3>{useCase.title}</h3>
+        <p>{useCase.body}</p>
+      </div>
+    ),
+  }));
+
   return (
     <main>
       <Navbar />
-      <section className={hero.hero}>
-        <div className={hero.card}>
-          <div className={hero.blobs} aria-hidden="true">
-            <span className={hero.blobGrey} />
-            <span className={hero.blobSoft} />
-            <span className={hero.ribbon} />
-            <span className={hero.ribbonBlur} />
+      <InnerHero
+        badge={service.badge}
+        line1={service.h1Line1}
+        line2={service.h1Line2}
+        highlight={service.highlight}
+        subtitle={service.subtitle}
+        primaryHref="#contact"
+        secondaryHref="/#works"
+        secondaryLabel="Explore Our Work"
+      />
+
+      {cover && (
+        <section>
+          <div className="container">
+            <figure className={`${styles.coverFigure} reveal`}>
+              <Image
+                src={cover.url}
+                alt={cover.alt}
+                width={1200}
+                height={525}
+                className={styles.cover}
+                priority
+              />
+              <figcaption className={styles.caption}>
+                Photo by{' '}
+                <a href={cover.photographerUrl} target="_blank" rel="noopener noreferrer">
+                  {cover.photographer}
+                </a>{' '}
+                on Pexels
+              </figcaption>
+            </figure>
           </div>
-          <div className={hero.inner}>
-            <div className={`${hero.badge} reveal`}>
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
-                <path d="M12 2l2.2 6.8H22l-6.2 4.5 2.4 7.2L12 16.2 5.8 20.5l2.4-7.2L2 8.8h7.8L12 2z" fill="#E63B2E"/>
-              </svg>
-              {service.badge}
-            </div>
-            <h1 className={`${hero.headline} reveal reveal-delay-1`}>
-              <Highlighted text={service.h1Line1} highlight={service.highlight} />
-              <br />
-              <Highlighted text={service.h1Line2} highlight={service.highlight} />
-            </h1>
-            <p className={`${hero.sub} reveal reveal-delay-2`}>{service.subtitle}</p>
-            <div className={`${hero.ctas} reveal reveal-delay-3`}>
-              <a href="#contact" className={hero.btnDark}><span>Start a Project</span></a>
-              <a href="/#works" className={hero.btnLight}><span>Explore Our Work</span></a>
-            </div>
-          </div>
-        </div>
-      </section>
+        </section>
+      )}
 
       <section id="overview">
         <SectionStage>
@@ -91,12 +104,35 @@ export default function ServicePage({ service }: { service: ServiceContent }) {
             </div>
             <div className={styles.topics}>
               {service.topics.map((topic, i) => (
-                <article key={topic.title} className={`${styles.card} reveal reveal-delay-${Math.min(i + 1, 6)}`}>
-                  <h3>{topic.title}</h3>
-                  <p>{topic.body}</p>
-                </article>
+                <div key={topic.title} className={`reveal reveal-delay-${Math.min(i + 1, 6)}`}>
+                  <CardContainer containerClassName="h-full">
+                    <CardBody className={`${styles.card} h-full`}>
+                      <CardItem translateZ={30} as="h3">
+                        {topic.title}
+                      </CardItem>
+                      <CardItem translateZ={15} as="p">
+                        {topic.body}
+                      </CardItem>
+                    </CardBody>
+                  </CardContainer>
+                </div>
               ))}
             </div>
+          </div>
+        </SectionStage>
+      </section>
+
+      <section>
+        <SectionStage>
+          <div className="container">
+            <div className={`${styles.header} reveal`}>
+              <div className="section-badge">
+                <span className="section-badge-dot" />
+                Who This Is For
+              </div>
+              <h2 className={styles.headline}>{service.useCasesTitle}</h2>
+            </div>
+            <CardHoverEffect items={useCaseItems} className="md:grid-cols-3" />
           </div>
         </SectionStage>
       </section>
@@ -111,19 +147,7 @@ export default function ServicePage({ service }: { service: ServiceContent }) {
               </div>
               <h2 className={styles.headline}>More from WhiteGuava</h2>
             </div>
-            <div className={styles.related}>
-              {service.related.map((item, i) => (
-                <a
-                  key={item.href}
-                  href={item.href}
-                  className={`${styles.relatedCard} reveal reveal-delay-${Math.min(i + 1, 6)}`}
-                >
-                  <h3>{item.title}</h3>
-                  <p>{item.desc}</p>
-                  <span>Learn more →</span>
-                </a>
-              ))}
-            </div>
+            <CardHoverEffect items={relatedItems} className="md:grid-cols-3" />
           </div>
         </SectionStage>
       </section>

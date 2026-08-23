@@ -4,6 +4,7 @@ import Breadcrumbs from '@/components/Breadcrumbs';
 import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
 import Navbar from '@/components/Navbar';
+import { CardHoverEffect, type HoverCardItem } from '@/components/ui/card-hover-effect';
 import SectionStage from '@/components/visual/SectionStage';
 import type { BlogPost } from '@/data/blog';
 import styles from './BlogIndex.module.css';
@@ -46,24 +47,25 @@ export default function BlogIndex({ posts }: { posts: BlogPost[] }) {
             {posts.length === 0 ? (
               <p className={styles.empty}>New articles are on the way.</p>
             ) : (
-              <div className={styles.grid}>
-                {posts.map((post, i) => (
-                  <a
-                    key={post.slug}
-                    href={post.path}
-                    className={`${styles.card} reveal reveal-delay-${Math.min(i + 1, 6)}`}
-                  >
-                    <span className={styles.category}>{post.category}</span>
-                    <h2>{post.title}</h2>
-                    <p>{post.excerpt}</p>
-                    <div className={styles.meta}>
-                      <span>{formatDate(post.publishedAt)}</span>
-                      <span aria-hidden="true">·</span>
-                      <span>{post.readingTimeMinutes} min read</span>
+              <CardHoverEffect
+                className="md:grid-cols-2 lg:grid-cols-3 gap-5"
+                items={posts.map<HoverCardItem>((post, i) => ({
+                  key: post.slug,
+                  href: post.path,
+                  content: (
+                    <div className={`${styles.card} reveal reveal-delay-${Math.min(i + 1, 6)}`}>
+                      <span className={styles.category}>{post.category}</span>
+                      <h2>{post.title}</h2>
+                      <p>{post.excerpt}</p>
+                      <div className={styles.meta}>
+                        <span>{formatDate(post.publishedAt)}</span>
+                        <span aria-hidden="true">·</span>
+                        <span>{post.readingTimeMinutes} min read</span>
+                      </div>
                     </div>
-                  </a>
-                ))}
-              </div>
+                  ),
+                }))}
+              />
             )}
           </div>
         </SectionStage>

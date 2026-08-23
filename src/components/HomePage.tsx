@@ -1,5 +1,7 @@
 import Navbar from '@/components/Navbar';
-import CinematicExperience from '@/components/cinematic/CinematicExperience';
+import StoryExperience from '@/components/story/StoryExperience';
+import Process from '@/components/Process';
+import Works from '@/components/Works';
 import Benefits from '@/components/Benefits';
 import Features from '@/components/Features';
 import Tools from '@/components/Tools';
@@ -17,7 +19,9 @@ export default function HomePage() {
   return (
     <main>
       <Navbar />
-      <CinematicExperience />
+      <StoryExperience />
+      <Process />
+      <Works />
       <Benefits />
       <Features />
       <Tools />

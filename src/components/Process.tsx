@@ -1,6 +1,7 @@
 'use client';
+import { CardBody, CardContainer, CardItem } from '@/components/ui/card-3d';
+import { Timeline, type TimelineEntry } from '@/components/ui/timeline';
 import SectionStage from '@/components/visual/SectionStage';
-import { useTilt } from '@/hooks/useParallax';
 import styles from './Process.module.css';
 
 const steps = [
@@ -42,47 +43,41 @@ const steps = [
   },
 ];
 
-function StepCard({ step, delay, total }: { step: typeof steps[0]; delay: number; total: number }) {
-  const tilt = useTilt(7);
-  return (
-    <div
-      ref={tilt.ref}
-      onMouseMove={tilt.onMove}
-      onMouseLeave={tilt.onLeave}
-      className={`${styles.card} reveal reveal-delay-${delay}`}
-    >
-      <div className={styles.cardTop}>
-        <h3 className={styles.title}>{step.title}</h3>
-        <p className={styles.desc}>{step.desc}</p>
-        <span className={styles.duration}>{step.duration}</span>
-      </div>
-      <div className={styles.numRow}>
-        <span className={styles.num}>{step.num}</span>
-        <span className={styles.den}>/{String(total).padStart(2, '0')}</span>
-      </div>
-    </div>
-  );
-}
-
 export default function Process() {
+  const entries: TimelineEntry[] = steps.map((step) => ({
+    label: step.duration,
+    title: step.title,
+    content: (
+      <CardContainer containerClassName="w-full py-2">
+        <CardBody className="relative min-h-[128px] w-full max-w-xl overflow-hidden rounded-2xl border border-black/[0.06] bg-white p-6 shadow-[var(--shadow-sm)]">
+          <CardItem translateZ={30} className="relative z-10 max-w-[72%] text-[14px] leading-relaxed text-[var(--text-secondary)]">
+            {step.desc}
+          </CardItem>
+          <CardItem
+            translateZ={15}
+            className="pointer-events-none absolute -bottom-3 -right-2 select-none text-7xl font-black leading-none text-black/[0.06]"
+          >
+            {step.num}
+          </CardItem>
+        </CardBody>
+      </CardContainer>
+    ),
+  }));
+
   return (
     <section id="process" className={styles.process}>
       <SectionStage>
-      <div className="container">
-        <div className={`${styles.top} reveal`}>
-          <div className="section-badge">
-            <span className="section-badge-dot" />
-            How We Build
+        <div className="container">
+          <div className={`${styles.top} reveal`}>
+            <div className="section-badge">
+              <span className="section-badge-dot" />
+              How We Build
+            </div>
+            <h2 className={styles.headline}>How We Build</h2>
           </div>
-          <h2 className={styles.headline}>How We Build</h2>
-        </div>
 
-        <div className={styles.grid}>
-          {steps.map((s, i) => (
-            <StepCard key={s.num} step={s} delay={Math.min(i + 1, 6)} total={steps.length} />
-          ))}
+          <Timeline data={entries} />
         </div>
-      </div>
       </SectionStage>
     </section>
   );

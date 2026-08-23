@@ -1,4 +1,4 @@
-import { FOOTER_LINKS, SERVICE_LINKS } from '@/lib/site';
+import { FOOTER_LINKS, LEGAL_LINKS, SERVICE_LINKS } from '@/lib/site';
 import styles from './Footer.module.css';
 
 export default function Footer() {
@@ -78,7 +78,16 @@ export default function Footer() {
             </a>
           ))}
         </nav>
-        <p className={styles.copyright}>© 2026 WhiteGuava. All Rights Reserved.</p>
+        <p className={styles.copyright}>
+          © 2026 WhiteGuava. All Rights Reserved.
+          {' · '}
+          {LEGAL_LINKS.map((link, i) => (
+            <span key={link.href}>
+              <a href={link.href}>{link.label}</a>
+              {i < LEGAL_LINKS.length - 1 ? ' · ' : ''}
+            </span>
+          ))}
+        </p>
         <a href="#home" className={styles.backTop}>Back To Top</a>
       </div>
     </footer>

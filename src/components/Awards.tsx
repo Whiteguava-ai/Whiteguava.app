@@ -8,8 +8,8 @@ const capabilities = [
   { title: 'AI Agents & Automation', project: 'Custom agents with tools, memory, and business integrations', year: 'Core', href: SERVICE_PATHS.agents },
   { title: 'Generative AI & RAG', project: 'LLM systems connected to your private business knowledge', year: 'Core', href: SERVICE_PATHS.agents },
   { title: 'Business Software', project: 'Web apps, portals, dashboards, and platforms built to scale', year: 'Core', href: SERVICE_PATHS.software },
-  { title: 'Data & Analytics', project: 'Pipelines, dashboards, and AI-ready data infrastructure', year: 'Core', href: '/#services' },
-  { title: 'Cloud & Deployment', project: 'AWS, Azure, infrastructure, monitoring, and production deployment', year: 'Core', href: '/#services' },
+  { title: 'Data & Analytics', project: 'Pipelines, dashboards, and AI-ready data infrastructure', year: 'Core', href: SERVICE_PATHS.dataAnalytics },
+  { title: 'Cloud & Deployment', project: 'AWS, Azure, infrastructure, monitoring, and production deployment', year: 'Core', href: SERVICE_PATHS.cloud },
   { title: 'AI Integration', project: 'Connecting AI to CRM, ERP, WhatsApp, APIs, and internal systems', year: 'Core', href: SERVICE_PATHS.whatsapp },
 ];
 

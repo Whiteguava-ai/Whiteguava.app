@@ -1,4 +1,5 @@
 import type { ReactNode } from 'react';
+import { CardBody, CardContainer, CardItem } from '@/components/ui/card-3d';
 import SectionStage from '@/components/visual/SectionStage';
 import styles from './Team.module.css';
 
@@ -62,21 +63,25 @@ export default function Team() {
           {/* Capability grid */}
           <div className={styles.subGrid}>
             {capabilities.map((c, i) => (
-              <div key={i} className={`${styles.memberCard} reveal reveal-delay-${i + 2}`}>
-                <div className={styles.memberTop}>
-                  <div className={styles.socials}>
-                    <span style={{
-                      width: 40, height: 40, borderRadius: '50%',
-                      background: 'linear-gradient(180deg, rgba(255,255,255,0.18) 0%, rgba(255,255,255,0.06) 100%)',
-                      display: 'flex', alignItems: 'center', justifyContent: 'center',
-                      fontSize: '14px', fontWeight: 700, color: 'rgba(255,255,255,0.7)',
-                    }}>
-                      {String(i + 1).padStart(2, '0')}
-                    </span>
-                  </div>
-                </div>
-                <h4 className={styles.memberName}>{c.area}</h4>
-                <p className={styles.memberRole}>{c.desc}</p>
+              <div key={i} className={`reveal reveal-delay-${i + 2}`}>
+                <CardContainer containerClassName="h-full">
+                  <CardBody className={`${styles.memberCard} h-full`}>
+                    <CardItem translateZ={25} className={styles.memberTop}>
+                      <div className={styles.socials}>
+                        <span style={{
+                          width: 40, height: 40, borderRadius: '50%',
+                          background: 'linear-gradient(180deg, rgba(255,255,255,0.18) 0%, rgba(255,255,255,0.06) 100%)',
+                          display: 'flex', alignItems: 'center', justifyContent: 'center',
+                          fontSize: '14px', fontWeight: 700, color: 'rgba(255,255,255,0.7)',
+                        }}>
+                          {String(i + 1).padStart(2, '0')}
+                        </span>
+                      </div>
+                    </CardItem>
+                    <CardItem translateZ={15} as="h4" className={styles.memberName}>{c.area}</CardItem>
+                    <CardItem translateZ={10} as="p" className={styles.memberRole}>{c.desc}</CardItem>
+                  </CardBody>
+                </CardContainer>
               </div>
             ))}
           </div>

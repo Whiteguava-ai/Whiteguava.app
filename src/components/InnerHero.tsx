@@ -1,5 +1,8 @@
 'use client';
 
+import { CardBody, CardContainer, CardItem } from '@/components/ui/card-3d';
+import { Spotlight } from '@/components/ui/spotlight';
+import { TextGenerateEffect } from '@/components/ui/text-generate-effect';
 import hero from './Hero.module.css';
 
 export default function InnerHero({
@@ -23,6 +26,8 @@ export default function InnerHero({
   secondaryHref?: string;
   secondaryLabel?: string;
 }) {
+  const highlightWords = highlight ? [highlight] : undefined;
+
   return (
     <section className={hero.hero}>
       <div className={hero.card}>
@@ -32,43 +37,38 @@ export default function InnerHero({
           <span className={hero.ribbon} />
           <span className={hero.ribbonBlur} />
         </div>
+        <Spotlight className="opacity-60" color="rgba(230,59,46,0.22)" />
+
         <div className={hero.inner}>
-          <div className={`${hero.badge} reveal`}>
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
-              <path d="M12 2l2.2 6.8H22l-6.2 4.5 2.4 7.2L12 16.2 5.8 20.5l2.4-7.2L2 8.8h7.8L12 2z" fill="#E63B2E"/>
-            </svg>
-            {badge}
-          </div>
-          <h1 className={`${hero.headline} reveal reveal-delay-1`}>
-            {highlight && line1.includes(highlight) ? (
-              <>
-                {line1.slice(0, line1.indexOf(highlight))}
-                <span className={hero.demand}>{highlight}</span>
-                {line1.slice(line1.indexOf(highlight) + highlight.length)}
-              </>
-            ) : (
-              line1
-            )}
-            {line2 && (
-              <>
-                <br />
-                {highlight && line2.includes(highlight) ? (
+          <CardContainer containerClassName="w-full">
+            <CardBody className="w-full">
+              <CardItem translateZ={20} className={hero.badge}>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
+                  <path d="M12 2l2.2 6.8H22l-6.2 4.5 2.4 7.2L12 16.2 5.8 20.5l2.4-7.2L2 8.8h7.8L12 2z" fill="#E63B2E"/>
+                </svg>
+                {badge}
+              </CardItem>
+
+              <CardItem translateZ={45} as="h1" className={hero.headline}>
+                <TextGenerateEffect words={line1} highlightWords={highlightWords} className="block" />
+                {line2 && (
                   <>
-                    {line2.slice(0, line2.indexOf(highlight))}
-                    <span className={hero.demand}>{highlight}</span>
-                    {line2.slice(line2.indexOf(highlight) + highlight.length)}
+                    {' '}
+                    <TextGenerateEffect words={line2} highlightWords={highlightWords} className="block" />
                   </>
-                ) : (
-                  line2
                 )}
-              </>
-            )}
-          </h1>
-          <p className={`${hero.sub} reveal reveal-delay-2`}>{subtitle}</p>
-          <div className={`${hero.ctas} reveal reveal-delay-3`}>
-            <a href={primaryHref} className={hero.btnDark}><span>{primaryLabel}</span></a>
-            <a href={secondaryHref} className={hero.btnLight}><span>{secondaryLabel}</span></a>
-          </div>
+              </CardItem>
+
+              <CardItem translateZ={25} as="p" className={hero.sub}>
+                {subtitle}
+              </CardItem>
+
+              <CardItem translateZ={35} className={hero.ctas}>
+                <a href={primaryHref} className={hero.btnDark}><span>{primaryLabel}</span></a>
+                <a href={secondaryHref} className={hero.btnLight}><span>{secondaryLabel}</span></a>
+              </CardItem>
+            </CardBody>
+          </CardContainer>
         </div>
       </div>
     </section>

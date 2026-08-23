@@ -291,7 +291,14 @@
   .ribbon { width: 48%; right: -12%; }
   .ribbonBlur { width: 56%; }
   .headline { letter-spacing: -0.03em; }
-  .sub { font-size: 15px; }
+  .sub {
+    font-size: 15px;
+    /* The subheadline sits over the hero's grey-to-red decorative blobs;
+       at mobile widths its wrap points can land it partway across that
+       transition, where the fixed #5c5c5c text color loses contrast. A
+       light shadow keeps it legible without touching the desktop look. */
+    text-shadow: 0 1px 3px rgba(255, 255, 255, 0.55);
+  }
   .sub br { display: none; }
   .btnDark, .btnLight { padding: 14px 22px; font-size: 14px; }
 }

@@ -166,13 +166,26 @@ export function servicePageGraph(service: ServiceContent) {
   };
 }
 
-export function articleSchema(post: BlogPost) {
+const DEFAULT_ARTICLE_IMAGE = {
+  '@type': 'ImageObject',
+  url: `${SITE_URL}/opengraph-image`,
+  width: 1200,
+  height: 630,
+};
+
+export function articleSchema(
+  post: BlogPost,
+  cover?: { url: string; width: number; height: number } | null,
+) {
   return {
     '@type': 'BlogPosting',
     '@id': `${SITE_URL}${post.path}#article`,
     headline: post.title,
     description: post.metaDescription,
     url: `${SITE_URL}${post.path}`,
+    image: cover
+      ? { '@type': 'ImageObject', url: cover.url, width: cover.width, height: cover.height }
+      : DEFAULT_ARTICLE_IMAGE,
     datePublished: post.publishedAt,
     dateModified: post.updatedAt,
     inLanguage: 'en-IN',
@@ -183,11 +196,14 @@ export function articleSchema(post: BlogPost) {
   };
 }
 
-export function blogPostGraph(post: BlogPost) {
+export function blogPostGraph(
+  post: BlogPost,
+  cover?: { url: string; width: number; height: number } | null,
+) {
   return {
     '@context': 'https://schema.org',
     '@graph': [
-      articleSchema(post),
+      articleSchema(post, cover),
       breadcrumbSchema([
         { name: SITE_NAME, path: '/' },
         { name: 'Blog', path: '/blog' },
