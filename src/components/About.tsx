@@ -1,25 +1,31 @@
 import LazyGlobe from '@/components/visual/LazyGlobe';
 import { CardBody, CardContainer, CardItem } from '@/components/ui/card-3d';
 import { Spotlight } from '@/components/ui/spotlight';
+import { CinematicText } from '@/components/motion/CinematicText';
+import { Reveal } from '@/components/motion/Reveal';
 import styles from './About.module.css';
 
 export default function About() {
   return (
     <section id="about" className={styles.about}>
       <div className="container">
-        <div className={`${styles.header} reveal`}>
+        <Reveal className={styles.header} stagger>
           <div className="section-badge">
             <span className="section-badge-dot" />
             About Us
           </div>
           <h2 className={styles.headline}>
-            <span className={styles.headlineDark}>From Business Problem</span>
+            <span className={styles.headlineDark}>
+              <CinematicText>From Business Problem</CinematicText>
+            </span>
             <br />
-            <span className={styles.headlineGrey}>To Working Product</span>
+            <span className={styles.headlineGrey}>
+              <CinematicText>To Working Product</CinematicText>
+            </span>
           </h2>
-        </div>
+        </Reveal>
 
-        <div className={`${styles.darkCard} reveal reveal-delay-1`}>
+        <Reveal className={styles.darkCard} direction="up" delay={0.1}>
           <Spotlight className="opacity-70" />
           <div className={styles.darkCardInner}>
             <div className={styles.availablePill}>
@@ -34,7 +40,7 @@ export default function About() {
           <div className={styles.globeArea}>
             <LazyGlobe />
           </div>
-        </div>
+        </Reveal>
 
         <div className={styles.bottomGrid}>
           <CardContainer containerClassName="reveal reveal-delay-2">

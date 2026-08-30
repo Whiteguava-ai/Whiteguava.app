@@ -17,8 +17,12 @@ import { BackgroundBeams } from '@/components/ui/background-beams';
 import { GradientFlow } from '@/components/ui/gradient-flow';
 import { Meteors } from '@/components/ui/meteors';
 import { ServiceGlyph } from '@/components/ui/service-glyph';
-import { TextGenerateEffect } from '@/components/ui/text-generate-effect';
 import { StickyScrollReveal, type StickyScrollItem } from '@/components/ui/sticky-scroll-reveal';
+import { CinematicText } from '@/components/motion/CinematicText';
+import { CountUp } from '@/components/motion/CountUp';
+import { MagneticButton } from '@/components/motion/MagneticButton';
+import { Reveal } from '@/components/motion/Reveal';
+import { ScrollScene } from '@/components/motion/ScrollScene';
 import {
   FINAL_CTA_CONTENT,
   SERVICES_CONTENT,
@@ -28,11 +32,15 @@ import {
 } from '@/data/story';
 
 /**
- * The homepage's opening narrative — a dark, scroll-driven sequence that
- * replaces the old three.js `CinematicExperience`. Built entirely from CSS/SVG
- * animation and Framer Motion (see `src/components/ui/`), it walks through the
- * same beats the WebGL scene graph did: hero → capability → services → CTA,
- * then hands off into the light-themed `Process`/`Works` sections below it.
+ * The homepage's opening act — a dark, scroll-driven sequence that walks
+ * through hero → capability → services → CTA before handing off into the
+ * light `Process` section below it.
+ *
+ * Cinematic build: the hero pins and dissolves upward under scroll, the
+ * capability stack assembles tile-by-tile as it passes, the services run as a
+ * pinned scrolly sequence, and the CTA beams ramp up as it enters. Every beat
+ * degrades to a plain stacked layout on phones and under reduced motion (see
+ * `ScrollScene` / `CinematicText`).
  */
 export default function StoryExperience() {
   return (
@@ -47,99 +55,172 @@ export default function StoryExperience() {
 
 function HeroBeat() {
   return (
-    <section
+    <ScrollScene
       id="story-hero"
       className="relative min-h-[100svh] overflow-hidden px-6 pb-24 pt-40 md:pt-52"
+      pin
+      end="+=70%"
+      build={({ gsap, timeline, q }) => {
+        gsap.from(q('.hero-card'), {
+          yPercent: 55,
+          opacity: 0,
+          duration: 1.1,
+          ease: 'expo.out',
+          delay: 0.35,
+        });
+        timeline
+          .to(q('.hero-content'), {
+            yPercent: -22,
+            opacity: 0,
+            filter: 'blur(6px)',
+            ease: 'none',
+          })
+          .to(
+            q('.hero-card'),
+            {
+              yPercent: -55,
+              rotateX: 42,
+              transformPerspective: 800,
+              scale: 0.86,
+              opacity: 0,
+              ease: 'none',
+            },
+            '<'
+          )
+          .to(q('.hero-glow'), { yPercent: 32, scale: 1.25, ease: 'none' }, '<');
+      }}
     >
-      <GradientFlow />
-      <Spotlight />
-      <div className="relative z-10 mx-auto flex max-w-4xl flex-col items-center text-center">
-        <span className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/[0.06] px-4 py-1.5 text-xs font-semibold tracking-[0.08em] text-white/80 backdrop-blur">
+      <div className="hero-glow">
+        <GradientFlow />
+        <Spotlight />
+      </div>
+
+      <div className="hero-content relative z-10 mx-auto flex max-w-4xl flex-col items-center text-center">
+        <Reveal
+          as="span"
+          direction="down"
+          distance={16}
+          className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/[0.06] px-4 py-1.5 text-xs font-semibold tracking-[0.08em] text-white/80 backdrop-blur"
+        >
           <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-[var(--accent)]" />
           {VOID_CONTENT.badge}
-        </span>
+        </Reveal>
 
         <h1 className="mt-8 text-4xl font-extrabold leading-[1.08] tracking-tight sm:text-5xl md:text-6xl lg:text-7xl">
-          <TextGenerateEffect words={WORLD_FORMS_CONTENT.headline[0]} className="block" />{' '}
+          <CinematicText as="span" trigger="load" className="block">
+            {WORLD_FORMS_CONTENT.headline[0]}
+          </CinematicText>{' '}
           <span className="mt-1 block">
             {WORLD_FORMS_CONTENT.headline[1].replace('AI.', '').trim()}{' '}
             <span className="text-[var(--accent)]">AI.</span>
           </span>
         </h1>
 
-        <p className="mt-6 max-w-2xl text-base leading-relaxed text-white/60 md:text-lg">
+        <Reveal
+          as="p"
+          delay={0.15}
+          className="mt-6 max-w-2xl text-base leading-relaxed text-white/60 md:text-lg"
+        >
           {WORLD_FORMS_CONTENT.sub}
-        </p>
+        </Reveal>
 
-        <div className="mt-9 flex flex-wrap items-center justify-center gap-4">
+        <Reveal stagger delay={0.25} className="mt-9 flex flex-wrap items-center justify-center gap-4">
           <a href={WORLD_FORMS_CONTENT.ctaPrimary.href} className="btn-dark">
             <span>{WORLD_FORMS_CONTENT.ctaPrimary.label}</span>
           </a>
           <a href={WORLD_FORMS_CONTENT.ctaSecondary.href} className="btn-outline">
             <span>{WORLD_FORMS_CONTENT.ctaSecondary.label}</span>
           </a>
-        </div>
-
-        <div className="mt-20 w-full max-w-md">
-          <CardContainer containerClassName="w-full">
-            <CardBody className="w-full rounded-3xl border border-white/10 bg-white/[0.04] p-8 backdrop-blur-xl">
-              <CardItem translateZ={40} className="flex items-center justify-between">
-                <span className="text-xs font-semibold tracking-[0.08em] text-white/40">STACK</span>
-                <span className="text-3xl font-extrabold text-[var(--accent)]">{TECH_CORE_CONTENT.stat}</span>
-              </CardItem>
-              <CardItem translateZ={60} className="mt-5 flex flex-wrap gap-2">
-                {TECH_CORE_CONTENT.tags.map((tag) => (
-                  <span
-                    key={tag}
-                    className="rounded-full border border-white/10 bg-white/[0.05] px-3 py-1 text-[11px] font-bold tracking-[0.05em] text-white/70"
-                  >
-                    {tag}
-                  </span>
-                ))}
-              </CardItem>
-              <CardItem translateZ={30} className="mt-6 text-xs text-white/40">
-                {TECH_CORE_CONTENT.location} · {TECH_CORE_CONTENT.availability}
-              </CardItem>
-            </CardBody>
-          </CardContainer>
-        </div>
+        </Reveal>
       </div>
-    </section>
+
+      <div className="hero-card relative z-10 mx-auto mt-20 w-full max-w-md [perspective:1000px]">
+        <CardContainer containerClassName="w-full">
+          <CardBody className="w-full rounded-3xl border border-white/10 bg-white/[0.04] p-8 backdrop-blur-xl">
+            <CardItem translateZ={40} className="flex items-center justify-between">
+              <span className="text-xs font-semibold tracking-[0.08em] text-white/40">STACK</span>
+              <span className="text-3xl font-extrabold text-[var(--accent)]">
+                <CountUp value={5} suffix="+" />
+              </span>
+            </CardItem>
+            <CardItem translateZ={60} className="mt-5 flex flex-wrap gap-2">
+              {TECH_CORE_CONTENT.tags.map((tag) => (
+                <span
+                  key={tag}
+                  className="rounded-full border border-white/10 bg-white/[0.05] px-3 py-1 text-[11px] font-bold tracking-[0.05em] text-white/70"
+                >
+                  {tag}
+                </span>
+              ))}
+            </CardItem>
+            <CardItem translateZ={30} className="mt-6 text-xs text-white/40">
+              {TECH_CORE_CONTENT.location} · {TECH_CORE_CONTENT.availability}
+            </CardItem>
+          </CardBody>
+        </CardContainer>
+      </div>
+
+      <div
+        aria-hidden="true"
+        className="hero-cue absolute inset-x-0 bottom-8 z-10 flex justify-center text-[11px] font-semibold tracking-[0.2em] text-white/30"
+      >
+        SCROLL
+      </div>
+    </ScrollScene>
   );
 }
 
 function CapabilityBeat() {
   return (
-    <section id="story-capability" className="relative overflow-hidden px-6 py-24 md:py-32">
-      <GradientFlow className="opacity-70" />
+    <ScrollScene
+      id="story-capability"
+      className="relative overflow-hidden px-6 py-24 md:py-40"
+      pin={false}
+      scrub={1}
+      start="top 80%"
+      end="bottom 60%"
+      build={({ timeline, q }) => {
+        timeline
+          .from(q('.cap-copy > *'), { y: 40, opacity: 0, stagger: 0.12, ease: 'power2.out' })
+          .from(
+            q('.cap-tile'),
+            {
+              y: 30,
+              opacity: 0,
+              scale: 0.9,
+              stagger: { each: 0.05, from: 'start', grid: 'auto' },
+              ease: 'back.out(1.4)',
+            },
+            '<0.1'
+          );
+      }}
+    >
+      <GradientFlow className="opacity-60" />
       <div className="relative z-10 mx-auto grid max-w-6xl gap-14 lg:grid-cols-2 lg:items-center lg:gap-20">
-        <div className="reveal">
+        <div className="cap-copy">
           <span className="text-xs font-semibold tracking-[0.08em] text-[#ff8c7f]">
             {TECH_CORE_CONTENT.eyebrow}
           </span>
           <h2 className="mt-4 text-3xl font-bold leading-tight md:text-4xl">
             From idea to working product — without the guesswork.
           </h2>
-          <p className="mt-5 max-w-lg text-[15px] leading-relaxed text-white/60">{TECH_CORE_CONTENT.body}</p>
+          <p className="mt-5 max-w-lg text-[15px] leading-relaxed text-white/60">
+            {TECH_CORE_CONTENT.body}
+          </p>
         </div>
 
-        <CardContainer>
-          <CardBody className="relative w-full rounded-3xl border border-white/10 bg-gradient-to-b from-white/[0.06] to-white/[0.02] p-8">
-            <CardItem translateZ={50} className="grid grid-cols-2 gap-3 sm:grid-cols-4">
-              {TECH_CORE_CONTENT.techs.map((tech, i) => (
-                <span
-                  key={tech}
-                  className="rounded-xl border border-white/10 bg-white/[0.04] px-3 py-3 text-center text-[12px] font-semibold text-white/70"
-                  style={{ transform: `translateZ(${(i % 3) * 6}px)` }}
-                >
-                  {tech}
-                </span>
-              ))}
-            </CardItem>
-          </CardBody>
-        </CardContainer>
+        <div className="grid grid-cols-2 gap-3 sm:grid-cols-4 [perspective:1000px]">
+          {TECH_CORE_CONTENT.techs.map((tech) => (
+            <span
+              key={tech}
+              className="cap-tile rounded-xl border border-white/10 bg-white/[0.04] px-3 py-3 text-center text-[12px] font-semibold text-white/70"
+            >
+              {tech}
+            </span>
+          ))}
+        </div>
       </div>
-    </section>
+    </ScrollScene>
   );
 }
 
@@ -197,27 +278,49 @@ function ServicesBeat() {
     <section id="services" className="relative border-t border-white/[0.06] px-6 py-20">
       <div className="relative z-10 mx-auto mb-10 max-w-6xl">
         <span className="text-xs font-semibold tracking-[0.08em] text-[#ff8c7f]">What We Do</span>
-        <h2 className="mt-3 text-3xl font-bold md:text-4xl">Eight ways we turn AI into working product.</h2>
+        <h2 className="mt-3 text-3xl font-bold md:text-4xl">
+          <CinematicText>Eight ways we turn AI into working product.</CinematicText>
+        </h2>
       </div>
-      <StickyScrollReveal items={items} dark vhPerItem={65} ambient />
+      <StickyScrollReveal items={items} dark vhPerItem={52} ambient />
     </section>
   );
 }
 
 function FinalCtaBeat() {
   return (
-    <section id="story-final-cta" className="relative overflow-hidden border-t border-white/[0.06] px-6 py-28">
-      <BackgroundBeams />
-      <Meteors number={20} />
-      <div className="relative z-10 mx-auto flex max-w-3xl flex-col items-center text-center">
-        <h2 className="text-3xl font-bold leading-tight md:text-5xl">{FINAL_CTA_CONTENT.headline}</h2>
-        <p className="mt-5 max-w-xl text-[15px] leading-relaxed text-white/60 md:text-base">
-          {FINAL_CTA_CONTENT.sub}
-        </p>
-        <a href={FINAL_CTA_CONTENT.cta.href} className="btn-accent mt-8">
-          <span>{FINAL_CTA_CONTENT.cta.label}</span>
-        </a>
+    <ScrollScene
+      id="story-final-cta"
+      className="relative overflow-hidden border-t border-white/[0.06] px-6 py-28"
+      pin={false}
+      scrub={1}
+      start="top bottom"
+      end="center center"
+      build={({ timeline, q }) => {
+        timeline
+          .fromTo(q('.cta-beams'), { opacity: 0.15 }, { opacity: 1, ease: 'none' })
+          .fromTo(q('.cta-meteors'), { opacity: 0 }, { opacity: 1, ease: 'none' }, '<');
+      }}
+    >
+      <div className="cta-beams">
+        <BackgroundBeams />
       </div>
-    </section>
+      <div className="cta-meteors">
+        <Meteors number={22} />
+      </div>
+      <div className="relative z-10 mx-auto flex max-w-3xl flex-col items-center text-center">
+        <h2 className="text-3xl font-bold leading-tight md:text-5xl">
+          <CinematicText>{FINAL_CTA_CONTENT.headline}</CinematicText>
+        </h2>
+        <Reveal as="p" delay={0.1} className="mt-5 max-w-xl text-[15px] leading-relaxed text-white/60 md:text-base">
+          {FINAL_CTA_CONTENT.sub}
+        </Reveal>
+        <Reveal delay={0.2} className="mt-8">
+          <MagneticButton href={FINAL_CTA_CONTENT.cta.href} className="btn-accent">
+            <span>{FINAL_CTA_CONTENT.cta.label}</span>
+          </MagneticButton>
+        </Reveal>
+      </div>
+    </ScrollScene>
   );
 }

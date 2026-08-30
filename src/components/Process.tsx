@@ -1,6 +1,8 @@
 'use client';
 import { CardBody, CardContainer, CardItem } from '@/components/ui/card-3d';
 import { Timeline, type TimelineEntry } from '@/components/ui/timeline';
+import { CinematicText } from '@/components/motion/CinematicText';
+import { Reveal } from '@/components/motion/Reveal';
 import SectionStage from '@/components/visual/SectionStage';
 import styles from './Process.module.css';
 
@@ -68,13 +70,15 @@ export default function Process() {
     <section id="process" className={styles.process}>
       <SectionStage>
         <div className="container">
-          <div className={`${styles.top} reveal`}>
+          <Reveal className={styles.top} stagger>
             <div className="section-badge">
               <span className="section-badge-dot" />
               How We Build
             </div>
-            <h2 className={styles.headline}>How We Build</h2>
-          </div>
+            <h2 className={styles.headline}>
+              <CinematicText>How We Build</CinematicText>
+            </h2>
+          </Reveal>
 
           <Timeline data={entries} />
         </div>

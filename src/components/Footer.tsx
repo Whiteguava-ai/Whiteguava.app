@@ -1,13 +1,17 @@
+import { Parallax } from '@/components/motion/Parallax';
+import { Reveal } from '@/components/motion/Reveal';
 import { FOOTER_LINKS, LEGAL_LINKS, SERVICE_LINKS } from '@/lib/site';
 import styles from './Footer.module.css';
 
 export default function Footer() {
   return (
     <footer className={styles.footer}>
-      <div className={styles.watermark} aria-hidden="true">WHITEGUAVA</div>
+      <Parallax speed={0.5} flow className={styles.watermark}>
+        <span aria-hidden="true">WHITEGUAVA</span>
+      </Parallax>
 
       <div className={styles.inner}>
-        <div className={styles.socialSection}>
+        <Reveal className={styles.socialSection} direction="up" distance={48}>
           <a href="/" className={styles.logoIcon} aria-label="WhiteGuava home">
             <img src="/brand/whiteguava-mark-square.png" alt="" width={472} height={472} loading="lazy" decoding="async" />
           </a>
@@ -57,7 +61,7 @@ export default function Footer() {
               <a key={link.href} href={link.href}>{link.label}</a>
             ))}
           </nav>
-        </div>
+        </Reveal>
       </div>
 
       <div className={styles.bottomBar}>

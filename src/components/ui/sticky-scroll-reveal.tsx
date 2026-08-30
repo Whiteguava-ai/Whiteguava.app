@@ -1,7 +1,7 @@
 'use client';
 
 import { useRef, useState, type ReactNode } from 'react';
-import { m, useMotionValueEvent, useScroll } from 'framer-motion';
+import { m, useMotionValueEvent, useScroll, useSpring } from 'framer-motion';
 import { CardBody, CardContainer } from '@/components/ui/card-3d';
 import { GradientFlow } from '@/components/ui/gradient-flow';
 import { cn } from '@/lib/cn';
@@ -42,6 +42,7 @@ export function StickyScrollReveal({
   const ref = useRef<HTMLDivElement>(null);
   const [active, setActive] = useState(0);
   const { scrollYProgress } = useScroll({ target: ref, offset: ['start start', 'end end'] });
+  const railScale = useSpring(scrollYProgress, { stiffness: 120, damping: 30 });
 
   useMotionValueEvent(scrollYProgress, 'change', (latest) => {
     const idx = Math.min(items.length - 1, Math.floor(latest * items.length));
@@ -52,6 +53,21 @@ export function StickyScrollReveal({
     <div ref={ref} className={cn('relative', className)} style={{ height: `${items.length * vhPerItem}vh` }}>
       <div className="sticky top-20 mx-auto flex max-w-6xl flex-col gap-8 px-6 py-10 lg:top-28 lg:flex-row lg:items-center lg:gap-16">
         {ambient && <GradientFlow className="-z-10 opacity-70" />}
+
+        <div
+          aria-hidden="true"
+          className={cn(
+            'absolute left-1 top-10 hidden w-px overflow-hidden rounded lg:block',
+            'h-[calc(100%-5rem)]',
+            dark ? 'bg-white/10' : 'bg-black/10'
+          )}
+        >
+          <m.span
+            style={{ scaleY: railScale }}
+            className="absolute inset-x-0 top-0 block h-full origin-top bg-[var(--accent)]"
+          />
+        </div>
+
         <div className="relative z-10 flex-1">
           <div className="flex flex-wrap gap-2">
             {items.map((item, i) => (

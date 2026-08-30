@@ -5,6 +5,7 @@ import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
 import Navbar from '@/components/Navbar';
 import { CardHoverEffect, type HoverCardItem } from '@/components/ui/card-hover-effect';
+import { CinematicText } from '@/components/motion/CinematicText';
 import SectionStage from '@/components/visual/SectionStage';
 import type { BlogPost } from '@/data/blog';
 import styles from './BlogIndex.module.css';
@@ -31,7 +32,9 @@ export default function BlogIndex({ posts }: { posts: BlogPost[] }) {
                 <span className="section-badge-dot" />
                 Blog
               </div>
-              <h1 className={styles.headline}>AI Agents, Automation & WhatsApp AI Insights</h1>
+              <h1 className={styles.headline}>
+                <CinematicText as="span" trigger="load">AI Agents, Automation & WhatsApp AI Insights</CinematicText>
+              </h1>
               <p className={styles.sub}>
                 Practical guides on AI agents, automation, and business AI — written by the team
                 that builds them.

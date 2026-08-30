@@ -1,8 +1,12 @@
 'use client';
 
+import { useRef } from 'react';
+import { m, useReducedMotion, useScroll, useTransform } from 'framer-motion';
 import { CardBody, CardContainer, CardItem } from '@/components/ui/card-3d';
 import { Spotlight } from '@/components/ui/spotlight';
 import { TextGenerateEffect } from '@/components/ui/text-generate-effect';
+import { Parallax } from '@/components/motion/Parallax';
+import { useMounted } from '@/lib/motion/useMounted';
 import hero from './Hero.module.css';
 
 export default function InnerHero({
@@ -27,19 +31,30 @@ export default function InnerHero({
   secondaryLabel?: string;
 }) {
   const highlightWords = highlight ? [highlight] : undefined;
+  const sectionRef = useRef<HTMLElement>(null);
+  const reduced = useReducedMotion();
+  const mounted = useMounted();
+  const { scrollYProgress } = useScroll({ target: sectionRef, offset: ['start start', 'end start'] });
+  const innerY = useTransform(scrollYProgress, [0, 1], [0, -60]);
+  const innerOpacity = useTransform(scrollYProgress, [0, 0.7], [1, 0]);
+  const innerScale = useTransform(scrollYProgress, [0, 1], [1, 0.94]);
+  const heroActive = mounted && !reduced;
 
   return (
-    <section className={hero.hero}>
+    <section ref={sectionRef} className={hero.hero}>
       <div className={hero.card}>
-        <div className={hero.blobs} aria-hidden="true">
-          <span className={hero.blobGrey} />
-          <span className={hero.blobSoft} />
-          <span className={hero.ribbon} />
-          <span className={hero.ribbonBlur} />
-        </div>
+        <Parallax speed={0.5} className={hero.blobs}>
+          <span aria-hidden="true" className={hero.blobGrey} />
+          <span aria-hidden="true" className={hero.blobSoft} />
+          <span aria-hidden="true" className={hero.ribbon} />
+          <span aria-hidden="true" className={hero.ribbonBlur} />
+        </Parallax>
         <Spotlight className="opacity-60" color="rgba(230,59,46,0.22)" />
 
-        <div className={hero.inner}>
+        <m.div
+          className={hero.inner}
+          style={heroActive ? { y: innerY, opacity: innerOpacity, scale: innerScale } : undefined}
+        >
           <CardContainer containerClassName="w-full">
             <CardBody className="w-full">
               <CardItem translateZ={20} className={hero.badge}>
@@ -69,7 +84,7 @@ export default function InnerHero({
               </CardItem>
             </CardBody>
           </CardContainer>
-        </div>
+        </m.div>
       </div>
     </section>
   );

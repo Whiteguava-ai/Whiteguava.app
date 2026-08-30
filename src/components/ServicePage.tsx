@@ -8,6 +8,7 @@ import InnerHero from '@/components/InnerHero';
 import Navbar from '@/components/Navbar';
 import { CardHoverEffect, type HoverCardItem } from '@/components/ui/card-hover-effect';
 import { CardBody, CardContainer, CardItem } from '@/components/ui/card-3d';
+import { CinematicText } from '@/components/motion/CinematicText';
 import SectionStage from '@/components/visual/SectionStage';
 import type { ServiceContent } from '@/data/services';
 import type { PexelsImage } from '@/lib/pexels';
@@ -81,7 +82,7 @@ export default function ServicePage({ service, cover }: { service: ServiceConten
                 <span className="section-badge-dot" />
                 Overview
               </div>
-              <h2 className={styles.headline}>{service.overviewTitle}</h2>
+              <h2 className={styles.headline}><CinematicText>{service.overviewTitle}</CinematicText></h2>
             </div>
             <div className={`${styles.overview} reveal reveal-delay-1`}>
               {service.overview.map((paragraph) => (
@@ -100,7 +101,7 @@ export default function ServicePage({ service, cover }: { service: ServiceConten
                 <span className="section-badge-dot" />
                 What We Build
               </div>
-              <h2 className={styles.headline}>{service.topicsTitle}</h2>
+              <h2 className={styles.headline}><CinematicText>{service.topicsTitle}</CinematicText></h2>
             </div>
             <div className={styles.topics}>
               {service.topics.map((topic, i) => (
@@ -130,7 +131,7 @@ export default function ServicePage({ service, cover }: { service: ServiceConten
                 <span className="section-badge-dot" />
                 Who This Is For
               </div>
-              <h2 className={styles.headline}>{service.useCasesTitle}</h2>
+              <h2 className={styles.headline}><CinematicText>{service.useCasesTitle}</CinematicText></h2>
             </div>
             <CardHoverEffect items={useCaseItems} className="md:grid-cols-3" />
           </div>
@@ -145,7 +146,7 @@ export default function ServicePage({ service, cover }: { service: ServiceConten
                 <span className="section-badge-dot" />
                 Related
               </div>
-              <h2 className={styles.headline}>More from WhiteGuava</h2>
+              <h2 className={styles.headline}><CinematicText>More from WhiteGuava</CinematicText></h2>
             </div>
             <CardHoverEffect items={relatedItems} className="md:grid-cols-3" />
           </div>

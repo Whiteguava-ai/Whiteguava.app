@@ -8,6 +8,7 @@ import Footer from '@/components/Footer';
 import Navbar from '@/components/Navbar';
 import { CardHoverEffect, type HoverCardItem } from '@/components/ui/card-hover-effect';
 import { TracingBeam } from '@/components/ui/tracing-beam';
+import { CinematicText } from '@/components/motion/CinematicText';
 import SectionStage from '@/components/visual/SectionStage';
 import type { BlogPost as BlogPostType } from '@/data/blog';
 import type { PexelsImage } from '@/lib/pexels';
@@ -55,7 +56,9 @@ export default function BlogPost({
                 <span className="section-badge-dot" />
                 {post.category}
               </div>
-              <h1 className={styles.headline}>{post.h1}</h1>
+              <h1 className={styles.headline}>
+                <CinematicText as="span" trigger="load">{post.h1}</CinematicText>
+              </h1>
               <p className={styles.sub}>{post.subtitle}</p>
               <div className={styles.meta}>
                 <span>By {SITE_NAME}</span>

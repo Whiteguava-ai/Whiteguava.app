@@ -3,6 +3,7 @@ import Script from 'next/script';
 import JsonLd from '@/components/JsonLd';
 import MotionProvider from '@/components/MotionProvider';
 import RevealObserver from '@/components/RevealObserver';
+import { CinematicRoot } from '@/components/motion';
 import { siteGraph } from '@/lib/schema';
 import { SITE_DESCRIPTION, SITE_NAME, SITE_URL } from '@/lib/site';
 import { satoshi } from '@/lib/fonts';
@@ -76,7 +77,10 @@ export default function RootLayout({
         </Script>
         <JsonLd data={siteGraph()} />
         <RevealObserver />
-        <MotionProvider>{children}</MotionProvider>
+        <MotionProvider>
+          <CinematicRoot />
+          {children}
+        </MotionProvider>
       </body>
     </html>
   );

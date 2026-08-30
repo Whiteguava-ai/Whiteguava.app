@@ -120,6 +120,38 @@ button, input, select, textarea {
   80%, 100% { transform: scale(1.9); opacity: 0; }
 }
 
+/* ===================== MOTION SAFETY / HELPERS ===================== */
+
+/*
+ * Global reduced-motion clamp. The JS motion primitives
+ * (src/components/motion/*) each branch on prefers-reduced-motion and render
+ * their final state, but continuously-running CSS keyframe ambience (blobs,
+ * meteors, marquee, shimmer) needs this net so a reduced-motion visitor gets a
+ * still page. Scroll-position-linked transforms are exempt: they only move
+ * when the user is actively scrolling, which is direct manipulation, not
+ * autoplay.
+ */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+  .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
+/* Reserve height so a pinned ScrollScene never collapses before GSAP measures it. */
+.cine-pin { position: relative; }
+
+.will-transform { will-change: transform; }
+
+.perspective-near { perspective: 800px; }
+.perspective-far { perspective: 1400px; }
+
 /* ===================== SCROLL REVEAL ===================== */
 .reveal {
   opacity: 0;

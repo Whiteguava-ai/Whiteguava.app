@@ -13,6 +13,7 @@ import Pricing from '@/components/Pricing';
 import FAQ from '@/components/FAQ';
 import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
+import { ActTransition } from '@/components/motion';
 import { homepageFaqs } from '@/data/faqs';
 
 export default function HomePage() {
@@ -20,13 +21,16 @@ export default function HomePage() {
     <main>
       <Navbar />
       <StoryExperience />
+      <ActTransition label="I · How we build" tone="light" />
       <Process />
       <Works />
       <Benefits />
       <Features />
       <Tools />
+      <ActTransition label="II · The team" tone="dark" />
       <Team />
       <Stats />
+      <ActTransition label="III · Work with us" tone="light" />
       <Awards />
       <Testimonials />
       <Pricing />

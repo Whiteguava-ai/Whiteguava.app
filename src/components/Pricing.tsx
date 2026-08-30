@@ -1,3 +1,5 @@
+import { CinematicText } from '@/components/motion/CinematicText';
+import { Reveal } from '@/components/motion/Reveal';
 import SectionStage from '@/components/visual/SectionStage';
 import styles from './Pricing.module.css';
 
@@ -32,21 +34,19 @@ export default function Pricing() {
     <section id="pricing" className={styles.pricing}>
       <SectionStage>
       <div className="container">
-        <div className={`${styles.header} reveal`}>
+        <Reveal className={styles.header} stagger>
           <div className="section-badge">
             <span className="section-badge-dot" />
             Solutions
           </div>
           <h2 className={styles.headline}>
-            Solutions That Fit
-            <br />
-            Your Needs
+            <CinematicText>Solutions That Fit Your Needs</CinematicText>
           </h2>
-        </div>
+        </Reveal>
 
-        <div className={`${styles.plans} reveal reveal-delay-2`}>
+        <div className={styles.plans}>
           {/* AI Discovery */}
-          <div className={styles.planLight}>
+          <Reveal className={styles.planLight} direction="left">
             <div className={styles.planHeader}>
               <div className={styles.planIcon}>
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -72,10 +72,10 @@ export default function Pricing() {
                 </li>
               ))}
             </ul>
-          </div>
+          </Reveal>
 
           {/* Custom Build */}
-          <div className={styles.planDark}>
+          <Reveal className={styles.planDark} direction="up" distance={64} duration={0.85}>
             <div className={styles.planHeader}>
               <div className={`${styles.planIcon} ${styles.planIconDark}`}>
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -101,11 +101,11 @@ export default function Pricing() {
                 </li>
               ))}
             </ul>
-          </div>
+          </Reveal>
         </div>
 
         {/* Enterprise card below */}
-        <div className={`reveal reveal-delay-3`} style={{ marginTop: '16px' }}>
+        <Reveal style={{ marginTop: '16px' }} direction="up">
           <div className={styles.planLight} style={{ maxWidth: '100%' }}>
             <div className={styles.planHeader}>
               <div className={styles.planIcon}>
@@ -129,7 +129,7 @@ export default function Pricing() {
               ))}
             </ul>
           </div>
-        </div>
+        </Reveal>
 
       </div>
       </SectionStage>

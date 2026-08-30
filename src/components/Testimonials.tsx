@@ -1,3 +1,5 @@
+import { CinematicText } from '@/components/motion/CinematicText';
+import { Reveal } from '@/components/motion/Reveal';
 import SectionStage from '@/components/visual/SectionStage';
 import styles from './Testimonials.module.css';
 
@@ -6,15 +8,17 @@ export default function Testimonials() {
     <section className={styles.testimonials}>
       <SectionStage>
       <div className="container">
-        <div className={`${styles.header} reveal`}>
+        <Reveal className={styles.header} stagger>
           <div className="section-badge">
             <span className="section-badge-dot" />
             Work With Us
           </div>
-          <h2 className={styles.headline}>Have a Problem Worth Solving?</h2>
-        </div>
+          <h2 className={styles.headline}>
+            <CinematicText>Have a Problem Worth Solving?</CinematicText>
+          </h2>
+        </Reveal>
 
-        <div className={`${styles.stage} reveal reveal-delay-2`}>
+        <Reveal className={styles.stage} direction="scale" duration={0.8}>
           <div className={styles.card}>
             <p className={styles.quote}>
               Tell us what you&apos;re trying to build, automate, or improve. We&apos;ll help you identify the right technical approach and turn it into a working solution.
@@ -44,7 +48,7 @@ export default function Testimonials() {
           <div className={styles.nav}>
             <a href="/#contact" className={styles.navBtn} aria-label="Start a project"><span>→</span></a>
           </div>
-        </div>
+        </Reveal>
       </div>
       </SectionStage>
     </section>

@@ -2,6 +2,8 @@
 import { useState } from 'react';
 import { CardBody, CardContainer } from '@/components/ui/card-3d';
 import { Spotlight } from '@/components/ui/spotlight';
+import { CinematicText } from '@/components/motion/CinematicText';
+import { Reveal } from '@/components/motion/Reveal';
 import SectionStage from '@/components/visual/SectionStage';
 import { CONTACT_EMAILS } from '@/lib/site';
 import styles from './Contact.module.css';
@@ -59,12 +61,14 @@ export default function Contact() {
       <Spotlight className="opacity-50" color="rgba(230,59,46,0.25)" />
       <div className="container">
         <div className={styles.layout}>
-          <div className={`${styles.left} reveal`}>
+          <Reveal className={styles.left} direction="left">
             <div className="section-badge">
               <span className="section-badge-dot" />
               Contact
             </div>
-            <h2 className={styles.headline}>Let&apos;s Build Something Intelligent.</h2>
+            <h2 className={styles.headline}>
+              <CinematicText>Let&apos;s Build Something Intelligent.</CinematicText>
+            </h2>
             <p style={{ fontSize: '15px', lineHeight: 1.6, color: '#555', marginBottom: '24px' }}>
               Have an idea, workflow, or business problem you&apos;d like to solve?<br />
               Tell us what you&apos;re working on and we&apos;ll get back to you.
@@ -81,9 +85,10 @@ export default function Contact() {
                 </div>
               </div>
             </div>
-          </div>
+          </Reveal>
 
-          <CardContainer containerClassName="reveal reveal-delay-2">
+          <Reveal direction="right" delay={0.1}>
+          <CardContainer>
           <CardBody>
           <form className={styles.form} onSubmit={handleSubmit}>
             <p className={styles.formTitle}>Tell us about your project</p>
@@ -245,6 +250,7 @@ export default function Contact() {
           </form>
           </CardBody>
           </CardContainer>
+          </Reveal>
         </div>
       </div>
       </SectionStage>

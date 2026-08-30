@@ -1,3 +1,5 @@
+import { CinematicText } from '@/components/motion/CinematicText';
+import { Reveal } from '@/components/motion/Reveal';
 import SectionStage from '@/components/visual/SectionStage';
 import styles from './Features.module.css';
 
@@ -87,29 +89,31 @@ export default function Features() {
     <section className={styles.features}>
       <SectionStage>
       <div className="container">
-        <div className={`${styles.header} reveal`}>
+        <Reveal className={styles.header} stagger>
           <div className="section-badge">
             <span className="section-badge-dot" />
             Capabilities
           </div>
-          <h2 className={styles.headline}>Intelligence Built Into Your Workflow</h2>
-        </div>
+          <h2 className={styles.headline}>
+            <CinematicText>Intelligence Built Into Your Workflow</CinematicText>
+          </h2>
+        </Reveal>
 
         <div className={styles.grid}>
           {features.map((f, i) => (
             f.visual === 'brand' ? (
-              <div key="brand" className={`${styles.brandCard} reveal reveal-delay-3`}>
+              <Reveal key="brand" className={styles.brandCard} direction={i % 2 === 0 ? 'left' : 'right'} delay={(i % 3) * 0.06}>
                 <div className={styles.brandIcon}>
                   <img src="/brand/whiteguava-mark-square.png" alt="" width={472} height={472} loading="lazy" decoding="async" />
                 </div>
                 <span>WhiteGuava</span>
-              </div>
+              </Reveal>
             ) : (
-              <div key={f.title} className={`${styles.card} reveal reveal-delay-${(i % 6) + 1}`}>
+              <Reveal key={f.title} className={styles.card} direction={i % 2 === 0 ? 'left' : 'right'} delay={(i % 3) * 0.06}>
                 <Visual type={f.visual} />
                 <h3 className={styles.cardTitle}>{f.title}</h3>
                 <p className={styles.cardDesc}>{f.desc}</p>
-              </div>
+              </Reveal>
             )
           ))}
         </div>

@@ -1,5 +1,10 @@
+'use client';
+
 import type { ReactNode } from 'react';
 import { CardBody, CardContainer, CardItem } from '@/components/ui/card-3d';
+import { CinematicText } from '@/components/motion/CinematicText';
+import { Reveal } from '@/components/motion/Reveal';
+import { ScrollScene } from '@/components/motion/ScrollScene';
 import SectionStage from '@/components/visual/SectionStage';
 import styles from './Team.module.css';
 
@@ -27,19 +32,19 @@ export default function Team() {
     <section className={styles.team}>
       <SectionStage dark>
       <div className="container">
-        <div className={`${styles.top} reveal`}>
+        <Reveal className={styles.top} stagger>
           <div className={`section-badge section-badge-dark`}>
             <span className="section-badge-dot" />
             Our Team
           </div>
           <h2 className={styles.headline}>
-            The People Behind<br />WhiteGuava
+            <CinematicText>The People Behind WhiteGuava</CinematicText>
           </h2>
-        </div>
+        </Reveal>
 
         <div className={styles.grid}>
           {/* Featured — brand statement */}
-          <div className={`${styles.featuredCard} reveal reveal-delay-1`}>
+          <Reveal className={styles.featuredCard} direction="left">
             <div className={styles.featuredInfo} style={{ padding: '40px 36px', minHeight: '360px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
               <div>
                 <p style={{ fontSize: '13px', fontWeight: 600, letterSpacing: '0.08em', color: 'rgba(255,255,255,0.4)', textTransform: 'uppercase', marginBottom: '20px' }}>
@@ -58,12 +63,28 @@ export default function Team() {
                 <SocialBtn type="github" />
               </div>
             </div>
-          </div>
+          </Reveal>
 
-          {/* Capability grid */}
-          <div className={styles.subGrid}>
+          {/* Capability grid — cards deal in on scroll */}
+          <ScrollScene
+            className={styles.subGrid}
+            pin={false}
+            scrub={1}
+            start="top 80%"
+            end="bottom 55%"
+            build={({ timeline, q }) => {
+              timeline.from(q('.team-cap'), {
+                yPercent: 28,
+                opacity: 0,
+                rotationZ: -5,
+                transformOrigin: 'top center',
+                stagger: 0.1,
+                ease: 'power3.out',
+              });
+            }}
+          >
             {capabilities.map((c, i) => (
-              <div key={i} className={`reveal reveal-delay-${i + 2}`}>
+              <div key={i} className="team-cap">
                 <CardContainer containerClassName="h-full">
                   <CardBody className={`${styles.memberCard} h-full`}>
                     <CardItem translateZ={25} className={styles.memberTop}>
@@ -84,7 +105,7 @@ export default function Team() {
                 </CardContainer>
               </div>
             ))}
-          </div>
+          </ScrollScene>
         </div>
       </div>
       </SectionStage>

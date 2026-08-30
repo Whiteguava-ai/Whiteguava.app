@@ -1,3 +1,5 @@
+import { CinematicText } from '@/components/motion/CinematicText';
+import { Reveal } from '@/components/motion/Reveal';
 import SectionStage from '@/components/visual/SectionStage';
 import styles from './Benefits.module.css';
 
@@ -6,17 +8,19 @@ export default function Benefits() {
     <section className={styles.benefits}>
       <SectionStage>
       <div className="container">
-        <div className={`${styles.top} reveal`}>
+        <Reveal className={styles.top} stagger>
           <div className="section-badge">
             <span className="section-badge-dot" />
             Why WhiteGuava
           </div>
-          <h2 className={`${styles.headline} reveal reveal-delay-1`}>Why WhiteGuava</h2>
-        </div>
+          <h2 className={styles.headline}>
+            <CinematicText>Why WhiteGuava</CinematicText>
+          </h2>
+        </Reveal>
 
         <div className={styles.grid}>
           {/* Card 1 */}
-          <div className={`${styles.card} reveal reveal-delay-1`}>
+          <Reveal className={styles.card} direction="left">
             <div className={styles.cardIllustration}>
               <div className={styles.metricsViz}>
                 {['Business','AI','Software','Outcome'].map((label, i) => (
@@ -36,10 +40,10 @@ export default function Benefits() {
             <p className={styles.cardDesc}>
               We don&apos;t force your workflow into a generic product. Every solution is shaped around how your business actually operates.
             </p>
-          </div>
+          </Reveal>
 
           {/* Card 2 */}
-          <div className={`${styles.card} reveal reveal-delay-2`}>
+          <Reveal className={styles.card} direction="right">
             <div className={styles.cardIllustration}>
               <div className={styles.checkGrid}>
                 {[1,2,3,4,5,6].map(i => (
@@ -57,10 +61,10 @@ export default function Benefits() {
             <p className={styles.cardDesc}>
               We use AI where it creates measurable value — not simply because it is trendy. Practical application over hype.
             </p>
-          </div>
+          </Reveal>
 
           {/* Card 3 */}
-          <div className={`${styles.card} reveal reveal-delay-3`}>
+          <Reveal className={styles.card} direction="left">
             <div className={styles.cardIllustration}>
               <div className={styles.shieldWrap}>
                 <svg width="110" height="110" viewBox="0 0 100 110" fill="none">
@@ -79,10 +83,10 @@ export default function Benefits() {
             <p className={styles.cardDesc}>
               Strategy, design, engineering, integration, and deployment under one team — no handoffs between agencies.
             </p>
-          </div>
+          </Reveal>
 
           {/* Card 4 */}
-          <div className={`${styles.card} reveal reveal-delay-4`}>
+          <Reveal className={styles.card} direction="right">
             <div className={styles.cardIllustration}>
               <div className={styles.uiMockup}>
                 <div className={styles.chatBubble}>
@@ -111,7 +115,7 @@ export default function Benefits() {
             <p className={styles.cardDesc}>
               We don&apos;t just build the AI layer. We build the complete product around it — from interface to infrastructure.
             </p>
-          </div>
+          </Reveal>
         </div>
       </div>
       </SectionStage>

@@ -1,18 +1,33 @@
 'use client';
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
+import { m, useMotionValueEvent, useReducedMotion, useScroll } from 'framer-motion';
 import { NAV_LINKS } from '@/lib/site';
 import styles from './Navbar.module.css';
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
+  const [hidden, setHidden] = useState(false);
   const [open, setOpen] = useState(false);
+  const reduced = useReducedMotion();
+  const { scrollY } = useScroll();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
     window.addEventListener('scroll', onScroll);
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
+
+  // Hide the bar while scrolling down through the page, bring it back the
+  // moment the reader scrolls up — but never hide it with the mobile menu open.
+  useMotionValueEvent(scrollY, 'change', (y) => {
+    const prev = scrollY.getPrevious() ?? 0;
+    if (open || reduced) {
+      setHidden(false);
+      return;
+    }
+    setHidden(y > prev && y > 240);
+  });
 
   useEffect(() => {
     document.body.style.overflow = open ? 'hidden' : '';
@@ -30,7 +45,11 @@ export default function Navbar() {
   const close = () => setOpen(false);
 
   return (
-    <header className={`${styles.header} ${scrolled ? styles.scrolled : ''} ${open ? styles.menuOpen : ''}`}>
+    <m.header
+      className={`${styles.header} ${scrolled ? styles.scrolled : ''} ${open ? styles.menuOpen : ''}`}
+      animate={{ y: hidden ? '-115%' : '0%' }}
+      transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+    >
       <nav className={styles.nav}>
         <a href="/" className={styles.logo} aria-label="WhiteGuava home" onClick={close}>
           <Image
@@ -76,6 +95,6 @@ export default function Navbar() {
         </ul>
         <a href="#contact" className={styles.mobileCta} onClick={close}>Start a Project</a>
       </div>
-    </header>
+    </m.header>
   );
 }

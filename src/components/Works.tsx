@@ -1,6 +1,8 @@
 'use client';
 import { useState } from 'react';
-import { CardHoverEffect, type HoverCardItem } from '@/components/ui/card-hover-effect';
+import { CinematicText } from '@/components/motion/CinematicText';
+import { Reveal } from '@/components/motion/Reveal';
+import { ScrollScene } from '@/components/motion/ScrollScene';
 import { useTilt } from '@/hooks/useParallax';
 import styles from './Works.module.css';
 
@@ -63,7 +65,7 @@ function WorkCard({ work }: { work: typeof works[0] }) {
           key={active}
           src={work.images[active]}
           alt={`${work.title} — ${work.industry} project by WhiteGuava`}
-          className={styles.workImg}
+          className={`${styles.workImg} works-img`}
           width={960}
           height={640}
           loading="lazy"
@@ -105,28 +107,63 @@ function WorkCard({ work }: { work: typeof works[0] }) {
   );
 }
 
-export default function Works() {
-  const items: HoverCardItem[] = works.map((w, i) => ({
-    key: w.title,
-    content: (
-      <div className={`reveal reveal-delay-${Math.min(i + 1, 6)}`}>
-        <WorkCard work={w} />
-      </div>
-    ),
-  }));
+/** Scroll distance for the pinned horizontal pan — the overflow the track has past its viewport. */
+function panDistance() {
+  const track = document.querySelector<HTMLElement>('.works-track');
+  const view = document.querySelector<HTMLElement>('.works-viewport');
+  if (!track || !view) return 2000;
+  return Math.max(0, track.scrollWidth - view.clientWidth);
+}
 
+export default function Works() {
   return (
     <section id="works" className={styles.works}>
       <div className="container">
-        <div className={`${styles.header} reveal`}>
+        <Reveal className={styles.header} stagger>
           <div className="section-badge">
             <span className="section-badge-dot" />
             Featured Work
           </div>
-          <h2 className={styles.headline}>Real Solutions. Real Business Problems.</h2>
-        </div>
+          <h2 className={styles.headline}>
+            <CinematicText>Real Solutions. Real Business Problems.</CinematicText>
+          </h2>
+        </Reveal>
+      </div>
 
-        <CardHoverEffect items={items} className="grid-cols-1 gap-5" />
+      {/* Cinematic horizontal pan: the section pins and the row of projects
+          slides left as the reader scrolls down. Desktop / fine-pointer only —
+          the `md:hidden` stack below is what phones and reduced-motion get. */}
+      <div className="hidden md:block">
+        <ScrollScene
+          pin
+          scrub={1}
+          end={() => '+=' + panDistance()}
+          build={({ timeline, q }) => {
+            const track = q('.works-track')[0] as HTMLElement | undefined;
+            if (!track) return;
+            timeline.to(track, { x: () => -panDistance(), ease: 'none' });
+          }}
+        >
+          <div className="works-viewport overflow-hidden py-12">
+            <div className="works-track flex w-max gap-8 px-[max(6vw,32px)]">
+              {works.map((w) => (
+                <div key={w.title} className="w-[min(78vw,600px)] shrink-0">
+                  <WorkCard work={w} />
+                </div>
+              ))}
+            </div>
+          </div>
+        </ScrollScene>
+      </div>
+
+      <div className="container md:hidden">
+        <div className={styles.list}>
+          {works.map((w, i) => (
+            <Reveal key={w.title} delay={i * 0.05} direction={i % 2 === 0 ? 'left' : 'right'}>
+              <WorkCard work={w} />
+            </Reveal>
+          ))}
+        </div>
       </div>
     </section>
   );

@@ -1,7 +1,8 @@
 'use client';
 
 import { useEffect, useRef, useState, type ReactNode } from 'react';
-import { m, useScroll, useTransform } from 'framer-motion';
+import { m, useReducedMotion, useScroll, useTransform } from 'framer-motion';
+import { useMounted } from '@/lib/motion/useMounted';
 import { cn } from '@/lib/cn';
 
 export interface TimelineEntry {
@@ -12,15 +13,14 @@ export interface TimelineEntry {
 
 /**
  * Aceternity "Timeline": a vertical line whose fill grows with scroll progress,
- * alongside a stack of entries. Used for step-by-step / process narratives
- * (replaces the old cinematic "Pipeline" scene).
+ * alongside a stack of entries. Used for step-by-step / process narratives.
  *
- * Below `md`, the label/title collapse into a single stacked column above
- * each entry's content — a fixed side column at phone widths would either
- * force "DEVELOPMENT" to wrap onto three lines or squeeze the content column
- * down to almost nothing. From `md` up, label/title become a column that
- * sticks alongside the content as the reader scrolls past it, matching the
- * original desktop layout.
+ * Cinematic layer: each entry's content slides in from an alternating side and
+ * scales toward 1 as it reaches the reading zone, then eases back as it leaves
+ * — a continuous, scroll-linked focus pass rather than a one-shot reveal.
+ * Below `md` the label/title collapse into a stacked column; from `md` up they
+ * stick alongside the content. All entry motion is skipped under
+ * `prefers-reduced-motion`.
  */
 export function Timeline({ data, dark = false, className }: { data: TimelineEntry[]; dark?: boolean; className?: string }) {
   const contentRef = useRef<HTMLDivElement>(null);
@@ -43,39 +43,8 @@ export function Timeline({ data, dark = false, className }: { data: TimelineEntr
   return (
     <div ref={containerRef} className={cn('w-full', className)}>
       <div ref={contentRef} className="relative mx-auto max-w-5xl">
-        {data.map((item) => (
-          <div
-            key={item.title}
-            className="pl-10 pt-12 first:pt-0 sm:pl-12 md:flex md:items-start md:gap-10 md:pl-0 md:pt-16"
-          >
-            <div className="relative flex flex-col items-start md:sticky md:top-32 md:z-10 md:w-56 md:shrink-0">
-              <div
-                className={cn(
-                  'absolute -left-10 top-0 flex h-7 w-7 items-center justify-center rounded-full border sm:-left-12 sm:h-8 sm:w-8 md:-left-[3px] md:h-8 md:w-8',
-                  dark ? 'border-white/15 bg-[#141414]' : 'border-black/10 bg-white'
-                )}
-              >
-                <div className="h-2 w-2 rounded-full bg-[var(--accent)] sm:h-2.5 sm:w-2.5" />
-              </div>
-              <span
-                className={cn(
-                  'text-xs font-semibold tracking-[0.08em] md:pl-12',
-                  dark ? 'text-white/40' : 'text-[var(--text-secondary)]'
-                )}
-              >
-                {item.label}
-              </span>
-              <h3
-                className={cn(
-                  'mt-1 text-xl font-bold md:mt-2 md:pl-12 md:text-2xl',
-                  dark ? 'text-white' : 'text-[var(--text-primary)]'
-                )}
-              >
-                {item.title}
-              </h3>
-            </div>
-            <div className="mt-4 min-w-0 md:mt-0 md:flex-1 md:pl-6">{item.content}</div>
-          </div>
+        {data.map((item, i) => (
+          <TimelineRow key={item.title} item={item} index={i} dark={dark} />
         ))}
 
         <div
@@ -92,6 +61,62 @@ export function Timeline({ data, dark = false, className }: { data: TimelineEntr
             className="absolute inset-x-0 top-0 w-[2px] rounded-full bg-gradient-to-b from-[var(--accent)] via-[var(--accent)] to-transparent"
           />
         </div>
+      </div>
+    </div>
+  );
+}
+
+function TimelineRow({ item, index, dark }: { item: TimelineEntry; index: number; dark: boolean }) {
+  const rowRef = useRef<HTMLDivElement>(null);
+  const reduced = useReducedMotion();
+  const mounted = useMounted();
+  const fromLeft = index % 2 === 0;
+
+  const { scrollYProgress } = useScroll({
+    target: rowRef,
+    offset: ['start 90%', 'end 30%'],
+  });
+
+  const x = useTransform(scrollYProgress, [0, 0.35, 0.75, 1], [fromLeft ? -70 : 70, 0, 0, fromLeft ? -14 : 14]);
+  const opacity = useTransform(scrollYProgress, [0, 0.3, 0.8, 1], [0, 1, 1, 0.55]);
+  const scale = useTransform(scrollYProgress, [0, 0.35, 0.75, 1], [0.92, 1, 1, 0.97]);
+  const active = mounted && !reduced;
+
+  return (
+    <div
+      key={item.title}
+      className="pl-10 pt-12 first:pt-0 sm:pl-12 md:flex md:items-start md:gap-10 md:pl-0 md:pt-16"
+    >
+      <div className="relative flex flex-col items-start md:sticky md:top-32 md:z-10 md:w-56 md:shrink-0">
+        <div
+          className={cn(
+            'absolute -left-10 top-0 flex h-7 w-7 items-center justify-center rounded-full border sm:-left-12 sm:h-8 sm:w-8 md:-left-[3px] md:h-8 md:w-8',
+            dark ? 'border-white/15 bg-[#141414]' : 'border-black/10 bg-white'
+          )}
+        >
+          <div className="h-2 w-2 rounded-full bg-[var(--accent)] sm:h-2.5 sm:w-2.5" />
+        </div>
+        <span
+          className={cn(
+            'text-xs font-semibold tracking-[0.08em] md:pl-12',
+            dark ? 'text-white/40' : 'text-[var(--text-secondary)]'
+          )}
+        >
+          {item.label}
+        </span>
+        <h3
+          className={cn(
+            'mt-1 text-xl font-bold md:mt-2 md:pl-12 md:text-2xl',
+            dark ? 'text-white' : 'text-[var(--text-primary)]'
+          )}
+        >
+          {item.title}
+        </h3>
+      </div>
+      <div ref={rowRef} className="mt-4 min-w-0 md:mt-0 md:flex-1 md:pl-6">
+        <m.div style={active ? { x, opacity, scale, willChange: 'transform' } : undefined}>
+          {item.content}
+        </m.div>
       </div>
     </div>
   );

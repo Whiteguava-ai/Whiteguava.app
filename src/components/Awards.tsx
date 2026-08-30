@@ -1,5 +1,6 @@
 'use client';
 import { useState } from 'react';
+import { Reveal } from '@/components/motion/Reveal';
 import SectionStage from '@/components/visual/SectionStage';
 import { SERVICE_PATHS } from '@/lib/site';
 import styles from './Awards.module.css';
@@ -23,7 +24,7 @@ export default function Awards() {
     <section className={styles.awards}>
       <SectionStage>
       <div className="container">
-        <div className={`${styles.top} reveal`}>
+        <Reveal className={styles.top} stagger>
           <div className="section-badge">
             <span className="section-badge-dot" />
             What We Do
@@ -32,23 +33,21 @@ export default function Awards() {
             <button onClick={prev} aria-label="Previous" className={styles.navBtn}><span>←</span></button>
             <button onClick={next} aria-label="Next" className={styles.navBtn}><span>→</span></button>
           </div>
-        </div>
+        </Reveal>
         <div className={styles.row}>
           {visible.map((a, idx) => (
-            <a
-              key={`${a.title}-${idx}`}
-              href={a.href}
-              className={`${styles.card} reveal reveal-delay-${idx + 1}`}
-            >
-              <div className={styles.medal}>
-                <svg width="36" height="36" viewBox="0 0 24 24" fill="none">
-                  <circle cx="12" cy="12" r="8" stroke="#161616" strokeWidth="1.6"/>
-                  <path d="M9 12l2 2 4-4" stroke="#161616" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>
-              </div>
-              <h3>{a.title}</h3>
-              <p>{a.project} <span>/ {a.year}</span></p>
-            </a>
+            <Reveal key={`${a.title}-${idx}`} direction={idx % 2 === 0 ? 'left' : 'right'} delay={idx * 0.08}>
+              <a href={a.href} className={styles.card}>
+                <div className={styles.medal}>
+                  <svg width="36" height="36" viewBox="0 0 24 24" fill="none">
+                    <circle cx="12" cy="12" r="8" stroke="#161616" strokeWidth="1.6"/>
+                    <path d="M9 12l2 2 4-4" stroke="#161616" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </div>
+                <h3>{a.title}</h3>
+                <p>{a.project} <span>/ {a.year}</span></p>
+              </a>
+            </Reveal>
           ))}
         </div>
       </div>
