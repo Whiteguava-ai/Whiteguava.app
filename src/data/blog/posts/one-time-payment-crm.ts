@@ -5,7 +5,7 @@ export const oneTimePaymentCrm: BlogPost = {
   slug: 'one-time-payment-crm',
   path: '/blog/one-time-payment-crm',
   title: 'One-Time-Payment CRM: Own GuavaCRM Instead of Renting Salesforce or Zoho',
-  metaTitle: 'One-Time-Payment CRM: Own It Instead of Renting Salesforce or Zoho (2026)',
+  metaTitle: 'One-Time-Payment CRM You Own: GuavaCRM vs Salesforce',
   metaDescription:
     'GuavaCRM is a CRM you buy once and own — no per-user pricing, no annual renewal, AI built in. See the 5-year cost next to Salesforce and Zoho, live.',
   excerpt:
@@ -34,6 +34,11 @@ export const oneTimePaymentCrm: BlogPost = {
     {
       type: 'p',
       text: 'GuavaCRM is the opposite model. WhiteGuava sets it up on your own cloud, hands it over, and then it is yours: no per-seat licence, no renewal, and the only ongoing cost is roughly $28 a month for the server it runs on. It covers the day-to-day sales work every team actually does — leads and deals, a drag-and-drop pipeline, contacts and companies, two-way email, tasks, notes, call logging, WhatsApp, round-robin assignment, SLAs, web forms, bulk email, roles and a full audit trail — plus an AI assistant built directly in. Run the numbers for your own team size below.',
+    },
+    {
+      type: 'callout',
+      title: 'In short',
+      text: 'A 10-person team on Salesforce Sales Cloud Enterprise pays about $21,000 a year at list price — roughly $105,000 over five years, rented. GuavaCRM is a one-time setup, then about $28/month for the server (roughly $1,700 over five years), and you own it. Same leads, deals, pipeline, email and AI, with the assistant included rather than a $4,800/year upgrade.',
     },
     { type: 'embed', component: 'crmCostCalculator', caption: 'List pricing, September 2026. GuavaCRM figure is the server cost only — setup is a separate one-time fee.' },
     {
@@ -224,5 +229,11 @@ export const oneTimePaymentCrm: BlogPost = {
     text: 'WhiteGuava sets up GuavaCRM on your cloud, imports your data, switches on the AI, and hands it over. One-time setup, then it runs for about $28 a month with no licences.',
     label: 'Get a GuavaCRM quote',
     href: '/#contact',
+  },
+  productSchema: {
+    name: 'GuavaCRM',
+    applicationCategory: 'BusinessApplication',
+    description:
+      'A self-hosted CRM for leads, deals, pipeline, email and AI, deployed on your own cloud and owned outright — a one-time setup instead of a per-user Salesforce or Zoho subscription.',
   },
 };

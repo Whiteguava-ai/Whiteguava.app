@@ -151,7 +151,12 @@ export default function ServicePage({ service, cover }: { service: ServiceConten
                   <CinematicText>{service.productSuite.title}</CinematicText>
                 </h2>
               </div>
-              <p className={`${styles.suiteIntro} reveal reveal-delay-1`}>{service.productSuite.intro}</p>
+              <p className={`${styles.suiteIntro} reveal reveal-delay-1`}>
+                {service.productSuite.intro}{' '}
+                <a href="/guava" style={{ fontWeight: 700, color: 'inherit' }}>
+                  See the full Guava Product Suite →
+                </a>
+              </p>
               <div className={styles.suiteGrid}>
                 {service.productSuite.items.map((item, i) => (
                   <a

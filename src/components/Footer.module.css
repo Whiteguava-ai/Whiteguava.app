@@ -212,6 +212,7 @@
 .serviceNav a:hover { color: var(--accent); }
 
 .navGroupLabel {
+  display: block;
   margin-top: 26px;
   font-size: 11px;
   font-weight: 800;
@@ -219,6 +220,12 @@
   text-transform: uppercase;
   color: #999;
   text-align: center;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.navGroupLabel:hover {
+  color: var(--accent);
 }
 
 .navGroupLabel + .serviceNav {

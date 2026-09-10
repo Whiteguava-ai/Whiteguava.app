@@ -5,7 +5,7 @@ export const oneTimePaymentErp: BlogPost = {
   slug: 'one-time-payment-erp',
   path: '/blog/one-time-payment-erp',
   title: 'One-Time-Payment ERP: Own GuavaERP Instead of Renting NetSuite or SAP',
-  metaTitle: 'One-Time-Payment ERP: Own GuavaERP Instead of Renting NetSuite or SAP (2026)',
+  metaTitle: 'Self-Hosted ERP You Own: GuavaERP vs NetSuite & SAP',
   metaDescription:
     'GuavaERP runs your accounting, inventory and operations on your own cloud — buy once, own it, AI built in. See the 5-year cost next to NetSuite, SAP, Dynamics 365 and Odoo.',
   excerpt:
@@ -34,6 +34,11 @@ export const oneTimePaymentErp: BlogPost = {
     {
       type: 'p',
       text: 'GuavaERP is the opposite model. WhiteGuava sets it up on your own cloud, configures it to how you actually run the business, hands it over, and then it is yours: no per-seat licence, no renewal, and the only ongoing cost is roughly $45 a month for the server. It covers the work every operating business does — a full double-entry general ledger, accounts receivable and payable, multi-warehouse stock with batch and serial tracking, purchasing with supplier comparison, quotation-to-invoice sales, manufacturing with bills of material, projects and timesheets, fixed assets, and multi-currency — plus an AI assistant built directly in. Run the numbers for your own team size below.',
+    },
+    {
+      type: 'callout',
+      title: 'In short',
+      text: 'Five years of Dynamics 365 Business Central for a 10-person team is about $48,000, rented — NetSuite is far more. GuavaERP is a one-time setup, then roughly $45/month for the server (about $2,700 over five years), and you own it. Same ledger, stock, purchasing and manufacturing, with the AI assistant included rather than sold as a Copilot add-on.',
     },
     { type: 'embed', component: 'productCostCalculator', product: 'erp', caption: 'List pricing, September 2026. NetSuite has no public list; the figure shown is a mid-point of independent estimates for a 10-user core deployment. The GuavaERP bar is the server cost only — setup is a separate one-time fee.' },
     { type: 'h2', text: 'What a subscription ERP is really charging you for', id: 'what-youre-paying-for' },
@@ -184,5 +189,11 @@ export const oneTimePaymentErp: BlogPost = {
     text: 'WhiteGuava sets up GuavaERP on your cloud, configures it to how you operate, imports your balances, switches on the AI, and hands it over. One-time setup, then it runs for about $45 a month with no licences.',
     label: 'Get a GuavaERP quote',
     href: '/#contact',
+  },
+  productSchema: {
+    name: 'GuavaERP',
+    applicationCategory: 'BusinessApplication',
+    description:
+      'A self-hosted ERP for accounting, inventory, purchasing, manufacturing and projects on one ledger, deployed on your own cloud and owned outright — instead of NetSuite, SAP or Dynamics 365 per-user pricing.',
   },
 };

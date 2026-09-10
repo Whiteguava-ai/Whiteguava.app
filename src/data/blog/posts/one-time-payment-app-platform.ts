@@ -5,7 +5,7 @@ export const oneTimePaymentAppPlatform: BlogPost = {
   slug: 'one-time-payment-app-platform',
   path: '/blog/one-time-payment-app-platform',
   title: 'One-Time-Payment App Platform: Own GuavaFramework Instead of Renting OutSystems or Retool',
-  metaTitle: 'One-Time-Payment App Platform: Own GuavaFramework Instead of Renting OutSystems (2026)',
+  metaTitle: 'Low-Code Platform You Own: GuavaFramework vs OutSystems',
   metaDescription:
     'GuavaFramework is the low-code application platform every Guava product is built on — buy once, own it, unlimited builders and users, AI built in. See the 5-year cost next to OutSystems, Mendix and Retool.',
   excerpt:
@@ -34,6 +34,11 @@ export const oneTimePaymentAppPlatform: BlogPost = {
     {
       type: 'p',
       text: 'GuavaFramework is the opposite model — and it is the same platform GuavaCRM, GuavaERP and every other Guava product is built on. WhiteGuava sets it up on your own cloud, hands it over, and then it is yours: no per-builder licence, no per-user app fee, no renewal, and the only ongoing cost is roughly $30 a month for the server — for any number of apps, builders and users. It covers the application-building job — define objects, fields and links with no migration scripts, auto-generated forms and list views, Kanban, calendar and dashboard views, client and server scripting, a permission engine down to the field, workflow with states and approvals, scheduled background jobs, an automatic REST API and webhooks for every object, a print-format designer, and full audit and versioning — plus AI schema and scripting tools built directly in.',
+    },
+    {
+      type: 'callout',
+      title: 'In short',
+      text: 'Low-code platforms meter the people who build apps, the people who use them, or both — so the platform costs more precisely as your software gets more useful. GuavaFramework is a one-time setup, then about $30/month for the server (roughly $1,800 over five years), for any number of apps, builders and users. It is the same platform every other Guava product is built on, with AI schema and script tools included.',
     },
     { type: 'embed', component: 'productCostCalculator', product: 'framework', caption: 'List pricing, September 2026. OutSystems and Mendix are largely custom-quoted; the figures shown are their published entry point and a conservative equivalent-build estimate. The GuavaFramework bar is the server cost only — setup is a separate one-time fee.' },
     { type: 'h2', text: 'What per-builder platform pricing is really charging you for', id: 'what-youre-paying-for' },
@@ -180,5 +185,11 @@ export const oneTimePaymentAppPlatform: BlogPost = {
     text: 'WhiteGuava sets up GuavaFramework on your cloud, builds your first apps, wires in your integrations, switches on the AI, and hands it over. One-time setup, then about $30 a month for any number of apps and users.',
     label: 'Get a GuavaFramework quote',
     href: '/#contact',
+  },
+  productSchema: {
+    name: 'GuavaFramework',
+    applicationCategory: 'DeveloperApplication',
+    description:
+      'A self-hosted low-code application platform — data model, forms, permissions, workflow and an auto REST API — deployed on your own cloud and owned outright, with unlimited builders and users, instead of per-builder OutSystems or Retool pricing.',
   },
 };

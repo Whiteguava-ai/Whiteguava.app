@@ -148,6 +148,54 @@ export function contactPageSchema() {
   };
 }
 
+export function guavaPillarGraph(
+  products: { name: string; href: string; does: string }[],
+  faqs: { q: string; a: string }[],
+) {
+  const url = `${SITE_URL}/guava`;
+  return {
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'CollectionPage',
+        '@id': `${url}#page`,
+        url,
+        name: 'Guava Product Suite — Business Software You Own',
+        description:
+          'Ten business applications — CRM, ERP, HR, LMS, BI, helpdesk, website builder, lending, project management and a low-code platform — deployed on your own cloud and owned outright, with AI built in, instead of per-user SaaS subscriptions.',
+        isPartOf: { '@id': WEBSITE_ID },
+        about: { '@id': ORG_ID },
+        publisher: { '@id': ORG_ID },
+      },
+      {
+        '@type': 'ItemList',
+        '@id': `${url}#products`,
+        name: 'Guava Product Suite',
+        numberOfItems: products.length,
+        itemListElement: products.map((p, i) => ({
+          '@type': 'ListItem',
+          position: i + 1,
+          url: `${SITE_URL}${p.href}`,
+          item: {
+            '@type': 'SoftwareApplication',
+            name: p.name,
+            applicationCategory: 'BusinessApplication',
+            operatingSystem: 'Web-based, Linux',
+            description: p.does,
+            url: `${SITE_URL}${p.href}`,
+            provider: { '@id': ORG_ID },
+          },
+        })),
+      },
+      breadcrumbSchema([
+        { name: SITE_NAME, path: '/' },
+        { name: 'Guava Product Suite', path: '/guava' },
+      ]),
+      faqPageSchema(faqs, `${url}#faq`),
+    ],
+  };
+}
+
 export function servicePageGraph(service: ServiceContent) {
   return {
     '@context': 'https://schema.org',
@@ -196,14 +244,43 @@ export function articleSchema(
   };
 }
 
+export function softwareApplicationSchema(post: BlogPost) {
+  if (!post.productSchema) return null;
+  const { name, applicationCategory, description } = post.productSchema;
+  return {
+    '@type': 'SoftwareApplication',
+    '@id': `${SITE_URL}${post.path}#software`,
+    name,
+    applicationCategory,
+    operatingSystem: 'Web-based, Linux',
+    description,
+    url: `${SITE_URL}${post.path}`,
+    author: { '@id': ORG_ID },
+    publisher: { '@id': ORG_ID },
+    provider: { '@id': ORG_ID },
+    offers: {
+      '@type': 'Offer',
+      priceCurrency: 'USD',
+      price: '0',
+      description:
+        'One-time setup engagement, then a self-hosted server cost only — no per-user licence or subscription.',
+      seller: { '@id': ORG_ID },
+    },
+    isAccessibleForFree: false,
+    subjectOf: { '@id': `${SITE_URL}${post.path}#article` },
+  };
+}
+
 export function blogPostGraph(
   post: BlogPost,
   cover?: { url: string; width: number; height: number } | null,
 ) {
+  const software = softwareApplicationSchema(post);
   return {
     '@context': 'https://schema.org',
     '@graph': [
       articleSchema(post, cover),
+      ...(software ? [software] : []),
       breadcrumbSchema([
         { name: SITE_NAME, path: '/' },
         { name: 'Blog', path: '/blog' },

@@ -5,7 +5,7 @@ export const oneTimePaymentBi: BlogPost = {
   slug: 'one-time-payment-bi-dashboards',
   path: '/blog/one-time-payment-bi-dashboards',
   title: 'One-Time-Payment BI: Own GuavaInsights Instead of Renting Tableau or Power BI',
-  metaTitle: 'One-Time-Payment BI: Own GuavaInsights Instead of Renting Tableau (2026)',
+  metaTitle: 'BI Dashboards You Own: GuavaInsights vs Tableau & Power BI',
   metaDescription:
     'GuavaInsights runs your dashboards, reports and data analysis on your own cloud — buy once, own it, AI built in. See the 5-year cost next to Tableau, Power BI, Looker and Zoho Analytics.',
   excerpt:
@@ -34,6 +34,11 @@ export const oneTimePaymentBi: BlogPost = {
     {
       type: 'p',
       text: 'GuavaInsights is the opposite model. WhiteGuava sets it up on your own cloud, next to your database, hands it over, and then it is yours: no per-seat licence, no viewer charge, no renewal, and the only ongoing cost is roughly $32 a month for the server. It covers the analytics job end to end — direct connections to your database, scheduled sync from apps and APIs, a visual query builder and raw SQL side by side, reusable data models, interactive dashboards with drill-down, scheduled reports, threshold alerts, row-level security, and embedded and public sharing — plus an AI analyst built directly in.',
+    },
+    {
+      type: 'callout',
+      title: 'In short',
+      text: 'BI tools charge for the people who only read a dashboard. Five years of Tableau Creator for 10 people is about $45,000, rented, plus Viewer seats on top. GuavaInsights is a one-time setup, then about $32/month for the server (roughly $1,900 over five years), with unlimited viewers and the AI analyst included rather than behind a capacity SKU.',
     },
     { type: 'embed', component: 'productCostCalculator', product: 'insights', caption: 'List pricing, September 2026. Looker and ThoughtSpot have no public list; the figures shown are conservative stand-ins. The GuavaInsights bar is the server cost only — setup is a separate one-time fee.' },
     { type: 'h2', text: 'What per-seat BI pricing is really charging you for', id: 'what-youre-paying-for' },
@@ -181,5 +186,11 @@ export const oneTimePaymentBi: BlogPost = {
     text: 'WhiteGuava sets up GuavaInsights on your cloud, connects your data, builds your first dashboards, switches on the AI analyst, and hands it over. One-time setup, then about $32 a month with viewers included.',
     label: 'Get a GuavaInsights quote',
     href: '/#contact',
+  },
+  productSchema: {
+    name: 'GuavaInsights',
+    applicationCategory: 'BusinessApplication',
+    description:
+      'A self-hosted BI platform for dashboards, SQL and visual queries, alerts and unlimited viewers, deployed on your own cloud and owned outright — instead of per-seat Tableau or Power BI pricing.',
   },
 };

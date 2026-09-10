@@ -5,7 +5,7 @@ export const oneTimePaymentLoanManagement: BlogPost = {
   slug: 'one-time-payment-loan-management',
   path: '/blog/one-time-payment-loan-management',
   title: 'One-Time-Payment Loan Software: Own GuavaLend Instead of Renting TurnKey Lender or LoanPro',
-  metaTitle: 'One-Time-Payment Loan Software: Own GuavaLend Instead of Renting TurnKey Lender (2026)',
+  metaTitle: 'Loan Management Software You Own: GuavaLend vs TurnKey Lender',
   metaDescription:
     'GuavaLend runs loan origination, servicing, repayments and collections on your own cloud — buy once, own it, AI built in. See the 5-year cost next to TurnKey Lender, LoanPro, Mambu and nCino.',
   excerpt:
@@ -34,6 +34,11 @@ export const oneTimePaymentLoanManagement: BlogPost = {
     {
       type: 'p',
       text: 'GuavaLend is the opposite model. WhiteGuava sets it up on your own cloud, configures it to your loan products, accrual conventions and regulator, hands it over, and then it is yours: no per-loan meter, no per-user licence, no renewal, and the only ongoing cost is roughly $35 a month for the server. It covers the whole lending job — configurable loan products, application capture and origination, scorecard and rule-based underwriting, disbursement, EMI and custom repayment schedules, daily interest and penalty accrual to a ledger, part-payment and restructuring, ageing and collections queues, a borrower portal, and regulatory reporting — plus an AI assistant built directly in.',
+    },
+    {
+      type: 'callout',
+      title: 'In short',
+      text: 'Loan-management platforms bill a base fee plus a charge per active loan or per user, so the software bill grows as your book grows. GuavaLend is a one-time setup, then about $35/month for the server (roughly $2,100 over five years), flat regardless of loan count. It covers products, origination, underwriting, servicing, accrual and collections, with an AI assistant and portfolio risk flags included.',
     },
     { type: 'embed', component: 'productCostCalculator', product: 'lend', caption: 'The loan-management market publishes very little pricing. Figures shown are estimates from independent 2026 comparisons and reseller quotes, not vendor list prices. The GuavaLend bar is the server cost only — setup is a separate one-time fee.' },
     { type: 'h2', text: 'What a per-loan meter is really charging you for', id: 'what-youre-paying-for' },
@@ -179,5 +184,11 @@ export const oneTimePaymentLoanManagement: BlogPost = {
     text: 'WhiteGuava sets up GuavaLend on your cloud, configures your products and accrual rules, migrates your book, switches on the AI, and hands it over. One-time setup, then about $35 a month with no per-loan meter.',
     label: 'Get a GuavaLend quote',
     href: '/#contact',
+  },
+  productSchema: {
+    name: 'GuavaLend',
+    applicationCategory: 'FinanceApplication',
+    description:
+      'A self-hosted loan-management platform for origination, underwriting, servicing, accrual and collections, deployed on your own cloud and owned outright — instead of a base fee plus a per-loan meter.',
   },
 };

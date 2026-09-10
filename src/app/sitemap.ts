@@ -13,9 +13,9 @@ import { SERVICE_LINKS, SITE_URL } from '@/lib/site';
 const HOME_LAST_MODIFIED = new Date('2026-08-23');
 const ABOUT_LAST_MODIFIED = new Date('2026-08-23');
 const CONTACT_LAST_MODIFIED = new Date('2026-08-23');
-const SERVICES_LAST_MODIFIED = new Date('2026-08-23');
+const SERVICES_LAST_MODIFIED = new Date('2026-09-10');
 const LEGAL_LAST_MODIFIED = new Date('2026-08-23');
-const BLOG_INDEX_LAST_MODIFIED = new Date('2026-08-20');
+const BLOG_INDEX_LAST_MODIFIED = new Date('2026-09-10');
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
@@ -25,12 +25,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'weekly',
       priority: 0.8,
     },
-    ...blogPostList.map((post) => ({
-      url: `${SITE_URL}${post.path}`,
-      lastModified: new Date(post.updatedAt),
-      changeFrequency: 'monthly' as const,
-      priority: 0.7,
-    })),
+    ...blogPostList.map((post) => {
+      const isProduct = post.slug.startsWith('one-time-payment-');
+      return {
+        url: `${SITE_URL}${post.path}`,
+        lastModified: new Date(post.updatedAt),
+        changeFrequency: isProduct ? ('weekly' as const) : ('monthly' as const),
+        priority: isProduct ? 0.8 : 0.7,
+      };
+    }),
     {
       url: `${SITE_URL}/`,
       lastModified: HOME_LAST_MODIFIED,
@@ -42,6 +45,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: ABOUT_LAST_MODIFIED,
       changeFrequency: 'monthly',
       priority: 0.8,
+    },
+    {
+      url: `${SITE_URL}/guava`,
+      lastModified: new Date('2026-09-10'),
+      changeFrequency: 'weekly',
+      priority: 0.9,
     },
     {
       url: `${SITE_URL}/contact`,

@@ -5,7 +5,7 @@ export const oneTimePaymentHr: BlogPost = {
   slug: 'one-time-payment-hr-software',
   path: '/blog/one-time-payment-hr-software',
   title: 'One-Time-Payment HR Software: Own GuavaHR Instead of Renting BambooHR or Workday',
-  metaTitle: 'One-Time-Payment HR Software: Own GuavaHR Instead of Renting BambooHR (2026)',
+  metaTitle: 'HR Software You Own: GuavaHR vs BambooHR & Workday',
   metaDescription:
     'GuavaHR runs employee records, leave, attendance and payroll on your own cloud — buy once, own it, AI built in. See the 5-year cost next to BambooHR, Workday, Rippling and Zoho People.',
   excerpt:
@@ -34,6 +34,11 @@ export const oneTimePaymentHr: BlogPost = {
     {
       type: 'p',
       text: 'GuavaHR is the opposite model. WhiteGuava sets it up on your own cloud, configures it to your leave rules, pay structures and approval chains, hands it over, and then it is yours: no per-employee licence, no renewal, and the only ongoing cost is roughly $28 a month for the server. It covers the whole employee lifecycle — records and documents, onboarding and offboarding checklists, leave and holiday policies, attendance and shifts, expense claims, payroll with salary structures and bank files, recruitment, appraisals and goals, employee self-service, and HR analytics — plus an AI assistant built directly in.',
+    },
+    {
+      type: 'callout',
+      title: 'In short',
+      text: 'HR software is priced per employee — the one number that only goes up. GuavaHR is a one-time setup, then about $28/month for the server (roughly $1,700 over five years), flat regardless of headcount. It covers records, onboarding, leave, attendance, payroll, recruitment and appraisals, with the AI assistant included rather than gated to an upper tier.',
     },
     { type: 'embed', component: 'productCostCalculator', product: 'hr', caption: 'List pricing, September 2026. Workday has no public list; the figure shown is a conservative stand-in for a small deployment. The GuavaHR bar is the server cost only — setup is a separate one-time fee.' },
     { type: 'h2', text: 'What per-employee HR pricing is really charging you for', id: 'what-youre-paying-for' },
@@ -180,5 +185,11 @@ export const oneTimePaymentHr: BlogPost = {
     text: 'WhiteGuava sets up GuavaHR on your cloud, configures your policies and payroll, imports your employee master, switches on the AI, and hands it over. One-time setup, then about $28 a month with no per-employee fees.',
     label: 'Get a GuavaHR quote',
     href: '/#contact',
+  },
+  productSchema: {
+    name: 'GuavaHR',
+    applicationCategory: 'BusinessApplication',
+    description:
+      'A self-hosted HR system for records, leave, attendance, payroll, recruitment and appraisals, deployed on your own cloud and owned outright — instead of per-employee BambooHR or Workday pricing.',
   },
 };

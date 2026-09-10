@@ -86,7 +86,7 @@ const services = [
       'GuavaPlan · project work',
       'GuavaFramework · app platform',
     ],
-    href: `${SERVICE_PATHS.software}#product-suite`,
+    href: '/guava',
     more: 'Explore the Guava Product Suite',
   },
 ];

@@ -18,6 +18,7 @@ export const NAV_LINKS = [
   { href: '/#home', label: 'Home' },
   { href: '/about', label: 'About' },
   { href: '/#services', label: 'Services' },
+  { href: '/guava', label: 'Products' },
   { href: '/#works', label: 'Works' },
   { href: '/#process', label: 'Process' },
   { href: '/#pricing', label: 'Pricing' },

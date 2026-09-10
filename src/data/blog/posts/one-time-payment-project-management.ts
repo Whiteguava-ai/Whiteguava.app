@@ -5,7 +5,7 @@ export const oneTimePaymentProjectManagement: BlogPost = {
   slug: 'one-time-payment-project-management',
   path: '/blog/one-time-payment-project-management',
   title: 'One-Time-Payment Project Tool: Own GuavaPlan Instead of Renting Asana or monday.com',
-  metaTitle: 'One-Time-Payment Project Tool: Own GuavaPlan Instead of Renting Asana (2026)',
+  metaTitle: 'Project Management Tool You Own: GuavaPlan vs Asana',
   metaDescription:
     'GuavaPlan runs projects, updates and progress tracking on your own cloud — buy once, own it, unlimited members, AI built in. See the 5-year cost next to Asana, monday.com, Basecamp and Notion.',
   excerpt:
@@ -34,6 +34,11 @@ export const oneTimePaymentProjectManagement: BlogPost = {
     {
       type: 'p',
       text: 'GuavaPlan is the opposite model. WhiteGuava sets it up on your own cloud, configures your project templates and update cadences, hands it over, and then it is yours: no per-seat licence, no renewal, and the only ongoing cost is roughly $22 a month for the server — for the whole company, contractors and clients included. It covers the work-tracking job — teams and projects, threaded discussions and regular written updates, tasks with dependencies and subtasks, list, board, table, timeline and calendar views, docs and wiki pages, milestones and a portfolio view, a workload view by person, guest access, and a personal daily digest instead of constant notifications — plus an AI assistant built directly in.',
+    },
+    {
+      type: 'callout',
+      title: 'In short',
+      text: 'Project tools charge per seat, so half the company and the client never get added. Five years of Asana Advanced for a 40-person company is about $60,000, rented. GuavaPlan is a one-time setup, then about $22/month for the server (roughly $1,300 over five years), with the whole company and your clients included and AI updates and summaries built in.',
     },
     { type: 'embed', component: 'productCostCalculator', product: 'plan', caption: 'List pricing, September 2026. Basecamp is a flat $299/month for any number of users; the rest are per seat. The GuavaPlan bar is the server cost only — setup is a separate one-time fee.' },
     { type: 'h2', text: 'What per-seat project pricing is really charging you for', id: 'what-youre-paying-for' },
@@ -181,5 +186,11 @@ export const oneTimePaymentProjectManagement: BlogPost = {
     text: 'WhiteGuava sets up GuavaPlan on your cloud, configures your templates and cadences, imports your projects, switches on the AI, and hands it over. One-time setup, then about $22 a month with everyone included.',
     label: 'Get a GuavaPlan quote',
     href: '/#contact',
+  },
+  productSchema: {
+    name: 'GuavaPlan',
+    applicationCategory: 'BusinessApplication',
+    description:
+      'A self-hosted work-management tool for projects, updates, tasks, docs and a daily digest for the whole company, deployed on your own cloud and owned outright — instead of per-seat Asana or monday.com pricing.',
   },
 };

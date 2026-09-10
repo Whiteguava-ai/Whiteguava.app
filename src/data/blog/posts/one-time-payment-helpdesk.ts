@@ -5,7 +5,7 @@ export const oneTimePaymentHelpdesk: BlogPost = {
   slug: 'one-time-payment-helpdesk',
   path: '/blog/one-time-payment-helpdesk',
   title: 'One-Time-Payment Helpdesk: Own GuavaDesk Instead of Renting Zendesk or Freshdesk',
-  metaTitle: 'One-Time-Payment Helpdesk: Own GuavaDesk Instead of Renting Zendesk (2026)',
+  metaTitle: 'Helpdesk You Own: GuavaDesk vs Zendesk & Freshdesk',
   metaDescription:
     'GuavaDesk runs your support tickets, knowledge base and SLAs on your own cloud — buy once, own it, AI built in. See the 5-year cost next to Zendesk, Freshdesk, Zoho Desk and Intercom.',
   excerpt:
@@ -34,6 +34,11 @@ export const oneTimePaymentHelpdesk: BlogPost = {
     {
       type: 'p',
       text: 'GuavaDesk is the opposite model. WhiteGuava sets it up on your own cloud, configures it to how your team triages, hands it over, and then it is yours: no per-agent licence, no AI add-on, no renewal, and the only ongoing cost is roughly $28 a month for the server. It covers the whole support job — shared queues and a full ticket lifecycle, email, portal and chat as channels, a knowledge base, a branded customer portal, SLA policies with escalation, round-robin and skill-based routing, canned responses, automations and CSAT surveys — plus an AI copilot built directly in.',
+    },
+    {
+      type: 'callout',
+      title: 'In short',
+      text: 'Helpdesks bill per agent, and support headcount swings with the season. Five years of Zendesk Suite Professional plus Copilot for 10 agents is about $99,000, rented. GuavaDesk is a one-time setup, then about $28/month for the server (roughly $1,700 over five years), with ticketing, a knowledge base, a customer portal, SLAs and an AI copilot all included.',
     },
     { type: 'embed', component: 'productCostCalculator', product: 'desk', caption: 'List pricing, September 2026. Zendesk and Freshdesk AI features are priced as per-agent add-ons; Intercom Fin is billed per resolution. The GuavaDesk bar is the server cost only — setup is a separate one-time fee.' },
     { type: 'h2', text: 'What per-agent helpdesk pricing is really charging you for', id: 'what-youre-paying-for' },
@@ -181,5 +186,11 @@ export const oneTimePaymentHelpdesk: BlogPost = {
     text: 'WhiteGuava sets up GuavaDesk on your cloud, configures your queues and SLAs, migrates your knowledge base, switches on the AI copilot, and hands it over. One-time setup, then about $28 a month with no per-agent fees.',
     label: 'Get a GuavaDesk quote',
     href: '/#contact',
+  },
+  productSchema: {
+    name: 'GuavaDesk',
+    applicationCategory: 'BusinessApplication',
+    description:
+      'A self-hosted helpdesk for tickets, knowledge base, SLAs, routing and an AI copilot, deployed on your own cloud and owned outright — instead of per-agent Zendesk or Freshdesk pricing.',
   },
 };

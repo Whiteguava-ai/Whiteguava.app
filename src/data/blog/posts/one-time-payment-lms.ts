@@ -5,7 +5,7 @@ export const oneTimePaymentLms: BlogPost = {
   slug: 'one-time-payment-lms',
   path: '/blog/one-time-payment-lms',
   title: 'One-Time-Payment LMS: Own GuavaLearn Instead of Renting Docebo or TalentLMS',
-  metaTitle: 'One-Time-Payment LMS: Own GuavaLearn Instead of Renting Docebo (2026)',
+  metaTitle: 'Self-Hosted LMS You Own: GuavaLearn vs Docebo & TalentLMS',
   metaDescription:
     'GuavaLearn runs your courses, learners and certifications on your own cloud — buy once, own it, AI built in. See the 5-year cost next to Docebo, TalentLMS, LearnWorlds and Thinkific.',
   excerpt:
@@ -34,6 +34,11 @@ export const oneTimePaymentLms: BlogPost = {
     {
       type: 'p',
       text: 'GuavaLearn is the opposite model. WhiteGuava sets it up on your own cloud and domain, brands it as your academy, hands it over, and then it is yours: no per-learner licence, no per-sale cut, no renewal, and the only ongoing cost is roughly $28 a month for the server. It covers the whole delivery job — a course builder with mixed content and SCORM, quizzes and assignments with grading, certifications with expiry, learning paths and programs, instructor-led batches, self-enrolment and paid checkout, discussion and Q&A, and full progress tracking — plus an AI tutor and authoring assistant built directly in.',
+    },
+    {
+      type: 'callout',
+      title: 'In short',
+      text: 'Every LMS meters learners — per active user, per tier, or a fee on every course sale. GuavaLearn is a one-time setup, then about $28/month for the server (roughly $1,700 over five years), for any number of learners and with no cut of course revenue. It covers the course builder, assessments, certifications, cohorts and paid enrolment, with an AI tutor and authoring assistant included.',
     },
     { type: 'embed', component: 'productCostCalculator', product: 'learn', caption: 'List pricing, September 2026. Docebo has no public list; the figure shown is a common entry estimate. TalentLMS and LearnWorlds figures are effective per-active-learner rates. The GuavaLearn bar is the server cost only.' },
     { type: 'h2', text: 'What per-learner LMS pricing is really charging you for', id: 'what-youre-paying-for' },
@@ -179,5 +184,11 @@ export const oneTimePaymentLms: BlogPost = {
     text: 'WhiteGuava sets up GuavaLearn on your cloud and domain, brands it as your academy, migrates your courses, switches on the AI, and hands it over. One-time setup, then about $28 a month with no per-learner fees.',
     label: 'Get a GuavaLearn quote',
     href: '/#contact',
+  },
+  productSchema: {
+    name: 'GuavaLearn',
+    applicationCategory: 'BusinessApplication',
+    description:
+      'A self-hosted LMS for courses, assessments, certifications, cohorts and paid enrolment, deployed on your own cloud and owned outright — instead of per-learner Docebo or TalentLMS pricing.',
   },
 };

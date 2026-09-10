@@ -62,7 +62,9 @@ export default function Footer() {
             ))}
           </nav>
 
-          <p className={styles.navGroupLabel}>Guava Product Suite — buy once, own it</p>
+          <a className={styles.navGroupLabel} href="/guava">
+            Guava Product Suite — buy once, own it
+          </a>
           <nav className={styles.serviceNav} aria-label="Guava Product Suite">
             {PRODUCT_LINKS.map((link) => (
               <a key={link.href} href={link.href}>{link.label}</a>

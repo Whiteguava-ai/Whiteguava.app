@@ -56,4 +56,15 @@ export type BlogPost = {
   faqs: BlogFaq[];
   related: BlogRelated[];
   cta: BlogCta;
+  /**
+   * When set, the post is the canonical page for a Guava product and emits a
+   * SoftwareApplication node in its JSON-LD graph.
+   */
+  productSchema?: {
+    name: string;
+    /** schema.org applicationCategory, e.g. "BusinessApplication". */
+    applicationCategory: string;
+    /** One-line description of the product for the schema node. */
+    description: string;
+  };
 };

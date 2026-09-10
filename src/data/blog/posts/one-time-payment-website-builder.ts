@@ -5,7 +5,7 @@ export const oneTimePaymentBuilder: BlogPost = {
   slug: 'one-time-payment-website-builder',
   path: '/blog/one-time-payment-website-builder',
   title: 'One-Time-Payment Website Builder: Own GuavaBuilder Instead of Renting Webflow or Wix',
-  metaTitle: 'One-Time-Payment Website Builder: Own GuavaBuilder Instead of Renting Webflow (2026)',
+  metaTitle: 'Website Builder You Own: GuavaBuilder vs Webflow & Wix',
   metaDescription:
     'GuavaBuilder builds websites and pages visually on your own cloud — buy once, own it, unlimited sites and editors, AI built in. See the 5-year cost next to Webflow, Wix Studio and Framer.',
   excerpt:
@@ -34,6 +34,11 @@ export const oneTimePaymentBuilder: BlogPost = {
     {
       type: 'p',
       text: 'GuavaBuilder is the opposite model. WhiteGuava sets it up on your own cloud, brands the editor, hands it over, and then it is yours: no per-site plan, no editor seat, no renewal, and the only ongoing cost is roughly $20 a month for the server — for any number of sites, pages and editors. It covers the whole build job — a visual canvas on the real box model, reusable components and global design tokens, CMS collections with dynamic pages, forms with storage, per-page SEO controls, a media library, staging and one-click publish with rollback, and custom code embeds — plus AI copy and SEO tools built directly in.',
+    },
+    {
+      type: 'callout',
+      title: 'In short',
+      text: 'Every website builder charges per site, and Webflow charges per editor seat on top. GuavaBuilder is a one-time setup, then about $20/month for the server (roughly $1,200 over five years), for unlimited sites, pages and editors. You own the exported code and host it yourself, with AI copy and SEO tools included rather than a monthly credit allowance.',
     },
     { type: 'embed', component: 'productCostCalculator', product: 'builder', caption: 'List pricing, September 2026. Most builders price per site; Webflow adds per-editor Workspace seats. The GuavaBuilder bar is the server cost only — setup is a separate one-time fee.' },
     { type: 'h2', text: 'What per-site builder pricing is really charging you for', id: 'what-youre-paying-for' },
@@ -180,5 +185,11 @@ export const oneTimePaymentBuilder: BlogPost = {
     text: 'WhiteGuava sets up GuavaBuilder on your cloud, builds your design system, migrates or starts your site, switches on the AI tools, and hands it over. One-time setup, then about $20 a month for unlimited sites.',
     label: 'Get a GuavaBuilder quote',
     href: '/#contact',
+  },
+  productSchema: {
+    name: 'GuavaBuilder',
+    applicationCategory: 'BusinessApplication',
+    description:
+      'A self-hosted visual website builder with a design system, CMS and unlimited sites and editors, deployed on your own cloud and owned outright — instead of per-site Webflow or Wix Studio pricing.',
   },
 };
