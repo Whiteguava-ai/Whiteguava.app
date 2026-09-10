@@ -3,6 +3,7 @@
 import {
   BarChart3,
   Bot,
+  Boxes,
   BrainCircuit,
   Cloud,
   LayoutDashboard,
@@ -233,6 +234,7 @@ const SERVICE_ICONS: Record<string, LucideIcon> = {
   '06': BarChart3,
   '07': Cloud,
   '08': Sparkles,
+  '09': Boxes,
 };
 
 function ServicesBeat() {
@@ -279,7 +281,7 @@ function ServicesBeat() {
       <div className="relative z-10 mx-auto mb-10 max-w-6xl">
         <span className="text-xs font-semibold tracking-[0.08em] text-[#ff8c7f]">What We Do</span>
         <h2 className="mt-3 text-3xl font-bold md:text-4xl">
-          <CinematicText>Eight ways we turn AI into working product.</CinematicText>
+          <CinematicText>Nine ways we turn AI into working product.</CinematicText>
         </h2>
       </div>
       <StickyScrollReveal items={items} dark vhPerItem={52} ambient />

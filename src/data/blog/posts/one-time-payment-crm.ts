@@ -86,7 +86,7 @@ export const oneTimePaymentCrm: BlogPost = {
     },
     {
       type: 'p',
-      text: 'GuavaCRM is built on the open-source Frappe CRM, rebranded and extended by WhiteGuava. The list below is what ships as standard — no tier to unlock it, no add-on to buy. Tap any row to see which Salesforce or Zoho plan charges for the same thing.',
+      text: 'GuavaCRM is built on a mature open-source core, rebranded and extended by WhiteGuava, and deployed on your own cloud. The list below is what ships as standard — no tier to unlock it, no add-on to buy. Tap any row to see which Salesforce or Zoho plan charges for the same thing.',
     },
     { type: 'embed', component: 'crmFeatureMatrix' },
     {
@@ -210,7 +210,7 @@ export const oneTimePaymentCrm: BlogPost = {
     },
     {
       q: 'Is GuavaCRM open source?',
-      a: 'It is built on Frappe CRM, which is open source, then rebranded and extended by WhiteGuava with a custom AI module and other changes. You receive the full codebase for your instance.',
+      a: 'It is built on a mature open-source CRM core, then rebranded and extended by WhiteGuava with a custom AI module and other changes. You receive the full codebase for your instance.',
     },
   ],
   related: [

@@ -51,6 +51,24 @@ export const SERVICE_LINKS = [
   { href: SERVICE_PATHS.cloud, label: 'Cloud & Deployment' },
 ] as const;
 
+/**
+ * The Guava Product Suite — ready business applications sold one-time and owned
+ * by the client. Each links to its full breakdown on the blog. Surfaced in the
+ * footer and on the AI Software Development service page.
+ */
+export const PRODUCT_LINKS = [
+  { href: '/blog/one-time-payment-crm', label: 'GuavaCRM' },
+  { href: '/blog/one-time-payment-erp', label: 'GuavaERP' },
+  { href: '/blog/one-time-payment-hr-software', label: 'GuavaHR' },
+  { href: '/blog/one-time-payment-lms', label: 'GuavaLearn' },
+  { href: '/blog/one-time-payment-bi-dashboards', label: 'GuavaInsights' },
+  { href: '/blog/one-time-payment-helpdesk', label: 'GuavaDesk' },
+  { href: '/blog/one-time-payment-website-builder', label: 'GuavaBuilder' },
+  { href: '/blog/one-time-payment-loan-management', label: 'GuavaLend' },
+  { href: '/blog/one-time-payment-project-management', label: 'GuavaPlan' },
+  { href: '/blog/one-time-payment-app-platform', label: 'GuavaFramework' },
+] as const;
+
 export const SOCIAL_PROFILES = [
   { name: 'LinkedIn', href: 'https://www.linkedin.com/company/whiteguava' },
   { name: 'Instagram', href: 'https://www.instagram.com/whiteguava.ai' },

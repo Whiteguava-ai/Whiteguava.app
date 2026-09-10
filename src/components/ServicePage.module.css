@@ -134,9 +134,72 @@
     0 24px 50px rgba(0,0,0,0.12);
 }
 
+.suiteIntro {
+  max-width: 820px;
+  font-size: 16px;
+  line-height: 1.75;
+  color: #555;
+  font-weight: 500;
+  margin-bottom: 26px;
+}
+
+.suiteGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+
+.suiteCard {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.86) 0%, rgba(242, 242, 242, 0.72) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.95);
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.95) inset, 0 10px 24px rgba(0, 0, 0, 0.05);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.suiteCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 1) inset, 0 20px 44px rgba(0, 0, 0, 0.1);
+}
+
+.suiteCat {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #9a9a9a;
+}
+
+.suiteName {
+  font-size: 17px;
+  font-weight: 800;
+  color: #161616;
+  letter-spacing: -0.02em;
+  margin: 4px 0 8px;
+}
+
+.suiteBlurb {
+  font-size: 13.5px;
+  line-height: 1.6;
+  color: #555;
+}
+
+.suiteMore {
+  margin-top: auto;
+  padding-top: 14px;
+  font-size: 12.5px;
+  font-weight: 700;
+  color: #161616;
+}
+
 @media (max-width: 900px) {
   .topics,
-  .related {
+  .related,
+  .suiteGrid {
     grid-template-columns: 1fr;
   }
 }

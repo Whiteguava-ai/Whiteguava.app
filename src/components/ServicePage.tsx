@@ -138,6 +138,39 @@ export default function ServicePage({ service, cover }: { service: ServiceConten
         </SectionStage>
       </section>
 
+      {service.productSuite && (
+        <section id="product-suite">
+          <SectionStage>
+            <div className="container">
+              <div className={`${styles.header} reveal`}>
+                <div className="section-badge">
+                  <span className="section-badge-dot" />
+                  Own It, Don&apos;t Rent It
+                </div>
+                <h2 className={styles.headline}>
+                  <CinematicText>{service.productSuite.title}</CinematicText>
+                </h2>
+              </div>
+              <p className={`${styles.suiteIntro} reveal reveal-delay-1`}>{service.productSuite.intro}</p>
+              <div className={styles.suiteGrid}>
+                {service.productSuite.items.map((item, i) => (
+                  <a
+                    key={item.name}
+                    href={item.href}
+                    className={`${styles.suiteCard} reveal reveal-delay-${Math.min(i + 1, 6)}`}
+                  >
+                    <span className={styles.suiteCat}>{item.category}</span>
+                    <span className={styles.suiteName}>{item.name}</span>
+                    <span className={styles.suiteBlurb}>{item.blurb}</span>
+                    <span className={styles.suiteMore}>Read the breakdown →</span>
+                  </a>
+                ))}
+              </div>
+            </div>
+          </SectionStage>
+        </section>
+      )}
+
       <section>
         <SectionStage>
           <div className="container">

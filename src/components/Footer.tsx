@@ -1,6 +1,6 @@
 import { Parallax } from '@/components/motion/Parallax';
 import { Reveal } from '@/components/motion/Reveal';
-import { FOOTER_LINKS, LEGAL_LINKS, SERVICE_LINKS } from '@/lib/site';
+import { FOOTER_LINKS, LEGAL_LINKS, PRODUCT_LINKS, SERVICE_LINKS } from '@/lib/site';
 import styles from './Footer.module.css';
 
 export default function Footer() {
@@ -58,6 +58,13 @@ export default function Footer() {
 
           <nav className={styles.serviceNav} aria-label="Services">
             {SERVICE_LINKS.map((link) => (
+              <a key={link.href} href={link.href}>{link.label}</a>
+            ))}
+          </nav>
+
+          <p className={styles.navGroupLabel}>Guava Product Suite — buy once, own it</p>
+          <nav className={styles.serviceNav} aria-label="Guava Product Suite">
+            {PRODUCT_LINKS.map((link) => (
               <a key={link.href} href={link.href}>{link.label}</a>
             ))}
           </nav>

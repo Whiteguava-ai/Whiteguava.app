@@ -191,7 +191,7 @@ export default function BlogPost({
                     if (!Embed) return null;
                     return (
                       <div key={i} className={styles.embed}>
-                        <Embed />
+                        <Embed product={block.product} />
                         {block.caption && <p className={styles.embedCaption}>{block.caption}</p>}
                       </div>
                     );

@@ -211,6 +211,20 @@
 
 .serviceNav a:hover { color: var(--accent); }
 
+.navGroupLabel {
+  margin-top: 26px;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #999;
+  text-align: center;
+}
+
+.navGroupLabel + .serviceNav {
+  margin-top: 8px;
+}
+
 .bottomBar {
   position: relative;
   z-index: 2;

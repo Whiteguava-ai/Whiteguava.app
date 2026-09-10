@@ -16,6 +16,19 @@ export type ServiceUseCase = {
   body: string;
 };
 
+export type ProductSuiteItem = {
+  name: string;
+  category: string;
+  blurb: string;
+  href: string;
+};
+
+export type ProductSuite = {
+  title: string;
+  intro: string;
+  items: ProductSuiteItem[];
+};
+
 export type ServiceContent = {
   slug: string;
   path: string;
@@ -35,6 +48,7 @@ export type ServiceContent = {
   topics: ServiceTopic[];
   useCasesTitle: string;
   useCases: ServiceUseCase[];
+  productSuite?: ProductSuite;
   related: ServiceRelated[];
   faqs: { q: string; a: string }[];
 };
@@ -102,7 +116,28 @@ export const services: Record<string, ServiceContent> = {
         title: 'Teams that need to move fast without hiring',
         body: 'Companies that want to outsource AI development for a defined project instead of running a multi-month hiring process first.',
       },
+      {
+        title: 'Businesses tired of renting core software',
+        body: 'Teams that have done the maths on five years of per-user subscriptions for their CRM, ERP or helpdesk and want to own the system instead — deployed on their own cloud, with the AI included.',
+      },
     ],
+    productSuite: {
+      title: 'The Guava Product Suite — buy once, own it',
+      intro:
+        'Alongside fully custom builds, WhiteGuava deploys a suite of ready business applications you own outright instead of renting. Each one is set up on your own cloud, branded for your business, configured to how you work, and handed over with the database and source. The only ongoing cost is the server it runs on — typically $20–$45 a month — plus a few dollars of AI usage, with the assistant built in rather than sold as an upgrade. Every product has a full breakdown, a live cost comparison against the incumbents, and interactive diagrams on the blog.',
+      items: [
+        { name: 'GuavaCRM', category: 'Sales', blurb: 'Leads, deals, pipeline, email and AI — instead of per-user Salesforce or Zoho.', href: '/blog/one-time-payment-crm' },
+        { name: 'GuavaERP', category: 'Operations', blurb: 'Accounting, inventory, purchasing and manufacturing on one ledger — instead of NetSuite or SAP.', href: '/blog/one-time-payment-erp' },
+        { name: 'GuavaHR', category: 'People', blurb: 'Records, leave, attendance, payroll and recruitment — instead of per-employee BambooHR or Workday.', href: '/blog/one-time-payment-hr-software' },
+        { name: 'GuavaLearn', category: 'Learning', blurb: 'Courses, assessments, certifications and paid enrolment — instead of Docebo or TalentLMS.', href: '/blog/one-time-payment-lms' },
+        { name: 'GuavaInsights', category: 'Analytics', blurb: 'Dashboards, SQL, alerts and unlimited viewers — instead of per-seat Tableau or Power BI.', href: '/blog/one-time-payment-bi-dashboards' },
+        { name: 'GuavaDesk', category: 'Support', blurb: 'Tickets, knowledge base, SLAs and an AI copilot — instead of per-agent Zendesk or Freshdesk.', href: '/blog/one-time-payment-helpdesk' },
+        { name: 'GuavaBuilder', category: 'Web', blurb: 'A visual canvas, design system and CMS with unlimited sites — instead of per-site Webflow or Wix.', href: '/blog/one-time-payment-website-builder' },
+        { name: 'GuavaLend', category: 'Lending', blurb: 'Origination, servicing, accrual and collections — instead of a base fee plus a per-loan meter.', href: '/blog/one-time-payment-loan-management' },
+        { name: 'GuavaPlan', category: 'Work', blurb: 'Projects, updates, tasks and a daily digest for the whole company — instead of per-seat Asana or monday.com.', href: '/blog/one-time-payment-project-management' },
+        { name: 'GuavaFramework', category: 'Platform', blurb: 'The low-code application platform the whole suite is built on — instead of per-builder OutSystems or Retool.', href: '/blog/one-time-payment-app-platform' },
+      ],
+    },
     related: [
       { href: SERVICE_PATHS.agents, title: 'AI Agents', desc: 'Tool-using agents for support and operations.' },
       { href: SERVICE_PATHS.automation, title: 'AI Automation', desc: 'Workflows that remove repetitive work.' },

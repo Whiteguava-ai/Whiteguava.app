@@ -1,7 +1,7 @@
 /**
  * Shared numbers for the GuavaCRM blog widgets. Every figure here traces to the
  * September 2026 comparison doc: published Zoho / Salesforce list pricing and a
- * direct inspection of the deployed CRM (Frappe v15 + CRM 1.83 + a custom
+ * direct inspection of the deployed CRM (an open-source CRM core plus a custom
  * OpenAI module). List price, annual billing, before tax.
  */
 
@@ -133,7 +133,7 @@ export const CRM_MATRIX: MatrixGroup[] = [
     group: 'Customization & data',
     rows: [
       { capability: 'Custom fields on every object', elsewhere: 'Every paid plan' },
-      { capability: 'Custom objects & modules', elsewhere: 'Zoho Enterprise / Salesforce Enterprise', note: 'Full Frappe framework — build whatever object your business needs.' },
+      { capability: 'Custom objects & modules', elsewhere: 'Zoho Enterprise / Salesforce Enterprise', note: 'Full application framework underneath — build whatever object your business needs.' },
       { capability: 'Bulk email / newsletter with unsubscribe tracking', elsewhere: 'Zoho Enterprise / Salesforce Marketing Cloud (separate product)' },
       { capability: 'Data import / export', elsewhere: 'Every paid plan' },
       { capability: 'Full audit trail & version history on every record', elsewhere: 'Zoho Enterprise / Salesforce Enterprise' },

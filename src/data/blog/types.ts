@@ -3,7 +3,14 @@ export type BlogEmbed =
   | 'crmRentVsOwn'
   | 'crmFeatureMatrix'
   | 'crmKanbanDemo'
-  | 'crmDifferentiators';
+  | 'crmDifferentiators'
+  | 'productCostCalculator'
+  | 'productRentVsOwn'
+  | 'productFeatureMatrix'
+  | 'productDifferentiators'
+  | 'productArchitecture'
+  | 'productModuleExplorer'
+  | 'productLifecycle';
 
 export type BlogBlock =
   | { type: 'p'; text: string }
@@ -12,7 +19,7 @@ export type BlogBlock =
   | { type: 'list'; items: string[]; ordered?: boolean }
   | { type: 'table'; headers: string[]; rows: string[][] }
   | { type: 'callout'; title: string; text: string }
-  | { type: 'embed'; component: BlogEmbed; caption?: string };
+  | { type: 'embed'; component: BlogEmbed; caption?: string; product?: string };
 
 export type BlogFaq = { q: string; a: string };
 

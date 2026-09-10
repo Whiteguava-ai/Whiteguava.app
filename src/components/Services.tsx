@@ -70,6 +70,25 @@ const services = [
     href: SERVICE_PATHS.agents,
     more: 'Explore conversational AI',
   },
+  {
+    num: '09',
+    title: 'Guava Product Suite — Own It, Don’t Rent It',
+    desc: 'Ten ready business applications you buy once and own outright, deployed on your own cloud with the AI built in — instead of per-user subscriptions that never stop.',
+    tags: [
+      'GuavaCRM · sales',
+      'GuavaERP · operations',
+      'GuavaHR · people',
+      'GuavaLearn · courses',
+      'GuavaInsights · analytics',
+      'GuavaDesk · support',
+      'GuavaBuilder · websites',
+      'GuavaLend · lending',
+      'GuavaPlan · project work',
+      'GuavaFramework · app platform',
+    ],
+    href: `${SERVICE_PATHS.software}#product-suite`,
+    more: 'Explore the Guava Product Suite',
+  },
 ];
 
 export default function Services() {

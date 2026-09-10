@@ -101,6 +101,14 @@ export const SERVICES_CONTENT: CinematicService[] = [
     href: SERVICE_PATHS.agents,
     more: 'Explore conversational AI',
   },
+  {
+    num: '09',
+    title: 'Guava Product Suite — Own It, Don’t Rent It',
+    desc: 'Ten ready business applications you buy once and own outright — CRM, ERP, HR, LMS, BI, helpdesk, website builder, lending, project work and the app platform behind them — deployed on your own cloud with the AI built in.',
+    tags: ['GuavaCRM & GuavaERP', 'GuavaHR & GuavaLearn', 'One-time payment, no per-user fees'],
+    href: `${SERVICE_PATHS.software}#product-suite`,
+    more: 'Explore the Guava Product Suite',
+  },
 ];
 
 export const PIPELINE_CONTENT = [
