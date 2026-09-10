@@ -32,7 +32,7 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
     .map((b) => ({ id: b.id, query: b.imageQuery as string, fallbackAlt: b.imageAlt ?? b.text }));
 
   const [cover, sectionImages] = await Promise.all([
-    fetchPexelsImage(post.coverQuery, post.coverAlt),
+    post.coverQuery ? fetchPexelsImage(post.coverQuery, post.coverAlt ?? post.title) : null,
     fetchPexelsImages(sectionQueries),
   ]);
 

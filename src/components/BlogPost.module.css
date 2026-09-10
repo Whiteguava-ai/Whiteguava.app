@@ -2,11 +2,29 @@
   padding-top: 8px;
 }
 
+/* Blog uses a wider content frame than the site default so the comparison
+   tables and interactive widgets fill the screen instead of leaving a gutter. */
+.wide {
+  max-width: 1360px;
+  margin: 0 auto;
+  padding: 0 48px;
+}
+@media (max-width: 1100px) {
+  .wide {
+    padding: 0 28px;
+  }
+}
+@media (max-width: 480px) {
+  .wide {
+    padding: 0 16px;
+  }
+}
+
 .header {
   display: flex;
   flex-direction: column;
   gap: 16px;
-  max-width: 820px;
+  max-width: 880px;
   margin: 18px 0 32px;
 }
 
@@ -82,17 +100,29 @@
 
 .layout {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 260px;
+  grid-template-columns: minmax(0, 1fr) 250px;
   gap: 56px;
   align-items: start;
 }
 
 .prose {
-  max-width: 720px;
+  max-width: 100%;
+  min-width: 0;
   font-size: 17px;
-  line-height: 1.8;
+  line-height: 1.75;
   color: #333;
   overflow-wrap: break-word;
+}
+
+/* The column is wide so tables and widgets can fill it; keep running text at a
+   comfortable measure. */
+.prose > p,
+.prose > ul,
+.prose > ol,
+.prose > h2,
+.prose > h3,
+.prose > .callout {
+  max-width: 764px;
 }
 
 .prose p {
@@ -140,6 +170,7 @@
 
 .tableWrap table {
   width: 100%;
+  min-width: 480px;
   border-collapse: collapse;
   font-size: 14.5px;
 }
@@ -159,6 +190,19 @@
 
 .tableWrap tr:last-child td {
   border-bottom: none;
+}
+
+.embed {
+  margin: 34px 0;
+  width: 100%;
+}
+
+.embedCaption {
+  margin: 12px 0 0;
+  font-size: 13px;
+  color: #999;
+  text-align: center;
+  line-height: 1.5;
 }
 
 .callout {
@@ -340,7 +384,7 @@
 
 @media (max-width: 1000px) {
   .layout {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
   }
   .toc {
     position: static;

@@ -14,6 +14,16 @@
   box-shadow: 0 24px 60px rgba(0,0,0,0.22);
 }
 
+/* Let a descendant's position: sticky escape the stage and track the viewport.
+   The ambient blobs are still clipped via their own container below. */
+.noClip {
+  overflow: visible;
+}
+.noClip .ambience {
+  overflow: hidden;
+  border-radius: inherit;
+}
+
 .tall { min-height: 520px; }
 
 .ambience {

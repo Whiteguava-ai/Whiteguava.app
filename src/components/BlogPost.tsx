@@ -1,5 +1,6 @@
 'use client';
 
+import { Fragment } from 'react';
 import Image from 'next/image';
 import Breadcrumbs from '@/components/Breadcrumbs';
 import Contact from '@/components/Contact';
@@ -9,6 +10,7 @@ import Navbar from '@/components/Navbar';
 import { CardHoverEffect, type HoverCardItem } from '@/components/ui/card-hover-effect';
 import { TracingBeam } from '@/components/ui/tracing-beam';
 import { CinematicText } from '@/components/motion/CinematicText';
+import { BLOG_EMBEDS } from '@/components/blog/embeds';
 import SectionStage from '@/components/visual/SectionStage';
 import type { BlogPost as BlogPostType } from '@/data/blog';
 import type { PexelsImage } from '@/lib/pexels';
@@ -43,7 +45,7 @@ export default function BlogPost({
 
       <section className={styles.headerSection}>
         <SectionStage>
-          <div className="container">
+          <div className={styles.wide}>
             <Breadcrumbs
               items={[
                 { name: 'Home', path: '/' },
@@ -99,8 +101,8 @@ export default function BlogPost({
       </section>
 
       <section>
-        <SectionStage>
-          <div className="container">
+        <SectionStage clip={false}>
+          <div className={styles.wide}>
             <div className={styles.layout}>
               <TracingBeam className="max-w-none">
               <div className={styles.prose}>
@@ -111,7 +113,7 @@ export default function BlogPost({
                   if (block.type === 'h2') {
                     const image = sectionImages[block.id];
                     return (
-                      <div key={i}>
+                      <Fragment key={i}>
                         {image && (
                           <figure className={styles.sectionFigure}>
                             <Image
@@ -132,7 +134,7 @@ export default function BlogPost({
                           </figure>
                         )}
                         <h2 id={block.id}>{block.text}</h2>
-                      </div>
+                      </Fragment>
                     );
                   }
                   if (block.type === 'h3') {
@@ -184,6 +186,16 @@ export default function BlogPost({
                       </div>
                     );
                   }
+                  if (block.type === 'embed') {
+                    const Embed = BLOG_EMBEDS[block.component];
+                    if (!Embed) return null;
+                    return (
+                      <div key={i} className={styles.embed}>
+                        <Embed />
+                        {block.caption && <p className={styles.embedCaption}>{block.caption}</p>}
+                      </div>
+                    );
+                  }
                   return null;
                 })}
               </div>
@@ -214,7 +226,7 @@ export default function BlogPost({
 
       <section>
         <SectionStage>
-          <div className="container">
+          <div className={styles.wide}>
             <div className={`${styles.ctaBox} reveal`}>
               <h2>{post.cta.title}</h2>
               <p>{post.cta.text}</p>
@@ -228,7 +240,7 @@ export default function BlogPost({
 
       <section>
         <SectionStage>
-          <div className="container">
+          <div className={styles.wide}>
             <div className={`${styles.header} reveal`}>
               <div className="section-badge">
                 <span className="section-badge-dot" />

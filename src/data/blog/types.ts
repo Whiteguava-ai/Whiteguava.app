@@ -1,10 +1,18 @@
+export type BlogEmbed =
+  | 'crmCostCalculator'
+  | 'crmRentVsOwn'
+  | 'crmFeatureMatrix'
+  | 'crmKanbanDemo'
+  | 'crmDifferentiators';
+
 export type BlogBlock =
   | { type: 'p'; text: string }
   | { type: 'h2'; text: string; id: string; imageQuery?: string; imageAlt?: string }
   | { type: 'h3'; text: string; id: string }
   | { type: 'list'; items: string[]; ordered?: boolean }
   | { type: 'table'; headers: string[]; rows: string[][] }
-  | { type: 'callout'; title: string; text: string };
+  | { type: 'callout'; title: string; text: string }
+  | { type: 'embed'; component: BlogEmbed; caption?: string };
 
 export type BlogFaq = { q: string; a: string };
 
@@ -31,9 +39,12 @@ export type BlogPost = {
   readingTimeMinutes: number;
   h1: string;
   subtitle: string;
-  /** Pexels search query used to fetch a contextual cover image at request time. */
-  coverQuery: string;
-  coverAlt: string;
+  /**
+   * Pexels search query used to fetch a contextual cover image at request time.
+   * Omit for posts that lead with an interactive embed instead of a photo.
+   */
+  coverQuery?: string;
+  coverAlt?: string;
   body: BlogBlock[];
   faqs: BlogFaq[];
   related: BlogRelated[];

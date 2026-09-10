@@ -1,0 +1,580 @@
+/* ============================================================
+   Shared chrome for the GuavaCRM blog widgets.
+   Light theme, --accent (#E63B2E) = GuavaCRM, grey = competitors.
+   ============================================================ */
+
+.widget {
+  --gap: 14px;
+  background: linear-gradient(180deg, #ffffff 0%, #fafafa 100%);
+  border: 1px solid rgba(0, 0, 0, 0.07);
+  border-radius: 26px;
+  padding: 26px 26px 28px;
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.9) inset,
+    0 18px 44px rgba(0, 0, 0, 0.07);
+  color: #1c1c1c;
+  overflow: hidden;
+}
+
+.widgetHead {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 8px 14px;
+  margin-bottom: 20px;
+}
+
+.kicker {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #e63b2e;
+}
+
+.wTitle {
+  font-size: clamp(18px, 2.4vw, 22px);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: #161616;
+  margin: 0;
+}
+
+.wNote {
+  font-size: 13px;
+  color: #777;
+  width: 100%;
+  margin: 2px 0 0;
+  line-height: 1.5;
+}
+
+/* ---------- controls ---------- */
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 20px 28px;
+  padding: 16px 18px;
+  background: #f4f4f4;
+  border-radius: 16px;
+  margin-bottom: 22px;
+}
+
+.control {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1 1 220px;
+}
+
+.controlLabel {
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #888;
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.controlLabel b {
+  color: #161616;
+  font-variant-numeric: tabular-nums;
+}
+
+.range {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 6px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #e63b2e var(--pct, 20%), #dcdcdc var(--pct, 20%));
+  outline: none;
+  cursor: pointer;
+}
+.range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #fff;
+  border: 2px solid #e63b2e;
+  box-shadow: 0 2px 8px rgba(230, 59, 46, 0.35);
+  cursor: pointer;
+}
+.range::-moz-range-thumb {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #fff;
+  border: 2px solid #e63b2e;
+  box-shadow: 0 2px 8px rgba(230, 59, 46, 0.35);
+  cursor: pointer;
+}
+
+.segmented {
+  display: inline-flex;
+  padding: 4px;
+  background: #e6e6e6;
+  border-radius: 12px;
+  gap: 4px;
+}
+.segBtn {
+  border: none;
+  background: transparent;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 700;
+  color: #666;
+  padding: 7px 14px;
+  border-radius: 9px;
+  cursor: pointer;
+  transition: background 0.18s ease, color 0.18s ease;
+}
+.segBtn[aria-pressed='true'] {
+  background: #fff;
+  color: #161616;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.12);
+}
+
+/* ---------- cost bars ---------- */
+.bars {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.barRow {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 6px;
+  min-width: 0;
+}
+.barLabel {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 10px;
+  font-size: 13.5px;
+}
+.barName {
+  font-weight: 700;
+  color: #333;
+}
+.barName.ours {
+  color: #e63b2e;
+}
+.barAmount {
+  font-weight: 800;
+  font-variant-numeric: tabular-nums;
+  color: #161616;
+  white-space: nowrap;
+}
+.barTrack {
+  height: 30px;
+  border-radius: 8px;
+  background: #f0f0f0;
+  overflow: hidden;
+}
+.barFill {
+  height: 100%;
+  border-radius: 8px;
+  background: linear-gradient(90deg, #c9c9c9, #b4b4b4);
+}
+.barFill.ours {
+  background: linear-gradient(90deg, #f15a4e, #c82822);
+}
+.barMult {
+  font-size: 11.5px;
+  font-weight: 700;
+  color: #999;
+  font-variant-numeric: tabular-nums;
+}
+
+.savings {
+  margin-top: 22px;
+  padding: 20px 22px;
+  border-radius: 18px;
+  background: linear-gradient(180deg, rgba(230, 59, 46, 0.08), rgba(230, 59, 46, 0.03));
+  border: 1px solid rgba(230, 59, 46, 0.2);
+  text-align: center;
+}
+.savingsNum {
+  font-size: clamp(30px, 6vw, 46px);
+  font-weight: 900;
+  letter-spacing: -0.03em;
+  color: #c82822;
+  line-height: 1.05;
+  font-variant-numeric: tabular-nums;
+  display: block;
+}
+.savingsCaption {
+  font-size: 13.5px;
+  color: #555;
+  margin-top: 6px;
+}
+
+/* ---------- rent vs own ticker ---------- */
+.ticker {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+.tickerCard {
+  padding: 22px 20px;
+  border-radius: 18px;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  background: #fff;
+}
+.tickerCard.rent {
+  background: #f6f6f6;
+}
+.tickerCard.own {
+  background: linear-gradient(180deg, rgba(230, 59, 46, 0.08), rgba(230, 59, 46, 0.03));
+  border-color: rgba(230, 59, 46, 0.22);
+}
+.tickerTag {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #999;
+}
+.tickerCard.own .tickerTag {
+  color: #c82822;
+}
+.tickerAmount {
+  font-size: clamp(26px, 5.5vw, 38px);
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  font-variant-numeric: tabular-nums;
+  color: #161616;
+  margin: 6px 0 2px;
+}
+.tickerCard.own .tickerAmount {
+  color: #c82822;
+}
+.tickerSub {
+  font-size: 12.5px;
+  color: #777;
+  line-height: 1.5;
+}
+.tickerFoot {
+  margin-top: 16px;
+  font-size: 12.5px;
+  color: #888;
+  text-align: center;
+  line-height: 1.55;
+}
+
+/* ---------- feature matrix ---------- */
+.matrixControls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 16px;
+  align-items: center;
+}
+.chip {
+  border: 1px solid #dcdcdc;
+  background: #fff;
+  font: inherit;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: #666;
+  padding: 6px 12px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+.chip[aria-pressed='true'] {
+  background: #161616;
+  border-color: #161616;
+  color: #fff;
+}
+.search {
+  flex: 1 1 180px;
+  min-width: 140px;
+  border: 1px solid #dcdcdc;
+  border-radius: 999px;
+  padding: 8px 14px;
+  font: inherit;
+  font-size: 13px;
+  color: #333;
+  background: #fff;
+}
+.search:focus {
+  outline: 2px solid rgba(230, 59, 46, 0.4);
+  outline-offset: 1px;
+}
+
+.matrixCard {
+  border: 1px solid #ececec;
+  border-radius: 16px;
+  overflow: hidden;
+}
+.matrixGroup {
+  background: #f4f4f4;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #888;
+  padding: 10px 16px;
+  border-top: 1px solid #ececec;
+}
+.matrixGroup:first-child {
+  border-top: none;
+}
+.mRow {
+  display: grid;
+  grid-template-columns: 1fr 84px;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  border: none;
+  background: #fff;
+  text-align: left;
+  font: inherit;
+  padding: 12px 16px;
+  border-top: 1px solid #f1f1f1;
+  cursor: pointer;
+}
+.mRow:hover {
+  background: #fbf5f4;
+}
+.mCap {
+  font-size: 14px;
+  color: #2a2a2a;
+  font-weight: 600;
+}
+.mOurs {
+  justify-self: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: #e63b2e;
+  color: #fff;
+  display: grid;
+  place-items: center;
+  font-size: 15px;
+  font-weight: 800;
+}
+.mDetail {
+  padding: 0 16px 14px;
+  background: #fff;
+  border-top: 1px solid #f7ecea;
+  font-size: 13px;
+  line-height: 1.6;
+  color: #555;
+}
+.mDetail .mElse {
+  display: inline-block;
+  margin-top: 10px;
+  font-size: 11.5px;
+  font-weight: 700;
+  color: #a15;
+  color: #b23b30;
+  background: #fbeae8;
+  border-radius: 999px;
+  padding: 3px 10px;
+}
+
+/* ---------- kanban demo ---------- */
+.board {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+}
+.col {
+  background: #f5f5f5;
+  border-radius: 14px;
+  padding: 10px;
+  min-height: 180px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.col.wonCol {
+  background: linear-gradient(180deg, rgba(230, 59, 46, 0.09), rgba(230, 59, 46, 0.03));
+  outline: 1px dashed rgba(230, 59, 46, 0.35);
+  outline-offset: -3px;
+}
+.colHead {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #888;
+  padding: 2px 4px 4px;
+}
+.colCount {
+  color: #bbb;
+}
+.deal {
+  background: #fff;
+  border: 1px solid #e6e6e6;
+  border-radius: 10px;
+  padding: 10px 11px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  cursor: grab;
+  touch-action: none;
+}
+.deal:active {
+  cursor: grabbing;
+}
+.dealCompany {
+  font-size: 13px;
+  font-weight: 700;
+  color: #222;
+}
+.dealValue {
+  font-size: 12px;
+  color: #e63b2e;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  margin-top: 2px;
+}
+.dealMove {
+  display: flex;
+  gap: 6px;
+  margin-top: 8px;
+}
+.dealMove button {
+  border: 1px solid #e0e0e0;
+  background: #fafafa;
+  border-radius: 7px;
+  font: inherit;
+  font-size: 11px;
+  font-weight: 700;
+  color: #666;
+  padding: 4px 8px;
+  cursor: pointer;
+}
+.dealMove button:disabled {
+  opacity: 0.35;
+  cursor: default;
+}
+.boardFoot {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 24px;
+  margin-top: 16px;
+  padding-top: 14px;
+  border-top: 1px solid #eee;
+  font-size: 13px;
+}
+.stat b {
+  font-size: 18px;
+  font-weight: 900;
+  color: #161616;
+  font-variant-numeric: tabular-nums;
+  display: block;
+}
+.stat span {
+  color: #888;
+  font-size: 11.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.stat.wonStat b {
+  color: #c82822;
+}
+
+/* ---------- differentiators ---------- */
+.diffGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 14px;
+}
+.diffCard {
+  background: #fff;
+  border: 1px solid #ececec;
+  border-radius: 18px;
+  padding: 20px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.diffCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.09);
+}
+.diffIcon {
+  width: 38px;
+  height: 38px;
+  border-radius: 11px;
+  background: linear-gradient(180deg, rgba(230, 59, 46, 0.14), rgba(230, 59, 46, 0.05));
+  color: #e63b2e;
+  display: grid;
+  place-items: center;
+  margin-bottom: 14px;
+}
+.diffTitle {
+  font-size: 15.5px;
+  font-weight: 800;
+  color: #161616;
+  letter-spacing: -0.01em;
+  margin: 0 0 6px;
+}
+.diffBody {
+  font-size: 13.5px;
+  line-height: 1.6;
+  color: #5f5f5f;
+  margin: 0;
+}
+.diffBody b {
+  color: #333;
+}
+
+/* ---------- responsive ---------- */
+@media (max-width: 720px) {
+  .widget {
+    padding: 20px 16px 22px;
+    border-radius: 22px;
+  }
+  .ticker {
+    grid-template-columns: 1fr;
+  }
+  .board {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .diffGrid {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 560px) {
+  .controls {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 14px;
+  }
+  .control {
+    flex: 1 1 auto;
+  }
+  .segmented {
+    align-self: flex-start;
+  }
+  .barLabel {
+    flex-wrap: wrap;
+    gap: 2px 8px;
+  }
+  .tickerAmount {
+    word-break: break-word;
+  }
+}
+@media (max-width: 460px) {
+  .board {
+    grid-template-columns: 1fr;
+  }
+  .mRow {
+    grid-template-columns: minmax(0, 1fr) 34px;
+    padding: 12px 12px;
+  }
+  .matrixGroup {
+    padding: 10px 12px;
+  }
+}
