@@ -25,6 +25,27 @@ function formatDate(iso: string) {
   });
 }
 
+/**
+ * Renders inline `[text](/path)` markdown links inside body prose so posts can
+ * carry contextual internal links. Plain text passes straight through.
+ */
+function RichText({ text }: { text: string }) {
+  const parts = text.split(/(\[[^\]]+\]\([^)]+\))/g);
+  return (
+    <>
+      {parts.map((part, i) => {
+        const m = /^\[([^\]]+)\]\(([^)]+)\)$/.exec(part);
+        if (!m) return <Fragment key={i}>{part}</Fragment>;
+        return (
+          <a key={i} href={m[2]}>
+            {m[1]}
+          </a>
+        );
+      })}
+    </>
+  );
+}
+
 export default function BlogPost({
   post,
   cover,
@@ -108,7 +129,11 @@ export default function BlogPost({
               <div className={styles.prose}>
                 {post.body.map((block, i) => {
                   if (block.type === 'p') {
-                    return <p key={i}>{block.text}</p>;
+                    return (
+                      <p key={i}>
+                        <RichText text={block.text} />
+                      </p>
+                    );
                   }
                   if (block.type === 'h2') {
                     const image = sectionImages[block.id];
@@ -149,7 +174,9 @@ export default function BlogPost({
                     return (
                       <ListTag key={i}>
                         {block.items.map((item) => (
-                          <li key={item}>{item}</li>
+                          <li key={item}>
+                            <RichText text={item} />
+                          </li>
                         ))}
                       </ListTag>
                     );

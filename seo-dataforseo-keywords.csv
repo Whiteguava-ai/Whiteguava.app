@@ -1,0 +1,132 @@
+group,keyword,sv,kd,cpc,comp,comp_idx
+BI / Analytics,power bi alternative,590,0,33.29,MEDIUM,42
+BI / Analytics,looker alternative,90,0,33.17,MEDIUM,44
+BI / Analytics,self hosted business intelligence,10,,,MEDIUM,43
+BI / Analytics,bi dashboards you buy once,0,,,,
+BI / Analytics,bi no viewer licence,0,,,,
+BI / Analytics,bi tool you own,0,,,,
+BI / Analytics,bi with unlimited viewers,0,,,,
+BI / Analytics,embedded analytics no per-view fee,0,,,,
+BI / Analytics,self-hosted dashboard tool,0,,,,
+BI / Analytics,tableau 5 year cost,0,,,,
+BI / Analytics,tableau alternative self-hosted,0,,,,
+CRM,self-hosted crm,170,40,25.6,MEDIUM,38
+CRM,zoho crm alternative,110,0,30.45,LOW,2
+CRM,one-time payment crm,10,,,,
+CRM,crm flat fee unlimited users,0,,,,
+CRM,crm no monthly fee,0,,,,
+CRM,crm total cost of ownership,0,,,,
+CRM,crm without per-user pricing,0,,,,
+CRM,crm you buy once,0,,,,
+CRM,crm you own,0,,,,
+CRM,open source crm you own,0,,,,
+CRM,own your crm data,0,,,,
+CRM,self hosted crm with ai,0,,,,
+ERP,odoo alternative,210,0,31.89,LOW,28
+ERP,self-hosted erp,20,,31.4,MEDIUM,41
+ERP,erp total cost of ownership,10,0,,LOW,0
+ERP,sap business one alternative,10,19,,LOW,0
+ERP,cheapest erp alternative to netsuite,0,,,,
+ERP,dynamics 365 business central alternative,0,,,,
+ERP,erp no per user fee,0,,,,
+ERP,erp on your own server,0,,,,
+ERP,erp without per-user pricing,0,,,,
+ERP,erp you buy once,0,,,,
+ERP,netsuite 5 year cost,0,,,,
+ERP,netsuite alternative self-hosted,0,,,,
+ERP,one-time payment erp,0,,,,
+ERP,own your erp,0,,,,
+ERP,self-hosted erp you own,0,,,,
+HR,bamboohr alternative,90,0,338.47,LOW,19
+HR,self-hosted payroll software,10,,,LOW,33
+HR,flat fee hr software,0,,,,
+HR,hr software no per employee fee,0,,,,
+HR,hr software one-time payment,0,,,,
+HR,hr software unlimited employees,0,,,,
+HR,hr software without per-employee pricing,0,,,,
+HR,hr software you own,0,,,,
+HR,hr system you buy once,0,,,,
+HR,hrms total cost of ownership,0,,,,
+HR,own your employee data,0,,,,
+HR,self-hosted hrms,0,,,,
+HR,workday alternative small business,0,,,,
+Helpdesk,freshdesk alternative,880,0,82.11,LOW,17
+Helpdesk,intercom alternative,90,0,49.36,MEDIUM,38
+Helpdesk,self-hosted ticketing system,90,24,25.92,MEDIUM,52
+Helpdesk,self-hosted helpdesk,30,15,43.2,LOW,27
+Helpdesk,zendesk alternative self-hosted,10,48,,,
+Helpdesk,helpdesk flat fee,0,,,,
+Helpdesk,helpdesk no per agent fee,0,,,,
+Helpdesk,helpdesk with ai included,0,,,,
+Helpdesk,helpdesk without per agent pricing,0,,,,
+Helpdesk,helpdesk you own,0,,,,
+Helpdesk,self hosted helpdesk with ai,0,,,,
+Helpdesk,zendesk too expensive,0,,,,
+LMS,self-hosted lms,110,10,10.02,MEDIUM,50
+LMS,talentlms alternative,30,0,55.89,MEDIUM,49
+LMS,corporate lms no per user cost,0,,,,
+LMS,docebo alternative self-hosted,0,,,,
+LMS,lms flat fee unlimited users,0,,,,
+LMS,lms unlimited learners,0,,,,
+LMS,lms without per-learner pricing,0,,,,
+LMS,lms you buy once,0,,,,
+LMS,one-time payment lms,0,,,,
+LMS,own your course platform,0,,,,
+LMS,self hosted lms you own,0,,,,
+LMS,sell courses no transaction fee,0,,,,
+Lending,loan servicing software,390,8,62.37,MEDIUM,46
+Lending,lending software total cost of ownership,0,,,,
+Lending,loan management software one-time cost,0,,,,
+Lending,loan management software you own,0,,,,
+Lending,loan software no per loan fee,0,,,,
+Lending,loanpro alternative,0,,,,
+Lending,nbfc loan software india,0,,,,
+Lending,own your loan book data,0,,,,
+Lending,self-hosted lending platform,0,,,,
+Lending,self-hosted loan origination software,0,,,,
+Lending,turnkey lender alternative,0,,,,
+Low-Code / Platform,budibase alternative,40,0,,MEDIUM,34
+Low-Code / Platform,outsystems alternative,30,0,12.15,MEDIUM,37
+Low-Code / Platform,mendix alternative,10,,47.26,MEDIUM,51
+Low-Code / Platform,self-hosted low-code platform,10,,,LOW,31
+Low-Code / Platform,internal tools platform,0,,,,
+Low-Code / Platform,low-code platform one-time cost,0,,,,
+Low-Code / Platform,low-code platform you own,0,,,,
+Low-Code / Platform,low-code without per-user pricing,0,,,,
+Low-Code / Platform,own your app platform,0,,,,
+Low-Code / Platform,retool alternative self-hosted,0,,,,
+Low-Code / Platform,self-hosted internal tools builder,0,,,,
+Other,self-hosted bi,10,,,MEDIUM,43
+Other,salesforce alternative self-hosted,0,,,,
+Pillar / Category,one-time payment software,10,,47.29,MEDIUM,44
+Pillar / Category,self-hosted business software,10,,16.94,MEDIUM,41
+Pillar / Category,business software without per-user pricing,0,,,,
+Pillar / Category,buy software once,0,,,,
+Pillar / Category,own your business software,0,,,,
+Pillar / Category,own your software,0,,,,
+Pillar / Category,saas alternative you own,0,,,,
+Pillar / Category,self hosted saas alternatives,0,,,,
+Pillar / Category,software you own vs rent,0,,,,
+Pillar / Category,stop renting saas,0,,,,
+Project Mgmt,monday.com alternative,480,0,34.61,MEDIUM,37
+Project Mgmt,self-hosted project management,140,62,5.16,MEDIUM,36
+Project Mgmt,basecamp alternative,40,0,30.36,LOW,27
+Project Mgmt,asana alternative self-hosted,10,,,,
+Project Mgmt,self hosted asana alternative,10,,,MEDIUM,48
+Project Mgmt,own your project data,0,,,,
+Project Mgmt,project management tool you own,0,,,,
+Project Mgmt,project management without per-seat pricing,0,,,,
+Project Mgmt,project management you buy once,0,,,,
+Project Mgmt,project tool no per user cost,0,,,,
+Project Mgmt,project tool unlimited users flat fee,0,,,,
+Website Builder,framer alternative,140,0,9.29,MEDIUM,46
+Website Builder,self-hosted website builder,70,58,15.95,LOW,24
+Website Builder,wix studio alternative,10,,6.42,HIGH,82
+Website Builder,cms you own,0,,,,
+Website Builder,export your website code,0,,,,
+Website Builder,own your website builder,0,,,,
+Website Builder,self hosted webflow alternative,0,,,,
+Website Builder,webflow alternative self-hosted,0,,,,
+Website Builder,website builder no per-site plan,0,,,,
+Website Builder,website builder unlimited sites,0,,,,
+Website Builder,website builder you own,0,,,,

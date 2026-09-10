@@ -7,7 +7,10 @@ export function postMetadata(post: BlogPost): Metadata {
   const ogTitle = `${post.metaTitle} | ${SITE_NAME}`;
 
   return {
-    title: post.metaTitle,
+    // `absolute` opts out of the "%s | WhiteGuava" template — the post
+    // metaTitles are keyword-led and already brand-inclusive (GuavaCRM, …),
+    // so the extra suffix would only push the target term past the SERP cut.
+    title: { absolute: post.metaTitle },
     description: post.metaDescription,
     alternates: {
       canonical: post.path,

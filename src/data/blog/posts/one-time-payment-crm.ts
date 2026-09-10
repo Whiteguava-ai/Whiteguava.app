@@ -5,19 +5,20 @@ export const oneTimePaymentCrm: BlogPost = {
   slug: 'one-time-payment-crm',
   path: '/blog/one-time-payment-crm',
   title: 'One-Time-Payment CRM: Own GuavaCRM Instead of Renting Salesforce or Zoho',
-  metaTitle: 'One-Time-Payment CRM You Own: GuavaCRM vs Salesforce',
+  metaTitle: 'Self-Hosted CRM You Own: GuavaCRM (Zoho & Salesforce Alternative)',
   metaDescription:
-    'GuavaCRM is a CRM you buy once and own — no per-user pricing, no annual renewal, AI built in. See the 5-year cost next to Salesforce and Zoho, live.',
+    'A self-hosted CRM you own instead of renting Salesforce or Zoho. GuavaCRM runs on your own cloud, bought once, AI built in. Run the 5-year cost comparison live.',
   excerpt:
     'A 10-person team pays Salesforce Enterprise $21,000 a year — forever. GuavaCRM is a one-time setup, then about $28 a month for the server, with the same leads, deals, pipeline, email and AI. Here is the full cost and feature comparison, with calculators you can run yourself.',
   category: 'CRM',
   tags: [
-    'one-time payment CRM',
-    'CRM you own',
     'self-hosted CRM',
-    'Salesforce alternative',
     'Zoho CRM alternative',
+    'Salesforce alternative self-hosted',
+    'CRM you own',
+    'one-time payment CRM',
     'CRM without per-user pricing',
+    'self hosted CRM with AI',
     'CRM total cost of ownership',
   ],
   publishedAt: '2026-08-31',
@@ -140,6 +141,10 @@ export const oneTimePaymentCrm: BlogPost = {
       text: 'This is the real pipeline behaviour in miniature. Drag a deal between stages, or use the arrows, and watch the pipeline and won totals update. The production CRM adds filters, saved views, per-deal activity, email and the AI buttons — but the core interaction is exactly this.',
     },
     { type: 'embed', component: 'crmKanbanDemo' },
+    {
+      type: 'p',
+      text: 'GuavaCRM is one of ten applications in the [Guava Product Suite](/guava) — the same buy-once, own-it model applied to [operations and accounting](/blog/one-time-payment-erp), [customer support](/blog/one-time-payment-helpdesk) and [project work](/blog/one-time-payment-project-management).',
+    },
     {
       type: 'h2',
       text: 'Who GuavaCRM is built for',

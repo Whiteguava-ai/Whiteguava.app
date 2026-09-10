@@ -12,7 +12,10 @@ const description =
 export const metadata: Metadata = {
   title,
   description,
-  alternates: { canonical: '/blog' },
+  alternates: {
+    canonical: '/blog',
+    types: { 'application/rss+xml': `${SITE_URL}/blog/feed.xml` },
+  },
   robots: { index: true, follow: true },
   openGraph: {
     title: `${title} | ${SITE_NAME}`,

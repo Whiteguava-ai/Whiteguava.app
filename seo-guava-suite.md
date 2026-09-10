@@ -7,13 +7,19 @@ _Last updated: 2026-09-10 · Site: https://www.thewhiteguava.in · Stack: Next.j
 | Item | State |
 |---|---|
 | 10 posts live in `blogPostList` → routed, prerendered, in `sitemap.xml` | ✅ done |
-| `metaTitle` trimmed to ≤ 60 chars, keyword-front-loaded ("… You Own: Guava… vs …") | ✅ done |
+| DataForSEO keyword pull (vol + KD, 131 kw) → `seo-dataforseo-keywords.md` / `.csv` | ✅ done |
+| `metaTitle` + `tags` on all 10 posts re-targeted to the DataForSEO volume terms (`self-hosted <cat>` + top `<incumbent> alternative`) | ✅ done |
 | `SoftwareApplication` + `Offer` JSON-LD node per product post (`productSchema` field → `softwareApplicationSchema()`) | ✅ done |
 | `BlogPosting` + `BreadcrumbList` + `FAQPage` JSON-LD | ✅ already emitted by `blogPostGraph()` |
 | Internal links: each post links 3–4 siblings + service pages; footer has a Guava Product Suite nav on every page; `/services/ai-software-development#product-suite` grid; homepage `#services` card | ✅ done |
 | `sitemap.ts`: product posts `priority 0.8`, `changeFrequency weekly`; blog index + services `lastmod` bumped | ✅ done |
 | `public/llms.txt` — curated suite + services index for AI answer engines | ✅ done |
 | `/guava` pillar page — hub for all 10 spokes, targets `own your business software` / `stop renting SaaS`; `CollectionPage` + `ItemList` (10 `SoftwareApplication`) + `FAQPage` schema; in nav ("Products"), footer, homepage, sitemap (priority 0.9) | ✅ done |
+| `metaDescription` on all 10 posts rewritten keyword-first (`self-hosted <cat> / <incumbent> alternative you own …`) | ✅ done |
+| Per-post dynamic OG + Twitter image (`blog/[slug]/opengraph-image.tsx`) — title + category + "One-time setup · You own it"; `articleSchema.image` points to it | ✅ done |
+| In-body contextual internal links — each post links the `/guava` pillar + 3 workflow-adjacent siblings mid-article (new `[text](/path)` markdown support in `BlogPost.tsx`) | ✅ done |
+| RSS feed at `/blog/feed.xml` (force-static), linked from `/blog` `<head>` | ✅ done |
+| Blog `<title>` opts out of the `%s \| WhiteGuava` template (keeps the keyword in the SERP-visible span) | ✅ done |
 | No "Frappe" / "ERPNext" anywhere (brand rule) | ✅ verified |
 
 ## 1. What still needs a LIVE deploy (cannot be checked locally)
@@ -28,100 +34,52 @@ Run these once the 9 new posts are deployed to `thewhiteguava.in`:
 6. **`npm run indexnow`** (from `agenai-clone/`) — submits to Bing/IndexNow; only works against the deployed domain. Confirm `scripts/submit-indexnow.mjs` reads from the sitemap/`blogPostList` (it should pick the new URLs up automatically).
 7. **Rich Results Test** (search.google.com/test/rich-results) on one product URL — confirm `SoftwareApplication`, `BreadcrumbList`, `BlogPosting` parse. (`FAQPage` no longer yields a SERP feature since May 2026 — keep it for entity/LLM context, don't expect rich results.)
 
-## 2. What needs a paid / authed connector (not installed in this session)
+## 2. Connector data
 
-- **Keyword volume + difficulty**: install the DataForSEO or Ahrefs extension, or authorize Keyword Tool Pro, then run `/seo dataforseo keywords` / `/seo ahrefs` against the keyword lists in §4 to get real MSV/KD and re-rank targets.
-- **Backlink profile / competitor gap**: `/seo backlinks` (free tier: Moz + Bing + Common Crawl) once deployed.
-- **AI visibility tracking**: `/seo seranking` or `/seo profound` to track whether ChatGPT/Perplexity/AI Overviews cite these pages over time.
+- **Keyword volume + difficulty**: ✅ pulled via DataForSEO REST API (2026-09-10) — see `seo-dataforseo-keywords.md` / `.csv`. §3–§4 below are rebuilt on that data. Re-pull quarterly.
+- **Backlink profile / competitor gap**: `/seo backlinks` (free tier: Moz + Bing + Common Crawl) once deployed — or DataForSEO `backlinks/*` endpoints with the same credentials.
+- **AI visibility tracking**: DataForSEO `ai_optimization/llm_mentions` (same key) to track whether ChatGPT/Perplexity/AI Overviews cite these pages over time.
 - **GSC performance data**: `/seo google gsc` after ~2–4 weeks of impressions.
 
-## 3. Keyword strategy — the pattern
+## 3. Keyword strategy — what the DataForSEO data changed
 
-Every category's commercial SERP is dominated by **listicles** ("N best X alternatives", "N open-source X"). WhiteGuava is not going to outrank G2/Capterra/vendor blogs for the head term `X software`. The winnable space is the **problem-aware long tail**, where intent is "I want to stop renting":
+The "you own / one-time payment / no per-user / stop renting" phrases we originally led with have **~0 exact US search volume**. They are the *angle*, not the *target* — keep them in body copy, H2s and FAQs for semantic + AI-answer coverage, but do not put them in the title tag.
 
-- `<category> you own` · `own your <category>`
-- `one-time payment <category>` · `<category> one time cost` · `lifetime <category>`
-- `self-hosted <category>` · `<category> on your own server` · `on-premise <category>`
-- `<category> without per-user pricing` · `flat fee <category>` · `<category> no per seat`
-- `<incumbent> alternative self-hosted` · `stop paying <incumbent>` · `<incumbent> too expensive`
-- `<category> total cost of ownership` · `<incumbent> 5 year cost`
+**Where the volume actually is** (US, avg monthly searches / DataForSEO keyword difficulty 0–100):
 
-Secondary: `<category> AI` where AI is bundled not upsold.
-The interactive cost calculator + comparison table are the ranking asset here — they answer the TCO query directly and are highly citable by AI engines.
+| Term type | Examples with real volume |
+|---|---|
+| `<incumbent> alternative` | freshdesk alternative **880 / KD 0** · power bi alternative **590 / KD 0** · monday.com alternative **480 / KD 0** · odoo alternative **210 / KD 0** · framer alternative **140 / KD 0** · zoho crm alternative **110 / KD 0** · looker / intercom / bamboohr alternative **90 / KD 0** · basecamp / budibase alternative **40 / KD 0** · outsystems / talentlms alternative **30 / KD 0** |
+| `self-hosted <category>` | self-hosted crm **170 / KD 40** · self-hosted project management **140 / KD 62** · self-hosted lms **110 / KD 10** · self-hosted ticketing system **90 / KD 24** · self-hosted website builder **70 / KD 58** · self-hosted helpdesk **30 / KD 15** |
+| category / TCO | **loan servicing software 390 / KD 8** (best pure opportunity) · one-time payment software 10 · self-hosted business software 10 · self-hosted payroll software 10 |
+
+The `alternative` terms show KD 0 because few pages are *exact-match optimized* for them — but the live SERPs are listicle-heavy (G2, Capterra, vendor "alternatives" blogs), so real difficulty is moderate. A focused comparison page **with the live cost calculator + table** is a genuinely different result type and can rank, especially for the mid-volume ones.
+
+**So each post now targets:** `self-hosted <category>` + the single highest-volume `<incumbent> alternative`, in the title, H1-adjacent copy, and one H2. "you own / one-time payment" stays as the differentiator throughout.
 
 ## 4. Per-post keyword map
 
 > Primary = the term the page should be _the_ answer for. Secondary = supporting H2/body. Questions = FAQ / PAA targets (already partly covered by each post's `faqs`).
 
-### GuavaCRM — `/blog/one-time-payment-crm`
-- **Primary:** one-time payment CRM · CRM you own
-- **Secondary:** self-hosted CRM · CRM without per-user pricing · Salesforce alternative self-hosted · Zoho CRM alternative · CRM total cost of ownership
-- **Long-tail:** CRM you buy once · CRM no monthly fee · own your CRM data · CRM flat fee unlimited users
-- **Questions:** Is there a CRM you pay once for? · How much does Salesforce cost over 5 years? · Can I self-host a CRM with AI?
-- **Competing pages:** Grow CRM, Perfex CRM, Sheetify, BottleCRM, "20 best open-source CRM" listicles.
+Full per-keyword volume/KD/CPC tables are in **`seo-dataforseo-keywords.md`**. Summary per post (primary = title target; the "angle" terms carry ~0 volume and live in body/H2/FAQ):
 
-### GuavaERP — `/blog/one-time-payment-erp`
-- **Primary:** self-hosted ERP you own · one-time payment ERP
-- **Secondary:** NetSuite alternative self-hosted · SAP Business One alternative · Dynamics 365 Business Central alternative · Odoo alternative · ERP without per-user pricing · ERP total cost of ownership
-- **Long-tail:** ERP you buy once · own your ERP · ERP on your own server · NetSuite 5 year cost · ERP no per user fee
-- **Questions:** What is the cheapest ERP alternative to NetSuite? · Can I own my ERP instead of subscribing? · How much does NetSuite cost for 10 users?
-- **Competing pages:** ERPNext, Odoo Community, ERPClaw, WP ERP, "best NetSuite alternatives" listicles.
+| Post | Title target (primary) | Supporting (H2 / body) | Angle terms (body / FAQ only) | Deployed `metaTitle` |
+|---|---|---|---|---|
+| **GuavaCRM** `/blog/one-time-payment-crm` | self-hosted crm (170/KD40) · zoho crm alternative (110/KD0) | salesforce alternative self-hosted · self hosted crm with ai | crm you own · one-time payment crm · crm without per-user pricing · crm total cost of ownership | `Self-Hosted CRM You Own: GuavaCRM (Zoho & Salesforce Alternative)` |
+| **GuavaERP** `/blog/one-time-payment-erp` | odoo alternative (210/KD0) · self-hosted erp (20) | sap business one alternative (10/KD19) · dynamics 365 business central alternative · netsuite alternative self-hosted | erp you own · one-time payment erp · erp total cost of ownership (10) | `Self-Hosted ERP & Odoo Alternative You Own: GuavaERP` |
+| **GuavaHR** `/blog/one-time-payment-hr-software` | bamboohr alternative (90/KD0) · self-hosted hr software | self-hosted payroll software (10) · flat fee hr software · workday alternative small business | hr software you own · hr software without per-employee pricing | `Self-Hosted HR Software & BambooHR Alternative You Own: GuavaHR` |
+| **GuavaLearn** `/blog/one-time-payment-lms` | self-hosted lms (110/KD10) · talentlms alternative (30/KD0) | docebo alternative self-hosted · lms unlimited learners | lms you own · one-time payment lms · lms without per-learner pricing · corporate lms no per user cost | `Self-Hosted LMS You Own: GuavaLearn (Docebo & TalentLMS Alternative)` |
+| **GuavaInsights** `/blog/one-time-payment-bi-dashboards` | power bi alternative (590/KD0) · self hosted business intelligence (10) | tableau alternative self-hosted · looker alternative (90/KD0) | bi tool you own · self-hosted dashboard tool · bi without per-seat pricing · one-time payment bi | `Self-Hosted Power BI Alternative You Own: GuavaInsights` |
+| **GuavaDesk** `/blog/one-time-payment-helpdesk` | freshdesk alternative (880/KD0) · self-hosted helpdesk (30/KD15) | self-hosted ticketing system (90/KD24) · zendesk alternative self-hosted (10/KD48) · intercom alternative (90/KD0) | helpdesk you own · helpdesk without per-agent pricing · one-time payment helpdesk | `Self-Hosted Helpdesk & Freshdesk Alternative You Own: GuavaDesk` |
+| **GuavaBuilder** `/blog/one-time-payment-website-builder` | framer alternative (140/KD0) · self-hosted website builder (70/KD58) | webflow alternative self-hosted · wix studio alternative (10) | website builder you own · website builder unlimited sites · export your website code · one-time payment website builder | `Self-Hosted Website Builder & Framer Alternative You Own: GuavaBuilder` |
+| **GuavaLend** `/blog/one-time-payment-loan-management` | **loan servicing software (390/KD8)** — best pure opportunity in the set | self-hosted loan management software · loan origination software self-hosted · turnkey lender / loanpro alternative | loan management software you own · one-time payment loan software · nbfc loan software | `Loan Servicing Software You Own: GuavaLend (Self-Hosted)` |
+| **GuavaPlan** `/blog/one-time-payment-project-management` | monday.com alternative (480/KD0) · self-hosted project management (140/KD62) | asana alternative self-hosted (10) · basecamp alternative (40/KD0) | project management tool you own · project management without per-seat pricing · own your project data | `Self-Hosted Project Management & monday.com Alternative: GuavaPlan` |
+| **GuavaFramework** `/blog/one-time-payment-app-platform` | self-hosted low-code platform (10) · retool alternative self-hosted · budibase alternative (40/KD0) | outsystems alternative (30/KD0) · mendix alternative (10) · internal tools platform | low-code platform you own · one-time payment low-code platform | `Self-Hosted Low-Code Platform You Own: GuavaFramework (Retool Alternative)` |
+| **Pillar** `/guava` | self-hosted business software (10) · one-time payment software (10) | own your business software · stop renting saas · saas alternative you own · buy software once (all ~0 vol — brand/AI-answer play) | — | (page `<title>`: _Guava Product Suite — Business Software You Own_) |
 
-### GuavaHR — `/blog/one-time-payment-hr-software`
-- **Primary:** HR software you own · HR software without per-employee pricing
-- **Secondary:** self-hosted HRMS · BambooHR alternative · Workday alternative small business · flat fee HR software · HRMS total cost of ownership
-- **Long-tail:** HR software one-time payment · HR system you buy once · self-hosted payroll software · HR software no per employee fee · own your employee data
-- **Questions:** Is there flat-fee HR software for unlimited employees? · What is the best BambooHR alternative without per-employee pricing? · Can HR software be self-hosted?
-- **Competing pages:** IceHRM, HR Cloud, HarmonyHR, Gusto's BambooHR-competitors guide, alternativeto lists.
+**Priority order by opportunity** (volume × achievability): 1) GuavaDesk (freshdesk alternative 880), 2) GuavaInsights (power bi alternative 590), 3) GuavaPlan (monday.com alternative 480), 4) GuavaLend (loan servicing software 390/KD8), 5) GuavaERP (odoo alternative 210), 6) GuavaCRM (self-hosted crm 170), 7) GuavaLearn (self-hosted lms 110), 8) GuavaHR (bamboohr alternative 90), 9) GuavaBuilder (framer alternative 140 but KD58 on self-hosted), 10) GuavaFramework (thin volume — leans on the AI-answer / brand play).
 
-### GuavaLearn — `/blog/one-time-payment-lms`
-- **Primary:** self-hosted LMS you own · LMS without per-learner pricing
-- **Secondary:** Docebo alternative self-hosted · TalentLMS alternative · LMS unlimited learners · one-time payment LMS · sell courses no transaction fee
-- **Long-tail:** LMS you buy once · own your course platform · LMS on your own server · LMS flat fee unlimited users · corporate LMS no per user cost
-- **Questions:** Is there an LMS with unlimited learners for a flat fee? · What is a self-hosted Docebo alternative? · Can I sell courses without a per-sale fee?
-- **Competing pages:** Moodle, Forma LMS, Chamilo, OpenOLAT, TalentLMS/Docebo "alternatives" blogs.
-
-### GuavaInsights — `/blog/one-time-payment-bi-dashboards`
-- **Primary:** BI tool you own · self-hosted BI without per-seat pricing
-- **Secondary:** Tableau alternative self-hosted · Power BI alternative · Looker alternative · BI with unlimited viewers · embedded analytics no per-view fee
-- **Long-tail:** BI dashboards you buy once · own your analytics platform · self-hosted dashboard tool · BI no viewer licence · Tableau 5 year cost
-- **Questions:** Is there a BI tool that doesn't charge per viewer? · What is a self-hosted Tableau alternative? · How much does Tableau cost per year?
-- **Competing pages:** Metabase, Apache Superset, Redash, "Tableau alternatives" listicles.
-
-### GuavaDesk — `/blog/one-time-payment-helpdesk`
-- **Primary:** helpdesk you own · self-hosted helpdesk without per-agent pricing
-- **Secondary:** Zendesk alternative self-hosted · Freshdesk alternative · Intercom alternative · helpdesk with AI included · helpdesk flat fee
-- **Long-tail:** helpdesk you buy once · own your support data · self-hosted ticketing system · helpdesk no per agent fee · Zendesk too expensive
-- **Questions:** Is there a helpdesk without per-agent pricing? · What is a self-hosted Zendesk alternative with AI? · How much does Zendesk cost with the AI add-on?
-- **Competing pages:** FreeScout, osTicket, Zammad, UVdesk, "Zendesk alternatives" listicles.
-
-### GuavaBuilder — `/blog/one-time-payment-website-builder`
-- **Primary:** website builder you own · self-hosted website builder
-- **Secondary:** Webflow alternative self-hosted · Wix Studio alternative · Framer alternative · website builder unlimited sites · export your website code
-- **Long-tail:** visual website builder you host yourself · own your website builder · website builder no per-site plan · Webflow without seat pricing · CMS you own
-- **Questions:** Is there a self-hosted Webflow alternative? · Can I own the code from a visual website builder? · Website builder with unlimited sites flat fee?
-- **Competing pages:** Webstudio, Silex, WordPress+block editors, "Webflow alternatives" listicles.
-
-### GuavaLend — `/blog/one-time-payment-loan-management`
-- **Primary:** loan management software you own · loan servicing software no per-loan fee
-- **Secondary:** TurnKey Lender alternative · LoanPro alternative · self-hosted loan origination software · lending software total cost of ownership · NBFC loan software India
-- **Long-tail:** loan management software one-time cost · own your loan book data · self-hosted lending platform · loan software no per active loan charge
-- **Questions:** Is there loan management software without a per-loan fee? · What is a self-hosted TurnKey Lender alternative? · Loan software for an NBFC that you own?
-- **Competing pages:** Mifos/Fineract, "best loan management software" listicles, LoanPro's own alternatives blog.
-
-### GuavaPlan — `/blog/one-time-payment-project-management`
-- **Primary:** project management tool you own · project management without per-seat pricing
-- **Secondary:** Asana alternative self-hosted · monday.com alternative · Basecamp alternative · project tool unlimited users flat fee · self-hosted project management
-- **Long-tail:** project management you buy once · own your project data · project tool no per user cost · Asana too expensive for large team
-- **Questions:** Is there a project management tool without per-seat pricing? · What is a self-hosted Asana alternative? · Project tool with unlimited users and a flat fee?
-- **Competing pages:** OpenProject, Plane, Vikunja, Leantime, Taiga, "self-hosted project management" listicles.
-
-### GuavaFramework — `/blog/one-time-payment-app-platform`
-- **Primary:** low-code platform you own · self-hosted low-code platform
-- **Secondary:** OutSystems alternative · Mendix alternative · Retool alternative self-hosted · low-code without per-user pricing · internal tools platform you host
-- **Long-tail:** low-code platform one-time cost · own your app platform · self-hosted internal tools builder · low-code no per builder fee · app platform unlimited users
-- **Questions:** Is there a self-hosted Retool alternative? · Low-code platform without per-user pricing? · Can I own the platform my internal apps run on?
-- **Competing pages:** Budibase, Appsmith, ToolJet, NocoBase, "Retool alternatives self-hosted" listicles.
+**Applied in code:** `metaTitle` + `tags` on all 10 posts rewritten to lead with the volume terms above (was leading with the ~0-volume "you own" phrasing).
 
 ## 5. Internal-link matrix (target state)
 
@@ -162,12 +120,19 @@ https://www.thewhiteguava.in/services/ai-software-development       (updated)
 - [x] `llms.txt` entry
 - [x] **"In short"** summary block immediately after the intro on all 10 posts (5-year rented cost vs one-time + server) — high value for AI Overviews + featured snippets
 - [x] `robots.ts` explicitly allows GPTBot, OAI-SearchBot, ChatGPT-User, ClaudeBot, Claude-Web, PerplexityBot, Google-Extended
+- [x] Per-post OG/Twitter image (title + category) for AI-engine + social preview
+- [x] RSS feed at `/blog/feed.xml` for aggregators / Discover ingestion
+- [x] In-body contextual internal links (pillar + siblings) so crawlers/LLMs see the topic cluster
 
-## 8. Suggested next actions, in order
+## 8. What's left — and it all needs the live site
 
-1. Deploy the 9 new posts + the `/guava` pillar.
-2. Submit §6 URLs (now including `/guava`) to GSC + run `npm run indexnow`.
-4. Run `/seo page` + `/seo geo` per post, `/seo audit` site-wide.
-5. Install DataForSEO or Ahrefs → validate the §4 keyword lists with real volume/KD, drop/keep targets.
-6. Lazy-load below-the-fold embeds if INP regresses.
-7. After 3–4 weeks: `/seo google gsc` to see which queries actually landed, then iterate H2s/FAQs toward the winners.
+The on-page / schema / internal-linking / GEO / feed work is **done in code**. Everything remaining requires the site deployed:
+
+1. **Deploy** the 9 new posts + `/guava`.
+2. **Index**: submit §6 URLs to GSC (or resubmit `sitemap.xml`); `npm run indexnow` for Bing.
+3. **Verify**: Rich Results Test on one post URL (SoftwareApplication + BlogPosting + Breadcrumb); check the per-post OG image renders in a social debugger.
+4. **Technical**: `/seo technical <url>`, `/seo page <url>` per post, `/seo audit` site-wide.
+5. **Performance**: PageSpeed / CrUX — the heavy posts (ERP, Lend) have 7 client widgets; if **INP** regresses, wrap the below-the-fold embeds (`productArchitecture`, `productModuleExplorer`, `productLifecycle`) in `next/dynamic`.
+6. **GEO**: `/seo geo <url>` per post; DataForSEO `ai_optimization/llm_mentions` (same key) for a citation baseline.
+7. **E-E-A-T** (optional, needs your input): add a named author with a bio to the posts + `articleSchema.author` as `Person` — currently attributed to the Organization.
+8. **After 3–4 weeks**: `/seo google gsc` → which queries actually landed → iterate H2s/FAQs toward the winners. Re-pull DataForSEO volumes quarterly.

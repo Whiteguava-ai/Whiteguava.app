@@ -214,13 +214,6 @@ export function servicePageGraph(service: ServiceContent) {
   };
 }
 
-const DEFAULT_ARTICLE_IMAGE = {
-  '@type': 'ImageObject',
-  url: `${SITE_URL}/opengraph-image`,
-  width: 1200,
-  height: 630,
-};
-
 export function articleSchema(
   post: BlogPost,
   cover?: { url: string; width: number; height: number } | null,
@@ -233,7 +226,12 @@ export function articleSchema(
     url: `${SITE_URL}${post.path}`,
     image: cover
       ? { '@type': 'ImageObject', url: cover.url, width: cover.width, height: cover.height }
-      : DEFAULT_ARTICLE_IMAGE,
+      : {
+          '@type': 'ImageObject',
+          url: `${SITE_URL}${post.path}/opengraph-image`,
+          width: 1200,
+          height: 630,
+        },
     datePublished: post.publishedAt,
     dateModified: post.updatedAt,
     inLanguage: 'en-IN',
