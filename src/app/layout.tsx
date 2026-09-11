@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from 'next';
 import Script from 'next/script';
+import CommandBar from '@/components/CommandBar';
 import JsonLd from '@/components/JsonLd';
 import MotionProvider from '@/components/MotionProvider';
 import RevealObserver from '@/components/RevealObserver';
@@ -80,6 +81,7 @@ export default function RootLayout({
         <MotionProvider>
           <CinematicRoot />
           {children}
+          <CommandBar />
         </MotionProvider>
       </body>
     </html>

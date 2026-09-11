@@ -1,6 +1,7 @@
 'use client';
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
+import { Search } from 'lucide-react';
 import { m, useMotionValueEvent, useReducedMotion, useScroll } from 'framer-motion';
 import { NAV_LINKS } from '@/lib/site';
 import styles from './Navbar.module.css';
@@ -74,6 +75,16 @@ export default function Navbar() {
             <li key={l.href}><a href={l.href}>{l.label}</a></li>
           ))}
         </ul>
+        <button
+          type="button"
+          className={styles.askBtn}
+          onClick={() => window.dispatchEvent(new Event('ask-whiteguava:open'))}
+          aria-label="Ask WhiteGuava — search the site with AI"
+        >
+          <Search width={15} height={15} strokeWidth={2.25} aria-hidden="true" />
+          <span className={styles.askBtnLabel}>Ask WhiteGuava</span>
+          <kbd className={styles.askBtnKbd} aria-hidden="true">⌘K</kbd>
+        </button>
         <a href="#contact" className={styles.cta} onClick={close}><span>Start a Project</span></a>
         <button
           type="button"

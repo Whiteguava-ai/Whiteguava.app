@@ -1,3 +1,4 @@
+import ProjectScoper from '@/components/ProjectScoper';
 import SectionStage from '@/components/visual/SectionStage';
 import { GUAVA_PRODUCTS } from '@/data/guava';
 import styles from './Guava.module.css';
@@ -53,6 +54,7 @@ export default function GuavaShowcase() {
               <a href="/guava" className="btn-dark">
                 <span>Explore the full Guava Product Suite</span>
               </a>
+              <ProjectScoper />
             </div>
           </div>
         </div>

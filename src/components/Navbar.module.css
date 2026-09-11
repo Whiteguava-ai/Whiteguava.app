@@ -77,6 +77,40 @@
   color: #161616;
 }
 
+.askBtn {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 9px 13px;
+  background: rgba(0, 0, 0, 0.045);
+  border: none;
+  border-radius: 999px;
+  color: #3a3a3a;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+  flex-shrink: 0;
+}
+
+.askBtn:hover {
+  background: rgba(0, 0, 0, 0.08);
+  color: #161616;
+}
+
+.askBtnLabel {
+  font-size: 13.5px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.askBtnKbd {
+  padding: 1px 5px;
+  border-radius: 5px;
+  background: rgba(0, 0, 0, 0.08);
+  font-size: 11px;
+  font-weight: 700;
+  font-family: inherit;
+}
+
 .cta {
   position: relative;
   overflow: hidden;
@@ -170,6 +204,16 @@
   .header.scrolled { padding: 10px 20px; }
   .links,
   .cta { display: none; }
+  /* `.nav` is `justify-content: space-between` at this width for the
+     logo/controls split below, but with links + cta hidden, that would
+     spread the 3 remaining items (logo, askBtn, menuBtn) evenly across the
+     row instead — landing askBtn adrift in the middle. An auto left-margin
+     on the first visible control after the logo absorbs all the leftover
+     space itself (auto margins win over `justify-content` per the flexbox
+     spec), pulling askBtn flush against menuBtn at the right edge instead. */
+  .askBtn { padding: 9px; margin-left: auto; }
+  .askBtnLabel,
+  .askBtnKbd { display: none; }
   .menuBtn { display: flex; }
   .nav {
     width: 100%;
