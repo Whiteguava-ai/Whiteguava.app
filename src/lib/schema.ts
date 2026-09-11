@@ -149,7 +149,7 @@ export function contactPageSchema() {
 }
 
 export function guavaPillarGraph(
-  products: { name: string; href: string; does: string }[],
+  products: { name: string; href: string; does: string; category?: string }[],
   faqs: { q: string; a: string }[],
 ) {
   const url = `${SITE_URL}/guava`;
@@ -180,6 +180,7 @@ export function guavaPillarGraph(
             '@type': 'SoftwareApplication',
             name: p.name,
             applicationCategory: 'BusinessApplication',
+            applicationSubCategory: p.category,
             operatingSystem: 'Web-based, Linux',
             description: p.does,
             url: `${SITE_URL}${p.href}`,

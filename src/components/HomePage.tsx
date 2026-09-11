@@ -1,5 +1,6 @@
 import Navbar from '@/components/Navbar';
 import StoryExperience from '@/components/story/StoryExperience';
+import GuavaShowcase from '@/components/GuavaShowcase';
 import Process from '@/components/Process';
 import Works from '@/components/Works';
 import Benefits from '@/components/Benefits';
@@ -21,6 +22,7 @@ export default function HomePage() {
     <main>
       <Navbar />
       <StoryExperience />
+      <GuavaShowcase />
       <ActTransition label="I · How we build" tone="light" />
       <Process />
       <Works />

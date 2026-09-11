@@ -10,7 +10,7 @@ import { SERVICE_LINKS, SITE_URL } from '@/lib/site';
  * said it will start distrusting/ignoring lastmod site-wide if it detects
  * that kind of fabricated freshness.
  */
-const HOME_LAST_MODIFIED = new Date('2026-08-23');
+const HOME_LAST_MODIFIED = new Date('2026-09-11');
 const ABOUT_LAST_MODIFIED = new Date('2026-08-23');
 const CONTACT_LAST_MODIFIED = new Date('2026-08-23');
 const SERVICES_LAST_MODIFIED = new Date('2026-09-10');

@@ -6,6 +6,12 @@
 
 export interface GuavaProduct {
   name: string;
+  /**
+   * The generic category term someone actually searches (e.g. "ERP
+   * Software"), shown as the small kicker above the product name — not an
+   * internal department label — so the card's on-page text carries the
+   * keyword the product needs to rank for, not just its brand name.
+   */
   category: string;
   href: string;
   /** One line: what it does. */
@@ -19,7 +25,7 @@ export interface GuavaProduct {
 export const GUAVA_PRODUCTS: GuavaProduct[] = [
   {
     name: 'GuavaCRM',
-    category: 'Sales',
+    category: 'CRM Software',
     href: '/blog/one-time-payment-crm',
     does: 'Leads, deals, a drag-and-drop pipeline, two-way email, tasks, call logging and WhatsApp.',
     replaces: 'Per-user Salesforce or Zoho CRM',
@@ -27,7 +33,7 @@ export const GUAVA_PRODUCTS: GuavaProduct[] = [
   },
   {
     name: 'GuavaERP',
-    category: 'Operations',
+    category: 'ERP Software',
     href: '/blog/one-time-payment-erp',
     does: 'Accounting, multi-warehouse inventory, purchasing, manufacturing and projects on one ledger.',
     replaces: 'NetSuite, SAP Business One or Dynamics 365',
@@ -35,7 +41,7 @@ export const GUAVA_PRODUCTS: GuavaProduct[] = [
   },
   {
     name: 'GuavaHR',
-    category: 'People',
+    category: 'HR Software',
     href: '/blog/one-time-payment-hr-software',
     does: 'Employee records, onboarding, leave, attendance, payroll, recruitment and appraisals.',
     replaces: 'Per-employee BambooHR, Workday or Rippling',
@@ -43,7 +49,7 @@ export const GUAVA_PRODUCTS: GuavaProduct[] = [
   },
   {
     name: 'GuavaLearn',
-    category: 'Learning',
+    category: 'LMS Software',
     href: '/blog/one-time-payment-lms',
     does: 'A course builder, quizzes, certifications, learning paths, cohorts and paid enrolment.',
     replaces: 'Per-learner Docebo, TalentLMS or Thinkific',
@@ -51,7 +57,7 @@ export const GUAVA_PRODUCTS: GuavaProduct[] = [
   },
   {
     name: 'GuavaInsights',
-    category: 'Analytics',
+    category: 'BI Software',
     href: '/blog/one-time-payment-bi-dashboards',
     does: 'Data connections, a SQL and visual query builder, dashboards, row-level security and alerts.',
     replaces: 'Per-seat Tableau, Power BI or Looker',
@@ -59,7 +65,7 @@ export const GUAVA_PRODUCTS: GuavaProduct[] = [
   },
   {
     name: 'GuavaDesk',
-    category: 'Support',
+    category: 'Helpdesk Software',
     href: '/blog/one-time-payment-helpdesk',
     does: 'Ticketing, a knowledge base, a customer portal, SLAs, routing, CSAT and an AI copilot.',
     replaces: 'Per-agent Zendesk, Freshdesk or Intercom',
@@ -67,7 +73,7 @@ export const GUAVA_PRODUCTS: GuavaProduct[] = [
   },
   {
     name: 'GuavaBuilder',
-    category: 'Web',
+    category: 'Website Builder',
     href: '/blog/one-time-payment-website-builder',
     does: 'A visual canvas, a real design system, CMS collections, forms, SEO controls and staging.',
     replaces: 'Per-site Webflow, Wix Studio or Framer',
@@ -75,7 +81,7 @@ export const GUAVA_PRODUCTS: GuavaProduct[] = [
   },
   {
     name: 'GuavaLend',
-    category: 'Lending',
+    category: 'Loan Management Software',
     href: '/blog/one-time-payment-loan-management',
     does: 'Loan products, origination, underwriting, servicing, daily accrual, collections and a borrower portal.',
     replaces: 'A base fee plus a per-loan meter (TurnKey Lender, LoanPro)',
@@ -83,7 +89,7 @@ export const GUAVA_PRODUCTS: GuavaProduct[] = [
   },
   {
     name: 'GuavaPlan',
-    category: 'Work',
+    category: 'Project Management Software',
     href: '/blog/one-time-payment-project-management',
     does: 'Projects, threaded updates, tasks, boards, docs, milestones and a calm daily digest.',
     replaces: 'Per-seat Asana, monday.com or Basecamp',
@@ -91,7 +97,7 @@ export const GUAVA_PRODUCTS: GuavaProduct[] = [
   },
   {
     name: 'GuavaFramework',
-    category: 'Platform',
+    category: 'Low-Code Platform',
     href: '/blog/one-time-payment-app-platform',
     does: 'The low-code platform the whole suite is built on — data model, forms, permissions, workflow and an auto REST API.',
     replaces: 'Per-builder OutSystems, Mendix or Retool',

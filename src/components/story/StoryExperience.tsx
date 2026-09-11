@@ -1,6 +1,7 @@
 'use client';
 
 import {
+  ArrowUpRight,
   BarChart3,
   Bot,
   Boxes,
@@ -12,40 +13,33 @@ import {
   Workflow,
   type LucideIcon,
 } from 'lucide-react';
+import InnerHero from '@/components/InnerHero';
 import { CardBody, CardContainer, CardItem } from '@/components/ui/card-3d';
-import { Spotlight } from '@/components/ui/spotlight';
-import { BackgroundBeams } from '@/components/ui/background-beams';
-import { GradientFlow } from '@/components/ui/gradient-flow';
-import { Meteors } from '@/components/ui/meteors';
 import { ServiceGlyph } from '@/components/ui/service-glyph';
-import { StickyScrollReveal, type StickyScrollItem } from '@/components/ui/sticky-scroll-reveal';
+import { Spotlight } from '@/components/ui/spotlight';
 import { CinematicText } from '@/components/motion/CinematicText';
-import { CountUp } from '@/components/motion/CountUp';
 import { MagneticButton } from '@/components/motion/MagneticButton';
 import { Reveal } from '@/components/motion/Reveal';
-import { ScrollScene } from '@/components/motion/ScrollScene';
+import { cn } from '@/lib/cn';
 import {
   FINAL_CTA_CONTENT,
   SERVICES_CONTENT,
   TECH_CORE_CONTENT,
   VOID_CONTENT,
   WORLD_FORMS_CONTENT,
+  type CinematicService,
 } from '@/data/story';
 
 /**
- * The homepage's opening act — a dark, scroll-driven sequence that walks
- * through hero → capability → services → CTA before handing off into the
- * light `Process` section below it.
- *
- * Cinematic build: the hero pins and dissolves upward under scroll, the
- * capability stack assembles tile-by-tile as it passes, the services run as a
- * pinned scrolly sequence, and the CTA beams ramp up as it enters. Every beat
- * degrades to a plain stacked layout on phones and under reduced motion (see
- * `ScrollScene` / `CinematicText`).
+ * The homepage's opening run: hero, capability intro, services showcase, and
+ * a closing CTA nudge — all in the same light, brand-consistent style used
+ * across the rest of the site (`InnerHero`, `Process`'s white 3D-tilt cards,
+ * `section-badge` / `CinematicText` / `Reveal`), so the homepage no longer
+ * reads as a one-off dark sequence bolted onto an otherwise light site.
  */
 export default function StoryExperience() {
   return (
-    <div id="home" className="relative bg-[#0D0D0D] text-white">
+    <div id="home" className="relative">
       <HeroBeat />
       <CapabilityBeat />
       <ServicesBeat />
@@ -56,172 +50,50 @@ export default function StoryExperience() {
 
 function HeroBeat() {
   return (
-    <ScrollScene
-      id="story-hero"
-      className="relative min-h-[100svh] overflow-hidden px-6 pb-24 pt-40 md:pt-52"
-      pin
-      end="+=70%"
-      build={({ gsap, timeline, q }) => {
-        gsap.from(q('.hero-card'), {
-          yPercent: 55,
-          opacity: 0,
-          duration: 1.1,
-          ease: 'expo.out',
-          delay: 0.35,
-        });
-        timeline
-          .to(q('.hero-content'), {
-            yPercent: -22,
-            opacity: 0,
-            filter: 'blur(6px)',
-            ease: 'none',
-          })
-          .to(
-            q('.hero-card'),
-            {
-              yPercent: -55,
-              rotateX: 42,
-              transformPerspective: 800,
-              scale: 0.86,
-              opacity: 0,
-              ease: 'none',
-            },
-            '<'
-          )
-          .to(q('.hero-glow'), { yPercent: 32, scale: 1.25, ease: 'none' }, '<');
-      }}
-    >
-      <div className="hero-glow">
-        <GradientFlow />
-        <Spotlight />
-      </div>
-
-      <div className="hero-content relative z-10 mx-auto flex max-w-4xl flex-col items-center text-center">
-        <Reveal
-          as="span"
-          direction="down"
-          distance={16}
-          className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/[0.06] px-4 py-1.5 text-xs font-semibold tracking-[0.08em] text-white/80 backdrop-blur"
-        >
-          <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-[var(--accent)]" />
-          {VOID_CONTENT.badge}
-        </Reveal>
-
-        <h1 className="mt-8 text-4xl font-extrabold leading-[1.08] tracking-tight sm:text-5xl md:text-6xl lg:text-7xl">
-          <CinematicText as="span" trigger="load" className="block">
-            {WORLD_FORMS_CONTENT.headline[0]}
-          </CinematicText>{' '}
-          <span className="mt-1 block">
-            {WORLD_FORMS_CONTENT.headline[1].replace('AI.', '').trim()}{' '}
-            <span className="text-[var(--accent)]">AI.</span>
-          </span>
-        </h1>
-
-        <Reveal
-          as="p"
-          delay={0.15}
-          className="mt-6 max-w-2xl text-base leading-relaxed text-white/60 md:text-lg"
-        >
-          {WORLD_FORMS_CONTENT.sub}
-        </Reveal>
-
-        <Reveal stagger delay={0.25} className="mt-9 flex flex-wrap items-center justify-center gap-4">
-          <a href={WORLD_FORMS_CONTENT.ctaPrimary.href} className="btn-dark">
-            <span>{WORLD_FORMS_CONTENT.ctaPrimary.label}</span>
-          </a>
-          <a href={WORLD_FORMS_CONTENT.ctaSecondary.href} className="btn-outline">
-            <span>{WORLD_FORMS_CONTENT.ctaSecondary.label}</span>
-          </a>
-        </Reveal>
-      </div>
-
-      <div className="hero-card relative z-10 mx-auto mt-20 w-full max-w-md [perspective:1000px]">
-        <CardContainer containerClassName="w-full">
-          <CardBody className="w-full rounded-3xl border border-white/10 bg-white/[0.04] p-8 backdrop-blur-xl">
-            <CardItem translateZ={40} className="flex items-center justify-between">
-              <span className="text-xs font-semibold tracking-[0.08em] text-white/40">STACK</span>
-              <span className="text-3xl font-extrabold text-[var(--accent)]">
-                <CountUp value={5} suffix="+" />
-              </span>
-            </CardItem>
-            <CardItem translateZ={60} className="mt-5 flex flex-wrap gap-2">
-              {TECH_CORE_CONTENT.tags.map((tag) => (
-                <span
-                  key={tag}
-                  className="rounded-full border border-white/10 bg-white/[0.05] px-3 py-1 text-[11px] font-bold tracking-[0.05em] text-white/70"
-                >
-                  {tag}
-                </span>
-              ))}
-            </CardItem>
-            <CardItem translateZ={30} className="mt-6 text-xs text-white/40">
-              {TECH_CORE_CONTENT.location} · {TECH_CORE_CONTENT.availability}
-            </CardItem>
-          </CardBody>
-        </CardContainer>
-      </div>
-
-      <div
-        aria-hidden="true"
-        className="hero-cue absolute inset-x-0 bottom-8 z-10 flex justify-center text-[11px] font-semibold tracking-[0.2em] text-white/30"
-      >
-        SCROLL
-      </div>
-    </ScrollScene>
+    <InnerHero
+      badge={VOID_CONTENT.badge}
+      line1={WORLD_FORMS_CONTENT.headline[0]}
+      line2={WORLD_FORMS_CONTENT.headline[1]}
+      highlight="AI"
+      subtitle={WORLD_FORMS_CONTENT.sub}
+      primaryHref={WORLD_FORMS_CONTENT.ctaPrimary.href}
+      primaryLabel={WORLD_FORMS_CONTENT.ctaPrimary.label}
+      secondaryHref={WORLD_FORMS_CONTENT.ctaSecondary.href}
+      secondaryLabel={WORLD_FORMS_CONTENT.ctaSecondary.label}
+    />
   );
 }
 
 function CapabilityBeat() {
   return (
-    <ScrollScene
-      id="story-capability"
-      className="relative overflow-hidden px-6 py-24 md:py-40"
-      pin={false}
-      scrub={1}
-      start="top 80%"
-      end="bottom 60%"
-      build={({ timeline, q }) => {
-        timeline
-          .from(q('.cap-copy > *'), { y: 40, opacity: 0, stagger: 0.12, ease: 'power2.out' })
-          .from(
-            q('.cap-tile'),
-            {
-              y: 30,
-              opacity: 0,
-              scale: 0.9,
-              stagger: { each: 0.05, from: 'start', grid: 'auto' },
-              ease: 'back.out(1.4)',
-            },
-            '<0.1'
-          );
-      }}
-    >
-      <GradientFlow className="opacity-60" />
+    <section className="relative overflow-hidden px-6 py-24 md:py-32">
       <div className="relative z-10 mx-auto grid max-w-6xl gap-14 lg:grid-cols-2 lg:items-center lg:gap-20">
-        <div className="cap-copy">
-          <span className="text-xs font-semibold tracking-[0.08em] text-[#ff8c7f]">
+        <Reveal className="flex flex-col gap-4" stagger>
+          <span className="section-badge">
+            <span className="section-badge-dot" />
             {TECH_CORE_CONTENT.eyebrow}
           </span>
-          <h2 className="mt-4 text-3xl font-bold leading-tight md:text-4xl">
-            From idea to working product — without the guesswork.
+          <h2 className="text-3xl font-bold leading-tight text-[var(--text-primary)] md:text-4xl">
+            <CinematicText>From idea to working product — without the guesswork.</CinematicText>
           </h2>
-          <p className="mt-5 max-w-lg text-[15px] leading-relaxed text-white/60">
+          <p className="max-w-lg text-[15px] leading-relaxed text-[var(--text-secondary)]">
             {TECH_CORE_CONTENT.body}
           </p>
-        </div>
+        </Reveal>
 
-        <div className="grid grid-cols-2 gap-3 sm:grid-cols-4 [perspective:1000px]">
+        <Reveal className="grid grid-cols-2 gap-3 sm:grid-cols-4" stagger staggerDelay={0.035} direction="scale">
           {TECH_CORE_CONTENT.techs.map((tech) => (
-            <span
-              key={tech}
-              className="cap-tile rounded-xl border border-white/10 bg-white/[0.04] px-3 py-3 text-center text-[12px] font-semibold text-white/70"
-            >
-              {tech}
-            </span>
+            <CardContainer key={tech} containerClassName="w-full">
+              <CardBody className="w-full rounded-xl border border-black/[0.06] bg-white px-3 py-4 text-center shadow-[var(--shadow-sm)] transition-shadow duration-300 hover:shadow-[var(--shadow-md)]">
+                <CardItem translateZ={20} as="span" className="text-[12px] font-semibold text-[var(--text-primary)]">
+                  {tech}
+                </CardItem>
+              </CardBody>
+            </CardContainer>
           ))}
-        </div>
+        </Reveal>
       </div>
-    </ScrollScene>
+    </section>
   );
 }
 
@@ -238,91 +110,130 @@ const SERVICE_ICONS: Record<string, LucideIcon> = {
 };
 
 function ServicesBeat() {
-  const items: StickyScrollItem[] = SERVICES_CONTENT.map((service) => ({
-    eyebrow: `${service.num} / ${String(SERVICES_CONTENT.length).padStart(2, '0')}`,
-    title: service.title,
-    description: service.desc,
-    content: (
-      <div className="relative flex h-full w-full flex-col overflow-hidden p-2">
-        <div className="flex flex-wrap gap-2">
-          {service.tags.map((tag) => (
-            <span
-              key={tag}
-              className="rounded-full border border-white/10 bg-white/[0.04] px-3 py-1.5 text-xs font-semibold text-white/70"
-            >
-              {tag}
-            </span>
-          ))}
-        </div>
-        <div className="flex flex-1 items-center justify-center">
-          <ServiceGlyph icon={SERVICE_ICONS[service.num] ?? Sparkles} />
-        </div>
-        <span
-          aria-hidden="true"
-          className="pointer-events-none absolute -right-2 bottom-6 select-none text-[110px] font-black leading-none text-white/[0.04]"
-        >
-          {service.num}
-        </span>
-        {service.href && (
-          <a
-            href={service.href}
-            className="relative z-10 mt-4 inline-flex items-center gap-2 text-sm font-semibold text-[var(--accent)]"
-          >
-            {service.more ?? 'Learn more'}
-            <span aria-hidden="true">→</span>
-          </a>
-        )}
-      </div>
-    ),
-  }));
-
   return (
-    <section id="services" className="relative border-t border-white/[0.06] px-6 py-20">
-      <div className="relative z-10 mx-auto mb-10 max-w-6xl">
-        <span className="text-xs font-semibold tracking-[0.08em] text-[#ff8c7f]">What We Do</span>
-        <h2 className="mt-3 text-3xl font-bold md:text-4xl">
+    <section id="services" className="relative overflow-hidden px-6 py-24 md:py-32">
+      <div className="relative z-10 mx-auto mb-14 max-w-3xl md:mb-20">
+        <Reveal as="span" direction="down" distance={12} className="section-badge">
+          <span className="section-badge-dot" />
+          What We Do
+        </Reveal>
+        <h2 className="mt-4 text-3xl font-bold leading-tight text-[var(--text-primary)] md:text-5xl">
           <CinematicText>Nine ways we turn AI into working product.</CinematicText>
         </h2>
       </div>
-      <StickyScrollReveal items={items} dark vhPerItem={52} ambient />
+
+      <div className="relative z-10 mx-auto flex max-w-4xl flex-col gap-5 md:gap-6">
+        {SERVICES_CONTENT.map((service, i) => (
+          <Reveal key={service.num} delay={Math.min(i * 0.05, 0.3)} amount={0.2}>
+            <ServiceCard3D
+              service={service}
+              icon={SERVICE_ICONS[service.num] ?? Sparkles}
+              index={i}
+              total={SERVICES_CONTENT.length}
+              featured={i === SERVICES_CONTENT.length - 1}
+            />
+          </Reveal>
+        ))}
+      </div>
     </section>
+  );
+}
+
+function ServiceCard3D({
+  service,
+  icon: Icon,
+  index,
+  total,
+  featured = false,
+}: {
+  service: CinematicService;
+  icon: LucideIcon;
+  index: number;
+  total: number;
+  featured?: boolean;
+}) {
+  return (
+    <CardContainer containerClassName="w-full">
+      <CardBody
+        className={cn(
+          'group relative w-full overflow-hidden rounded-3xl border bg-white p-7 shadow-[var(--shadow-sm)] transition-shadow duration-300 md:p-10',
+          featured
+            ? 'border-[var(--accent)]/30 bg-gradient-to-br from-[var(--accent)]/[0.08] via-white to-white hover:shadow-[var(--shadow-md)]'
+            : 'border-black/[0.06] hover:shadow-[var(--shadow-md)]'
+        )}
+      >
+        <CardItem
+          translateZ={15}
+          className="pointer-events-none absolute -right-3 -top-8 select-none text-[110px] font-black leading-none text-black/[0.04] md:-right-4 md:text-[160px]"
+        >
+          {service.num}
+        </CardItem>
+
+        <div className="relative flex flex-col gap-6 md:flex-row md:items-center md:gap-10">
+          <CardItem translateZ={70} className="shrink-0 self-start md:self-center">
+            <ServiceGlyph icon={Icon} dark={false} />
+          </CardItem>
+
+          <div className="min-w-0 flex-1">
+            <CardItem translateZ={35} as="span" className="text-xs font-semibold tracking-[0.08em] text-[var(--accent)]">
+              {String(index + 1).padStart(2, '0')} / {String(total).padStart(2, '0')}
+            </CardItem>
+            <CardItem translateZ={55} as="h3" className="mt-2 text-2xl font-bold text-[var(--text-primary)] md:text-3xl">
+              {service.title}
+            </CardItem>
+            <CardItem translateZ={25} as="p" className="mt-3 max-w-xl text-[15px] leading-relaxed text-[var(--text-secondary)]">
+              {service.desc}
+            </CardItem>
+            <CardItem translateZ={25} className="mt-5 flex flex-wrap gap-2">
+              {service.tags.map((tag) => (
+                <span
+                  key={tag}
+                  className="rounded-full border border-black/[0.06] bg-[var(--bg-card-light)] px-3 py-1.5 text-xs font-semibold text-[var(--text-secondary)]"
+                >
+                  {tag}
+                </span>
+              ))}
+            </CardItem>
+            {service.href && (
+              <CardItem
+                translateZ={45}
+                as="a"
+                href={service.href}
+                className="mt-6 inline-flex items-center gap-1.5 text-sm font-semibold text-[var(--accent)] transition-colors hover:text-[var(--accent-hover)]"
+              >
+                {service.more ?? 'Learn more'}
+                <ArrowUpRight
+                  className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                  strokeWidth={2.25}
+                />
+              </CardItem>
+            )}
+          </div>
+        </div>
+      </CardBody>
+    </CardContainer>
   );
 }
 
 function FinalCtaBeat() {
   return (
-    <ScrollScene
-      id="story-final-cta"
-      className="relative overflow-hidden border-t border-white/[0.06] px-6 py-28"
-      pin={false}
-      scrub={1}
-      start="top bottom"
-      end="center center"
-      build={({ timeline, q }) => {
-        timeline
-          .fromTo(q('.cta-beams'), { opacity: 0.15 }, { opacity: 1, ease: 'none' })
-          .fromTo(q('.cta-meteors'), { opacity: 0 }, { opacity: 1, ease: 'none' }, '<');
-      }}
-    >
-      <div className="cta-beams">
-        <BackgroundBeams />
-      </div>
-      <div className="cta-meteors">
-        <Meteors number={22} />
-      </div>
-      <div className="relative z-10 mx-auto flex max-w-3xl flex-col items-center text-center">
-        <h2 className="text-3xl font-bold leading-tight md:text-5xl">
+    <section className="relative overflow-hidden px-6 py-24 md:py-32">
+      <Spotlight className="opacity-60" color="rgba(230,59,46,0.25)" />
+      <Reveal className="relative z-10 mx-auto flex max-w-2xl flex-col items-center text-center" stagger>
+        <span className="section-badge">
+          <span className="section-badge-dot" />
+          Let&apos;s Talk
+        </span>
+        <h2 className="mt-5 text-3xl font-bold leading-tight text-[var(--text-primary)] md:text-5xl">
           <CinematicText>{FINAL_CTA_CONTENT.headline}</CinematicText>
         </h2>
-        <Reveal as="p" delay={0.1} className="mt-5 max-w-xl text-[15px] leading-relaxed text-white/60 md:text-base">
+        <p className="mt-5 max-w-xl text-[15px] leading-relaxed text-[var(--text-secondary)] md:text-base">
           {FINAL_CTA_CONTENT.sub}
-        </Reveal>
-        <Reveal delay={0.2} className="mt-8">
-          <MagneticButton href={FINAL_CTA_CONTENT.cta.href} className="btn-accent">
-            <span>{FINAL_CTA_CONTENT.cta.label}</span>
-          </MagneticButton>
-        </Reveal>
-      </div>
-    </ScrollScene>
+        </p>
+        <MagneticButton href={FINAL_CTA_CONTENT.cta.href} className="btn-accent mt-8">
+          <span>{FINAL_CTA_CONTENT.cta.label}</span>
+        </MagneticButton>
+      </Reveal>
+    </section>
   );
 }

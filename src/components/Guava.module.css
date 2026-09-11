@@ -113,6 +113,12 @@
   color: #161616;
 }
 
+.ctaRow {
+  margin-top: 32px;
+  display: flex;
+  justify-content: center;
+}
+
 /* ---------- steps ---------- */
 .steps {
   display: grid;

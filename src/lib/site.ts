@@ -57,17 +57,21 @@ export const SERVICE_LINKS = [
  * by the client. Each links to its full breakdown on the blog. Surfaced in the
  * footer and on the AI Software Development service page.
  */
+// Label pairs the brand name with the generic category term someone actually
+// searches (e.g. "ERP", "CRM software") — this list renders in the footer on
+// every page, so the anchor text carries that keyword sitewide instead of
+// only reinforcing the brand name, which needs no ranking help of its own.
 export const PRODUCT_LINKS = [
-  { href: '/blog/one-time-payment-crm', label: 'GuavaCRM' },
-  { href: '/blog/one-time-payment-erp', label: 'GuavaERP' },
-  { href: '/blog/one-time-payment-hr-software', label: 'GuavaHR' },
-  { href: '/blog/one-time-payment-lms', label: 'GuavaLearn' },
-  { href: '/blog/one-time-payment-bi-dashboards', label: 'GuavaInsights' },
-  { href: '/blog/one-time-payment-helpdesk', label: 'GuavaDesk' },
-  { href: '/blog/one-time-payment-website-builder', label: 'GuavaBuilder' },
-  { href: '/blog/one-time-payment-loan-management', label: 'GuavaLend' },
-  { href: '/blog/one-time-payment-project-management', label: 'GuavaPlan' },
-  { href: '/blog/one-time-payment-app-platform', label: 'GuavaFramework' },
+  { href: '/blog/one-time-payment-crm', label: 'GuavaCRM · CRM Software' },
+  { href: '/blog/one-time-payment-erp', label: 'GuavaERP · ERP Software' },
+  { href: '/blog/one-time-payment-hr-software', label: 'GuavaHR · HR Software' },
+  { href: '/blog/one-time-payment-lms', label: 'GuavaLearn · LMS Software' },
+  { href: '/blog/one-time-payment-bi-dashboards', label: 'GuavaInsights · BI Software' },
+  { href: '/blog/one-time-payment-helpdesk', label: 'GuavaDesk · Helpdesk Software' },
+  { href: '/blog/one-time-payment-website-builder', label: 'GuavaBuilder · Website Builder' },
+  { href: '/blog/one-time-payment-loan-management', label: 'GuavaLend · Loan Management Software' },
+  { href: '/blog/one-time-payment-project-management', label: 'GuavaPlan · Project Management Software' },
+  { href: '/blog/one-time-payment-app-platform', label: 'GuavaFramework · Low-Code Platform' },
 ] as const;
 
 export const SOCIAL_PROFILES = [

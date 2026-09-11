@@ -76,7 +76,7 @@ export default function GuavaPage() {
                     <span className="section-badge-dot" />
                     Own it, don&apos;t rent it
                   </div>
-                  <h1 className={styles.headline}>Every core business tool is now a rental.</h1>
+                  <h2 className={styles.headline}>Every core business tool is now a rental.</h2>
                 </div>
                 <div className={`${styles.lede} reveal reveal-delay-1`}>
                   <p>

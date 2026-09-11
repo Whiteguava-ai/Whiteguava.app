@@ -136,3 +136,27 @@ The on-page / schema / internal-linking / GEO / feed work is **done in code**. E
 6. **GEO**: `/seo geo <url>` per post; DataForSEO `ai_optimization/llm_mentions` (same key) for a citation baseline.
 7. **E-E-A-T** (optional, needs your input): add a named author with a bio to the posts + `articleSchema.author` as `Person` — currently attributed to the Organization.
 8. **After 3–4 weeks**: `/seo google gsc` → which queries actually landed → iterate H2s/FAQs toward the winners. Re-pull DataForSEO volumes quarterly.
+
+## 9. Bare category terms ("erp", "crm", …) — checked 2026-09-11, deliberately not targeted
+
+The user's own credentials pulled a fresh DataForSEO `google_ads/search_volume/live` check (cost $0.09) on the bare head terms behind each product, to answer directly: "if someone searches ERP only, should we rank for that?" Raw numbers, US, en:
+
+| Term | Volume/mo | Ads competition | Comp. index | CPC |
+|---|---|---|---|---|
+| erp | 90,500 | LOW | 20 | $23.22 |
+| erp software | 49,500 | LOW | 11 | $40.80 |
+| crm | 165,000 | MEDIUM | 40 | $47.54 |
+| crm software | 165,000 | LOW | 7 | $39.75 |
+| hr software | 9,900 | LOW | 28 | $147.34 |
+| lms | 246,000 | LOW | 13 | $18.86 |
+| helpdesk software | 6,600 | LOW | 17 | $104.74 |
+| project management software | 165,000 | LOW | 6 | $45.46 |
+| loan management software | 390 | LOW | 33 | $80.94 |
+| low-code platform | 1,600 | LOW | 25 | $38.71 |
+| business intelligence software | 8,100 | LOW | 4 | $40.51 |
+
+Full rows appended to `seo-dataforseo-keywords.csv` under group `Head Terms (bare category — reference only, not targeted)`.
+
+**Important:** `competition` / `competition_index` here are Google **Ads** (PPC bid) competition, not organic keyword difficulty — this endpoint doesn't return KD at all. "LOW ads competition" on a term like `crm` (165k/mo) does not mean it's easy to rank organically; the SERP for every one of these bare terms is owned by Salesforce, SAP, Oracle, monday.com, Zendesk, Capterra/G2, and similar Tier-1 incumbents with years of domain authority and backlinks a new site cannot out-rank with on-page work alone, however well-optimized.
+
+**Decision: keep targeting the long-tail terms already in §3–4** (`self-hosted crm`, `odoo alternative`, `freshdesk alternative`, etc.) — lower volume individually, but realistically winnable, and they're the terms that actually match a self-hosted/one-time-payment differentiator instead of competing head-on with giants on their own turf. Treat the bare terms in the table above as later-stage, domain-authority-dependent targets, not something to chase now — don't retitle pages or restructure content around them.
