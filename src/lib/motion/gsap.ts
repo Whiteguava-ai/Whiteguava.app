@@ -11,7 +11,7 @@ import { useGSAP } from '@gsap/react';
  * has run before any `ScrollTrigger` / `SplitText` / `useGSAP` call.
  *
  * All three plugins ship inside the installed `gsap` package (free for
- * commercial use since GSAP 3.13) — no separate install, no CDN, so nothing
+ * commercial use since GSAP 3.13), no separate install, no CDN, so nothing
  * here trips the app's `script-src 'self'` CSP.
  *
  * `useGSAP` from `@gsap/react` is the scoped-cleanup hook: every tween,
@@ -37,7 +37,7 @@ export function prefersReducedMotion(): boolean {
 
 /**
  * Heavy pin / scrub choreography only runs on a real pointer at tablet width
- * and up. Below that we fall back to lighter in-view reveals — pinning fights
+ * and up. Below that we fall back to lighter in-view reveals, pinning fights
  * native momentum scroll on phones and is the main mobile-jank offender.
  */
 export const CINEMATIC_QUERY = '(min-width: 768px) and (pointer: fine)';

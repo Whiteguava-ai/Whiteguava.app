@@ -16,7 +16,7 @@ const PATHS = [
 /**
  * Aceternity "Background Beams": faint animated light trails drifting through a
  * dark section, used behind CTA / contact panels. Static SVG paths (no data
- * dependency) with a looping gradient sweep along each — collapses to a single
+ * dependency) with a looping gradient sweep along each, collapses to a single
  * still frame under prefers-reduced-motion.
  */
 export function BackgroundBeams({ className }: { className?: string }) {

@@ -22,7 +22,7 @@ export const metadata: Metadata = {
 };
 
 /**
- * Standard-template legal page — accurate to what this site actually does
+ * Standard-template legal page, accurate to what this site actually does
  * (contact form, Ahrefs analytics, Pexels-sourced blog imagery, no
  * e-commerce/payment processing), but not a substitute for review by
  * qualified counsel before being relied on as a final policy.
@@ -54,7 +54,7 @@ export default function PrivacyPolicyPage() {
               <p>
                 When you submit our contact form, we collect the information you provide: your name, email
                 address, company, phone number, and any project details you share. We do not require this
-                information to browse the site — it&apos;s only collected if you choose to reach out.
+                information to browse the site, it&apos;s only collected if you choose to reach out.
               </p>
             </div>
 
@@ -71,7 +71,7 @@ export default function PrivacyPolicyPage() {
               <h2 style={{ fontSize: '22px', fontWeight: 700, color: '#161616', marginBottom: '12px' }}>Analytics &amp; third-party services</h2>
               <p>
                 We use Ahrefs Web Analytics to understand aggregate site traffic (pages visited, referrers,
-                approximate location) — it does not use cookies to track you across other sites. Blog post images
+                approximate location), it does not use cookies to track you across other sites. Blog post images
                 are sourced from the Pexels API at page-render time; this is a server-side request and does not
                 share your personal data with Pexels.
               </p>

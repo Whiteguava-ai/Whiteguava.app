@@ -7,7 +7,7 @@ import { useMounted } from '@/lib/motion/useMounted';
 /**
  * A chapter marker between two homepage "acts". Not a full-screen curtain
  * (the sections sit in rounded stage cards, a bleed wipe would fight the
- * seams) — instead a short scroll band: a large ghost label drifts through,
+ * seams), instead a short scroll band: a large ghost label drifts through,
  * an accent rule draws across, and the background carries a faint wash in the
  * tone of the act you're entering. Purely decorative. Structure is identical
  * server/client/reduced-motion; the drift only attaches after mount.

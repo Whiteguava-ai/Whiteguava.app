@@ -21,7 +21,7 @@ const BUDGETS = ['Not sure yet', 'Under $2,000', '$2,000–$10,000', '$10,000–
 const TIMELINES = ['ASAP', 'Within a month', '1–3 months', '3–6 months', 'Just exploring'];
 
 /**
- * "Not sure where to start?" — a short form that hands what a visitor
+ * "Not sure where to start?", a short form that hands what a visitor
  * describes to Claude (grounded in the same site content `/api/ask` uses)
  * and gets back which products/services actually fit, instead of them
  * reading all ten product pages themselves. Self-contained; rendered from
@@ -79,7 +79,7 @@ export default function ProjectScoper() {
                 What are you trying to solve?
               </h3>
               <p className="mt-1.5 text-sm text-[var(--text-secondary)]">
-                Describe it in your own words — we&apos;ll match it to the right product or service.
+                Describe it in your own words, we&apos;ll match it to the right product or service.
               </p>
 
               <textarea
@@ -138,7 +138,7 @@ export default function ProjectScoper() {
                 ))}
                 {result.recommendations.length === 0 && (
                   <p className="rounded-2xl border border-black/[0.06] bg-[var(--bg-card-light)] p-4 text-sm text-[var(--text-secondary)]">
-                    Nothing in the current lineup is a clean fit — best to talk it through directly.
+                    Nothing in the current lineup is a clean fit, best to talk it through directly.
                   </p>
                 )}
               </div>

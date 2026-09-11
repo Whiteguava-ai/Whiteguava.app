@@ -91,7 +91,7 @@ export default function Pricing() {
             <a href="/#contact" className={`${styles.planBtnDark}`}><span>Discuss Your Project</span></a>
             <div className={styles.includedDark}>
               <p className={styles.includedLabelDark}>What&apos;s included</p>
-              <p className={styles.includedDescDark}>Full-cycle development — AI systems, applications, automation, integrations, and deployment.</p>
+              <p className={styles.includedDescDark}>Full-cycle development, AI systems, applications, automation, integrations, and deployment.</p>
             </div>
             <ul className={styles.featureListDark}>
               {buildFeatures.map((f, i) => (

@@ -10,7 +10,7 @@ export default function robots(): MetadataRoute.Robots {
         disallow: ['/api/'],
       },
       // Explicit entries for the AI answer-engine crawlers that matter for
-      // GEO (Google AI Overviews, ChatGPT, Perplexity) — already allowed by
+      // GEO (Google AI Overviews, ChatGPT, Perplexity), already allowed by
       // the wildcard above, but named here so access is auditable at a
       // glance instead of implicit.
       { userAgent: 'GPTBot', allow: '/', disallow: ['/api/'] },

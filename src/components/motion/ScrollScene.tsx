@@ -17,12 +17,12 @@ export interface SceneBuild {
 
 /**
  * Complex-tier primitive: a section that pins and/or scrubs a GSAP timeline to
- * scroll position. This is where the "scroll film" lives — headline rises,
+ * scroll position. This is where the "scroll film" lives, headline rises,
  * background pans, cards deal in, all tied to the scrollbar rather than a
  * mount-triggered play.
  *
  * The heavy version runs only for `CINEMATIC_QUERY` (≥768px, fine pointer) AND
- * only when the visitor has not asked to reduce motion — `gsap.matchMedia`
+ * only when the visitor has not asked to reduce motion, `gsap.matchMedia`
  * tears the whole thing down (and restores the static layout) outside that
  * window. On phones / reduced-motion the children just render normally; give
  * them their own `<Reveal>` if they still need a light entrance.
@@ -47,7 +47,7 @@ export function ScrollScene({
   style?: CSSProperties;
   id?: string;
   pin?: boolean;
-  /** `true` or 0.5–1.5. Never pass `false` here — use `<Reveal>` for discrete. */
+  /** `true` or 0.5–1.5. Never pass `false` here, use `<Reveal>` for discrete. */
   scrub?: boolean | number;
   start?: string | number | (() => string | number);
   end?: string | number | (() => string | number);

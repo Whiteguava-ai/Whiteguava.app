@@ -5,7 +5,7 @@ import { useSyncExternalStore } from 'react';
 const noop = () => () => {};
 
 /**
- * `false` during SSR and the first client render, `true` afterwards — the
+ * `false` during SSR and the first client render, `true` afterwards, the
  * React-blessed "am I past hydration" check (`useSyncExternalStore` with a
  * server snapshot of `false`), so it needs no `setState`-in-effect.
  *

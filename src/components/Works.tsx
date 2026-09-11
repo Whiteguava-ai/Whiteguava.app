@@ -29,7 +29,7 @@ const works = [
   },
   {
     title: 'Internal Knowledge Base AI Assistant',
-    desc: 'RAG-based internal assistant connected to company documents, policies, and wikis — deployed as a production-ready web application.',
+    desc: 'RAG-based internal assistant connected to company documents, policies, and wikis, deployed as a production-ready web application.',
     deliverables: 'RAG system, vector database, web application, authentication',
     industry: 'Enterprise',
     images: [
@@ -64,7 +64,7 @@ function WorkCard({ work }: { work: typeof works[0] }) {
         <img
           key={active}
           src={work.images[active]}
-          alt={`${work.title} — ${work.industry} project by WhiteGuava`}
+          alt={`${work.title}, ${work.industry} project by WhiteGuava`}
           className={`${styles.workImg} works-img`}
           width={960}
           height={640}
@@ -107,7 +107,7 @@ function WorkCard({ work }: { work: typeof works[0] }) {
   );
 }
 
-/** Scroll distance for the pinned horizontal pan — the overflow the track has past its viewport. */
+/** Scroll distance for the pinned horizontal pan, the overflow the track has past its viewport. */
 function panDistance() {
   const track = document.querySelector<HTMLElement>('.works-track');
   const view = document.querySelector<HTMLElement>('.works-viewport');
@@ -131,7 +131,7 @@ export default function Works() {
       </div>
 
       {/* Cinematic horizontal pan: the section pins and the row of projects
-          slides left as the reader scrolls down. Desktop / fine-pointer only —
+          slides left as the reader scrolls down. Desktop / fine-pointer only,
           the `md:hidden` stack below is what phones and reduced-motion get. */}
       <div className="hidden md:block">
         <ScrollScene

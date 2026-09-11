@@ -92,7 +92,7 @@ function RichText({ text }: { text: string }) {
 }
 
 /**
- * The "what a subscription can't give you" showcase — the point of the whole
+ * The "what a subscription can't give you" showcase, the point of the whole
  * pitch, called out on its own.
  */
 export function ProductDifferentiators({ product }: { product?: string }) {

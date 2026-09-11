@@ -1,5 +1,5 @@
 /**
- * Content for the /guava pillar page — the hub for the Guava Product Suite.
+ * Content for the /guava pillar page, the hub for the Guava Product Suite.
  * Each product links to its full breakdown post; the numbers here trace to
  * those posts (server cost per month, September 2026 competitor list pricing).
  */
@@ -8,8 +8,8 @@ export interface GuavaProduct {
   name: string;
   /**
    * The generic category term someone actually searches (e.g. "ERP
-   * Software"), shown as the small kicker above the product name — not an
-   * internal department label — so the card's on-page text carries the
+   * Software"), shown as the small kicker above the product name, not an
+   * internal department label, so the card's on-page text carries the
    * keyword the product needs to rank for, not just its brand name.
    */
   category: string;
@@ -99,7 +99,7 @@ export const GUAVA_PRODUCTS: GuavaProduct[] = [
     name: 'GuavaFramework',
     category: 'Low-Code Platform',
     href: '/blog/one-time-payment-app-platform',
-    does: 'The low-code platform the whole suite is built on — data model, forms, permissions, workflow and an auto REST API.',
+    does: 'The low-code platform the whole suite is built on, data model, forms, permissions, workflow and an auto REST API.',
     replaces: 'Per-builder OutSystems, Mendix or Retool',
     serverMo: 30,
   },
@@ -117,7 +117,7 @@ export const GUAVA_STEPS: GuavaStep[] = [
   },
   {
     title: 'We configure it to how you work',
-    body: 'Your pipeline stages, chart of accounts, leave rules, SLAs, workflows and roles — set up during the engagement, plus your existing data imported.',
+    body: 'Your pipeline stages, chart of accounts, leave rules, SLAs, workflows and roles, set up during the engagement, plus your existing data imported.',
   },
   {
     title: 'We switch on the AI and hand it over',
@@ -131,7 +131,7 @@ export const GUAVA_STEPS: GuavaStep[] = [
 
 export const GUAVA_STOP_PAYING: { item: string; subscription: string; guava: string }[] = [
   { item: 'Per-user / per-seat licence', subscription: 'Every active user is a monthly line item, forever', guava: 'One server cost, any number of users' },
-  { item: 'Annual renewal', subscription: 'Re-bills every year, often at a higher rate', guava: 'You own it — nothing to renew' },
+  { item: 'Annual renewal', subscription: 'Re-bills every year, often at a higher rate', guava: 'You own it, nothing to renew' },
   { item: 'AI as an upgrade', subscription: 'A separate tier, add-on seat, or per-message meter', guava: 'Built in, priced at API cost (~$3–5/mo)' },
   { item: 'Growth penalty', subscription: 'Hiring, more learners or a bigger book raises the bill', guava: 'Cost is flat as you grow' },
   { item: 'Data access', subscription: 'Stop paying and you lose access to your own records', guava: 'Full SQL access and export, always' },
@@ -141,19 +141,19 @@ export const GUAVA_STOP_PAYING: { item: string; subscription: string; guava: str
 export const guavaFaqs: { q: string; a: string }[] = [
   {
     q: 'What is the Guava Product Suite?',
-    a: 'A set of ten business applications — CRM, ERP, HR, LMS, BI, helpdesk, website builder, loan management, project management, and the low-code platform behind them — that WhiteGuava deploys on your own cloud and hands over for you to own. Each is a one-time setup engagement, then you pay only for the server it runs on.',
+    a: 'A set of ten business applications, CRM, ERP, HR, LMS, BI, helpdesk, website builder, loan management, project management, and the low-code platform behind them, that WhiteGuava deploys on your own cloud and hands over for you to own. Each is a one-time setup engagement, then you pay only for the server it runs on.',
   },
   {
     q: 'How is this cheaper than a SaaS subscription?',
-    a: 'SaaS products charge per user per month, and the price covers hosting, vendor margin, and a large sales and support organisation. A Guava product is built on open-source software running on your own cloud, so once it is set up the only recurring cost is the virtual machine — typically $20 to $45 a month regardless of how many people use it.',
+    a: 'SaaS products charge per user per month, and the price covers hosting, vendor margin, and a large sales and support organisation. A Guava product is built on open-source software running on your own cloud, so once it is set up the only recurring cost is the virtual machine, typically $20 to $45 a month regardless of how many people use it.',
   },
   {
     q: 'Is it really a one-time payment?',
-    a: 'The software is a one-time setup engagement — deploy, configure, import data, hand over. After that you own it. The only recurring cost is the server, plus a few dollars of AI usage. There is no per-user licence and no annual renewal.',
+    a: 'The software is a one-time setup engagement, deploy, configure, import data, hand over. After that you own it. The only recurring cost is the server, plus a few dollars of AI usage. There is no per-user licence and no annual renewal.',
   },
   {
     q: 'Do the products have AI?',
-    a: 'Yes. Each ships with a custom AI module — drafting, summaries, and a plain-English assistant over your data, plus product-specific features like auto-triage on the helpdesk or portfolio risk flags on lending. It runs on a metered model at roughly $3 to $5 a month for a small team, with no separate AI tier.',
+    a: 'Yes. Each ships with a custom AI module, drafting, summaries, and a plain-English assistant over your data, plus product-specific features like auto-triage on the helpdesk or portfolio risk flags on lending. It runs on a metered model at roughly $3 to $5 a month for a small team, with no separate AI tier.',
   },
   {
     q: 'Where does our data live?',
@@ -161,14 +161,14 @@ export const guavaFaqs: { q: string; a: string }[] = [
   },
   {
     q: 'Can we customise a product after handover?',
-    a: 'Yes — that is the point of owning the source. New fields, objects, workflows, reports, integrations and AI features can all be built straight onto it. WhiteGuava offers ongoing support and development, but it is optional, never a required contract.',
+    a: 'Yes, that is the point of owning the source. New fields, objects, workflows, reports, integrations and AI features can all be built straight onto it. WhiteGuava offers ongoing support and development, but it is optional, never a required contract.',
   },
   {
     q: 'Can the products work together?',
-    a: 'Yes. They share the same underlying platform (GuavaFramework), so records and workflows connect — payroll posts to the ERP ledger, support and sales share contacts, training records tie into HR, and everything can feed GuavaInsights.',
+    a: 'Yes. They share the same underlying platform (GuavaFramework), so records and workflows connect, payroll posts to the ERP ledger, support and sales share contacts, training records tie into HR, and everything can feed GuavaInsights.',
   },
   {
     q: 'Can we start with one product and add more later?',
-    a: 'Yes. Most businesses start with the one that hurts most — usually the CRM, ERP or helpdesk — and add others when the subscription for them comes up for renewal.',
+    a: 'Yes. Most businesses start with the one that hurts most, usually the CRM, ERP or helpdesk, and add others when the subscription for them comes up for renewal.',
   },
 ];

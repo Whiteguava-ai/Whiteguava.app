@@ -10,7 +10,7 @@ function money(n: number): string {
 }
 
 /**
- * A live pipeline — drag a card between stages (desktop) or use the arrows
+ * A live pipeline, drag a card between stages (desktop) or use the arrows
  * (touch / keyboard / reduced motion). Dropping a deal in "Won" rolls it into
  * the tally. It's the real GuavaCRM Kanban behaviour in miniature.
  */

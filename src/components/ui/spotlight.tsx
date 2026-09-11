@@ -5,7 +5,7 @@ import { cn } from '@/lib/cn';
 
 /**
  * Aceternity "Spotlight": an ambient, softly drifting radial light behind hero
- * content. Pure CSS gradients + Framer Motion for the entrance/drift — no canvas,
+ * content. Pure CSS gradients + Framer Motion for the entrance/drift, no canvas,
  * no WebGL. Collapses to a static glow under prefers-reduced-motion.
  */
 export function Spotlight({

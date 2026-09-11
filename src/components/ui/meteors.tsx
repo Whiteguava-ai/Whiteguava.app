@@ -5,7 +5,7 @@ import { cn } from '@/lib/cn';
 
 /**
  * Deterministic pseudo-random in [0, 1), seeded by an integer. Used instead of
- * `Math.random()` so meteor positions are a pure function of `number` — stable
+ * `Math.random()` so meteor positions are a pure function of `number`, stable
  * across server and client renders (no hydration mismatch) and across
  * re-renders (satisfies the "no impure calls during render" rule).
  */
@@ -16,7 +16,7 @@ function seededRandom(seed: number) {
 
 /**
  * Aceternity "Meteors": diagonal light streaks drifting across a dark surface.
- * Pure CSS keyframe animation, staggered per-meteor — cheap enough to leave
+ * Pure CSS keyframe animation, staggered per-meteor, cheap enough to leave
  * running continuously. Renders nothing under prefers-reduced-motion.
  */
 export function Meteors({ number = 16, className }: { number?: number; className?: string }) {

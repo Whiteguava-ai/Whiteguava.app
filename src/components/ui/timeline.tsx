@@ -17,7 +17,7 @@ export interface TimelineEntry {
  *
  * Cinematic layer: each entry's content slides in from an alternating side and
  * scales toward 1 as it reaches the reading zone, then eases back as it leaves
- * — a continuous, scroll-linked focus pass rather than a one-shot reveal.
+ *, a continuous, scroll-linked focus pass rather than a one-shot reveal.
  * Below `md` the label/title collapse into a stacked column; from `md` up they
  * stick alongside the content. All entry motion is skipped under
  * `prefers-reduced-motion`.

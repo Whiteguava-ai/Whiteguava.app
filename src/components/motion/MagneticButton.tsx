@@ -5,7 +5,7 @@ import { gsap, useGSAP } from '@/lib/motion/gsap';
 
 /**
  * A link/button that leans toward the cursor while hovered and springs back on
- * leave — reserved for a single focal CTA per view (the motion contract caps
+ * leave, reserved for a single focal CTA per view (the motion contract caps
  * magnetic elements at 1–2 per screen). Pull is clamped so the element never
  * leaves its own hit box. Pointer-driven only: no-op on touch and under
  * reduced motion, where it renders as a plain anchor.

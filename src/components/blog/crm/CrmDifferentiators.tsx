@@ -25,7 +25,7 @@ const DIFFS: Diff[] = [
     body: (
       <>
         Add the whole company, your partners, and read-only viewers. The price <b>does not move</b>.
-        Zoho tiers can’t even be mixed — if two people need Ultimate, all ten pay for it.
+        Zoho tiers can’t even be mixed, if two people need Ultimate, all ten pay for it.
       </>
     ),
   },
@@ -44,7 +44,7 @@ const DIFFS: Diff[] = [
     title: 'The source is yours to change',
     body: (
       <>
-        We rebrand it, patch it, and build features straight onto it — the AI module was added this
+        We rebrand it, patch it, and build features straight onto it, the AI module was added this
         way. A licensed product can’t be edited like that at any price.
       </>
     ),
@@ -65,7 +65,7 @@ const DIFFS: Diff[] = [
     body: (
       <>
         Salesforce raised Enterprise from $165 to $175 and Unlimited from $330 to $350 in 2026.
-        GuavaCRM has no renewal to raise — you already own it.
+        GuavaCRM has no renewal to raise, you already own it.
       </>
     ),
   },
@@ -74,7 +74,7 @@ const DIFFS: Diff[] = [
     title: 'Runs on one ~$28/month server',
     body: (
       <>
-        Not a licence, not a seat count — a single virtual machine you can size up or down. Everything
+        Not a licence, not a seat count, a single virtual machine you can size up or down. Everything
         else is included in the setup.
       </>
     ),
@@ -82,7 +82,7 @@ const DIFFS: Diff[] = [
 ];
 
 /**
- * The "what the paid options can't give you" showcase — the point of the whole
+ * The "what the paid options can't give you" showcase, the point of the whole
  * pitch, called out on its own.
  */
 export function CrmDifferentiators() {

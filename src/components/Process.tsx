@@ -125,7 +125,7 @@ function StepCard({
   align,
 }: {
   step: { num: string; title: string; desc: string; duration: string };
-  /** Which edge the card's text hugs on desktop — the edge facing the spine. */
+  /** Which edge the card's text hugs on desktop, the edge facing the spine. */
   align: 'left' | 'right';
 }) {
   return (
@@ -141,7 +141,7 @@ function StepCard({
           className={cn(
             'pointer-events-none absolute top-2 select-none text-7xl font-black leading-none text-black/[0.05] md:text-8xl',
             // Mobile text always reads left-aligned (see `md:text-right` above),
-            // so the watermark sits on the right there regardless of `align` —
+            // so the watermark sits on the right there regardless of `align`,
             // only the desktop, alignment-aware side kicks in from `md:`.
             align === 'right' ? 'right-3 md:left-3' : 'right-3'
           )}

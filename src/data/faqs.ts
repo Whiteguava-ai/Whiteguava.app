@@ -9,11 +9,11 @@ export const homepageFaqs = [
   },
   {
     q: 'What type of businesses do you work with?',
-    a: 'We work with businesses of all sizes — from startups building their first product to established companies looking to automate processes or integrate AI into existing systems. If you have a real problem worth solving, we can help.',
+    a: 'We work with businesses of all sizes, from startups building their first product to established companies looking to automate processes or integrate AI into existing systems. If you have a real problem worth solving, we can help.',
   },
   {
     q: 'What is an AI agent?',
-    a: 'An AI agent is software that can understand a request, use tools and business data, and complete a task with limited hand-holding. WhiteGuava builds agents for support, operations, and internal workflows — connected to the systems you already use.',
+    a: 'An AI agent is software that can understand a request, use tools and business data, and complete a task with limited hand-holding. WhiteGuava builds agents for support, operations, and internal workflows, connected to the systems you already use.',
   },
   {
     q: 'What kind of AI solutions can WhiteGuava build?',
@@ -21,7 +21,7 @@ export const homepageFaqs = [
   },
   {
     q: 'Can you integrate AI into our existing software?',
-    a: 'Yes. We specialise in connecting AI to the systems your business already uses — CRM, ERP, databases, APIs, cloud platforms, and internal tools. AI should work with your stack, not replace it.',
+    a: 'Yes. We specialise in connecting AI to the systems your business already uses, CRM, ERP, databases, APIs, cloud platforms, and internal tools. AI should work with your stack, not replace it.',
   },
   {
     q: 'Can you build a complete application from scratch?',
@@ -33,11 +33,11 @@ export const homepageFaqs = [
   },
   {
     q: 'How is AI automation different from regular automation?',
-    a: 'Traditional automation follows fixed rules. AI automation can read unstructured input — emails, documents, chat messages — and decide the next step. We use both: reliable workflows where rules are enough, and AI where judgment is required.',
+    a: 'Traditional automation follows fixed rules. AI automation can read unstructured input, emails, documents, chat messages, and decide the next step. We use both: reliable workflows where rules are enough, and AI where judgment is required.',
   },
   {
     q: 'Can you connect AI to our internal documents and data?',
-    a: 'Yes. We build RAG (Retrieval Augmented Generation) systems that connect AI to your internal documents, databases, policies, and wikis — so it answers from your business knowledge, not general internet data.',
+    a: 'Yes. We build RAG (Retrieval Augmented Generation) systems that connect AI to your internal documents, databases, policies, and wikis, so it answers from your business knowledge, not general internet data.',
   },
   {
     q: 'Do you work with startups and small businesses?',
@@ -45,7 +45,7 @@ export const homepageFaqs = [
   },
   {
     q: 'Do you provide deployment and ongoing support?',
-    a: 'Yes. We take your solution from development to production — handling cloud deployment, infrastructure, monitoring, and post-launch improvements. We aim to be a long-term technical partner, not a one-time vendor.',
+    a: 'Yes. We take your solution from development to production, handling cloud deployment, infrastructure, monitoring, and post-launch improvements. We aim to be a long-term technical partner, not a one-time vendor.',
   },
   {
     q: 'How is project pricing determined?',
@@ -53,19 +53,19 @@ export const homepageFaqs = [
   },
   {
     q: 'What technologies do you use?',
-    a: 'Python, TypeScript, React, Next.js, FastAPI, Node.js, PostgreSQL, MongoDB, Docker, AWS, Azure, OpenAI, Anthropic, Google AI, LangChain, Hugging Face, vector databases, and more — chosen based on what fits your project best.',
+    a: 'Python, TypeScript, React, Next.js, FastAPI, Node.js, PostgreSQL, MongoDB, Docker, AWS, Azure, OpenAI, Anthropic, Google AI, LangChain, Hugging Face, vector databases, and more, chosen based on what fits your project best.',
   },
 ];
 
 /**
- * A distinct FAQ set for /about — company/working-style questions rather
+ * A distinct FAQ set for /about, company/working-style questions rather
  * than the homepage's service-capability questions. Kept separate from
  * homepageFaqs so the two pages don't ship identical Q&A content.
  */
 export const aboutFaqs = [
   {
     q: 'Where is WhiteGuava based, and who do you work with?',
-    a: "We're based in Bengaluru, Karnataka, India, and work with clients worldwide — remote collaboration is the default, not an exception.",
+    a: "We're based in Bengaluru, Karnataka, India, and work with clients worldwide, remote collaboration is the default, not an exception.",
   },
   {
     q: "What's your process from first conversation to launch?",
@@ -73,11 +73,11 @@ export const aboutFaqs = [
   },
   {
     q: 'Can I see examples of things you’ve built?',
-    a: 'Yes — the Works section on our homepage walks through recent projects, including a WhatsApp AI agent for retail/e-commerce customer support, a document AI pipeline for financial services, a RAG-based internal knowledge assistant for an enterprise client, and an operations automation platform for a B2B business.',
+    a: 'Yes, the Works section on our homepage walks through recent projects, including a WhatsApp AI agent for retail/e-commerce customer support, a document AI pipeline for financial services, a RAG-based internal knowledge assistant for an enterprise client, and an operations automation platform for a B2B business.',
   },
   {
     q: 'What if I’m not sure whether I need AI, automation, or something else entirely?',
-    a: 'That’s exactly what an AI discovery conversation is for — pick "AI Discovery / Consultation" on our contact form and we’ll help you figure out what the problem actually needs before recommending a build.',
+    a: 'That’s exactly what an AI discovery conversation is for, pick "AI Discovery / Consultation" on our contact form and we’ll help you figure out what the problem actually needs before recommending a build.',
   },
   {
     q: 'Do you handle confidential business data and sign NDAs?',
@@ -89,6 +89,6 @@ export const aboutFaqs = [
   },
   {
     q: 'Do you disappear after the project launches?',
-    a: "No — launch is the fifth of six stages in how we work, not the last. The sixth is ongoing improvement: monitoring, performance, and reliability work after the system is live in production.",
+    a: "No, launch is the fifth of six stages in how we work, not the last. The sixth is ongoing improvement: monitoring, performance, and reliability work after the system is live in production.",
   },
 ];

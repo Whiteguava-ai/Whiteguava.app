@@ -24,7 +24,7 @@ const items = [
 
 /**
  * The capability marquee, skewed by scroll velocity: fast scrolling rakes the
- * strip into a lean, easing back to upright as you settle — the "speed lines"
+ * strip into a lean, easing back to upright as you settle, the "speed lines"
  * trick. The CSS keyframe loop stays on the inner `.track`; the skew rides an
  * outer wrapper so the two transforms don't fight. Flat and upright under
  * reduced motion.
@@ -59,7 +59,7 @@ export default function Stats() {
             <CinematicText>One Team. Multiple Capabilities.</CinematicText>
           </h2>
           <p className={styles.sub}>
-            We combine AI, software engineering, automation, data, and cloud to build practical solutions that work in production — not just in demos.
+            We combine AI, software engineering, automation, data, and cloud to build practical solutions that work in production, not just in demos.
           </p>
         </Reveal>
       </div>

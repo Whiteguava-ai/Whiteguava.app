@@ -17,13 +17,13 @@ export const whatAreAiAgents: BlogPost = {
   readingTimeMinutes: 14,
   h1: 'What Are AI Agents? Types, Examples, and How They Actually Work',
   subtitle:
-    'A complete, practical explanation of AI agents — what they are, the core types, how they reason and act, and where they show up in real businesses.',
+    'A complete, practical explanation of AI agents, what they are, the core types, how they reason and act, and where they show up in real businesses.',
   coverQuery: 'artificial intelligence technology abstract network',
   coverAlt: 'Abstract visualization of a connected AI network representing an AI agent reasoning over data and tools',
   body: [
     {
       type: 'p',
-      text: 'An AI agent is a software system that uses a large language model to perceive its environment, reason about a goal, decide which tools or data it needs, take action, and adjust based on the outcome — with limited human supervision once it is running. That is the short answer.',
+      text: 'An AI agent is a software system that uses a large language model to perceive its environment, reason about a goal, decide which tools or data it needs, take action, and adjust based on the outcome, with limited human supervision once it is running. That is the short answer.',
     },
     {
       type: 'p',
@@ -36,12 +36,12 @@ export const whatAreAiAgents: BlogPost = {
     },
     {
       type: 'p',
-      text: 'This definition is not new — it comes from classical AI, where an "agent" is anything that perceives its environment through sensors and acts on it through actuators. What changed with large language models is the reasoning step: instead of hand-coded rules, an LLM interprets messy, unstructured input (natural language, a scanned form, a photo) and decides what to do about it. That is why "AI agent" and "agentic AI" became common terms only after LLMs got reliable enough to plan and use tools.',
+      text: 'This definition is not new, it comes from classical AI, where an "agent" is anything that perceives its environment through sensors and acts on it through actuators. What changed with large language models is the reasoning step: instead of hand-coded rules, an LLM interprets messy, unstructured input (natural language, a scanned form, a photo) and decides what to do about it. That is why "AI agent" and "agentic AI" became common terms only after LLMs got reliable enough to plan and use tools.',
     },
     {
       type: 'callout',
       title: 'AI agent vs. vertical AI agent',
-      text: 'A general AI agent can be pointed at many kinds of tasks. A "vertical AI agent" is purpose-built and pre-trained for one industry or function — for example, an agent built specifically for insurance claims triage or restaurant order-taking — trading flexibility for depth in that one domain.',
+      text: 'A general AI agent can be pointed at many kinds of tasks. A "vertical AI agent" is purpose-built and pre-trained for one industry or function, for example, an agent built specifically for insurance claims triage or restaurant order-taking, trading flexibility for depth in that one domain.',
     },
     {
       type: 'h2',
@@ -58,10 +58,10 @@ export const whatAreAiAgents: BlogPost = {
       type: 'list',
       ordered: true,
       items: [
-        'Perceive — the agent receives an input: a customer message, a new record in a CRM, a document that was just uploaded.',
-        'Decide — the underlying model reasons about what the input requires and which tool, if any, is needed to handle it correctly.',
-        'Act — the agent calls a tool: an API, a database query, a function that sends a message or creates a ticket.',
-        'Observe — the agent reads the result of that action and decides whether the task is done, whether another step is needed, or whether a human should take over.',
+        'Perceive, the agent receives an input: a customer message, a new record in a CRM, a document that was just uploaded.',
+        'Decide, the underlying model reasons about what the input requires and which tool, if any, is needed to handle it correctly.',
+        'Act, the agent calls a tool: an API, a database query, a function that sends a message or creates a ticket.',
+        'Observe, the agent reads the result of that action and decides whether the task is done, whether another step is needed, or whether a human should take over.',
       ],
     },
     {
@@ -77,10 +77,10 @@ export const whatAreAiAgents: BlogPost = {
       type: 'table',
       headers: ['', 'Traditional Automation', 'AI Chatbot', 'AI Agent'],
       rows: [
-        ['Follows a fixed path?', 'Yes — if/then rules only', 'Mostly — scripted flows or a single prompt', 'No — decides the path based on the request'],
-        ['Handles unstructured input?', 'No', 'Partially, within the script', 'Yes — reads and reasons about free text, documents, data'],
-        ['Can use external tools/APIs?', 'Only pre-wired steps', 'Rarely', 'Yes — calls tools as part of reasoning'],
-        ['Adapts mid-task?', 'No', 'No', 'Yes — observes results and changes course'],
+        ['Follows a fixed path?', 'Yes, if/then rules only', 'Mostly, scripted flows or a single prompt', 'No, decides the path based on the request'],
+        ['Handles unstructured input?', 'No', 'Partially, within the script', 'Yes, reads and reasons about free text, documents, data'],
+        ['Can use external tools/APIs?', 'Only pre-wired steps', 'Rarely', 'Yes, calls tools as part of reasoning'],
+        ['Adapts mid-task?', 'No', 'No', 'Yes, observes results and changes course'],
         ['Typical use', 'CRM updates, notifications, approvals', 'FAQ answers, simple lead capture', 'Support resolution, document handling, multi-step workflows'],
         ['Fails how?', 'Breaks on unexpected input', 'Gives a generic or wrong scripted answer', 'Can escalate to a human when uncertain, if built correctly'],
       ],
@@ -118,7 +118,7 @@ export const whatAreAiAgents: BlogPost = {
     { type: 'h3', text: '4. Utility-based agents', id: 'utility-based' },
     {
       type: 'p',
-      text: 'Go a step further than goal-based agents by weighing multiple possible outcomes and picking the one with the highest value on some measure — not just "a way to the goal" but "the best way." A logistics agent choosing between three delivery routes based on cost, time, and reliability is utility-based.',
+      text: 'Go a step further than goal-based agents by weighing multiple possible outcomes and picking the one with the highest value on some measure, not just "a way to the goal" but "the best way." A logistics agent choosing between three delivery routes based on cost, time, and reliability is utility-based.',
     },
     { type: 'h3', text: '5. Learning agents', id: 'learning-agents' },
     {
@@ -144,11 +144,11 @@ export const whatAreAiAgents: BlogPost = {
     {
       type: 'list',
       items: [
-        'Tool-using agents — given a defined set of APIs or functions and decide at runtime which to call. The most common pattern in business deployments: a support agent that looks up an order, checks a policy, and issues a refund.',
-        'RAG-grounded agents — retrieve relevant passages from a private knowledge base before answering, so responses are based on your actual documents rather than general training data. Nearly every serious business agent needs this layer.',
-        'Planning agents — break a goal into a sequence of sub-tasks before executing them, and revise the plan if an early step fails. Useful for research-then-act workflows.',
-        'Conversational agents — handle natural-language interactions across chat, WhatsApp, email, or voice, often combining tool use and RAG grounding in one deployment.',
-        'Vertical agents — purpose-built for one function or industry (claims triage, recruiting screening, expense audit) rather than general-purpose.',
+        'Tool-using agents, given a defined set of APIs or functions and decide at runtime which to call. The most common pattern in business deployments: a support agent that looks up an order, checks a policy, and issues a refund.',
+        'RAG-grounded agents, retrieve relevant passages from a private knowledge base before answering, so responses are based on your actual documents rather than general training data. Nearly every serious business agent needs this layer.',
+        'Planning agents, break a goal into a sequence of sub-tasks before executing them, and revise the plan if an early step fails. Useful for research-then-act workflows.',
+        'Conversational agents, handle natural-language interactions across chat, WhatsApp, email, or voice, often combining tool use and RAG grounding in one deployment.',
+        'Vertical agents, purpose-built for one function or industry (claims triage, recruiting screening, expense audit) rather than general-purpose.',
       ],
     },
     {
@@ -165,13 +165,13 @@ export const whatAreAiAgents: BlogPost = {
     {
       type: 'list',
       items: [
-        'Recommendation agents — streaming and retail platforms use learning agents that refine suggestions based on what a user actually watches or buys, rather than a fixed rule set.',
-        'Autonomous vehicles — self-driving systems combine model-based and utility-based agents to perceive the road, model what other vehicles will likely do, and choose the safest, most efficient action.',
-        'Finance and banking — goal-based agents assist with fraud detection, loan-document review, and compliance checks, flagging cases for a human rather than deciding unilaterally on high-stakes outcomes.',
-        'Retail and logistics — utility-based agents help with merchandise planning and warehouse monitoring, weighing cost, speed, and stock levels to choose an action.',
-        'Customer support agents — read a request, check order or account data, and either resolve it or hand off to a person with full context attached instead of starting the conversation over.',
-        'WhatsApp AI agents — answer product questions, check order status, and qualify a lead, built on the WhatsApp Business API rather than a generic web widget, because that is where many customers already message a business.',
-        'Document-handling agents — read an invoice or form, extract the fields that matter, flag anything below a confidence threshold for a human, and push clean data into an ERP instead of someone retyping it.',
+        'Recommendation agents, streaming and retail platforms use learning agents that refine suggestions based on what a user actually watches or buys, rather than a fixed rule set.',
+        'Autonomous vehicles, self-driving systems combine model-based and utility-based agents to perceive the road, model what other vehicles will likely do, and choose the safest, most efficient action.',
+        'Finance and banking, goal-based agents assist with fraud detection, loan-document review, and compliance checks, flagging cases for a human rather than deciding unilaterally on high-stakes outcomes.',
+        'Retail and logistics, utility-based agents help with merchandise planning and warehouse monitoring, weighing cost, speed, and stock levels to choose an action.',
+        'Customer support agents, read a request, check order or account data, and either resolve it or hand off to a person with full context attached instead of starting the conversation over.',
+        'WhatsApp AI agents, answer product questions, check order status, and qualify a lead, built on the WhatsApp Business API rather than a generic web widget, because that is where many customers already message a business.',
+        'Document-handling agents, read an invoice or form, extract the fields that matter, flag anything below a confidence threshold for a human, and push clean data into an ERP instead of someone retyping it.',
       ],
     },
     { type: 'h2', text: 'What Can an AI Agent Actually Do for a Business?', id: 'what-agents-do' },
@@ -191,7 +191,7 @@ export const whatAreAiAgents: BlogPost = {
     {
       type: 'callout',
       title: 'A note on scope',
-      text: 'A narrow, well-defined agent — for example, one that only handles order-status lookups on WhatsApp — is a realistic first project. Trying to build one agent that handles "all of customer support" on day one is where most agent projects stall.',
+      text: 'A narrow, well-defined agent, for example, one that only handles order-status lookups on WhatsApp, is a realistic first project. Trying to build one agent that handles "all of customer support" on day one is where most agent projects stall.',
     },
     {
       type: 'h2',
@@ -208,19 +208,19 @@ export const whatAreAiAgents: BlogPost = {
     {
       type: 'list',
       items: [
-        'Skipping grounding — letting the agent answer from general knowledge instead of your actual data leads to confident, wrong answers.',
-        'No escalation path — an agent that cannot recognize when it is out of its depth and hand off to a person will eventually mishandle something important.',
-        'Scoping too broad — starting with "automate all of support" instead of one well-defined workflow makes both the build and the evaluation much harder.',
-        'No logging or evaluation — without visibility into what the agent actually said and did, problems surface from customer complaints instead of monitoring.',
-        'Unclear accountability — letting an agent take high-stakes actions (refunds, approvals, contract terms) without a defined owner for when it gets something wrong.',
-        'Treating the demo as the finish line — a prototype that works on ten test cases is not the same as a system that holds up on real, messy traffic.',
+        'Skipping grounding, letting the agent answer from general knowledge instead of your actual data leads to confident, wrong answers.',
+        'No escalation path, an agent that cannot recognize when it is out of its depth and hand off to a person will eventually mishandle something important.',
+        'Scoping too broad, starting with "automate all of support" instead of one well-defined workflow makes both the build and the evaluation much harder.',
+        'No logging or evaluation, without visibility into what the agent actually said and did, problems surface from customer complaints instead of monitoring.',
+        'Unclear accountability, letting an agent take high-stakes actions (refunds, approvals, contract terms) without a defined owner for when it gets something wrong.',
+        'Treating the demo as the finish line, a prototype that works on ten test cases is not the same as a system that holds up on real, messy traffic.',
       ],
     },
   ],
   faqs: [
     {
       q: 'What is the simplest definition of an AI agent?',
-      a: 'An AI agent is a system that can perceive its environment, decide what to do about it, use tools or data to carry out that decision, and adjust based on the results — rather than only generating a single text response.',
+      a: 'An AI agent is a system that can perceive its environment, decide what to do about it, use tools or data to carry out that decision, and adjust based on the results, rather than only generating a single text response.',
     },
     {
       q: 'What are the 5 types of AI agents?',
@@ -232,11 +232,11 @@ export const whatAreAiAgents: BlogPost = {
     },
     {
       q: 'What can AI agents do?',
-      a: 'In business settings, AI agents commonly handle customer support resolution, document data extraction, order and account lookups, lead qualification, and internal knowledge search — any task that involves reading unstructured input and acting on real data.',
+      a: 'In business settings, AI agents commonly handle customer support resolution, document data extraction, order and account lookups, lead qualification, and internal knowledge search, any task that involves reading unstructured input and acting on real data.',
     },
     {
       q: 'What is a vertical AI agent?',
-      a: 'A vertical AI agent is built and tuned for one specific industry or function — such as insurance claims triage or restaurant order-taking — rather than being general-purpose. It trades flexibility for depth in that one domain.',
+      a: 'A vertical AI agent is built and tuned for one specific industry or function, such as insurance claims triage or restaurant order-taking, rather than being general-purpose. It trades flexibility for depth in that one domain.',
     },
     {
       q: 'Do AI agents replace human staff?',
@@ -244,7 +244,7 @@ export const whatAreAiAgents: BlogPost = {
     },
     {
       q: 'What is the first step to building an AI agent for a business?',
-      a: 'Pick one narrow, well-defined workflow with clear rules and a real volume problem — such as order-status lookups or first-response support triage — rather than attempting to automate an entire department at once.',
+      a: 'Pick one narrow, well-defined workflow with clear rules and a real volume problem, such as order-status lookups or first-response support triage, rather than attempting to automate an entire department at once.',
     },
   ],
   related: [
@@ -255,7 +255,7 @@ export const whatAreAiAgents: BlogPost = {
   ],
   cta: {
     title: 'Thinking about building an AI agent for your business?',
-    text: 'WhiteGuava designs and builds production AI agents — grounded in your data, connected to your systems, with a human escalation path built in from day one.',
+    text: 'WhiteGuava designs and builds production AI agents, grounded in your data, connected to your systems, with a human escalation path built in from day one.',
     label: 'Talk to Our Team',
     href: '/services/ai-agents',
   },

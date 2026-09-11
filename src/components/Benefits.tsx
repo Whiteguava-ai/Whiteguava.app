@@ -59,7 +59,7 @@ export default function Benefits() {
             </div>
             <h3 className={styles.cardTitle}>AI Where It Matters</h3>
             <p className={styles.cardDesc}>
-              We use AI where it creates measurable value — not simply because it is trendy. Practical application over hype.
+              We use AI where it creates measurable value, not simply because it is trendy. Practical application over hype.
             </p>
           </Reveal>
 
@@ -81,7 +81,7 @@ export default function Benefits() {
             </div>
             <h3 className={styles.cardTitle}>From Idea to Production</h3>
             <p className={styles.cardDesc}>
-              Strategy, design, engineering, integration, and deployment under one team — no handoffs between agencies.
+              Strategy, design, engineering, integration, and deployment under one team, no handoffs between agencies.
             </p>
           </Reveal>
 
@@ -113,7 +113,7 @@ export default function Benefits() {
             </div>
             <h3 className={styles.cardTitle}>Software + AI</h3>
             <p className={styles.cardDesc}>
-              We don&apos;t just build the AI layer. We build the complete product around it — from interface to infrastructure.
+              We don&apos;t just build the AI layer. We build the complete product around it, from interface to infrastructure.
             </p>
           </Reveal>
         </div>

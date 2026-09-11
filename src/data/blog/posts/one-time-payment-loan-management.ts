@@ -9,7 +9,7 @@ export const oneTimePaymentLoanManagement: BlogPost = {
   metaDescription:
     'Self-hosted loan servicing software you own: GuavaLend runs origination, underwriting, accrual and collections on your own cloud, AI built in, no per-loan fee. See the 5-year cost vs TurnKey Lender.',
   excerpt:
-    'Loan-management platforms bill a base fee plus a charge per active loan or per user, and grow the invoice as your book grows. GuavaLend is a one-time setup, then about $35/month for the server, with products, origination, underwriting, servicing, accrual, collections and a borrower portal — plus an AI assistant.',
+    'Loan-management platforms bill a base fee plus a charge per active loan or per user, and grow the invoice as your book grows. GuavaLend is a one-time setup, then about $35/month for the server, with products, origination, underwriting, servicing, accrual, collections and a borrower portal, plus an AI assistant.',
   category: 'Lending',
   tags: [
     'loan servicing software',
@@ -26,7 +26,7 @@ export const oneTimePaymentLoanManagement: BlogPost = {
   readingTimeMinutes: 13,
   h1: 'GuavaLend: The Loan-Management Platform You Buy Once Instead of Renting Per Loan',
   subtitle:
-    'The same products, origination, underwriting, servicing, accrual and collections as the hosted platforms — set up once, owned by you, running on a ~$35/month server instead of a base fee plus a per-loan meter.',
+    'The same products, origination, underwriting, servicing, accrual and collections as the hosted platforms, set up once, owned by you, running on a ~$35/month server instead of a base fee plus a per-loan meter.',
   body: [
     {
       type: 'p',
@@ -34,18 +34,18 @@ export const oneTimePaymentLoanManagement: BlogPost = {
     },
     {
       type: 'p',
-      text: 'GuavaLend is the opposite model. WhiteGuava sets it up on your own cloud, configures it to your loan products, accrual conventions and regulator, hands it over, and then it is yours: no per-loan meter, no per-user licence, no renewal, and the only ongoing cost is roughly $35 a month for the server. It covers the whole lending job — configurable loan products, application capture and origination, scorecard and rule-based underwriting, disbursement, EMI and custom repayment schedules, daily interest and penalty accrual to a ledger, part-payment and restructuring, ageing and collections queues, a borrower portal, and regulatory reporting — plus an AI assistant built directly in.',
+      text: 'GuavaLend is the opposite model. WhiteGuava sets it up on your own cloud, configures it to your loan products, accrual conventions and regulator, hands it over, and then it is yours: no per-loan meter, no per-user licence, no renewal, and the only ongoing cost is roughly $35 a month for the server. It covers the whole lending job, configurable loan products, application capture and origination, scorecard and rule-based underwriting, disbursement, EMI and custom repayment schedules, daily interest and penalty accrual to a ledger, part-payment and restructuring, ageing and collections queues, a borrower portal, and regulatory reporting, plus an AI assistant built directly in.',
     },
     {
       type: 'callout',
       title: 'In short',
       text: 'Loan-management platforms bill a base fee plus a charge per active loan or per user, so the software bill grows as your book grows. GuavaLend is a one-time setup, then about $35/month for the server (roughly $2,100 over five years), flat regardless of loan count. It covers products, origination, underwriting, servicing, accrual and collections, with an AI assistant and portfolio risk flags included.',
     },
-    { type: 'embed', component: 'productCostCalculator', product: 'lend', caption: 'The loan-management market publishes very little pricing. Figures shown are estimates from independent 2026 comparisons and reseller quotes, not vendor list prices. The GuavaLend bar is the server cost only — setup is a separate one-time fee.' },
+    { type: 'embed', component: 'productCostCalculator', product: 'lend', caption: 'The loan-management market publishes very little pricing. Figures shown are estimates from independent 2026 comparisons and reseller quotes, not vendor list prices. The GuavaLend bar is the server cost only, setup is a separate one-time fee.' },
     { type: 'h2', text: 'What a per-loan meter is really charging you for', id: 'what-youre-paying-for' },
     {
       type: 'p',
-      text: 'Repayment schedules, accrual and collections are mature and broadly the same across the serious platforms. What the base-plus-per-loan price rents is hosting, the vendor’s margin, and a licence that scales precisely with the size of your book — the one number a lender most wants to grow.',
+      text: 'Repayment schedules, accrual and collections are mature and broadly the same across the serious platforms. What the base-plus-per-loan price rents is hosting, the vendor’s margin, and a licence that scales precisely with the size of your book, the one number a lender most wants to grow.',
     },
     {
       type: 'p',
@@ -61,7 +61,7 @@ export const oneTimePaymentLoanManagement: BlogPost = {
       type: 'table',
       headers: ['Platform', 'Basis', 'Per year (est.)', 'AI', 'vs GuavaLend'],
       rows: [
-        ['GuavaLend (self-hosted)', 'flat server', '~$520', 'Built in (~$3–5/mo usage)', '—'],
+        ['GuavaLend (self-hosted)', 'flat server', '~$520', 'Built in (~$3–5/mo usage)', 'N/A'],
         ['Bryt', 'small lenders', '~$324', 'No', '0.6×'],
         ['LoanPro', 'base + per active loan', '~$18,000+', 'Partial', '35×'],
         ['TurnKey Lender', 'small-to-mid', '~$36,000', 'Decisioning AI', '69×'],
@@ -71,18 +71,18 @@ export const oneTimePaymentLoanManagement: BlogPost = {
     },
     {
       type: 'p',
-      text: 'Bryt is cheaper at a very small scale, with a correspondingly limited feature set and no AI. Everything with real servicing depth carries a base fee and a per-loan meter — and GuavaLend replaces both with a flat server cost.',
+      text: 'Bryt is cheaper at a very small scale, with a correspondingly limited feature set and no AI. Everything with real servicing depth carries a base fee and a per-loan meter, and GuavaLend replaces both with a flat server cost.',
     },
     { type: 'h2', text: 'How a loan is tracked, day by day', id: 'architecture' },
     {
       type: 'p',
-      text: 'Every module feeds one loan ledger and an accrual engine that runs interest and penalties daily, on your cloud. The diagram shows the layers — where people work, the lending modules, the ledger and accrual, automation and AI, and your cloud.',
+      text: 'Every module feeds one loan ledger and an accrual engine that runs interest and penalties daily, on your cloud. The diagram shows the layers, where people work, the lending modules, the ledger and accrual, automation and AI, and your cloud.',
     },
     { type: 'embed', component: 'productArchitecture', product: 'lend' },
     { type: 'h2', text: 'Everything GuavaLend does out of the box', id: 'features' },
     {
       type: 'p',
-      text: 'Every module below is part of GuavaLend from day one — including the borrower portal and reminder messaging that hosted platforms sell as add-ons. Explore what each covers, then check the feature matrix.',
+      text: 'Every module below is part of GuavaLend from day one, including the borrower portal and reminder messaging that hosted platforms sell as add-ons. Explore what each covers, then check the feature matrix.',
     },
     { type: 'embed', component: 'productModuleExplorer', product: 'lend' },
     { type: 'embed', component: 'productFeatureMatrix', product: 'lend' },
@@ -95,18 +95,18 @@ export const oneTimePaymentLoanManagement: BlogPost = {
     { type: 'h2', text: 'What renting TurnKey Lender, LoanPro or nCino will never give you', id: 'only-here' },
     {
       type: 'p',
-      text: 'Feature lists converge. What separates an owned lending platform from a rented one is structural — whether the licence scales with your book, where the loan data lives when a regulator asks, and whether the rules fit how you actually lend.',
+      text: 'Feature lists converge. What separates an owned lending platform from a rented one is structural, whether the licence scales with your book, where the loan data lives when a regulator asks, and whether the rules fit how you actually lend.',
     },
     { type: 'embed', component: 'productDifferentiators', product: 'lend' },
-    { type: 'h2', text: 'The AI is built in — not an analytics or decisioning tier', id: 'ai' },
+    { type: 'h2', text: 'The AI is built in, not an analytics or decisioning tier', id: 'ai' },
     { type: 'p', text: 'WhiteGuava adds the AI features a lending team actually uses straight onto GuavaLend as a custom module:' },
     {
       type: 'list',
       items: [
-        'Draft with AI — writes borrower notices, overdue reminders and responses to portal requests from the account’s own history.',
-        'Summarize — collapses a borrower account (loans, payments, promises, disputes) and its current risk picture into a short brief.',
-        'Ask AI — answers portfolio questions in plain English (total overdue, exposure by product, concentration by region) within each user’s branch and product access.',
-        'Risk flags — marks accounts whose payment behaviour is trending toward default, with the signals shown, for a collections officer to act on.',
+        'Draft with AI, writes borrower notices, overdue reminders and responses to portal requests from the account’s own history.',
+        'Summarize, collapses a borrower account (loans, payments, promises, disputes) and its current risk picture into a short brief.',
+        'Ask AI, answers portfolio questions in plain English (total overdue, exposure by product, concentration by region) within each user’s branch and product access.',
+        'Risk flags, marks accounts whose payment behaviour is trending toward default, with the signals shown, for a collections officer to act on.',
       ],
     },
     {
@@ -116,7 +116,7 @@ export const oneTimePaymentLoanManagement: BlogPost = {
     },
     {
       type: 'p',
-      text: 'GuavaLend is one of ten applications in the [Guava Product Suite](/guava) — the same buy-once, own-it model applied to [accounting and the general ledger](/blog/one-time-payment-erp), [borrower relationships and enquiries](/blog/one-time-payment-crm) and [the low-code platform underneath](/blog/one-time-payment-app-platform).',
+      text: 'GuavaLend is one of ten applications in the [Guava Product Suite](/guava), the same buy-once, own-it model applied to [accounting and the general ledger](/blog/one-time-payment-erp), [borrower relationships and enquiries](/blog/one-time-payment-crm) and [the low-code platform underneath](/blog/one-time-payment-app-platform).',
     },
     { type: 'h2', text: 'Who GuavaLend is built for', id: 'who-its-for' },
     { type: 'p', text: 'GuavaLend is the right call for lenders that want to own the system their book runs on:' },
@@ -139,7 +139,7 @@ export const oneTimePaymentLoanManagement: BlogPost = {
         'WhiteGuava deploys GuavaLend on your cloud account (Azure, AWS or your choice), branded for your business.',
         'We configure your loan products, rate and fee rules, accrual conventions, underwriting scorecards, approval limits, sanction and statement formats, collections rules, messaging channels and roles, migrate your live book, and switch on the AI module.',
         'We hand over full admin access, the database and documentation. From that point the software is yours.',
-        'Ongoing, you pay only for the server — around $35 a month — plus a few dollars of AI usage. Support and future changes are optional.',
+        'Ongoing, you pay only for the server, around $35 a month, plus a few dollars of AI usage. Support and future changes are optional.',
       ],
     },
     {
@@ -151,11 +151,11 @@ export const oneTimePaymentLoanManagement: BlogPost = {
   faqs: [
     {
       q: 'Is GuavaLend really a one-time payment?',
-      a: 'The platform is a one-time setup engagement — WhiteGuava deploys, configures and hands it over, and then you own it. The only recurring cost is the server, around $35 a month, plus a few dollars of AI usage. There is no per-loan meter and no per-user licence.',
+      a: 'The platform is a one-time setup engagement, WhiteGuava deploys, configures and hands it over, and then you own it. The only recurring cost is the server, around $35 a month, plus a few dollars of AI usage. There is no per-loan meter and no per-user licence.',
     },
     {
       q: 'Does the cost rise as our loan book grows?',
-      a: 'No. The cost is the server, not the number of active loans. A much larger book may need a slightly bigger server — a few extra dollars a month — but there is no per-loan charge.',
+      a: 'No. The cost is the server, not the number of active loans. A much larger book may need a slightly bigger server, a few extra dollars a month, but there is no per-loan charge.',
     },
     {
       q: 'Can GuavaLend handle our accrual conventions and statutory reports?',
@@ -163,15 +163,15 @@ export const oneTimePaymentLoanManagement: BlogPost = {
     },
     {
       q: 'Does it include a borrower portal?',
-      a: 'Yes — statements, repayment schedules, online payment, and requests such as foreclosure quotes and restructuring, all in the box. Hosted platforms typically sell the portal as an add-on.',
+      a: 'Yes, statements, repayment schedules, online payment, and requests such as foreclosure quotes and restructuring, all in the box. Hosted platforms typically sell the portal as an add-on.',
     },
     {
       q: 'Does GuavaLend have AI?',
-      a: 'Yes — borrower communications drafting, account and risk summaries, plain-English portfolio questions, and repayment-risk flags. It runs on a metered model at roughly $3 to $5 a month for a small team.',
+      a: 'Yes, borrower communications drafting, account and risk summaries, plain-English portfolio questions, and repayment-risk flags. It runs on a metered model at roughly $3 to $5 a month for a small team.',
     },
     {
       q: 'Where does the loan book live?',
-      a: 'On your own cloud subscription, in a database you control, with full SQL access, full export and the source code — which is often the deciding factor for a regulated lender.',
+      a: 'On your own cloud subscription, in a database you control, with full SQL access, full export and the source code, which is often the deciding factor for a regulated lender.',
     },
     {
       q: 'Can it integrate with bureaus and payment rails?',
@@ -179,8 +179,8 @@ export const oneTimePaymentLoanManagement: BlogPost = {
     },
   ],
   related: [
-    { href: '/blog/one-time-payment-erp', title: 'One-Time-Payment ERP', desc: 'GuavaERP — loan interest income and fees can post straight to its ledger.' },
-    { href: '/blog/one-time-payment-crm', title: 'One-Time-Payment CRM', desc: 'GuavaCRM — manage loan enquiries and borrower relationships upstream.' },
+    { href: '/blog/one-time-payment-erp', title: 'One-Time-Payment ERP', desc: 'GuavaERP, loan interest income and fees can post straight to its ledger.' },
+    { href: '/blog/one-time-payment-crm', title: 'One-Time-Payment CRM', desc: 'GuavaCRM, manage loan enquiries and borrower relationships upstream.' },
     { href: SERVICE_PATHS.software, title: 'AI Software Development', desc: 'How WhiteGuava builds, configures and deploys regulated platforms like GuavaLend.' },
     { href: SERVICE_PATHS.cloud, title: 'Cloud & Deployment', desc: 'Secure, compliant infrastructure for a loan book.' },
   ],
@@ -194,6 +194,6 @@ export const oneTimePaymentLoanManagement: BlogPost = {
     name: 'GuavaLend',
     applicationCategory: 'FinanceApplication',
     description:
-      'A self-hosted loan-management platform for origination, underwriting, servicing, accrual and collections, deployed on your own cloud and owned outright — instead of a base fee plus a per-loan meter.',
+      'A self-hosted loan-management platform for origination, underwriting, servicing, accrual and collections, deployed on your own cloud and owned outright, instead of a base fee plus a per-loan meter.',
   },
 };

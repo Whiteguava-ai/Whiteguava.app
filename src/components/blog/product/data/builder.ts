@@ -1,7 +1,7 @@
 import type { ProductDef } from '../types';
 
 /**
- * GuavaBuilder — build websites and pages visually on a platform you own.
+ * GuavaBuilder, build websites and pages visually on a platform you own.
  * Competitor list pricing, September 2026:
  *   Webflow site plans from $14/month, Premium around $39/month; Workspace seats
  *   from $16 to $39 per seat per month; Agency Workspace $35/month.
@@ -34,7 +34,7 @@ export const builder: ProductDef = {
   ],
 
   ladder: [
-    { vendor: 'GuavaBuilder', tier: 'server + AI usage', perUserMo: null, tenUsersYr: 280, ai: 'yes', aiNote: 'copy, layout, SEO', vsOurs: '—', ours: true },
+    { vendor: 'GuavaBuilder', tier: 'server + AI usage', perUserMo: null, tenUsersYr: 280, ai: 'yes', aiNote: 'copy, layout, SEO', vsOurs: 'N/A', ours: true },
     { vendor: 'Framer', tier: 'one site', perUserMo: null, tenUsersYr: 180, ai: 'partial', vsOurs: '0.6× per site' },
     { vendor: 'Squarespace', tier: 'Business, one site', perUserMo: null, tenUsersYr: 276, ai: 'partial', vsOurs: '1× per site' },
     { vendor: 'Wix Studio', tier: 'one site', perUserMo: null, tenUsersYr: 324, ai: 'partial', vsOurs: '1.2× per site' },
@@ -49,7 +49,7 @@ export const builder: ProductDef = {
       rows: [
         { capability: 'Visual canvas with real HTML/CSS box model', elsewhere: 'Webflow / Wix Studio' },
         { capability: 'Reusable components with overridable content', elsewhere: 'Higher tiers' },
-        { capability: 'Global design tokens — colour, type, spacing', elsewhere: 'Higher tiers' },
+        { capability: 'Global design tokens, colour, type, spacing', elsewhere: 'Higher tiers' },
         { capability: 'Breakpoints and responsive control', elsewhere: 'Every builder' },
       ],
     },
@@ -74,28 +74,28 @@ export const builder: ProductDef = {
     {
       group: 'AI assistant',
       rows: [
-        { capability: 'Draft — section copy and layout from a prompt', elsewhere: 'AI credits, capped per plan' },
-        { capability: 'Summarize — a content inventory across the site', elsewhere: 'Not offered' },
-        { capability: 'Ask AI — questions over your own site content and CMS', elsewhere: 'Not offered' },
+        { capability: 'Draft, section copy and layout from a prompt', elsewhere: 'AI credits, capped per plan' },
+        { capability: 'Summarize, a content inventory across the site', elsewhere: 'Not offered' },
+        { capability: 'Ask AI, questions over your own site content and CMS', elsewhere: 'Not offered' },
         { capability: 'Generate alt text and SEO meta in bulk', elsewhere: 'Partial, higher tiers' },
       ],
     },
     {
       group: 'Fundamentals',
       rows: [
-        { capability: 'Per-page SEO controls — title, meta, canonical, schema', elsewhere: 'Every builder (varies)' },
+        { capability: 'Per-page SEO controls, title, meta, canonical, schema', elsewhere: 'Every builder (varies)' },
         { capability: 'Forms with submissions stored and emailed', elsewhere: 'Every paid plan' },
-        { capability: 'Custom code embeds — head, body, per page', elsewhere: 'Higher tiers' },
+        { capability: 'Custom code embeds, head, body, per page', elsewhere: 'Higher tiers' },
         { capability: 'Full site and content export at any time', elsewhere: 'Limited or unavailable' },
       ],
     },
   ],
 
   diffs: [
-    { icon: 'infinity', title: 'Sites, pages and editors — all uncounted', body: 'Every builder charges per site, and Webflow charges per editor seat on top. GuavaBuilder runs any number of sites, pages and editors on one server.' },
+    { icon: 'infinity', title: 'Sites, pages and editors, all uncounted', body: 'Every builder charges per site, and Webflow charges per editor seat on top. GuavaBuilder runs any number of sites, pages and editors on one server.' },
     { icon: 'code', title: 'You own the output, not just the design', body: 'The full HTML, CSS and assets are yours, hosted on **your** cloud. Wix locks you in entirely; Webflow only exports on a paid workspace.' },
-    { icon: 'database', title: 'Your content is a database you control', body: 'CMS collections, form submissions and media live on **your** cloud subscription with full export — not on a platform that can change its plans under you.' },
-    { icon: 'sparkles', title: 'AI copy and layout without a credit cap', body: 'Section drafting, bulk alt text and SEO meta run on metered API calls — **a few dollars a month** — instead of a monthly AI-credit allowance you run out of.' },
+    { icon: 'database', title: 'Your content is a database you control', body: 'CMS collections, form submissions and media live on **your** cloud subscription with full export, not on a platform that can change its plans under you.' },
+    { icon: 'sparkles', title: 'AI copy and layout without a credit cap', body: 'Section drafting, bulk alt text and SEO meta run on metered API calls, **a few dollars a month**, instead of a monthly AI-credit allowance you run out of.' },
     { icon: 'palette', title: 'A real design system, not a theme', body: 'Global tokens, components and breakpoints behave like production front-end code, because that is what they compile to.' },
     { icon: 'shield', title: 'No renewal, no per-site upgrade', body: 'Launch a campaign microsite on a Friday without adding a plan. You own GuavaBuilder; the server is the only cost.' },
   ],
@@ -128,7 +128,7 @@ export const builder: ProductDef = {
   },
 
   modules: [
-    { name: 'Visual canvas', tag: 'Build', blurb: 'Design in the real box model, so what you build is what ships — no theme abstraction in the way.', points: ['Flexbox and grid layout with visual controls', 'Breakpoints from mobile up', 'Class-based styling that maps to CSS', 'Keyboard shortcuts and copy-paste across pages'] },
+    { name: 'Visual canvas', tag: 'Build', blurb: 'Design in the real box model, so what you build is what ships, no theme abstraction in the way.', points: ['Flexbox and grid layout with visual controls', 'Breakpoints from mobile up', 'Class-based styling that maps to CSS', 'Keyboard shortcuts and copy-paste across pages'] },
     { name: 'Components & tokens', tag: 'Design system', blurb: 'Build once, reuse everywhere, and change the whole site from one place.', points: ['Reusable components with per-instance content overrides', 'Global tokens for colour, type and spacing', 'Nested components and slots', 'Style guide page generated from your tokens'] },
     { name: 'CMS collections', tag: 'Content', blurb: 'Structured content that powers dynamic pages and lists.', points: ['Collections with typed fields and references', 'Dynamic pages generated per item', 'Filtering, sorting and pagination on lists', 'Editor role for non-designers'] },
     { name: 'Forms & media', tag: 'Content', blurb: 'Capture leads and manage assets without a third-party tool.', points: ['Forms with validation, storage and email/webhook delivery', 'Spam protection', 'Media library with automatic responsive images', 'Alt-text management'] },
@@ -138,7 +138,7 @@ export const builder: ProductDef = {
 
   lifecycle: {
     title: 'Design to published, and back again',
-    caption: 'How a page goes from idea to live and keeps improving. Click a step — AI helps at the start and the SEO pass.',
+    caption: 'How a page goes from idea to live and keeps improving. Click a step, AI helps at the start and the SEO pass.',
     steps: [
       { label: 'Design', detail: 'Lay out the page on the canvas using your components and tokens, or ask AI for a first-draft section from a prompt.', metric: 'Layout drafted' },
       { label: 'Build', detail: 'Refine the structure, wire up components, and set responsive behaviour across breakpoints.', metric: 'Responsive & clean' },
@@ -151,7 +151,7 @@ export const builder: ProductDef = {
 
   ai: [
     { name: 'Draft with AI', desc: 'Generates section copy and a first-pass layout from a short prompt, using your components and tokens so it fits the design.' },
-    { name: 'Summarize', desc: 'Produces a content inventory across the whole site — every page, its purpose and its last update — for a redesign or audit.' },
+    { name: 'Summarize', desc: 'Produces a content inventory across the whole site, every page, its purpose and its last update, for a redesign or audit.' },
     { name: 'Ask AI', desc: 'Answers questions over your own site content and CMS data, useful for large sites where nobody remembers every page.' },
     { name: 'SEO pass', desc: 'Generates titles, meta descriptions, Open Graph text and image alt text in bulk, for review before publish.' },
   ],

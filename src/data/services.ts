@@ -60,26 +60,26 @@ export const services: Record<string, ServiceContent> = {
     name: 'AI Software Development',
     title: 'AI Software Development',
     description:
-      'Custom AI software development for web apps, portals, and internal tools — from architecture to production, built by WhiteGuava in Bengaluru.',
+      'Custom AI software development for web apps, portals, and internal tools, from architecture to production, built by WhiteGuava in Bengaluru.',
     badge: 'AI Software',
     h1Line1: 'AI Software',
     h1Line2: 'Development',
     highlight: 'AI',
     subtitle:
-      'WhiteGuava designs and builds business software with AI where it creates value — applications, portals, and platforms that hold up in production.',
+      'WhiteGuava designs and builds business software with AI where it creates value, applications, portals, and platforms that hold up in production.',
     imageQuery: 'software developers working on laptops in modern office',
     imageAlt: 'Software engineers collaborating on a custom application build',
     overviewTitle: 'Software built around how you work',
     overview: [
       'WhiteGuava is an AI software development company based in Bengaluru, India. We build complete products: the interface, the backend, the data layer, and the AI capabilities that sit inside them.',
-      'If you need a custom application — not a demo and not a bolt-on chatbot — we take it from discovery through cloud deployment. That includes web apps, mobile apps, dashboards, and customer portals, with AI used only where it earns its place.',
+      'If you need a custom application, not a demo and not a bolt-on chatbot, we take it from discovery through cloud deployment. That includes web apps, mobile apps, dashboards, and customer portals, with AI used only where it earns its place.',
       'Teams also come to us as an offshore AI development company: an India-based partner that can take on a full build, or extend an existing team, without the overhead of hiring artificial intelligence engineers in-house. Whether you outsource AI development entirely or need it to plug into a team you already have, the process and the standard of delivery stay the same.',
     ],
     topicsTitle: 'What this engagement covers',
     topics: [
       {
         title: 'AI for software development',
-        body: 'We use AI inside the product and across the build: assistants, search, document handling, and recommendations — plus modern engineering practices that keep delivery tight.',
+        body: 'We use AI inside the product and across the build: assistants, search, document handling, and recommendations, plus modern engineering practices that keep delivery tight.',
       },
       {
         title: 'Custom applications',
@@ -106,7 +106,7 @@ export const services: Record<string, ServiceContent> = {
     useCases: [
       {
         title: 'Startups building a first version',
-        body: 'A founding team that needs a working product — not a prototype — built by an AI app development company that can own the whole stack.',
+        body: 'A founding team that needs a working product, not a prototype, built by an AI app development company that can own the whole stack.',
       },
       {
         title: 'Businesses replacing spreadsheets and email',
@@ -118,24 +118,24 @@ export const services: Record<string, ServiceContent> = {
       },
       {
         title: 'Businesses tired of renting core software',
-        body: 'Teams that have done the maths on five years of per-user subscriptions for their CRM, ERP or helpdesk and want to own the system instead — deployed on their own cloud, with the AI included.',
+        body: 'Teams that have done the maths on five years of per-user subscriptions for their CRM, ERP or helpdesk and want to own the system instead, deployed on their own cloud, with the AI included.',
       },
     ],
     productSuite: {
-      title: 'The Guava Product Suite — buy once, own it',
+      title: 'The Guava Product Suite, buy once, own it',
       intro:
-        'Alongside fully custom builds, WhiteGuava deploys a suite of ready business applications you own outright instead of renting. Each one is set up on your own cloud, branded for your business, configured to how you work, and handed over with the database and source. The only ongoing cost is the server it runs on — typically $20–$45 a month — plus a few dollars of AI usage, with the assistant built in rather than sold as an upgrade. Every product has a full breakdown, a live cost comparison against the incumbents, and interactive diagrams on the blog.',
+        'Alongside fully custom builds, WhiteGuava deploys a suite of ready business applications you own outright instead of renting. Each one is set up on your own cloud, branded for your business, configured to how you work, and handed over with the database and source. The only ongoing cost is the server it runs on, typically $20–$45 a month, plus a few dollars of AI usage, with the assistant built in rather than sold as an upgrade. Every product has a full breakdown, a live cost comparison against the incumbents, and interactive diagrams on the blog.',
       items: [
-        { name: 'GuavaCRM', category: 'Sales', blurb: 'Leads, deals, pipeline, email and AI — instead of per-user Salesforce or Zoho.', href: '/blog/one-time-payment-crm' },
-        { name: 'GuavaERP', category: 'Operations', blurb: 'Accounting, inventory, purchasing and manufacturing on one ledger — instead of NetSuite or SAP.', href: '/blog/one-time-payment-erp' },
-        { name: 'GuavaHR', category: 'People', blurb: 'Records, leave, attendance, payroll and recruitment — instead of per-employee BambooHR or Workday.', href: '/blog/one-time-payment-hr-software' },
-        { name: 'GuavaLearn', category: 'Learning', blurb: 'Courses, assessments, certifications and paid enrolment — instead of Docebo or TalentLMS.', href: '/blog/one-time-payment-lms' },
-        { name: 'GuavaInsights', category: 'Analytics', blurb: 'Dashboards, SQL, alerts and unlimited viewers — instead of per-seat Tableau or Power BI.', href: '/blog/one-time-payment-bi-dashboards' },
-        { name: 'GuavaDesk', category: 'Support', blurb: 'Tickets, knowledge base, SLAs and an AI copilot — instead of per-agent Zendesk or Freshdesk.', href: '/blog/one-time-payment-helpdesk' },
-        { name: 'GuavaBuilder', category: 'Web', blurb: 'A visual canvas, design system and CMS with unlimited sites — instead of per-site Webflow or Wix.', href: '/blog/one-time-payment-website-builder' },
-        { name: 'GuavaLend', category: 'Lending', blurb: 'Origination, servicing, accrual and collections — instead of a base fee plus a per-loan meter.', href: '/blog/one-time-payment-loan-management' },
-        { name: 'GuavaPlan', category: 'Work', blurb: 'Projects, updates, tasks and a daily digest for the whole company — instead of per-seat Asana or monday.com.', href: '/blog/one-time-payment-project-management' },
-        { name: 'GuavaFramework', category: 'Platform', blurb: 'The low-code application platform the whole suite is built on — instead of per-builder OutSystems or Retool.', href: '/blog/one-time-payment-app-platform' },
+        { name: 'GuavaCRM', category: 'Sales', blurb: 'Leads, deals, pipeline, email and AI, instead of per-user Salesforce or Zoho.', href: '/blog/one-time-payment-crm' },
+        { name: 'GuavaERP', category: 'Operations', blurb: 'Accounting, inventory, purchasing and manufacturing on one ledger, instead of NetSuite or SAP.', href: '/blog/one-time-payment-erp' },
+        { name: 'GuavaHR', category: 'People', blurb: 'Records, leave, attendance, payroll and recruitment, instead of per-employee BambooHR or Workday.', href: '/blog/one-time-payment-hr-software' },
+        { name: 'GuavaLearn', category: 'Learning', blurb: 'Courses, assessments, certifications and paid enrolment, instead of Docebo or TalentLMS.', href: '/blog/one-time-payment-lms' },
+        { name: 'GuavaInsights', category: 'Analytics', blurb: 'Dashboards, SQL, alerts and unlimited viewers, instead of per-seat Tableau or Power BI.', href: '/blog/one-time-payment-bi-dashboards' },
+        { name: 'GuavaDesk', category: 'Support', blurb: 'Tickets, knowledge base, SLAs and an AI copilot, instead of per-agent Zendesk or Freshdesk.', href: '/blog/one-time-payment-helpdesk' },
+        { name: 'GuavaBuilder', category: 'Web', blurb: 'A visual canvas, design system and CMS with unlimited sites, instead of per-site Webflow or Wix.', href: '/blog/one-time-payment-website-builder' },
+        { name: 'GuavaLend', category: 'Lending', blurb: 'Origination, servicing, accrual and collections, instead of a base fee plus a per-loan meter.', href: '/blog/one-time-payment-loan-management' },
+        { name: 'GuavaPlan', category: 'Work', blurb: 'Projects, updates, tasks and a daily digest for the whole company, instead of per-seat Asana or monday.com.', href: '/blog/one-time-payment-project-management' },
+        { name: 'GuavaFramework', category: 'Platform', blurb: 'The low-code application platform the whole suite is built on, instead of per-builder OutSystems or Retool.', href: '/blog/one-time-payment-app-platform' },
       ],
     },
     related: [
@@ -146,7 +146,7 @@ export const services: Record<string, ServiceContent> = {
     faqs: [
       {
         q: 'Do you only build the AI layer?',
-        a: 'No. We build the full product around it — interface, backend, integrations, and deployment. AI is part of the software, not a separate experiment.',
+        a: 'No. We build the full product around it, interface, backend, integrations, and deployment. AI is part of the software, not a separate experiment.',
       },
       {
         q: 'Can you work with an existing codebase?',
@@ -158,11 +158,11 @@ export const services: Record<string, ServiceContent> = {
       },
       {
         q: 'Do you work as an offshore development team?',
-        a: 'Yes. Many clients engage WhiteGuava specifically as an offshore AI development company — either for a complete build or to extend an in-house team for a fixed scope.',
+        a: 'Yes. Many clients engage WhiteGuava specifically as an offshore AI development company, either for a complete build or to extend an in-house team for a fixed scope.',
       },
       {
         q: 'How is this different from a general software development company?',
-        a: 'We are a software development company first — architecture, engineering, and delivery discipline are the foundation. AI is applied where it genuinely improves the product, not added as a label.',
+        a: 'We are a software development company first, architecture, engineering, and delivery discipline are the foundation. AI is applied where it genuinely improves the product, not added as a label.',
       },
     ],
   },
@@ -172,20 +172,20 @@ export const services: Record<string, ServiceContent> = {
     name: 'Custom AI Agents',
     title: 'AI Agent Development',
     description:
-      'AI agent development by WhiteGuava. We design agents that use your tools and data to complete real workflows — support, operations, and internal assistants.',
+      'AI agent development by WhiteGuava. We design agents that use your tools and data to complete real workflows, support, operations, and internal assistants.',
     badge: 'AI Agents',
     h1Line1: 'Custom',
     h1Line2: 'AI Agents',
     highlight: 'AI',
     subtitle:
-      'AI agents by WhiteGuava that reason, use tools, and finish the job — connected to your business systems, not stuck in a chat window.',
+      'AI agents by WhiteGuava that reason, use tools, and finish the job, connected to your business systems, not stuck in a chat window.',
     imageQuery: 'artificial intelligence robot assistant technology',
     imageAlt: 'AI agent interface handling a customer conversation',
     overviewTitle: 'What an AI agent actually is',
     overview: [
       'What is an AI agent, in practice? It is not a FAQ script. It can read a request, decide which tools or data it needs, take steps, and hand off to a person when it should. We build that behaviour around your workflows, permissions, and source systems.',
-      'WhiteGuava agents show up as customer support assistants, WhatsApp AI agents, internal knowledge assistants, and operations helpers. They use RAG (retrieval-augmented generation) so answers come from your documents and databases, not from generic internet text — the same LLM application development approach frameworks like LangChain are built around, applied to your specific systems.',
-      'The best conversational AI is not the one with the cleverest replies — it is the one that actually knows your business and knows when to stop and ask a human. That is the standard we build agents to.',
+      'WhiteGuava agents show up as customer support assistants, WhatsApp AI agents, internal knowledge assistants, and operations helpers. They use RAG (retrieval-augmented generation) so answers come from your documents and databases, not from generic internet text, the same LLM application development approach frameworks like LangChain are built around, applied to your specific systems.',
+      'The best conversational AI is not the one with the cleverest replies, it is the one that actually knows your business and knows when to stop and ask a human. That is the standard we build agents to.',
     ],
     topicsTitle: 'How we build agents',
     topics: [
@@ -211,7 +211,7 @@ export const services: Record<string, ServiceContent> = {
       },
       {
         title: 'LLM and RAG architecture',
-        body: 'Model choice, retrieval design, and evaluation are treated as engineering decisions — the same discipline behind serious LLM application development.',
+        body: 'Model choice, retrieval design, and evaluation are treated as engineering decisions, the same discipline behind serious LLM application development.',
       },
     ],
     useCasesTitle: 'Where agents get used',
@@ -226,7 +226,7 @@ export const services: Record<string, ServiceContent> = {
       },
       {
         title: 'Internal HR and operations',
-        body: 'From candidate screening support to internal policy lookup, agents built for AI in HR and recruitment work the same way as customer-facing ones — grounded in your actual documents.',
+        body: 'From candidate screening support to internal policy lookup, agents built for AI in HR and recruitment work the same way as customer-facing ones, grounded in your actual documents.',
       },
     ],
     related: [
@@ -237,7 +237,7 @@ export const services: Record<string, ServiceContent> = {
     faqs: [
       {
         q: 'How is an AI agent different from a chatbot?',
-        a: 'A chatbot usually answers from a script or a single prompt. An agent can use tools, read business data, and complete multi-step work — then escalate when it is unsure.',
+        a: 'A chatbot usually answers from a script or a single prompt. An agent can use tools, read business data, and complete multi-step work, then escalate when it is unsure.',
       },
       {
         q: 'Can agents use our internal documents?',
@@ -249,11 +249,11 @@ export const services: Record<string, ServiceContent> = {
       },
       {
         q: 'What is RAG, and do we need it?',
-        a: 'RAG (retrieval-augmented generation) lets an agent pull real answers from your documents and databases instead of relying only on what a model already knows. Most business agents need it — generic answers rarely satisfy a specific customer or employee question.',
+        a: 'RAG (retrieval-augmented generation) lets an agent pull real answers from your documents and databases instead of relying only on what a model already knows. Most business agents need it, generic answers rarely satisfy a specific customer or employee question.',
       },
       {
         q: 'Can an agent handle sales or HR conversations, not just support?',
-        a: 'Yes. The same tool-using, RAG-grounded pattern applies to an AI sales agent qualifying leads or an internal assistant supporting HR and recruitment — the workflow and data change, the underlying build does not.',
+        a: 'Yes. The same tool-using, RAG-grounded pattern applies to an AI sales agent qualifying leads or an internal assistant supporting HR and recruitment, the workflow and data change, the underlying build does not.',
       },
     ],
   },
@@ -263,20 +263,20 @@ export const services: Record<string, ServiceContent> = {
     name: 'AI and Automation',
     title: 'AI Automation',
     description:
-      'AI automation by WhiteGuava. Replace repetitive work with reliable workflows — document handling, reporting, lead ops, and system-to-system automation.',
+      'AI automation by WhiteGuava. Replace repetitive work with reliable workflows, document handling, reporting, lead ops, and system-to-system automation.',
     badge: 'Automation',
     h1Line1: 'AI and',
     h1Line2: 'Automation',
     highlight: 'AI',
     subtitle:
-      'Turn repetitive processes into reliable workflows — with AI where the input is messy, and rules where the path is clear.',
+      'Turn repetitive processes into reliable workflows, with AI where the input is messy, and rules where the path is clear.',
     imageQuery: 'automated workflow business process technology',
     imageAlt: 'Automated business workflow running on a dashboard',
     overviewTitle: 'Automation that respects the real process',
     overview: [
       'AI and automation work best together. Some steps should stay deterministic: approvals, notifications, CRM updates. Other steps need judgment: reading a document, classifying an email, deciding whether to escalate.',
-      'WhiteGuava designs those workflows around how your team already operates — lead capture, reporting, document handling, and ops handoffs — then connects them to the tools you use. When a platform like n8n is the right fit, we use it. When the process needs custom software, we build that instead.',
-      'Automation and AI is not a single product you buy off a shelf — it is a set of decisions about which steps to automate, which to leave to a person, and which need a model in between. That is the part of the work most vendors skip.',
+      'WhiteGuava designs those workflows around how your team already operates, lead capture, reporting, document handling, and ops handoffs, then connects them to the tools you use. When a platform like n8n is the right fit, we use it. When the process needs custom software, we build that instead.',
+      'Automation and AI is not a single product you buy off a shelf, it is a set of decisions about which steps to automate, which to leave to a person, and which need a model in between. That is the part of the work most vendors skip.',
     ],
     topicsTitle: 'Where this shows up in a business',
     topics: [
@@ -286,7 +286,7 @@ export const services: Record<string, ServiceContent> = {
       },
       {
         title: 'Document-heavy work',
-        body: 'Extraction, classification, and routing of invoices, forms, and records — often paired with our document AI work.',
+        body: 'Extraction, classification, and routing of invoices, forms, and records, often paired with our document AI work.',
       },
       {
         title: 'Tools versus custom systems',
@@ -298,7 +298,7 @@ export const services: Record<string, ServiceContent> = {
       },
       {
         title: 'System-to-system automation',
-        body: 'Keeping a CRM, ERP, and internal tools in sync without manual re-entry — the unglamorous automation work that saves the most hours.',
+        body: 'Keeping a CRM, ERP, and internal tools in sync without manual re-entry, the unglamorous automation work that saves the most hours.',
       },
       {
         title: 'Reporting that builds itself',
@@ -328,7 +328,7 @@ export const services: Record<string, ServiceContent> = {
     faqs: [
       {
         q: 'Do you only automate with AI?',
-        a: 'No. We use AI when the input is unstructured or the decision is fuzzy. Stable, rule-based steps stay as regular automation — it is simpler and easier to trust.',
+        a: 'No. We use AI when the input is unstructured or the decision is fuzzy. Stable, rule-based steps stay as regular automation, it is simpler and easier to trust.',
       },
       {
         q: 'Can you automate around our CRM or ERP?',
@@ -344,7 +344,7 @@ export const services: Record<string, ServiceContent> = {
       },
       {
         q: 'How do you decide what to automate first?',
-        a: 'We look at where manual effort is highest and error cost is manageable — usually the process someone complains about weekly, not a hypothetical edge case.',
+        a: 'We look at where manual effort is highest and error cost is manageable, usually the process someone complains about weekly, not a hypothetical edge case.',
       },
     ],
   },
@@ -354,20 +354,20 @@ export const services: Record<string, ServiceContent> = {
     name: 'WhatsApp AI Chatbots',
     title: 'WhatsApp AI Chatbots',
     description:
-      'WhatsApp AI chatbots by WhiteGuava. Agents that answer customers, use your business data, and escalate to humans — built on the WhatsApp Business API.',
+      'WhatsApp AI chatbots by WhiteGuava. Agents that answer customers, use your business data, and escalate to humans, built on the WhatsApp Business API.',
     badge: 'WhatsApp AI',
     h1Line1: 'WhatsApp',
     h1Line2: 'AI Chatbots',
     highlight: 'AI',
     subtitle:
-      'Customer conversations on WhatsApp, backed by your product data and business systems — not a keyword bot.',
+      'Customer conversations on WhatsApp, backed by your product data and business systems, not a keyword bot.',
     imageQuery: 'mobile phone chat messaging app conversation',
     imageAlt: 'Customer service conversation happening over a messaging app',
     overviewTitle: 'WhatsApp as a working channel, not a widget',
     overview: [
       'Businesses ask for a WhatsApp AI chatbot when customers already live in WhatsApp. We build agents on the WhatsApp Business API that can answer questions, look up orders or services, and pass the thread to a human when needed.',
       'That requires more than a model. It needs a Business API setup, message templates where Meta requires them, connection to your CRM or catalogue, and rules for when the bot should stop talking. WhiteGuava handles the AI, the integration, and the production path.',
-      'For businesses in India, WhatsApp is often the primary support and sales channel already — so a WhatsApp business API India setup usually means connecting AI to an account that is already active, not starting from zero.',
+      'For businesses in India, WhatsApp is often the primary support and sales channel already, so a WhatsApp business API India setup usually means connecting AI to an account that is already active, not starting from zero.',
     ],
     topicsTitle: 'What we put in place',
     topics: [
@@ -431,7 +431,7 @@ export const services: Record<string, ServiceContent> = {
       },
       {
         q: 'What does WhatsApp Business API pricing actually cover?',
-        a: 'Meta charges per conversation (with category-based pricing that changes periodically), and a BSP may add its own fee if you use one. We do not control that pricing — we design the AI and the integration on top of whichever plan you have.',
+        a: 'Meta charges per conversation (with category-based pricing that changes periodically), and a BSP may add its own fee if you use one. We do not control that pricing, we design the AI and the integration on top of whichever plan you have.',
       },
       {
         q: 'Do we need an existing WhatsApp Business API setup first?',
@@ -445,7 +445,7 @@ export const services: Record<string, ServiceContent> = {
     name: 'Document AI',
     title: 'Document AI',
     description:
-      'Document AI by WhiteGuava. Custom extraction, classification, and review workflows — built around your documents, not a generic OCR tool.',
+      'Document AI by WhiteGuava. Custom extraction, classification, and review workflows, built around your documents, not a generic OCR tool.',
     badge: 'Document AI',
     h1Line1: 'Document',
     h1Line2: 'AI',
@@ -458,7 +458,7 @@ export const services: Record<string, ServiceContent> = {
     overview: [
       'Intelligent document processing is useful when people spend hours reading invoices, forms, contracts, or KYC packs and typing the same fields into another system.',
       'WhiteGuava builds pipelines that extract those fields, classify the document, and push structured data into your workflow. That can use a specialised engine such as Google Document AI or Azure Document Intelligence when it fits, or a custom model and LLM extraction layer when your layouts are messy.',
-      'This applies just as well to a Word document AI workflow — contracts and forms that arrive as .docx rather than scans — as it does to PDFs and images. The extraction target matters more than the file format.',
+      'This applies just as well to a Word document AI workflow, contracts and forms that arrive as .docx rather than scans, as it does to PDFs and images. The extraction target matters more than the file format.',
     ],
     topicsTitle: 'What the system does',
     topics: [
@@ -480,7 +480,7 @@ export const services: Record<string, ServiceContent> = {
       },
       {
         title: 'Choosing the right extraction engine',
-        body: 'Google Document AI, Azure Document Intelligence, or a custom LLM-based extractor — the choice depends on your documents, not a fixed default.',
+        body: 'Google Document AI, Azure Document Intelligence, or a custom LLM-based extractor, the choice depends on your documents, not a fixed default.',
       },
       {
         title: 'Beyond PDFs and scans',
@@ -518,11 +518,11 @@ export const services: Record<string, ServiceContent> = {
       },
       {
         q: 'What do we get at the end?',
-        a: 'A working pipeline: ingest, extract, review, and export — usually with an admin dashboard and an API into the rest of your stack.',
+        a: 'A working pipeline: ingest, extract, review, and export, usually with an admin dashboard and an API into the rest of your stack.',
       },
       {
         q: 'Does this work on Word documents, not just PDFs?',
-        a: 'Yes. Word document AI extraction follows the same pattern as scanned files — identify the structure, pull the fields, and route the output. The pipeline adapts to the format, not the other way round.',
+        a: 'Yes. Word document AI extraction follows the same pattern as scanned files, identify the structure, pull the fields, and route the output. The pipeline adapts to the format, not the other way round.',
       },
       {
         q: 'How accurate is the extraction?',
@@ -547,9 +547,9 @@ export const services: Record<string, ServiceContent> = {
     imageAlt: 'Analytics dashboard showing business metrics and charts',
     overviewTitle: 'Data that is ready before the dashboard',
     overview: [
-      'Most "we need analytics" requests are really a data problem: numbers live in five different systems, nobody trusts the export, and every report is rebuilt by hand. WhiteGuava starts there — pipelines that pull from your real sources, clean and structure the data, and land it somewhere queries and dashboards can rely on.',
+      'Most "we need analytics" requests are really a data problem: numbers live in five different systems, nobody trusts the export, and every report is rebuilt by hand. WhiteGuava starts there, pipelines that pull from your real sources, clean and structure the data, and land it somewhere queries and dashboards can rely on.',
       'The same pipelines double as the foundation for AI: agents and automation are only as good as the data behind them, so we build the analytics layer and the AI-ready infrastructure as one system, not two separate projects.',
-      'This is also where a lot of "AI in automation" projects quietly fail — not because the model is wrong, but because the data feeding it was never made reliable. Getting the pipeline right first is what makes everything built on top of it trustworthy.',
+      'This is also where a lot of "AI in automation" projects quietly fail, not because the model is wrong, but because the data feeding it was never made reliable. Getting the pipeline right first is what makes everything built on top of it trustworthy.',
     ],
     topicsTitle: 'What this engagement covers',
     topics: [
@@ -559,7 +559,7 @@ export const services: Record<string, ServiceContent> = {
       },
       {
         title: 'Analytics dashboards',
-        body: 'Business-facing dashboards for the metrics your team actually checks — revenue, usage, operations — built on top of clean, versioned data.',
+        body: 'Business-facing dashboards for the metrics your team actually checks, revenue, usage, operations, built on top of clean, versioned data.',
       },
       {
         title: 'AI-ready infrastructure',
@@ -601,18 +601,18 @@ export const services: Record<string, ServiceContent> = {
     faqs: [
       {
         q: 'Do we need a data warehouse first?',
-        a: 'Not necessarily. We assess what you have — spreadsheets, a production database, SaaS exports — and design the simplest pipeline and storage that supports your reporting and AI needs, adding a warehouse when the scale justifies it.',
+        a: 'Not necessarily. We assess what you have, spreadsheets, a production database, SaaS exports, and design the simplest pipeline and storage that supports your reporting and AI needs, adding a warehouse when the scale justifies it.',
       },
       {
         q: 'Can you work with our existing BI tool?',
-        a: 'Yes. We can build dashboards in the tool you already use (or recommend one) once the underlying data pipeline is reliable — the pipeline is usually the real bottleneck, not the charts.',
+        a: 'Yes. We can build dashboards in the tool you already use (or recommend one) once the underlying data pipeline is reliable, the pipeline is usually the real bottleneck, not the charts.',
       },
       {
         q: 'How does this connect to AI agents or automation?',
         a: 'Agents, RAG systems, and automation all need current, structured data to work from. The pipelines we build here are the same ones that power those systems, so the two efforts reinforce each other.',
       },
       {
-        q: 'We already have some dashboards — is this still useful?',
+        q: 'We already have some dashboards, is this still useful?',
         a: 'Often, yes. Existing dashboards are frequently built on fragile, manually-refreshed exports. We look at whether the underlying pipeline is solid before deciding whether to rebuild the reporting layer.',
       },
       {
@@ -639,8 +639,8 @@ export const services: Record<string, ServiceContent> = {
     overviewTitle: 'From working demo to production system',
     overview: [
       'A lot of AI and software projects stall at the same point: the demo works, but nobody has set up the infrastructure, deployment pipeline, or monitoring to run it reliably for real users. That gap is what this service closes.',
-      'WhiteGuava sets up backend infrastructure, databases, APIs, and CI/CD pipelines on AWS, Azure, or your preferred cloud platform — usually as the deployment layer for AI agents, software, or automation we are already building, though we also take on infrastructure-only engagements.',
-      'This is also where cost control happens. Cloud bills grow quietly when infrastructure is sized for peak-guesswork instead of actual traffic — we size it for what you run, with room to scale deliberately, not by accident.',
+      'WhiteGuava sets up backend infrastructure, databases, APIs, and CI/CD pipelines on AWS, Azure, or your preferred cloud platform, usually as the deployment layer for AI agents, software, or automation we are already building, though we also take on infrastructure-only engagements.',
+      'This is also where cost control happens. Cloud bills grow quietly when infrastructure is sized for peak-guesswork instead of actual traffic, we size it for what you run, with room to scale deliberately, not by accident.',
     ],
     topicsTitle: 'What this engagement covers',
     topics: [
@@ -692,10 +692,10 @@ export const services: Record<string, ServiceContent> = {
     faqs: [
       {
         q: 'Do you only deploy projects you built?',
-        a: 'No. We take on infrastructure and deployment work for existing codebases too — assessing what is there, then setting up the cloud environment, CI/CD, and monitoring around it.',
+        a: 'No. We take on infrastructure and deployment work for existing codebases too, assessing what is there, then setting up the cloud environment, CI/CD, and monitoring around it.',
       },
       {
-        q: 'AWS or Azure — which do you recommend?',
+        q: 'AWS or Azure, which do you recommend?',
         a: 'It depends on your existing stack, team familiarity, and budget. We work with both and will recommend based on your specific situation rather than a default preference.',
       },
       {
@@ -708,7 +708,7 @@ export const services: Record<string, ServiceContent> = {
       },
       {
         q: 'Do you handle ongoing support after deployment?',
-        a: 'We can. Some clients want a one-time setup, others want continued support for scaling and incidents — we scope it based on what you need.',
+        a: 'We can. Some clients want a one-time setup, others want continued support for scaling and incidents, we scope it based on what you need.',
       },
     ],
   },

@@ -21,7 +21,7 @@ export interface StickyScrollItem {
  *
  * Unlike the original (which stacks every item's full text in a fixed-height
  * `overflow-y-auto` box and lets the user scroll *inside* it), this version has
- * no internal scroll container — so both the step list and the detail panel
+ * no internal scroll container, so both the step list and the detail panel
  * show only the active item, cross-fading between items, keeping the sticky
  * block short enough to actually stay pinned for the section's full scroll range.
  */

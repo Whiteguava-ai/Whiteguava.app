@@ -15,7 +15,7 @@ const capabilities = [
   },
   {
     area: 'Software Engineering',
-    desc: 'Full-stack web and mobile application development — from architecture to production-ready code.',
+    desc: 'Full-stack web and mobile application development, from architecture to production-ready code.',
   },
   {
     area: 'Automation & Integrations',
@@ -43,7 +43,7 @@ export default function Team() {
         </Reveal>
 
         <div className={styles.grid}>
-          {/* Featured — brand statement */}
+          {/* Featured, brand statement */}
           <Reveal className={styles.featuredCard} direction="left">
             <div className={styles.featuredInfo} style={{ padding: '40px 36px', minHeight: '360px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
               <div>
@@ -55,7 +55,7 @@ export default function Team() {
                 </h3>
               </div>
               <p className={styles.featuredRole} style={{ fontSize: '15px', lineHeight: 1.65, color: 'rgba(255,255,255,0.55)', marginTop: '20px' }}>
-                We combine deep technical expertise with practical business thinking to build AI and software solutions that actually work — not just in demos, but in production.
+                We combine deep technical expertise with practical business thinking to build AI and software solutions that actually work, not just in demos, but in production.
               </p>
               <div className={styles.socials} style={{ marginTop: '24px' }}>
                 <SocialBtn type="linkedin" />
@@ -65,7 +65,7 @@ export default function Team() {
             </div>
           </Reveal>
 
-          {/* Capability grid — cards deal in on scroll */}
+          {/* Capability grid, cards deal in on scroll */}
           <ScrollScene
             className={styles.subGrid}
             pin={false}

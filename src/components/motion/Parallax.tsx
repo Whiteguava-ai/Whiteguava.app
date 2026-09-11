@@ -11,7 +11,7 @@ import {
 import { useMounted } from '@/lib/motion/useMounted';
 
 /**
- * Continuous scroll-linked drift for a *decorative* layer — a gradient wash, a
+ * Continuous scroll-linked drift for a *decorative* layer, a gradient wash, a
  * blurred blob field, a background numeral, an image inside its frame. Never
  * wrap body copy or interactive controls in this (reading against a moving
  * background is uncomfortable and the motion contract forbids it).
@@ -23,7 +23,7 @@ import { useMounted } from '@/lib/motion/useMounted';
  * under `prefers-reduced-motion`; the transform is only attached after mount.
  *
  * By default the inner layer fills the wrapper (`position: absolute; inset:
- * 0`) — right for a full-bleed backdrop whose own children are absolutely
+ * 0`), right for a full-bleed backdrop whose own children are absolutely
  * positioned. Pass `flow` for content that must lay itself out normally.
  *
  * `speed` > 0 lags behind the scroll ("further away"); `speed` < 0 leads.

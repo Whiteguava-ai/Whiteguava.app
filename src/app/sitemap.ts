@@ -4,7 +4,7 @@ import { SERVICE_LINKS, SITE_URL } from '@/lib/site';
 
 /**
  * Pin each static page's lastmod to the date its content actually last
- * changed — bump the specific constant by hand when you edit that page.
+ * changed, bump the specific constant by hand when you edit that page.
  * Using `new Date()` here stamps every page "modified right now" on every
  * crawl or rebuild regardless of whether anything changed, and Google has
  * said it will start distrusting/ignoring lastmod site-wide if it detects

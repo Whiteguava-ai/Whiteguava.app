@@ -2,7 +2,7 @@ import { SERVICE_PATHS } from '@/lib/site';
 
 export const VOID_CONTENT = {
   badge: 'AI + SOFTWARE + AUTOMATION',
-  line1: 'Good AI feels obvious —',
+  line1: 'Good AI feels obvious,',
   line2: 'because the hard work is hidden.',
 };
 
@@ -48,7 +48,7 @@ export const SERVICES_CONTENT: CinematicService[] = [
   {
     num: '02',
     title: 'Custom AI & Machine Learning',
-    desc: 'Build intelligent systems around your data and business requirements — from generative AI and RAG to prediction and classification.',
+    desc: 'Build intelligent systems around your data and business requirements, from generative AI and RAG to prediction and classification.',
     tags: ['Generative AI', 'RAG systems', 'NLP & computer vision'],
     href: SERVICE_PATHS.agents,
     more: 'Explore custom AI systems',
@@ -56,7 +56,7 @@ export const SERVICES_CONTENT: CinematicService[] = [
   {
     num: '03',
     title: 'Business Software Development',
-    desc: 'Custom software built around how your business actually operates — from web apps to portals, dashboards, and platforms.',
+    desc: 'Custom software built around how your business actually operates, from web apps to portals, dashboards, and platforms.',
     tags: ['Web applications', 'Admin dashboards', 'ERP & CRM systems'],
     href: SERVICE_PATHS.software,
     more: 'Explore AI software development',
@@ -64,7 +64,7 @@ export const SERVICES_CONTENT: CinematicService[] = [
   {
     num: '04',
     title: 'AI Integration',
-    desc: 'Bring AI into the systems your business already uses — CRM, ERP, WhatsApp, APIs, databases, and cloud platforms.',
+    desc: 'Bring AI into the systems your business already uses, CRM, ERP, WhatsApp, APIs, databases, and cloud platforms.',
     tags: ['CRM & ERP integrations', 'WhatsApp & messaging', 'API connectors'],
     href: SERVICE_PATHS.whatsapp,
     more: 'Explore WhatsApp AI & integrations',
@@ -72,7 +72,7 @@ export const SERVICES_CONTENT: CinematicService[] = [
   {
     num: '05',
     title: 'Automation & Digital Transformation',
-    desc: 'Replace repetitive manual processes with intelligent, reliable workflows — from document processing to approval flows.',
+    desc: 'Replace repetitive manual processes with intelligent, reliable workflows, from document processing to approval flows.',
     tags: ['Document processing', 'Reporting automation', 'Approval workflows'],
     href: SERVICE_PATHS.automation,
     more: 'Explore AI automation',
@@ -80,7 +80,7 @@ export const SERVICES_CONTENT: CinematicService[] = [
   {
     num: '06',
     title: 'Data & Analytics',
-    desc: 'Turn raw business data into useful intelligence — dashboards, pipelines, and AI-ready data infrastructure.',
+    desc: 'Turn raw business data into useful intelligence, dashboards, pipelines, and AI-ready data infrastructure.',
     tags: ['Data pipelines', 'Analytics dashboards', 'AI-ready infrastructure'],
     href: SERVICE_PATHS.dataAnalytics,
     more: 'Explore data & analytics',
@@ -96,15 +96,15 @@ export const SERVICES_CONTENT: CinematicService[] = [
   {
     num: '08',
     title: 'AI-Powered Digital Experiences',
-    desc: 'Build better customer and employee experiences with AI — intelligent search, assistants, and personalized interfaces.',
+    desc: 'Build better customer and employee experiences with AI, intelligent search, assistants, and personalized interfaces.',
     tags: ['AI search', 'Conversational interfaces', 'Intelligent websites'],
     href: SERVICE_PATHS.agents,
     more: 'Explore conversational AI',
   },
   {
     num: '09',
-    title: 'Guava Product Suite — Own It, Don’t Rent It',
-    desc: 'Ten ready business applications you buy once and own outright — CRM, ERP, HR, LMS, BI, helpdesk, website builder, lending, project work and the app platform behind them — deployed on your own cloud with the AI built in.',
+    title: 'Guava Product Suite, Own It, Don’t Rent It',
+    desc: 'Ten ready business applications you buy once and own outright, CRM, ERP, HR, LMS, BI, helpdesk, website builder, lending, project work and the app platform behind them, deployed on your own cloud with the AI built in.',
     tags: ['GuavaCRM & GuavaERP', 'GuavaHR & GuavaLearn', 'One-time payment, no per-user fees'],
     href: '/guava',
     more: 'Explore the Guava Product Suite',
@@ -135,7 +135,7 @@ export const PROJECTS_CONTENT = [
   },
   {
     title: 'Internal Knowledge Base AI Assistant',
-    desc: 'RAG-based internal assistant connected to company documents, policies, and wikis — deployed as a production-ready web application.',
+    desc: 'RAG-based internal assistant connected to company documents, policies, and wikis, deployed as a production-ready web application.',
     deliverables: 'RAG system, vector database, web application, authentication',
     industry: 'Enterprise',
   },

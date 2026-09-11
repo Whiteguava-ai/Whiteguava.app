@@ -3,11 +3,11 @@
  *
  * Every Guava product post (GuavaERP, GuavaHR, GuavaLearn, …) is driven by a
  * single `ProductDef` object. The generic widgets in this folder read from it,
- * so a new product post is a data file plus a `body` array — no new components.
+ * so a new product post is a data file plus a `body` array, no new components.
  *
  * All competitor figures trace to published list pricing captured in
  * September 2026 and are cited as "list price, annual billing, before tax".
- * The Guava figure is always the server cost only — setup is a separate,
+ * The Guava figure is always the server cost only, setup is a separate,
  * one-time fee.
  */
 
@@ -120,7 +120,7 @@ export interface ProductDef {
 
   /** Flat server cost, in whole dollars per month. */
   serverMo: number;
-  /** Flat server + AI cost, per year — the Guava row in every chart. */
+  /** Flat server + AI cost, per year, the Guava row in every chart. */
   guavaYr: number;
 
   plans: ProductPlan[];

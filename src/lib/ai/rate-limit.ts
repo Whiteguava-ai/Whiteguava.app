@@ -1,6 +1,6 @@
 /**
  * Minimal in-memory, per-IP rate limit for the public AI endpoints. Resets on
- * server restart and doesn't share state across instances — fine for a
+ * server restart and doesn't share state across instances, fine for a
  * marketing site's traffic; swap for a shared store (Upstash Redis, etc.) if
  * this ever runs on more than one instance behind a load balancer.
  */

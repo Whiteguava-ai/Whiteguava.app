@@ -36,7 +36,7 @@ export default function BlogIndex({ posts }: { posts: BlogPost[] }) {
                 <CinematicText as="span" trigger="load">AI Agents, Automation & WhatsApp AI Insights</CinematicText>
               </h1>
               <p className={styles.sub}>
-                Practical guides on AI agents, automation, and business AI — written by the team
+                Practical guides on AI agents, automation, and business AI, written by the team
                 that builds them.
               </p>
             </div>

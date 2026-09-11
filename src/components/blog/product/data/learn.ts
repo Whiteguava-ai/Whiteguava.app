@@ -1,7 +1,7 @@
 import type { ProductDef } from '../types';
 
 /**
- * GuavaLearn — build, run and deliver online courses on a platform you own.
+ * GuavaLearn, build, run and deliver online courses on a platform you own.
  * Competitor list pricing, September 2026:
  *   TalentLMS is billed per active user; tiers run Core $69, Grow $109, Pro $179
  *   per month. ~$3 per active learner per month used as an effective blended rate.
@@ -33,7 +33,7 @@ export const learn: ProductDef = {
   ],
 
   ladder: [
-    { vendor: 'GuavaLearn', tier: 'server + AI usage', perUserMo: null, tenUsersYr: 400, ai: 'yes', aiNote: 'Draft, Summarize, Ask, grading', vsOurs: '—', ours: true },
+    { vendor: 'GuavaLearn', tier: 'server + AI usage', perUserMo: null, tenUsersYr: 400, ai: 'yes', aiNote: 'Draft, Summarize, Ask, grading', vsOurs: 'N/A', ours: true },
     { vendor: 'Thinkific', tier: 'Grow (flat)', perUserMo: null, tenUsersYr: 1_188, ai: 'partial', vsOurs: '3×' },
     { vendor: 'TalentLMS', tier: 'per active user', perUserMo: 3, tenUsersYr: 360, ai: 'partial', aiNote: 'TalentCraft', vsOurs: '0.9× at 10, 9× at 100' },
     { vendor: 'LearnWorlds', tier: 'Pro Trainer', perUserMo: 4, tenUsersYr: 480, ai: 'partial', aiNote: '+ $5 / sale', vsOurs: '1.2× at 10' },
@@ -57,7 +57,7 @@ export const learn: ProductDef = {
         { capability: 'Quizzes with multiple question types and pools', elsewhere: 'Every LMS' },
         { capability: 'Assignments with file upload and manual grading', elsewhere: 'Higher tiers' },
         { capability: 'Certificates with expiry and renewal', elsewhere: 'Higher tiers' },
-        { capability: 'Proctoring rules — attempts, time limits, shuffling', elsewhere: 'Higher tiers' },
+        { capability: 'Proctoring rules, attempts, time limits, shuffling', elsewhere: 'Higher tiers' },
       ],
     },
     {
@@ -72,9 +72,9 @@ export const learn: ProductDef = {
     {
       group: 'AI assistant',
       rows: [
-        { capability: 'Draft — lesson outlines, summaries and quiz questions', elsewhere: 'TalentCraft / Docebo AI on paid tiers' },
-        { capability: 'Summarize — a learner’s progress and gaps', elsewhere: 'Higher tier only' },
-        { capability: 'Ask AI — a course-content tutor for learners', elsewhere: 'Rarely available' },
+        { capability: 'Draft, lesson outlines, summaries and quiz questions', elsewhere: 'TalentCraft / Docebo AI on paid tiers' },
+        { capability: 'Summarize, a learner’s progress and gaps', elsewhere: 'Higher tier only' },
+        { capability: 'Ask AI, a course-content tutor for learners', elsewhere: 'Rarely available' },
         { capability: 'Assisted grading of written answers with rationale', elsewhere: 'Not offered' },
       ],
     },
@@ -93,7 +93,7 @@ export const learn: ProductDef = {
     { icon: 'infinity', title: 'Learners do not have a price tag', body: 'Docebo sizes for 250+ learners; TalentLMS bills per active user; creator plans skim a fee per sale. GuavaLearn costs the same for 30 learners or 30,000.' },
     { icon: 'graduation', title: 'Your academy, your brand, your domain', body: 'It runs on **your** cloud and your domain, with your look. Not a sub-site on a platform that can change its terms or its pricing tiers.' },
     { icon: 'database', title: 'The course content and every result are yours', body: 'Full export of courses, learner records and completion history, plus the source code. Nothing about your training programme is locked to a vendor.' },
-    { icon: 'sparkles', title: 'AI course tools without the AI tier', body: 'Outline drafting, quiz generation and a learner tutor run on metered API calls — **a few dollars a month**, not a TalentCraft or Docebo AI upgrade.' },
+    { icon: 'sparkles', title: 'AI course tools without the AI tier', body: 'Outline drafting, quiz generation and a learner tutor run on metered API calls, **a few dollars a month**, not a TalentCraft or Docebo AI upgrade.' },
     { icon: 'coins', title: 'Sell courses without a per-sale cut', body: 'Checkout, coupons and paid enrolment ship in the box with no revenue share. Creator platforms take a fee on every transaction unless you buy up.' },
     { icon: 'shield', title: 'No renewal, no tier jump when you grow', body: 'Adding a department or a partner’s staff to your training does not move you up a plan. You own GuavaLearn.' },
   ],
@@ -130,7 +130,7 @@ export const learn: ProductDef = {
   modules: [
     { name: 'Course builder', tag: 'Authoring', blurb: 'Structure a course once and fill it with any content type your material needs.', points: ['Chapters and lessons with video, audio, slides and text', 'SCORM and web-content embedding', 'Drip scheduling, prerequisites and visibility rules', 'Reusable content library across courses'] },
     { name: 'Quizzes & assignments', tag: 'Assessment', blurb: 'Check understanding with graded quizzes and real submitted work.', points: ['Question pools, shuffling and time limits', 'Assignments with file upload and rubrics', 'Manual and AI-assisted grading', 'Attempt limits and pass thresholds'] },
-    { name: 'Certifications', tag: 'Assessment', blurb: 'Issue certificates that expire and prompt renewal — for compliance training that matters.', points: ['Certificate templates tied to course completion', 'Expiry, renewal and recertification windows', 'Verifiable certificate links', 'Certification reports for auditors'] },
+    { name: 'Certifications', tag: 'Assessment', blurb: 'Issue certificates that expire and prompt renewal, for compliance training that matters.', points: ['Certificate templates tied to course completion', 'Expiry, renewal and recertification windows', 'Verifiable certificate links', 'Certification reports for auditors'] },
     { name: 'Paths & programs', tag: 'Delivery', blurb: 'Bundle courses into a journey with a defined order and outcome.', points: ['Sequenced learning paths with gating', 'Role-based curricula', 'Progress rolled up across the whole path', 'Program-level certificates'] },
     { name: 'Batches & enrolment', tag: 'Delivery', blurb: 'Run instructor-led cohorts alongside self-paced courses.', points: ['Scheduled batches with rosters and sessions', 'Self-enrolment, invites and bulk assignment', 'Paid enrolment with checkout and coupons', 'HR and SSO sync for staff training'] },
     { name: 'Tracking & reports', tag: 'Insight', blurb: 'See who has done what, where people stall, and what needs a nudge.', points: ['Per-learner and per-course progress and scores', 'Group, path and time-period reports', 'Completion and overdue dashboards', 'Scheduled report emails and full export'] },
@@ -138,7 +138,7 @@ export const learn: ProductDef = {
 
   lifecycle: {
     title: 'Author to certificate',
-    caption: 'The path a course takes from idea to a learner’s certificate. Click a step — AI helps most at authoring and assessment.',
+    caption: 'The path a course takes from idea to a learner’s certificate. Click a step, AI helps most at authoring and assessment.',
     steps: [
       { label: 'Author', detail: 'Build the course structure and content. AI drafts lesson outlines and a first set of quiz questions from your material.', metric: 'Draft course ready' },
       { label: 'Publish', detail: 'Set prerequisites, drip schedule, certificate rules and price, then publish to the catalogue.', metric: 'Live in catalogue' },
@@ -151,7 +151,7 @@ export const learn: ProductDef = {
 
   ai: [
     { name: 'Draft with AI', desc: 'Turns source material into lesson outlines, summaries and a first draft of quiz questions to edit rather than write from scratch.' },
-    { name: 'Summarize', desc: 'Condenses a learner’s progress across a path — what is done, what is overdue, where scores dipped — for a manager or trainer.' },
+    { name: 'Summarize', desc: 'Condenses a learner’s progress across a path, what is done, what is overdue, where scores dipped, for a manager or trainer.' },
     { name: 'Ask AI', desc: 'A tutor for learners that answers questions using only the course content, and an admin assistant for questions over completion data.' },
     { name: 'Assisted grading', desc: 'Proposes a score and feedback for written answers against the rubric, shown to the instructor to approve or adjust.' },
   ],

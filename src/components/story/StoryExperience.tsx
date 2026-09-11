@@ -17,6 +17,7 @@ import InnerHero from '@/components/InnerHero';
 import { CardBody, CardContainer, CardItem } from '@/components/ui/card-3d';
 import { ServiceGlyph } from '@/components/ui/service-glyph';
 import { Spotlight } from '@/components/ui/spotlight';
+import { getTechColor, TechLogo } from '@/components/ui/tech-logos';
 import { CinematicText } from '@/components/motion/CinematicText';
 import { MagneticButton } from '@/components/motion/MagneticButton';
 import { Reveal } from '@/components/motion/Reveal';
@@ -32,7 +33,7 @@ import {
 
 /**
  * The homepage's opening run: hero, capability intro, services showcase, and
- * a closing CTA nudge — all in the same light, brand-consistent style used
+ * a closing CTA nudge, all in the same light, brand-consistent style used
  * across the rest of the site (`InnerHero`, `Process`'s white 3D-tilt cards,
  * `section-badge` / `CinematicText` / `Reveal`), so the homepage no longer
  * reads as a one-off dark sequence bolted onto an otherwise light site.
@@ -65,35 +66,73 @@ function HeroBeat() {
 }
 
 function CapabilityBeat() {
+  const half = Math.ceil(TECH_CORE_CONTENT.techs.length / 2);
+  const rowA = TECH_CORE_CONTENT.techs.slice(0, half);
+  const rowB = TECH_CORE_CONTENT.techs.slice(half);
+
   return (
-    <section className="relative overflow-hidden px-6 py-24 md:py-32">
-      <div className="relative z-10 mx-auto grid max-w-6xl gap-14 lg:grid-cols-2 lg:items-center lg:gap-20">
-        <Reveal className="flex flex-col gap-4" stagger>
+    <section className="relative overflow-hidden py-24 md:py-32">
+      <div className="relative z-10 mx-auto max-w-2xl px-6 text-center">
+        <Reveal className="flex flex-col items-center gap-4" stagger>
           <span className="section-badge">
             <span className="section-badge-dot" />
             {TECH_CORE_CONTENT.eyebrow}
           </span>
           <h2 className="text-3xl font-bold leading-tight text-[var(--text-primary)] md:text-4xl">
-            <CinematicText>From idea to working product — without the guesswork.</CinematicText>
+            <CinematicText>From idea to working product, without the guesswork.</CinematicText>
           </h2>
           <p className="max-w-lg text-[15px] leading-relaxed text-[var(--text-secondary)]">
             {TECH_CORE_CONTENT.body}
           </p>
         </Reveal>
-
-        <Reveal className="grid grid-cols-2 gap-3 sm:grid-cols-4" stagger staggerDelay={0.035} direction="scale">
-          {TECH_CORE_CONTENT.techs.map((tech) => (
-            <CardContainer key={tech} containerClassName="w-full">
-              <CardBody className="w-full rounded-xl border border-black/[0.06] bg-white px-3 py-4 text-center shadow-[var(--shadow-sm)] transition-shadow duration-300 hover:shadow-[var(--shadow-md)]">
-                <CardItem translateZ={20} as="span" className="text-[12px] font-semibold text-[var(--text-primary)]">
-                  {tech}
-                </CardItem>
-              </CardBody>
-            </CardContainer>
-          ))}
-        </Reveal>
       </div>
+
+      <Reveal className="mt-14 flex flex-col gap-4 md:mt-20" direction="scale" amount={0.3}>
+        <TechMarqueeRow techs={rowA} />
+        <TechMarqueeRow techs={rowB} reverse />
+      </Reveal>
     </section>
+  );
+}
+
+/**
+ * A continuous, seam-free logo ticker instead of a static grid, two rows
+ * drifting in opposite directions read as one flowing band rather than a
+ * generic "tech stack tiles" grid. Reuses the `marquee` keyframe already
+ * defined in globals.css (`translateX(0)` -> `translateX(-50%)`); doubling
+ * the item list and scrolling exactly half its width is what makes the loop
+ * invisible. Pointer-driven pause-on-hover would fight the seam illusion at
+ * the wrap point, so hover only brightens the item under the cursor instead.
+ */
+function TechMarqueeRow({ techs, reverse = false }: { techs: string[]; reverse?: boolean }) {
+  const items = [...techs, ...techs];
+  return (
+    <div className="[mask-image:linear-gradient(to_right,transparent,black_8%,black_92%,transparent)] overflow-hidden">
+      <div
+        className={cn(
+          'flex w-max gap-4 animate-[marquee_38s_linear_infinite]',
+          reverse && '[animation-direction:reverse]'
+        )}
+      >
+        {items.map((tech, i) => {
+          const accent = getTechColor(tech);
+          return (
+            <div
+              key={`${tech}-${i}`}
+              className="group flex shrink-0 items-center gap-2.5 rounded-full border border-black/[0.06] bg-white py-2 pl-2 pr-5 opacity-80 shadow-[var(--shadow-sm)] transition-opacity duration-300 hover:opacity-100"
+            >
+              <span
+                className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full"
+                style={{ background: `${accent}17` }}
+              >
+                <TechLogo name={tech} className="h-4 w-4" style={{ color: accent }} />
+              </span>
+              <span className="whitespace-nowrap text-[13px] font-semibold text-[var(--text-primary)]">{tech}</span>
+            </div>
+          );
+        })}
+      </div>
+    </div>
   );
 }
 

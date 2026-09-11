@@ -25,7 +25,7 @@ export default function Tools() {
               <CinematicText>Built With Modern Technology</CinematicText>
             </h2>
             <p className={styles.desc}>
-              Python, TypeScript, React, Next.js, FastAPI, Node.js — combined with OpenAI, Anthropic, Google AI, LangChain, vector databases, AWS, and Azure to build reliable, production-grade AI software and automation.
+              Python, TypeScript, React, Next.js, FastAPI, Node.js, combined with OpenAI, Anthropic, Google AI, LangChain, vector databases, AWS, and Azure to build reliable, production-grade AI software and automation.
             </p>
             <a href="/#contact" className="btn-dark"><span>Start a Project</span></a>
           </Reveal>

@@ -5,7 +5,7 @@ import { gsap, SplitText, useGSAP } from '@/lib/motion/gsap';
 
 /**
  * Headline reveal built on GSAP SplitText: the line breaks into words (or
- * characters) that rise, un-blur and un-rotate into place — on mount for an
+ * characters) that rise, un-blur and un-rotate into place, on mount for an
  * above-the-fold hero (`trigger="load"`) or as it scrolls into view
  * (`trigger="scroll"`, optionally `scrub`bed to the scrollbar).
  *
@@ -15,7 +15,7 @@ import { gsap, SplitText, useGSAP } from '@/lib/motion/gsap';
  * applied imperatively only after hydration, and only when motion is allowed,
  * so crawlers / no-JS / reduced-motion users always get clean, visible copy.
  *
- * `lines` splitting is deliberately unsupported — it needs fonts fully loaded
+ * `lines` splitting is deliberately unsupported, it needs fonts fully loaded
  * to measure correctly. Use `words` for a line-style cascade.
  */
 export function CinematicText({

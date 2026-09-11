@@ -6,13 +6,13 @@ import { AnimatePresence, m } from 'framer-motion';
 import { useMounted } from '@/lib/motion/useMounted';
 
 /**
- * Shared overlay shell for the AI features (command bar, project scoper) —
+ * Shared overlay shell for the AI features (command bar, project scoper),
  * backdrop click, Escape, and body-scroll lock, with a fade + rise entrance.
  * Not a general-purpose dialog primitive; just enough for these two.
  *
  * Rendered through a portal straight into `document.body`. This site's
  * `.reveal` entrance-animation class sets `transform: translateY(0)` (not
- * `none`) once visible — and per spec, ANY non-`none` transform on an
+ * `none`) once visible, and per spec, ANY non-`none` transform on an
  * ancestor creates a new containing block for `position: fixed` descendants,
  * so without the portal this modal would render clipped to whichever
  * `.reveal`-wrapped section it happens to be invoked from instead of

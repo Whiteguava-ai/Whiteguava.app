@@ -22,7 +22,7 @@ export const metadata: Metadata = {
 };
 
 /**
- * Standard-template legal page — not a substitute for review by qualified
+ * Standard-template legal page, not a substitute for review by qualified
  * counsel before being relied on as a final policy. Client engagements are
  * governed by their own signed scope/contract; this page covers use of the
  * public website only.
@@ -53,7 +53,7 @@ export default function TermsOfServicePage() {
               <h2 style={{ fontSize: '22px', fontWeight: 700, color: '#161616', marginBottom: '12px' }}>Use of this website</h2>
               <p>
                 You may browse this site and submit the contact form to enquire about our services. You agree not
-                to misuse the site — including attempting to disrupt it, scrape it at scale, or submit the contact
+                to misuse the site, including attempting to disrupt it, scrape it at scale, or submit the contact
                 form for purposes unrelated to a genuine enquiry.
               </p>
             </div>
@@ -61,7 +61,7 @@ export default function TermsOfServicePage() {
             <div>
               <h2 style={{ fontSize: '22px', fontWeight: 700, color: '#161616', marginBottom: '12px' }}>Content &amp; intellectual property</h2>
               <p>
-                The content on this site — including text, graphics, and the {SITE_NAME} name and logo — belongs
+                The content on this site, including text, graphics, and the {SITE_NAME} name and logo, belongs
                 to {SITE_NAME} unless otherwise credited (for example, photography sourced from Pexels
                 contributors). You may not reproduce or redistribute it without permission.
               </p>

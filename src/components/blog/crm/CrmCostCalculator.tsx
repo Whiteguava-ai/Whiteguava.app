@@ -47,7 +47,7 @@ export function CrmCostCalculator() {
         <h3 className={styles.wTitle}>What each CRM costs your team</h3>
         <p className={styles.wNote}>
           List price, annual billing, before tax. GuavaCRM is a one-time setup, then ~$28/month for the
-          server it runs on — the bar below is that server cost only.
+          server it runs on, the bar below is that server cost only.
         </p>
       </div>
 
@@ -128,7 +128,7 @@ export function CrmCostCalculator() {
         </m.span>
         <p className={styles.savingsCaption}>
           saved over {years} {years === 1 ? 'year' : 'years'} versus Salesforce Enterprise, for a{' '}
-          {users}-person team — before the AI add-on Salesforce charges on top.
+          {users}-person team, before the AI add-on Salesforce charges on top.
         </p>
       </div>
     </div>

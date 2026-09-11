@@ -9,7 +9,7 @@ import { cn } from '@/lib/cn';
  * time as the section enters view. Renders the full text immediately (no
  * animation) under prefers-reduced-motion.
  *
- * Words render fully visible by default — the hidden-then-reveal state is
+ * Words render fully visible by default, the hidden-then-reveal state is
  * applied imperatively client-side in the effect below, never baked into the
  * server-rendered HTML. That keeps the headline readable for anything that
  * doesn't execute JS (crawlers, first paint, no-JS clients) while still

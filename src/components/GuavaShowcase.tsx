@@ -4,7 +4,7 @@ import { GUAVA_PRODUCTS } from '@/data/guava';
 import styles from './Guava.module.css';
 
 /**
- * The homepage's dedicated spotlight on the Guava Product Suite — WhiteGuava's
+ * The homepage's dedicated spotlight on the Guava Product Suite, WhiteGuava's
  * most important line of business, so it gets its own full section (all 10
  * products, real cards) rather than being one tile among nine in `Services`.
  * Reuses `Guava.module.css` and `GUAVA_PRODUCTS` directly from the `/guava`
@@ -26,7 +26,7 @@ export default function GuavaShowcase() {
             <div className={`${styles.lede} reveal reveal-delay-1`} style={{ marginBottom: 32 }}>
               <p>
                 CRM, ERP, HR, LMS, BI, helpdesk, website builder, lending, project work and the
-                low-code platform behind them all — deployed on your own cloud, bought once, with
+                low-code platform behind them all, deployed on your own cloud, bought once, with
                 AI built in. No per-user licences, no renewals, no growth penalty.
               </p>
             </div>

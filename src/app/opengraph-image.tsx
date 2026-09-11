@@ -46,7 +46,7 @@ export default function OpenGraphImage() {
             AI Agents, Automation & Software
           </div>
           <div style={{ fontSize: 28, color: '#555555', fontWeight: 500 }}>
-            AI agents, automation, and custom software — Bengaluru, India
+            AI agents, automation, and custom software, Bengaluru, India
           </div>
         </div>
         <div

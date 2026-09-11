@@ -12,9 +12,9 @@ import { guavaPillarGraph } from '@/lib/schema';
 import { SITE_NAME, SITE_URL } from '@/lib/site';
 import styles from '@/components/Guava.module.css';
 
-const title = 'Guava Product Suite — Business Software You Own';
+const title = 'Guava Product Suite, Business Software You Own';
 const description =
-  'Own your business software instead of renting it. GuavaCRM, GuavaERP, GuavaHR and 7 more, deployed on your own cloud, bought once, with AI built in — no per-user licences, no renewals.';
+  'Own your business software instead of renting it. GuavaCRM, GuavaERP, GuavaHR and 7 more, deployed on your own cloud, bought once, with AI built in, no per-user licences, no renewals.';
 
 export const metadata: Metadata = {
   title,
@@ -55,7 +55,7 @@ export default function GuavaPage() {
           line1="Own Your Business"
           line2="Software"
           highlight="Own"
-          subtitle="CRM, ERP, HR and seven more — deployed on your own cloud, bought once, with AI built in. No per-user licences, no annual renewals, no growth penalty."
+          subtitle="CRM, ERP, HR and seven more, deployed on your own cloud, bought once, with AI built in. No per-user licences, no annual renewals, no growth penalty."
           primaryHref="#contact"
           secondaryHref="/blog/one-time-payment-crm"
           secondaryLabel="See a full breakdown"
@@ -80,7 +80,7 @@ export default function GuavaPage() {
                 </div>
                 <div className={`${styles.lede} reveal reveal-delay-1`}>
                   <p>
-                    Your CRM, your ERP, your helpdesk, your project tool — you pay for them per user,
+                    Your CRM, your ERP, your helpdesk, your project tool, you pay for them per user,
                     per month, every month. The bill goes up when you hire, when you add a client,
                     when the vendor raises prices, and when you want the AI features. Stop paying and
                     you lose access to your own records. Over five years a mid-size team spends tens
@@ -91,13 +91,13 @@ export default function GuavaPage() {
                     your own cloud, configures it to how you work, switches on an AI assistant built
                     directly in, and hands it over with the database and the source code.{' '}
                     <b>
-                      From that point it is yours — the only ongoing cost is roughly $20 to $45 a
+                      From that point it is yours, the only ongoing cost is roughly $20 to $45 a
                       month for the server it runs on.
                     </b>{' '}
                     No per-seat licence. No renewal. No AI upgrade.
                   </p>
                   <p>
-                    Each product below has its own full breakdown — a live cost comparison against
+                    Each product below has its own full breakdown, a live cost comparison against
                     the incumbents, interactive diagrams, and the feature matrix.
                   </p>
                 </div>
@@ -219,7 +219,7 @@ export default function GuavaPage() {
                   <li>Businesses with data-residency, audit or confidentiality requirements about where records live.</li>
                   <li>Agencies and consultancies that need clients and partners in their tools without paying per head.</li>
                   <li>Teams that have outgrown spreadsheets and free tiers but do not want a multi-year subscription to move up.</li>
-                  <li>Operations with rules — leave policies, accrual conventions, pricing logic — that generic SaaS cannot quite express.</li>
+                  <li>Operations with rules (leave policies, accrual conventions, pricing logic) that generic SaaS cannot quite express.</li>
                   <li>Anyone who has done the five-year maths on Salesforce, NetSuite, Zendesk or Workday and wants that budget back.</li>
                 </ul>
               </div>
@@ -236,8 +236,8 @@ export default function GuavaPage() {
                 <div className={`${styles.ctaBox} reveal`}>
                   <h2>Start with the one that hurts most.</h2>
                   <p>
-                    Most businesses begin with the CRM, ERP or helpdesk — usually when a renewal is
-                    coming up — and add the rest over time. WhiteGuava deploys it on your cloud,
+                    Most businesses begin with the CRM, ERP or helpdesk, usually when a renewal is
+                    coming up, and add the rest over time. WhiteGuava deploys it on your cloud,
                     imports your data, switches on the AI, and hands it over. One-time setup, then the
                     server cost only.
                   </p>

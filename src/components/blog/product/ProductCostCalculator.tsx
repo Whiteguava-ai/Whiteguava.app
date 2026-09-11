@@ -54,7 +54,7 @@ export function ProductCostCalculator({ product }: { product?: string }) {
         <h3 className={styles.wTitle}>What each option costs your team</h3>
         <p className={styles.wNote}>
           List price, annual billing, before tax. {def.name} is a one-time setup, then about $
-          {def.serverMo}/month for the server it runs on — the bar below is that server cost only.
+          {def.serverMo}/month for the server it runs on, the bar below is that server cost only.
         </p>
       </div>
 
@@ -134,7 +134,7 @@ export function ProductCostCalculator({ product }: { product?: string }) {
         </m.span>
         <p className={styles.savingsCaption}>
           saved over {years} {years === 1 ? 'year' : 'years'} versus {refRow?.plan.name ?? def.refName}, for a{' '}
-          {users}-person team — with the AI assistant already included on {def.name}.
+          {users}-person team, with the AI assistant already included on {def.name}.
         </p>
       </div>
     </div>

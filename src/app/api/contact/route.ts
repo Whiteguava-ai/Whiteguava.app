@@ -56,7 +56,7 @@ function row(label: string, value: string) {
 }
 
 function buildEmail(data: Record<keyof typeof MAX, string>) {
-  const subject = `${SITE_NAME} enquiry${data.service ? ` — ${data.service}` : ''} from ${data.name}`;
+  const subject = `${SITE_NAME} enquiry${data.service ? `, ${data.service}` : ''} from ${data.name}`;
   const html = `
     <div style="font-family:Inter,Arial,sans-serif;font-size:15px;line-height:1.5">
       <p>New project enquiry from the WhiteGuava website.</p>

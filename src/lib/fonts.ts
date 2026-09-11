@@ -1,7 +1,7 @@
 import localFont from 'next/font/local';
 
 /**
- * Self-hosted Satoshi (regular/medium/bold — the only static weights Fontshare
+ * Self-hosted Satoshi (regular/medium/bold, the only static weights Fontshare
  * actually ships for this family, despite the old CDN URL requesting 600/800
  * too). Replaces the external api.fontshare.com/cdn.fontshare.com request,
  * which sat on the homepage LCP path.

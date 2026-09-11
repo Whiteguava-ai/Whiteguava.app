@@ -9,7 +9,7 @@ export const oneTimePaymentCrm: BlogPost = {
   metaDescription:
     'A self-hosted CRM you own instead of renting Salesforce or Zoho. GuavaCRM runs on your own cloud, bought once, AI built in. Run the 5-year cost comparison live.',
   excerpt:
-    'A 10-person team pays Salesforce Enterprise $21,000 a year — forever. GuavaCRM is a one-time setup, then about $28 a month for the server, with the same leads, deals, pipeline, email and AI. Here is the full cost and feature comparison, with calculators you can run yourself.',
+    'A 10-person team pays Salesforce Enterprise $21,000 a year, forever. GuavaCRM is a one-time setup, then about $28 a month for the server, with the same leads, deals, pipeline, email and AI. Here is the full cost and feature comparison, with calculators you can run yourself.',
   category: 'CRM',
   tags: [
     'self-hosted CRM',
@@ -26,22 +26,22 @@ export const oneTimePaymentCrm: BlogPost = {
   readingTimeMinutes: 11,
   h1: 'GuavaCRM: The CRM You Buy Once Instead of Renting Forever',
   subtitle:
-    'Same pipeline, contacts, email and AI as the big platforms — set up once, owned by you, and running on a ~$28/month server instead of a per-user subscription that never stops.',
+    'Same pipeline, contacts, email and AI as the big platforms, set up once, owned by you, and running on a ~$28/month server instead of a per-user subscription that never stops.',
   body: [
     {
       type: 'p',
-      text: 'Every mainstream CRM is rented. You pay per user, per month, every month, and the bill goes up when your team grows or when the vendor raises prices — which Salesforce did again in 2026. A 10-person team on Salesforce Sales Cloud Enterprise pays about $21,000 a year at list price. Over five years that is $105,000, and at the end of it you own nothing.',
+      text: 'Every mainstream CRM is rented. You pay per user, per month, every month, and the bill goes up when your team grows or when the vendor raises prices, which Salesforce did again in 2026. A 10-person team on Salesforce Sales Cloud Enterprise pays about $21,000 a year at list price. Over five years that is $105,000, and at the end of it you own nothing.',
     },
     {
       type: 'p',
-      text: 'GuavaCRM is the opposite model. WhiteGuava sets it up on your own cloud, hands it over, and then it is yours: no per-seat licence, no renewal, and the only ongoing cost is roughly $28 a month for the server it runs on. It covers the day-to-day sales work every team actually does — leads and deals, a drag-and-drop pipeline, contacts and companies, two-way email, tasks, notes, call logging, WhatsApp, round-robin assignment, SLAs, web forms, bulk email, roles and a full audit trail — plus an AI assistant built directly in. Run the numbers for your own team size below.',
+      text: 'GuavaCRM is the opposite model. WhiteGuava sets it up on your own cloud, hands it over, and then it is yours: no per-seat licence, no renewal, and the only ongoing cost is roughly $28 a month for the server it runs on. It covers the day-to-day sales work every team actually does, leads and deals, a drag-and-drop pipeline, contacts and companies, two-way email, tasks, notes, call logging, WhatsApp, round-robin assignment, SLAs, web forms, bulk email, roles and a full audit trail, plus an AI assistant built directly in. Run the numbers for your own team size below.',
     },
     {
       type: 'callout',
       title: 'In short',
-      text: 'A 10-person team on Salesforce Sales Cloud Enterprise pays about $21,000 a year at list price — roughly $105,000 over five years, rented. GuavaCRM is a one-time setup, then about $28/month for the server (roughly $1,700 over five years), and you own it. Same leads, deals, pipeline, email and AI, with the assistant included rather than a $4,800/year upgrade.',
+      text: 'A 10-person team on Salesforce Sales Cloud Enterprise pays about $21,000 a year at list price, roughly $105,000 over five years, rented. GuavaCRM is a one-time setup, then about $28/month for the server (roughly $1,700 over five years), and you own it. Same leads, deals, pipeline, email and AI, with the assistant included rather than a $4,800/year upgrade.',
     },
-    { type: 'embed', component: 'crmCostCalculator', caption: 'List pricing, September 2026. GuavaCRM figure is the server cost only — setup is a separate one-time fee.' },
+    { type: 'embed', component: 'crmCostCalculator', caption: 'List pricing, September 2026. GuavaCRM figure is the server cost only, setup is a separate one-time fee.' },
     {
       type: 'h2',
       text: 'What you are really paying Salesforce and Zoho for',
@@ -49,7 +49,7 @@ export const oneTimePaymentCrm: BlogPost = {
     },
     {
       type: 'p',
-      text: 'The subscription price is not mostly the software. Modern CRMs are mature — the core feature set is broadly the same everywhere. What you rent is the hosting, the vendor’s margin, the sales and support organisation, and the option to keep using your own data next month. Stop paying and access ends, even though the records are yours.',
+      text: 'The subscription price is not mostly the software. Modern CRMs are mature, the core feature set is broadly the same everywhere. What you rent is the hosting, the vendor’s margin, the sales and support organisation, and the option to keep using your own data next month. Stop paying and access ends, even though the records are yours.',
     },
     {
       type: 'p',
@@ -69,7 +69,7 @@ export const oneTimePaymentCrm: BlogPost = {
       type: 'table',
       headers: ['Plan', 'Per user / mo', '10 users / year', 'AI assistant', 'vs GuavaCRM'],
       rows: [
-        ['GuavaCRM (self-hosted)', '~$2.85', '~$340', 'Built in (~$3–5/mo usage)', '—'],
+        ['GuavaCRM (self-hosted)', '~$2.85', '~$340', 'Built in (~$3–5/mo usage)', 'N/A'],
         ['Zoho CRM · Standard', '$14', '$1,680', 'No', '5×'],
         ['Zoho CRM · Professional', '$23', '$2,760', 'No', '8×'],
         ['Zoho CRM · Enterprise', '$40', '$4,800', 'Yes (Zia)', '14×'],
@@ -83,7 +83,7 @@ export const oneTimePaymentCrm: BlogPost = {
     },
     {
       type: 'p',
-      text: 'Even the cheapest paid Zoho plan costs a 10-person team five times what GuavaCRM’s server costs — and that plan has no AI at all. To match GuavaCRM’s built-in assistant on Zoho you are on Enterprise at $4,800 a year; on Salesforce you are paying for a $21,000 plan and then adding Einstein on top.',
+      text: 'Even the cheapest paid Zoho plan costs a 10-person team five times what GuavaCRM’s server costs, and that plan has no AI at all. To match GuavaCRM’s built-in assistant on Zoho you are on Enterprise at $4,800 a year; on Salesforce you are paying for a $21,000 plan and then adding Einstein on top.',
     },
     {
       type: 'h2',
@@ -92,7 +92,7 @@ export const oneTimePaymentCrm: BlogPost = {
     },
     {
       type: 'p',
-      text: 'GuavaCRM is built on a mature open-source core, rebranded and extended by WhiteGuava, and deployed on your own cloud. The list below is what ships as standard — no tier to unlock it, no add-on to buy. Tap any row to see which Salesforce or Zoho plan charges for the same thing.',
+      text: 'GuavaCRM is built on a mature open-source core, rebranded and extended by WhiteGuava, and deployed on your own cloud. The list below is what ships as standard, no tier to unlock it, no add-on to buy. Tap any row to see which Salesforce or Zoho plan charges for the same thing.',
     },
     { type: 'embed', component: 'crmFeatureMatrix' },
     {
@@ -102,12 +102,12 @@ export const oneTimePaymentCrm: BlogPost = {
     },
     {
       type: 'p',
-      text: 'Feature lists converge. The things that genuinely separate an owned CRM from a rented one are structural — they come from where the software runs and who controls it, and no subscription tier can offer them.',
+      text: 'Feature lists converge. The things that genuinely separate an owned CRM from a rented one are structural, they come from where the software runs and who controls it, and no subscription tier can offer them.',
     },
     { type: 'embed', component: 'crmDifferentiators' },
     {
       type: 'h2',
-      text: 'The AI is built in — not a $4,800 upgrade',
+      text: 'The AI is built in, not a $4,800 upgrade',
       id: 'ai',
     },
     {
@@ -117,19 +117,19 @@ export const oneTimePaymentCrm: BlogPost = {
     {
       type: 'list',
       items: [
-        'Draft with AI — one click on any lead or deal writes a contextual reply or follow-up email, using the record’s history.',
-        'Summarize — collapses a long activity trail into a few lines so anyone picking up the account is caught up instantly.',
-        'Ask AI — a sidebar assistant that answers plain-English questions about your pipeline and contacts, and respects each user’s permissions.',
+        'Draft with AI, one click on any lead or deal writes a contextual reply or follow-up email, using the record’s history.',
+        'Summarize, collapses a long activity trail into a few lines so anyone picking up the account is caught up instantly.',
+        'Ask AI, a sidebar assistant that answers plain-English questions about your pipeline and contacts, and respects each user’s permissions.',
       ],
     },
     {
       type: 'p',
-      text: 'These run on OpenAI’s gpt-4o-mini and cost roughly $3 to $5 per month in usage for a 10-person team. There is no “AI edition” to buy. On Zoho, the equivalent assistant (Zia) starts at the Enterprise tier — $4,800 a year for the same 10 people. On Salesforce, Einstein is a paid add-on on top of a plan that already costs $21,000 a year.',
+      text: 'These run on OpenAI’s gpt-4o-mini and cost roughly $3 to $5 per month in usage for a 10-person team. There is no “AI edition” to buy. On Zoho, the equivalent assistant (Zia) starts at the Enterprise tier, $4,800 a year for the same 10 people. On Salesforce, Einstein is a paid add-on on top of a plan that already costs $21,000 a year.',
     },
     {
       type: 'callout',
       title: 'Why this matters',
-      text: 'AI is the one place every CRM vendor has chosen to put a paywall. Because GuavaCRM’s source is yours, the AI is just a feature — priced at what the API actually costs, not at what a vendor can charge for it.',
+      text: 'AI is the one place every CRM vendor has chosen to put a paywall. Because GuavaCRM’s source is yours, the AI is just a feature, priced at what the API actually costs, not at what a vendor can charge for it.',
     },
     {
       type: 'h2',
@@ -138,12 +138,12 @@ export const oneTimePaymentCrm: BlogPost = {
     },
     {
       type: 'p',
-      text: 'This is the real pipeline behaviour in miniature. Drag a deal between stages, or use the arrows, and watch the pipeline and won totals update. The production CRM adds filters, saved views, per-deal activity, email and the AI buttons — but the core interaction is exactly this.',
+      text: 'This is the real pipeline behaviour in miniature. Drag a deal between stages, or use the arrows, and watch the pipeline and won totals update. The production CRM adds filters, saved views, per-deal activity, email and the AI buttons, but the core interaction is exactly this.',
     },
     { type: 'embed', component: 'crmKanbanDemo' },
     {
       type: 'p',
-      text: 'GuavaCRM is one of ten applications in the [Guava Product Suite](/guava) — the same buy-once, own-it model applied to [operations and accounting](/blog/one-time-payment-erp), [customer support](/blog/one-time-payment-helpdesk) and [project work](/blog/one-time-payment-project-management).',
+      text: 'GuavaCRM is one of ten applications in the [Guava Product Suite](/guava), the same buy-once, own-it model applied to [operations and accounting](/blog/one-time-payment-erp), [customer support](/blog/one-time-payment-helpdesk) and [project work](/blog/one-time-payment-project-management).',
     },
     {
       type: 'h2',
@@ -157,9 +157,9 @@ export const oneTimePaymentCrm: BlogPost = {
     {
       type: 'list',
       items: [
-        'Small and mid-size sales teams — 3 to 100 people — who want a full CRM without watching the bill climb every time they hire.',
+        'Small and mid-size sales teams, 3 to 100 people, who want a full CRM without watching the bill climb every time they hire.',
         'Agencies and consultancies that need to add clients, partners and read-only viewers without paying per head.',
-        'Businesses that care where their customer data lives — GuavaCRM runs on your own cloud subscription, with full database and export access.',
+        'Businesses that care where their customer data lives, GuavaCRM runs on your own cloud subscription, with full database and export access.',
         'Teams that have outgrown a spreadsheet or a free tier and do not want to sign a multi-year subscription to move up.',
         'Anyone who has done the math on five years of Salesforce or Zoho and wants that budget back.',
       ],
@@ -180,23 +180,23 @@ export const oneTimePaymentCrm: BlogPost = {
         'WhiteGuava deploys GuavaCRM on your cloud account (Azure, AWS or your choice), branded for your business.',
         'We import your existing contacts and deals, set up your pipeline stages, roles, assignment rules and email, and switch on the AI module.',
         'We hand over full admin access, the database, and documentation. From that point the software is yours.',
-        'Ongoing, you pay only for the server — around $28 a month — plus a few dollars of AI usage. Support and future changes are available if you want them, never required.',
+        'Ongoing, you pay only for the server, around $28 a month, plus a few dollars of AI usage. Support and future changes are available if you want them, never required.',
       ],
     },
     {
       type: 'callout',
       title: 'The five-year picture',
-      text: 'Salesforce Enterprise for 10 people: about $105,000, rented. GuavaCRM: a one-time setup, then roughly $1,700 in server cost over the same five years — and you own it at the end.',
+      text: 'Salesforce Enterprise for 10 people: about $105,000, rented. GuavaCRM: a one-time setup, then roughly $1,700 in server cost over the same five years, and you own it at the end.',
     },
   ],
   faqs: [
     {
       q: 'Is GuavaCRM really a one-time payment?',
-      a: 'The CRM itself is a one-time setup engagement — WhiteGuava deploys, configures and hands it over, and then you own it. The only recurring cost is the server it runs on, around $28 a month, plus a few dollars of AI usage. There is no per-user licence and no annual renewal.',
+      a: 'The CRM itself is a one-time setup engagement, WhiteGuava deploys, configures and hands it over, and then you own it. The only recurring cost is the server it runs on, around $28 a month, plus a few dollars of AI usage. There is no per-user licence and no annual renewal.',
     },
     {
       q: 'How is GuavaCRM so much cheaper than Salesforce and Zoho?',
-      a: 'Salesforce and Zoho charge per user per month, forever, and the price covers hosting, vendor margin, and a large sales and support organisation. GuavaCRM is built on open-source software running on your own cloud, so once it is set up the only cost is the virtual machine — about $28 a month regardless of how many people use it.',
+      a: 'Salesforce and Zoho charge per user per month, forever, and the price covers hosting, vendor margin, and a large sales and support organisation. GuavaCRM is built on open-source software running on your own cloud, so once it is set up the only cost is the virtual machine, about $28 a month regardless of how many people use it.',
     },
     {
       q: 'Do I have to pay per user with GuavaCRM?',
@@ -204,19 +204,19 @@ export const oneTimePaymentCrm: BlogPost = {
     },
     {
       q: 'Does GuavaCRM have AI?',
-      a: 'Yes. It includes Draft with AI (writes contextual emails on a lead or deal), Summarize (condenses an activity trail), and Ask AI (answers plain-English questions about your data). They run on OpenAI gpt-4o-mini and cost about $3 to $5 a month in usage for a 10-person team — with no separate AI tier to buy.',
+      a: 'Yes. It includes Draft with AI (writes contextual emails on a lead or deal), Summarize (condenses an activity trail), and Ask AI (answers plain-English questions about your data). They run on OpenAI gpt-4o-mini and cost about $3 to $5 a month in usage for a 10-person team, with no separate AI tier to buy.',
     },
     {
       q: 'Can I get my data out of GuavaCRM? Is there lock-in?',
       a: 'There is no lock-in. GuavaCRM is a database on your own cloud subscription. You have full SQL access, full export, and the source code. If you ever want to move, nothing is holding your data hostage.',
     },
     {
-      q: 'Where does GuavaCRM run — is it self-hosted?',
+      q: 'Where does GuavaCRM run, is it self-hosted?',
       a: 'It runs on your own cloud account, typically a single Azure virtual machine, though AWS or another provider works too. WhiteGuava sets it up and manages the deployment during handover; after that the infrastructure is under your control.',
     },
     {
       q: 'What happens if I need changes or help later?',
-      a: 'Because the source is yours, GuavaCRM can be customised in ways a licensed product cannot — new fields, new objects, new automations, or new AI features. WhiteGuava offers ongoing support and development if you want it, but it is optional, not a required contract.',
+      a: 'Because the source is yours, GuavaCRM can be customised in ways a licensed product cannot, new fields, new objects, new automations, or new AI features. WhiteGuava offers ongoing support and development if you want it, but it is optional, not a required contract.',
     },
     {
       q: 'Is GuavaCRM open source?',
@@ -225,9 +225,9 @@ export const oneTimePaymentCrm: BlogPost = {
   ],
   related: [
     { href: SERVICE_PATHS.software, title: 'AI Software Development', desc: 'How WhiteGuava builds and deploys custom business software like GuavaCRM.' },
-    { href: SERVICE_PATHS.automation, title: 'AI Automation', desc: 'Automating the workflows that sit around your CRM — quotes, approvals, reporting.' },
+    { href: SERVICE_PATHS.automation, title: 'AI Automation', desc: 'Automating the workflows that sit around your CRM, quotes, approvals, reporting.' },
     { href: SERVICE_PATHS.dataAnalytics, title: 'Data & Analytics', desc: 'Reporting and dashboards on top of your own CRM database.' },
-    { href: '/blog/ai-agents-for-business', title: 'AI Agents for Business', desc: 'Where AI agents fit alongside a CRM — support, qualification, follow-up.' },
+    { href: '/blog/ai-agents-for-business', title: 'AI Agents for Business', desc: 'Where AI agents fit alongside a CRM, support, qualification, follow-up.' },
   ],
   cta: {
     title: 'Want a CRM your team owns outright?',
@@ -239,6 +239,6 @@ export const oneTimePaymentCrm: BlogPost = {
     name: 'GuavaCRM',
     applicationCategory: 'BusinessApplication',
     description:
-      'A self-hosted CRM for leads, deals, pipeline, email and AI, deployed on your own cloud and owned outright — a one-time setup instead of a per-user Salesforce or Zoho subscription.',
+      'A self-hosted CRM for leads, deals, pipeline, email and AI, deployed on your own cloud and owned outright, a one-time setup instead of a per-user Salesforce or Zoho subscription.',
   },
 };

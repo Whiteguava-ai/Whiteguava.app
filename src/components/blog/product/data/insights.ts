@@ -1,7 +1,7 @@
 import type { ProductDef } from '../types';
 
 /**
- * GuavaInsights — dashboards, reports and data analysis on a platform you own.
+ * GuavaInsights, dashboards, reports and data analysis on a platform you own.
  * Competitor list pricing, September 2026:
  *   Microsoft Power BI Pro $14/user/mo, Premium Per User $24/user/mo.
  *   Tableau Cloud Creator $75/user/mo (annual), Explorer $42, Viewer $15;
@@ -34,7 +34,7 @@ export const insights: ProductDef = {
   ],
 
   ladder: [
-    { vendor: 'GuavaInsights', tier: 'server + AI usage', perUserMo: null, tenUsersYr: 470, ai: 'yes', aiNote: 'ask, narrate, alert', vsOurs: '—', ours: true },
+    { vendor: 'GuavaInsights', tier: 'server + AI usage', perUserMo: null, tenUsersYr: 470, ai: 'yes', aiNote: 'ask, narrate, alert', vsOurs: 'N/A', ours: true },
     { vendor: 'Zoho Analytics', tier: 'effective per user', perUserMo: 8, tenUsersYr: 960, ai: 'partial', aiNote: 'Zia', vsOurs: '2×' },
     { vendor: 'Power BI', tier: 'Pro', perUserMo: 14, tenUsersYr: 1_680, ai: 'partial', aiNote: 'Copilot needs capacity', vsOurs: '4×' },
     { vendor: 'Power BI', tier: 'Premium Per User', perUserMo: 24, tenUsersYr: 2_880, ai: 'partial', aiNote: 'Copilot', vsOurs: '6×' },
@@ -75,9 +75,9 @@ export const insights: ProductDef = {
     {
       group: 'AI assistant',
       rows: [
-        { capability: 'Ask a question, get the chart — natural language to query', elsewhere: 'Copilot / Pulse on paid tiers + capacity' },
+        { capability: 'Ask a question, get the chart, natural language to query', elsewhere: 'Copilot / Pulse on paid tiers + capacity' },
         { capability: 'Auto-written narrative for a dashboard', elsewhere: 'Higher tier only' },
-        { capability: 'Ask AI — follow-up questions over the underlying data', elsewhere: 'Enterprise AI tier' },
+        { capability: 'Ask AI, follow-up questions over the underlying data', elsewhere: 'Enterprise AI tier' },
         { capability: 'Anomaly detection and explained spikes', elsewhere: 'Premium / enterprise' },
       ],
     },
@@ -93,12 +93,12 @@ export const insights: ProductDef = {
   ],
 
   diffs: [
-    { icon: 'infinity', title: 'Everyone can look, for free', body: 'Power BI and Tableau charge for Viewer seats — the people who only read a dashboard. On GuavaInsights the whole company can view, embed and subscribe at no extra cost.' },
-    { icon: 'database', title: 'It sits next to your data, on your cloud', body: 'The analytics layer runs on **your** cloud alongside your database — no extracting sensitive data into a vendor’s multi-tenant service to chart it.' },
-    { icon: 'sparkles', title: 'Natural-language analysis without a capacity SKU', body: 'Ask-in-English, dashboard narratives and anomaly explanations run on metered API calls — **a few dollars a month**. Copilot needs a Fabric capacity; Pulse needs a plan.' },
+    { icon: 'infinity', title: 'Everyone can look, for free', body: 'Power BI and Tableau charge for Viewer seats, the people who only read a dashboard. On GuavaInsights the whole company can view, embed and subscribe at no extra cost.' },
+    { icon: 'database', title: 'It sits next to your data, on your cloud', body: 'The analytics layer runs on **your** cloud alongside your database, no extracting sensitive data into a vendor’s multi-tenant service to chart it.' },
+    { icon: 'sparkles', title: 'Natural-language analysis without a capacity SKU', body: 'Ask-in-English, dashboard narratives and anomaly explanations run on metered API calls, **a few dollars a month**. Copilot needs a Fabric capacity; Pulse needs a plan.' },
     { icon: 'code', title: 'SQL when you need it, not walled off', body: 'Raw SQL, notebooks and custom models are first-class, not a pro-tier unlock. Your analysts are not boxed into a drag-and-drop editor.' },
     { icon: 'chart', title: 'Embed anywhere with no per-view meter', body: 'Put a dashboard in your product or portal for customers. Most platforms price embedded analytics per view or per external user.' },
-    { icon: 'shield', title: 'No renewal, no seat audit', body: 'Analyst leaves, three join — nothing to reconcile with a vendor. You own GuavaInsights; the server is the only cost.' },
+    { icon: 'shield', title: 'No renewal, no seat audit', body: 'Analyst leaves, three join, nothing to reconcile with a vendor. You own GuavaInsights; the server is the only cost.' },
   ],
 
   architecture: {
@@ -139,7 +139,7 @@ export const insights: ProductDef = {
 
   lifecycle: {
     title: 'Question to answer, on repeat',
-    caption: 'How a business question becomes a dashboard everyone trusts. Click a step — AI can shortcut the middle.',
+    caption: 'How a business question becomes a dashboard everyone trusts. Click a step, AI can shortcut the middle.',
     steps: [
       { label: 'Connect', detail: 'Point GuavaInsights at your database or schedule a sync from the apps that hold the data.', metric: 'Source live' },
       { label: 'Model', detail: 'Shape the raw tables into a model with the metrics and calculated fields the business actually uses.', metric: 'Metrics defined' },
@@ -153,7 +153,7 @@ export const insights: ProductDef = {
   ai: [
     { name: 'Ask in English', desc: 'Type a question about your data and get the query and the chart back, ready to drop on a dashboard.' },
     { name: 'Narrate', desc: 'Writes a plain-language summary of what a dashboard is showing this week, for the top of a report or an email digest.' },
-    { name: 'Ask AI', desc: 'Follow-up questions over the underlying data — "why did this dip?", "which region drove it?" — answered within each viewer’s access.' },
+    { name: 'Ask AI', desc: 'Follow-up questions over the underlying data, "why did this dip?", "which region drove it?", answered within each viewer’s access.' },
     { name: 'Anomaly alerts', desc: 'Flags metrics that move outside their normal range and offers a first explanation for a human to confirm.' },
   ],
 };

@@ -7,7 +7,7 @@ import { SITE_URL } from '@/lib/site';
 
 /**
  * The site's entire public content, flattened into one plain-text corpus for
- * an LLM to answer questions against — no vector DB, no chunking/retrieval
+ * an LLM to answer questions against, no vector DB, no chunking/retrieval
  * step. The whole site is small enough (a few dozen thousand tokens) to just
  * hand to Claude in full on every request; that's simpler and more reliable
  * than approximate retrieval for a corpus this size, and it's rebuilt from
@@ -30,7 +30,7 @@ function blockToText(block: BlogBlock): string {
     case 'table':
       return [block.headers.join(' | '), ...block.rows.map((r) => r.join(' | '))].join('\n');
     case 'callout':
-      return `NOTE — ${block.title}: ${block.text}`;
+      return `NOTE (${block.title}): ${block.text}`;
     case 'embed':
       // Interactive widgets (calculators, diagrams) carry no answerable text of
       // their own; the surrounding prose already explains what they show.
@@ -49,15 +49,15 @@ export function buildKnowledgeBase(): string {
 
   sections.push(
     [
-      '# WhiteGuava — company facts',
+      '# WhiteGuava: company facts',
       'WhiteGuava is an AI software development company based in Bengaluru, Karnataka, India, available for worldwide projects.',
-      'It builds AI agents, custom AI/ML systems, business software, AI integrations, automation, data & analytics, and cloud deployment — and separately sells the Guava Product Suite, ten business applications sold as a one-time setup instead of a per-user subscription.',
+      'It builds AI agents, custom AI/ML systems, business software, AI integrations, automation, data & analytics, and cloud deployment. It also separately sells the Guava Product Suite: ten business applications sold as a one-time setup instead of a per-user subscription.',
       `Website: ${SITE_URL}`,
     ].join('\n')
   );
 
   sections.push(
-    '# Guava Product Suite — the ten products\n' +
+    '# Guava Product Suite: the ten products\n' +
       GUAVA_PRODUCTS.map(
         (p) =>
           `## ${p.name} (${p.category})\nWhat it does: ${p.does}\nReplaces: ${p.replaces}\nApprox. self-hosted server cost: $${p.serverMo}/month (one-time setup engagement, no per-user licence)\nFull breakdown: ${SITE_URL}${p.href}`
@@ -65,7 +65,7 @@ export function buildKnowledgeBase(): string {
   );
 
   sections.push(
-    '# Guava Product Suite — FAQ\n' +
+    '# Guava Product Suite: FAQ\n' +
       guavaFaqs.map((f) => `Q: ${f.q}\nA: ${f.a}`).join('\n\n')
   );
 

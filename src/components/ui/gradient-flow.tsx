@@ -4,7 +4,7 @@ import { useMemo } from 'react';
 import { m, useReducedMotion } from 'framer-motion';
 import { cn } from '@/lib/cn';
 
-/** Deterministic pseudo-random in [0, 1) — a pure function of `seed`, so it's
+/** Deterministic pseudo-random in [0, 1), a pure function of `seed`, so it's
  * stable across server/client renders and re-renders (no hydration mismatch,
  * no "impure call during render" issue the way `Math.random()` would cause). */
 function seededRandom(seed: number) {
@@ -15,7 +15,7 @@ function seededRandom(seed: number) {
 /**
  * An ambient backdrop for dark sections: a large, saturated aurora-style wash
  * slowly breathes behind two bigger drifting color blobs, with light streaks
- * continuously flowing top to bottom over the top — enough color and motion
+ * continuously flowing top to bottom over the top, enough color and motion
  * that a big dark panel reads as a living surface, not empty black.
  */
 export function GradientFlow({ className, streaks = 9 }: { className?: string; streaks?: number }) {

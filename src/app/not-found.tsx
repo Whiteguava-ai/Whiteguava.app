@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   title: 'Page Not Found',
   description: `The page you're looking for doesn't exist on ${SITE_NAME}.`,
   // Next.js also auto-injects its own `noindex` meta tag for any 404-status
-  // response in this version, so two robots tags will still render — but
+  // response in this version, so two robots tags will still render, but
   // without this, the root layout's `index, follow` leaks through instead
   // and actively conflicts with it. This keeps both tags in agreement.
   robots: { index: false, follow: false },

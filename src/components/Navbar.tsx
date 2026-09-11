@@ -20,7 +20,7 @@ export default function Navbar() {
   }, []);
 
   // Hide the bar while scrolling down through the page, bring it back the
-  // moment the reader scrolls up — but never hide it with the mobile menu open.
+  // moment the reader scrolls up, but never hide it with the mobile menu open.
   useMotionValueEvent(scrollY, 'change', (y) => {
     const prev = scrollY.getPrevious() ?? 0;
     if (open || reduced) {
@@ -55,7 +55,7 @@ export default function Navbar() {
         <a href="/" className={styles.logo} aria-label="WhiteGuava home" onClick={close}>
           <Image
             src="/brand/whiteguava-logo.png"
-            alt="WhiteGuava — AI software development company"
+            alt="WhiteGuava, AI software development company"
             className={styles.logoFull}
             width={890}
             height={206}
@@ -79,7 +79,7 @@ export default function Navbar() {
           type="button"
           className={styles.askBtn}
           onClick={() => window.dispatchEvent(new Event('ask-whiteguava:open'))}
-          aria-label="Ask WhiteGuava — search the site with AI"
+          aria-label="Ask WhiteGuava, search the site with AI"
         >
           <Search width={15} height={15} strokeWidth={2.25} aria-hidden="true" />
           <span className={styles.askBtnLabel}>Ask WhiteGuava</span>

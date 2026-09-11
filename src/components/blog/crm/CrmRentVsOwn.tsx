@@ -39,7 +39,7 @@ export function CrmRentVsOwn() {
         <h3 className={styles.wTitle}>A subscription bills whether you use it or not</h3>
         <p className={styles.wNote}>
           At Salesforce Sales Cloud Enterprise list price, a 10-person team pays{' '}
-          <b>${PER_DAY.toFixed(2)} every day</b> — ${SF_ENTERPRISE_PER_YEAR.toLocaleString('en-US')} a year,
+          <b>${PER_DAY.toFixed(2)} every day</b>, ${SF_ENTERPRISE_PER_YEAR.toLocaleString('en-US')} a year,
           $105,000 over five years, and it never stops.
         </p>
       </div>

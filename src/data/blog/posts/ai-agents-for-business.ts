@@ -17,13 +17,13 @@ export const aiAgentsForBusiness: BlogPost = {
   readingTimeMinutes: 12,
   h1: 'AI Agents for Business: Use Cases, Examples, and How to Get Started',
   subtitle:
-    'A practical look at what AI agents do for businesses today — by function and by industry — plus real cost drivers and a framework for deciding if you need one.',
+    'A practical look at what AI agents do for businesses today, by function and by industry, plus real cost drivers and a framework for deciding if you need one.',
   coverQuery: 'business team office meeting technology laptop',
   coverAlt: 'Business team reviewing work on a laptop, representing how AI agents support day-to-day business operations',
   body: [
     {
       type: 'p',
-      text: 'An AI agent for business is a system that handles a defined piece of work end-to-end — reading a request, checking real data, taking action, and escalating to a person when it should — instead of just answering a question. Businesses are using them today for customer support, lead qualification, document processing, and internal operations, usually starting with one narrow workflow rather than an entire department.',
+      text: 'An AI agent for business is a system that handles a defined piece of work end-to-end, reading a request, checking real data, taking action, and escalating to a person when it should, instead of just answering a question. Businesses are using them today for customer support, lead qualification, document processing, and internal operations, usually starting with one narrow workflow rather than an entire department.',
     },
     {
       type: 'p',
@@ -43,7 +43,7 @@ export const aiAgentsForBusiness: BlogPost = {
     { type: 'h3', text: 'Customer support & service', id: 'customer-support' },
     {
       type: 'p',
-      text: 'Support agents read an incoming message, check order or account data, and resolve routine requests — order status, refund eligibility, account changes — while handing off anything ambiguous or high-stakes to a person with full context attached. This is the single most common first deployment because the volume is high, the rules are usually clear, and the cost of a wrong answer is recoverable.',
+      text: 'Support agents read an incoming message, check order or account data, and resolve routine requests, order status, refund eligibility, account changes, while handing off anything ambiguous or high-stakes to a person with full context attached. This is the single most common first deployment because the volume is high, the rules are usually clear, and the cost of a wrong answer is recoverable.',
     },
     { type: 'h3', text: 'Sales & lead qualification', id: 'sales' },
     {
@@ -53,7 +53,7 @@ export const aiAgentsForBusiness: BlogPost = {
     { type: 'h3', text: 'Marketing operations', id: 'marketing' },
     {
       type: 'p',
-      text: 'Marketing teams use agents for first-draft content generation, campaign data pulls, and audience segmentation — work that used to take an analyst a day and now takes an agent minutes, with a human still reviewing before anything goes out. Agents here work best as a drafting and research layer, not as an unsupervised publisher.',
+      text: 'Marketing teams use agents for first-draft content generation, campaign data pulls, and audience segmentation, work that used to take an analyst a day and now takes an agent minutes, with a human still reviewing before anything goes out. Agents here work best as a drafting and research layer, not as an unsupervised publisher.',
     },
     { type: 'h3', text: 'Finance & operations', id: 'finance-ops' },
     {
@@ -79,18 +79,18 @@ export const aiAgentsForBusiness: BlogPost = {
     {
       type: 'list',
       items: [
-        'Ecommerce & retail — order-status and returns agents, product-question answering, and inventory-level monitoring that flags restocks before a customer notices a stockout.',
-        'Real estate — lead qualification for property inquiries, scheduling viewings, and answering listing questions around the clock instead of losing leads overnight.',
-        'Healthcare & clinics — appointment scheduling, insurance-eligibility checks, and intake-form processing, always with a licensed person making clinical decisions.',
-        'Logistics & manufacturing — shipment-status agents, exception handling when a delivery is delayed, and demand-forecasting support that flags anomalies for a planner.',
-        'Professional services & law firms — document review triage, intake-question answering, and drafting first-pass summaries that a lawyer or consultant still reviews.',
-        'Hospitality & restaurants — reservation and order-taking agents, especially over WhatsApp or a booking widget, that hand off anything non-standard to staff.',
+        'Ecommerce & retail, order-status and returns agents, product-question answering, and inventory-level monitoring that flags restocks before a customer notices a stockout.',
+        'Real estate, lead qualification for property inquiries, scheduling viewings, and answering listing questions around the clock instead of losing leads overnight.',
+        'Healthcare & clinics, appointment scheduling, insurance-eligibility checks, and intake-form processing, always with a licensed person making clinical decisions.',
+        'Logistics & manufacturing, shipment-status agents, exception handling when a delivery is delayed, and demand-forecasting support that flags anomalies for a planner.',
+        'Professional services & law firms, document review triage, intake-question answering, and drafting first-pass summaries that a lawyer or consultant still reviews.',
+        'Hospitality & restaurants, reservation and order-taking agents, especially over WhatsApp or a booking widget, that hand off anything non-standard to staff.',
       ],
     },
     {
       type: 'callout',
       title: 'Where WhiteGuava fits',
-      text: 'We build AI agents for customer support, sales qualification, and document processing, along with WhatsApp-based agents for businesses whose customers already message them there — see our AI agent development and WhatsApp AI services for how these get built in practice.',
+      text: 'We build AI agents for customer support, sales qualification, and document processing, along with WhatsApp-based agents for businesses whose customers already message them there, see our AI agent development and WhatsApp AI services for how these get built in practice.',
     },
     {
       type: 'h2',
@@ -99,7 +99,7 @@ export const aiAgentsForBusiness: BlogPost = {
     },
     {
       type: 'p',
-      text: 'Adoption is real but still early. McKinsey\'s 2025 State of AI research found that 23% of organizations report scaling an agentic AI system in at least one business function, with another 39% actively experimenting — and most of the organizations that are scaling are doing so in only one or two functions so far, not company-wide.',
+      text: 'Adoption is real but still early. McKinsey\'s 2025 State of AI research found that 23% of organizations report scaling an agentic AI system in at least one business function, with another 39% actively experimenting, and most of the organizations that are scaling are doing so in only one or two functions so far, not company-wide.',
     },
     {
       type: 'p',
@@ -132,7 +132,7 @@ export const aiAgentsForBusiness: BlogPost = {
     },
     {
       type: 'p',
-      text: 'A single, well-defined agent — order-status lookups on WhatsApp, for example — is a realistic and affordable first project. The price climbs when a project tries to cover an entire department, touch many systems at once, or launch straight into production without a pilot phase to validate it against real traffic.',
+      text: 'A single, well-defined agent, order-status lookups on WhatsApp, for example, is a realistic and affordable first project. The price climbs when a project tries to cover an entire department, touch many systems at once, or launch straight into production without a pilot phase to validate it against real traffic.',
     },
     {
       type: 'h2',
@@ -146,9 +146,9 @@ export const aiAgentsForBusiness: BlogPost = {
     {
       type: 'list',
       items: [
-        'Off-the-shelf tools — fastest to start, cheapest up front, but limited to what the vendor built. Works well when your workflow is generic (a standard FAQ bot, a common CRM integration).',
-        'In-house build — full control and no per-seat vendor cost, but requires engineering time you may not have, plus ongoing maintenance as your systems change.',
-        'Agency or development partner — a middle path: an agent built specifically around your data and systems, without needing to hire and manage an in-house AI team. Best fit when your workflow is specific to your business and a generic tool would not fit it well.',
+        'Off-the-shelf tools, fastest to start, cheapest up front, but limited to what the vendor built. Works well when your workflow is generic (a standard FAQ bot, a common CRM integration).',
+        'In-house build, full control and no per-seat vendor cost, but requires engineering time you may not have, plus ongoing maintenance as your systems change.',
+        'Agency or development partner, a middle path: an agent built specifically around your data and systems, without needing to hire and manage an in-house AI team. Best fit when your workflow is specific to your business and a generic tool would not fit it well.',
       ],
     },
     {
@@ -170,7 +170,7 @@ export const aiAgentsForBusiness: BlogPost = {
       type: 'list',
       ordered: true,
       items: [
-        'Does it involve reading unstructured input — a message, a document, a free-text field — rather than a fixed form?',
+        'Does it involve reading unstructured input, a message, a document, a free-text field, rather than a fixed form?',
         'Does it require checking real data before responding correctly, rather than giving the same answer every time?',
         'Does the volume make manual handling genuinely expensive in staff time, not just occasionally annoying?',
       ],
@@ -183,22 +183,22 @@ export const aiAgentsForBusiness: BlogPost = {
     {
       type: 'list',
       items: [
-        'Starting company-wide instead of with one workflow — makes both the build and the evaluation of success much harder.',
-        'Skipping data grounding — an agent answering from general knowledge instead of your actual systems gives confident, wrong answers.',
-        'No escalation path — a workflow with no defined handoff to a person will eventually mishandle something that mattered.',
-        'Treating a working demo as a finished system — ten clean test cases is not the same as holding up on messy, real customer traffic.',
-        'No ownership of outcomes — letting an agent take high-stakes actions (refunds, approvals) without someone accountable when it gets one wrong.',
+        'Starting company-wide instead of with one workflow, makes both the build and the evaluation of success much harder.',
+        'Skipping data grounding, an agent answering from general knowledge instead of your actual systems gives confident, wrong answers.',
+        'No escalation path, a workflow with no defined handoff to a person will eventually mishandle something that mattered.',
+        'Treating a working demo as a finished system, ten clean test cases is not the same as holding up on messy, real customer traffic.',
+        'No ownership of outcomes, letting an agent take high-stakes actions (refunds, approvals) without someone accountable when it gets one wrong.',
       ],
     },
   ],
   faqs: [
     {
       q: 'What are AI agents used for in business?',
-      a: 'Businesses use AI agents most often for customer support resolution, lead qualification, document and invoice processing, appointment scheduling, and internal knowledge search — any workflow involving unstructured input and real data lookups.',
+      a: 'Businesses use AI agents most often for customer support resolution, lead qualification, document and invoice processing, appointment scheduling, and internal knowledge search, any workflow involving unstructured input and real data lookups.',
     },
     {
       q: 'Are AI agents worth it for small businesses?',
-      a: 'For a specific, high-volume workflow with clear rules — such as order-status lookups or first-response support — yes, a narrow agent is usually affordable and worth evaluating. Trying to automate an entire department at once is where small business projects tend to stall.',
+      a: 'For a specific, high-volume workflow with clear rules, such as order-status lookups or first-response support, yes, a narrow agent is usually affordable and worth evaluating. Trying to automate an entire department at once is where small business projects tend to stall.',
     },
     {
       q: 'How much does an AI agent cost for a business?',
@@ -218,7 +218,7 @@ export const aiAgentsForBusiness: BlogPost = {
     },
     {
       q: 'What is the first AI agent a business should build?',
-      a: 'Pick one narrow, well-defined, high-volume workflow with clear rules — order-status lookups, first-response support triage, or invoice data extraction are common starting points — rather than attempting to automate an entire function at once.',
+      a: 'Pick one narrow, well-defined, high-volume workflow with clear rules, order-status lookups, first-response support triage, or invoice data extraction are common starting points, rather than attempting to automate an entire function at once.',
     },
   ],
   related: [
@@ -230,7 +230,7 @@ export const aiAgentsForBusiness: BlogPost = {
   ],
   cta: {
     title: 'Ready to put an AI agent to work in your business?',
-    text: 'WhiteGuava designs and builds AI agents scoped to one real workflow at a time — grounded in your data, connected to your systems, with a human escalation path from day one.',
+    text: 'WhiteGuava designs and builds AI agents scoped to one real workflow at a time, grounded in your data, connected to your systems, with a human escalation path from day one.',
     label: 'Talk to Our Team',
     href: '/services/ai-agents',
   },

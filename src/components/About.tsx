@@ -77,7 +77,7 @@ export default function About() {
             <CardBody className={styles.quoteCard}>
               <CardItem translateZ={25} className={styles.quoteContent}>
                 <div className={styles.quoteMark}>&ldquo;&rdquo;</div>
-                <p className={styles.quoteText}>Good AI feels obvious — because the hard work is hidden.</p>
+                <p className={styles.quoteText}>Good AI feels obvious, because the hard work is hidden.</p>
                 <p className={styles.quoteAuthor}>
                   WhiteGuava
                   <span className={styles.quoteDivider}> | </span>

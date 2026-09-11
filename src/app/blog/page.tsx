@@ -7,7 +7,7 @@ import { SITE_NAME, SITE_URL } from '@/lib/site';
 
 const title = 'Blog: AI Agents, Automation & WhatsApp AI Insights';
 const description =
-  'Practical guides on AI agents, AI automation, WhatsApp AI, and document AI for businesses — written by the team building them at WhiteGuava.';
+  'Practical guides on AI agents, AI automation, WhatsApp AI, and document AI for businesses, written by the team building them at WhiteGuava.';
 
 export const metadata: Metadata = {
   title,

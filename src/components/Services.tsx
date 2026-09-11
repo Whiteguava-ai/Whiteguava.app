@@ -17,7 +17,7 @@ const services = [
   {
     num: '02',
     title: 'Custom AI & Machine Learning',
-    desc: 'Build intelligent systems around your data and business requirements — from generative AI and RAG to prediction and classification.',
+    desc: 'Build intelligent systems around your data and business requirements, from generative AI and RAG to prediction and classification.',
     tags: ['Generative AI', 'RAG systems', 'NLP & computer vision', 'Prediction & recommendation', 'Fine-tuning'],
     href: SERVICE_PATHS.agents,
     more: 'Explore custom AI systems',
@@ -25,7 +25,7 @@ const services = [
   {
     num: '03',
     title: 'Business Software Development',
-    desc: 'Custom software built around how your business actually operates — from web apps to portals, dashboards, and platforms.',
+    desc: 'Custom software built around how your business actually operates, from web apps to portals, dashboards, and platforms.',
     tags: ['Web applications', 'Mobile applications', 'Admin dashboards', 'Customer portals', 'ERP & CRM systems'],
     href: SERVICE_PATHS.software,
     more: 'Explore AI software development',
@@ -33,7 +33,7 @@ const services = [
   {
     num: '04',
     title: 'AI Integration',
-    desc: 'Bring AI into the systems your business already uses — CRM, ERP, WhatsApp, APIs, databases, and cloud platforms.',
+    desc: 'Bring AI into the systems your business already uses, CRM, ERP, WhatsApp, APIs, databases, and cloud platforms.',
     tags: ['CRM & ERP integrations', 'WhatsApp & messaging', 'API & database connectors', 'Third-party AI models', 'Internal system integration'],
     href: SERVICE_PATHS.whatsapp,
     more: 'Explore WhatsApp AI & integrations',
@@ -41,7 +41,7 @@ const services = [
   {
     num: '05',
     title: 'Automation & Digital Transformation',
-    desc: 'Replace repetitive manual processes with intelligent, reliable workflows — from document processing to approval flows.',
+    desc: 'Replace repetitive manual processes with intelligent, reliable workflows, from document processing to approval flows.',
     tags: ['Document processing', 'Data extraction', 'Reporting automation', 'Lead & ops automation', 'Approval workflows'],
     href: SERVICE_PATHS.automation,
     more: 'Explore AI automation',
@@ -49,7 +49,7 @@ const services = [
   {
     num: '06',
     title: 'Data & Analytics',
-    desc: 'Turn raw business data into useful intelligence — dashboards, pipelines, and AI-ready data infrastructure.',
+    desc: 'Turn raw business data into useful intelligence, dashboards, pipelines, and AI-ready data infrastructure.',
     tags: ['Data pipelines', 'Analytics dashboards', 'Business intelligence', 'AI-ready infrastructure', 'Predictive analytics'],
     href: SERVICE_PATHS.dataAnalytics,
     more: 'Explore data & analytics',
@@ -65,15 +65,15 @@ const services = [
   {
     num: '08',
     title: 'AI-Powered Digital Experiences',
-    desc: 'Build better customer and employee experiences with AI — intelligent search, assistants, and personalized interfaces.',
+    desc: 'Build better customer and employee experiences with AI, intelligent search, assistants, and personalized interfaces.',
     tags: ['AI search', 'Conversational interfaces', 'Intelligent websites', 'AI-powered portals', 'Personalized experiences'],
     href: SERVICE_PATHS.agents,
     more: 'Explore conversational AI',
   },
   {
     num: '09',
-    title: 'Guava Product Suite — Own It, Don’t Rent It',
-    desc: 'Ten ready business applications you buy once and own outright, deployed on your own cloud with the AI built in — instead of per-user subscriptions that never stop.',
+    title: 'Guava Product Suite, Own It, Don’t Rent It',
+    desc: 'Ten ready business applications you buy once and own outright, deployed on your own cloud with the AI built in, instead of per-user subscriptions that never stop.',
     tags: [
       'GuavaCRM · sales',
       'GuavaERP · operations',
@@ -109,7 +109,7 @@ export default function Services() {
               What We<br />Build
             </h2>
             <p className={`${styles.desc} reveal reveal-delay-2`}>
-              AI software development, agents, and automation built around your business — from idea to production.
+              AI software development, agents, and automation built around your business, from idea to production.
             </p>
             <div className={`${styles.films} reveal reveal-delay-3`} ref={stackRef}>
               <div className={styles.film}>

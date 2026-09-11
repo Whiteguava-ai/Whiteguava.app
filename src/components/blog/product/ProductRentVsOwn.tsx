@@ -42,7 +42,7 @@ export function ProductRentVsOwn({ product }: { product?: string }) {
         <span className={styles.kicker}>Rent vs own</span>
         <h3 className={styles.wTitle}>A subscription bills whether you use it or not</h3>
         <p className={styles.wNote}>
-          At {def.refName} list price, a 10-person team pays <b>${perDay.toFixed(2)} every day</b> — $
+          At {def.refName} list price, a 10-person team pays <b>${perDay.toFixed(2)} every day</b>, $
           {perYear.toLocaleString('en-US')} a year, ${def.refFiveYear.toLocaleString('en-US')} over five
           years, and it never stops.
         </p>

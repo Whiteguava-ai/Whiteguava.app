@@ -160,9 +160,9 @@ export function guavaPillarGraph(
         '@type': 'CollectionPage',
         '@id': `${url}#page`,
         url,
-        name: 'Guava Product Suite — Business Software You Own',
+        name: 'Guava Product Suite, Business Software You Own',
         description:
-          'Ten business applications — CRM, ERP, HR, LMS, BI, helpdesk, website builder, lending, project management and a low-code platform — deployed on your own cloud and owned outright, with AI built in, instead of per-user SaaS subscriptions.',
+          'Ten business applications, CRM, ERP, HR, LMS, BI, helpdesk, website builder, lending, project management and a low-code platform, deployed on your own cloud and owned outright, with AI built in, instead of per-user SaaS subscriptions.',
         isPartOf: { '@id': WEBSITE_ID },
         about: { '@id': ORG_ID },
         publisher: { '@id': ORG_ID },
@@ -262,7 +262,7 @@ export function softwareApplicationSchema(post: BlogPost) {
       priceCurrency: 'USD',
       price: '0',
       description:
-        'One-time setup engagement, then a self-hosted server cost only — no per-user licence or subscription.',
+        'One-time setup engagement, then a self-hosted server cost only, no per-user licence or subscription.',
       seller: { '@id': ORG_ID },
     },
     isAccessibleForFree: false,

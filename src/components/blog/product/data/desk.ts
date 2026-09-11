@@ -1,7 +1,7 @@
 import type { ProductDef } from '../types';
 
 /**
- * GuavaDesk — customer support tickets and workflows on a helpdesk you own.
+ * GuavaDesk, customer support tickets and workflows on a helpdesk you own.
  * Competitor list pricing, September 2026:
  *   Zendesk Suite Team $55, Growth ~$89, Professional $115 per agent per month
  *   (annual); the AI Copilot add-on is $50 per agent per month on top.
@@ -34,7 +34,7 @@ export const desk: ProductDef = {
   ],
 
   ladder: [
-    { vendor: 'GuavaDesk', tier: 'server + AI usage', perUserMo: null, tenUsersYr: 400, ai: 'yes', aiNote: 'Draft, Summarize, Ask, triage', vsOurs: '—', ours: true },
+    { vendor: 'GuavaDesk', tier: 'server + AI usage', perUserMo: null, tenUsersYr: 400, ai: 'yes', aiNote: 'Draft, Summarize, Ask, triage', vsOurs: 'N/A', ours: true },
     { vendor: 'Freshdesk', tier: 'Growth', perUserMo: 15, tenUsersYr: 1_800, ai: 'partial', aiNote: 'Copilot add-on', vsOurs: '5×' },
     { vendor: 'Zoho Desk', tier: 'Professional', perUserMo: 23, tenUsersYr: 2_760, ai: 'partial', aiNote: 'Zia', vsOurs: '7×' },
     { vendor: 'Intercom', tier: 'Advanced', perUserMo: 39, tenUsersYr: 4_680, ai: 'partial', aiNote: '+ Fin per resolution', vsOurs: '12×' },
@@ -75,10 +75,10 @@ export const desk: ProductDef = {
     {
       group: 'AI assistant',
       rows: [
-        { capability: 'Draft — a reply from the ticket and the knowledge base', elsewhere: 'Copilot / Fin add-on, priced per agent or per resolution' },
-        { capability: 'Summarize — a long or reassigned ticket thread', elsewhere: 'AI add-on only' },
-        { capability: 'Ask AI — an agent copilot over your knowledge base', elsewhere: 'AI add-on only' },
-        { capability: 'Auto-triage — category, priority and tags on arrival', elsewhere: 'Higher tiers / AI add-on' },
+        { capability: 'Draft, a reply from the ticket and the knowledge base', elsewhere: 'Copilot / Fin add-on, priced per agent or per resolution' },
+        { capability: 'Summarize, a long or reassigned ticket thread', elsewhere: 'AI add-on only' },
+        { capability: 'Ask AI, an agent copilot over your knowledge base', elsewhere: 'AI add-on only' },
+        { capability: 'Auto-triage, category, priority and tags on arrival', elsewhere: 'Higher tiers / AI add-on' },
       ],
     },
     {
@@ -130,7 +130,7 @@ export const desk: ProductDef = {
   },
 
   modules: [
-    { name: 'Ticketing & queues', tag: 'Core', blurb: 'Everything an agent works from — a shared inbox, saved views and a clear ticket lifecycle.', points: ['Shared queues with saved, filtered views', 'Merge, split, link and parent/child tickets', 'Custom fields, forms and ticket types', 'Bulk actions and keyboard-first navigation'] },
+    { name: 'Ticketing & queues', tag: 'Core', blurb: 'Everything an agent works from, a shared inbox, saved views and a clear ticket lifecycle.', points: ['Shared queues with saved, filtered views', 'Merge, split, link and parent/child tickets', 'Custom fields, forms and ticket types', 'Bulk actions and keyboard-first navigation'] },
     { name: 'Multichannel inbox', tag: 'Core', blurb: 'Email, the portal, chat and API requests land in one place with full context.', points: ['Email piping with threading and attachments', 'Portal and chat as first-class channels', 'API to create tickets from your product', 'Contact and company records built as you go'] },
     { name: 'Knowledge base', tag: 'Self-service', blurb: 'Deflect the repeat questions with articles customers and agents both use.', points: ['Categories, versioning and draft workflow', 'Public and internal-only articles', 'Article suggestions as the customer types', 'Usage stats on which articles actually help'] },
     { name: 'SLA & escalation', tag: 'Process', blurb: 'Promise a response time and have the system hold everyone to it.', points: ['Response and resolution SLA policies', 'Business hours, holidays and pause conditions', 'Escalation rules with notifications', 'Breach and at-risk dashboards'] },
@@ -140,13 +140,13 @@ export const desk: ProductDef = {
 
   lifecycle: {
     title: 'Received to reviewed',
-    caption: 'The life of a support ticket in GuavaDesk. Click a step — AI helps at triage, response and handover.',
+    caption: 'The life of a support ticket in GuavaDesk. Click a step, AI helps at triage, response and handover.',
     steps: [
       { label: 'Received', detail: 'A customer emails, uses the portal or chats. A ticket is created with their history attached.', metric: 'Ticket opened' },
       { label: 'Triaged', detail: 'AI proposes a category, priority and tags; an SLA clock starts based on the type and the customer.', metric: 'SLA running' },
-      { label: 'Assigned', detail: 'Routing rules put it with the right agent or team — round-robin, load-balanced or by skill.', metric: 'Owned' },
+      { label: 'Assigned', detail: 'Routing rules put it with the right agent or team, round-robin, load-balanced or by skill.', metric: 'Owned' },
       { label: 'Responded', detail: 'The agent gets an AI-drafted reply built from the ticket and the knowledge base, edits it, and sends.', metric: 'First reply sent' },
-      { label: 'Resolved', detail: 'The issue is fixed and the ticket closed; if it reopens, the full thread — summarised — travels with it.', metric: 'Closed' },
+      { label: 'Resolved', detail: 'The issue is fixed and the ticket closed; if it reopens, the full thread, summarised, travels with it.', metric: 'Closed' },
       { label: 'Reviewed', detail: 'A CSAT survey goes out, the result lands on the agent and queue dashboards, and patterns feed back into the knowledge base.', metric: 'CSAT captured' },
     ],
   },

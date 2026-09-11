@@ -19,14 +19,14 @@ import { useMounted } from '@/lib/motion/useMounted';
  * lives in `ScrollScene` / `Parallax` instead.
  *
  * `direction` names the edge the content enters from. `stagger` makes each
- * direct child come in on its own beat — it wraps every child in a block, so
+ * direct child come in on its own beat, it wraps every child in a block, so
  * use it for stacked/flowing content (a heading block, a button row), not for
  * grid/flex layouts where a card must stay the direct child; there, give each
  * card its own `<Reveal delay={i * 0.06}>`.
  *
  * The DOM is identical on the server, the first client render, and under
- * `prefers-reduced-motion` — only the animation props switch on, and only
- * after mount — so hydration never diverges.
+ * `prefers-reduced-motion`, only the animation props switch on, and only
+ * after mount, so hydration never diverges.
  */
 
 type Tag = 'div' | 'section' | 'header' | 'article' | 'span' | 'p' | 'ul' | 'li' | 'figure';

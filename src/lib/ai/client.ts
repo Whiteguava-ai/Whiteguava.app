@@ -3,7 +3,7 @@ import OpenAI from 'openai';
 /**
  * Shared server-only OpenAI client. Both AI routes do grounded Q&A over
  * content we hand them in full, not open-ended reasoning, so a small, cheap
- * model is plenty and keeps a public, unauthenticated endpoint affordable —
+ * model is plenty and keeps a public, unauthenticated endpoint affordable,
  * override via `OPENAI_MODEL` if a better-priced or better-suited model
  * becomes available later without touching code.
  */

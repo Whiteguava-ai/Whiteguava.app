@@ -1,14 +1,14 @@
 import type { ProductDef } from '../types';
 
 /**
- * GuavaERP — accounting, inventory and operations you own.
+ * GuavaERP, accounting, inventory and operations you own.
  * Competitor figures: published list pricing, September 2026.
  *   Odoo Standard $31.10/user/mo year one, $38.90 on renewal; Custom $61 → $76.20.
  *   Microsoft Dynamics 365 Business Central Essentials $80, Premium $110 (US list, annual).
  *   SAP Business One roughly $80–$120 per user per month via partners.
  *   Zoho One $37 per employee per month on the All-Employee plan.
  *   NetSuite has no public list; independent 2026 estimates put a 10-user core-ERP
- *   subscription at roughly $12,000–$60,000 a year — $30,000 used here as a mid-point.
+ *   subscription at roughly $12,000–$60,000 a year, $30,000 used here as a mid-point.
  */
 export const erp: ProductDef = {
   key: 'erp',
@@ -34,7 +34,7 @@ export const erp: ProductDef = {
   ],
 
   ladder: [
-    { vendor: 'GuavaERP', tier: 'server + AI usage', perUserMo: null, tenUsersYr: 650, ai: 'yes', aiNote: 'Draft, Summarize, Ask', vsOurs: '—', ours: true },
+    { vendor: 'GuavaERP', tier: 'server + AI usage', perUserMo: null, tenUsersYr: 650, ai: 'yes', aiNote: 'Draft, Summarize, Ask', vsOurs: 'N/A', ours: true },
     { vendor: 'Odoo', tier: 'Standard (renewal)', perUserMo: 38.9, tenUsersYr: 4_668, ai: 'partial', aiNote: 'limited', vsOurs: '7×' },
     { vendor: 'Zoho One', tier: 'All Employee', perUserMo: 37, tenUsersYr: 4_440, ai: 'partial', aiNote: 'Zia', vsOurs: '7×' },
     { vendor: 'Odoo', tier: 'Custom (renewal)', perUserMo: 76.2, tenUsersYr: 9_144, ai: 'partial', aiNote: 'limited', vsOurs: '14×' },
@@ -61,7 +61,7 @@ export const erp: ProductDef = {
       rows: [
         { capability: 'Multi-warehouse stock with batch & serial tracking', elsewhere: 'Odoo Custom / NetSuite add-on' },
         { capability: 'Reorder levels and auto purchase suggestions', elsewhere: 'Higher tiers' },
-        { capability: 'Stock valuation — FIFO, moving average', elsewhere: 'Every ERP' },
+        { capability: 'Stock valuation, FIFO, moving average', elsewhere: 'Every ERP' },
         { capability: 'Landed cost, quality inspection, stock ageing', elsewhere: 'NetSuite / SAP add-ons' },
       ],
     },
@@ -77,7 +77,7 @@ export const erp: ProductDef = {
     {
       group: 'Operations',
       rows: [
-        { capability: 'Manufacturing — BOM, work orders, routing', elsewhere: 'Odoo Custom / Dynamics 365 BC + add-on' },
+        { capability: 'Manufacturing, BOM, work orders, routing', elsewhere: 'Odoo Custom / Dynamics 365 BC + add-on' },
         { capability: 'Projects, tasks and timesheets with costing', elsewhere: 'Separate module, usually paid' },
         { capability: 'Fixed-asset register with depreciation', elsewhere: 'Higher tiers' },
         { capability: 'Maintenance and asset movement tracking', elsewhere: 'Add-on' },
@@ -86,9 +86,9 @@ export const erp: ProductDef = {
     {
       group: 'AI assistant',
       rows: [
-        { capability: 'Draft — purchase orders, customer and vendor emails', elsewhere: 'Copilot / add-on on top of an enterprise plan', note: 'One click on any record, using its own history.' },
-        { capability: 'Summarize — a vendor or customer account at a glance', elsewhere: 'Higher tier only' },
-        { capability: 'Ask AI — plain-English questions over stock, receivables, sales', elsewhere: 'Enterprise AI tier', note: 'Respects each user’s role and company access.' },
+        { capability: 'Draft, purchase orders, customer and vendor emails', elsewhere: 'Copilot / add-on on top of an enterprise plan', note: 'One click on any record, using its own history.' },
+        { capability: 'Summarize, a vendor or customer account at a glance', elsewhere: 'Higher tier only' },
+        { capability: 'Ask AI, plain-English questions over stock, receivables, sales', elsewhere: 'Enterprise AI tier', note: 'Respects each user’s role and company access.' },
         { capability: 'Anomaly flags on invoices and journal entries', elsewhere: 'Rarely available below enterprise' },
       ],
     },
@@ -105,10 +105,10 @@ export const erp: ProductDef = {
 
   diffs: [
     { icon: 'infinity', title: 'No per-seat licence, ever', body: 'Add finance, the warehouse floor, sales, external auditors and read-only directors. The price **does not move**. Every subscription ERP meters the exact people who need to see the numbers.' },
-    { icon: 'database', title: 'Your ledger, on your cloud', body: 'The general ledger is a database on **your** cloud subscription — full SQL access, full export, and the source code. Nothing about your accounts is hostage to a renewal.' },
-    { icon: 'code', title: 'Built for your operation, not a template', body: 'A new document type, an approval chain, a custom stock report, a country tax pack — built straight onto the system. A licensed ERP charges for a customization tier and still limits how far you can go.' },
+    { icon: 'database', title: 'Your ledger, on your cloud', body: 'The general ledger is a database on **your** cloud subscription, full SQL access, full export, and the source code. Nothing about your accounts is hostage to a renewal.' },
+    { icon: 'code', title: 'Built for your operation, not a template', body: 'A new document type, an approval chain, a custom stock report, a country tax pack, built straight onto the system. A licensed ERP charges for a customization tier and still limits how far you can go.' },
     { icon: 'sparkles', title: 'AI without an AI edition', body: 'Drafting, account summaries and Ask-AI over stock and receivables cost **a few dollars a month** in usage. Copilot and enterprise-AI tiers add that cost on top of an already large plan.' },
-    { icon: 'trendingDown', title: 'No renewal to be repriced at', body: 'Subscription ERP list prices drift up every year and mid-contract "true-ups" catch growing teams. GuavaERP has no renewal — you already own it.' },
+    { icon: 'trendingDown', title: 'No renewal to be repriced at', body: 'Subscription ERP list prices drift up every year and mid-contract "true-ups" catch growing teams. GuavaERP has no renewal, you already own it.' },
     { icon: 'boxes', title: 'One server runs the whole company', body: 'Accounting, stock, manufacturing and projects on a single virtual machine you can size up at month-end and down again. Not a per-module, per-user, per-company licence stack.' },
   ],
 
@@ -155,20 +155,20 @@ export const erp: ProductDef = {
 
   lifecycle: {
     title: 'Order to cash, end to end',
-    caption: 'The path a customer order takes through GuavaERP. Click a step — every one posts to the same ledger, so the numbers are always in sync.',
+    caption: 'The path a customer order takes through GuavaERP. Click a step, every one posts to the same ledger, so the numbers are always in sync.',
     steps: [
       { label: 'Quotation', detail: 'A quote is raised against a pricing list, with margin shown before it is sent. AI can draft the covering email from the customer’s history.', metric: 'Pipeline value updates' },
-      { label: 'Sales order', detail: 'The customer accepts and the quote becomes an order — stock is reserved, and delivery and billing schedules are set.', metric: 'Committed stock reserved' },
+      { label: 'Sales order', detail: 'The customer accepts and the quote becomes an order, stock is reserved, and delivery and billing schedules are set.', metric: 'Committed stock reserved' },
       { label: 'Delivery', detail: 'A delivery note ships the goods, stock leaves the warehouse at its valuation rate, and the cost of goods sold is recognised.', metric: 'Inventory ↓ · COGS posted' },
       { label: 'Sales invoice', detail: 'The invoice is raised from the delivery, tax is applied from the template, and revenue and receivables hit the ledger.', metric: 'Revenue + AR posted' },
       { label: 'Payment', detail: 'The customer pays, the receipt is matched against the invoice, and the bank ledger and AR ageing update together.', metric: 'Cash ↑ · AR cleared' },
-      { label: 'Close', detail: 'At period end everything is already posted. The trial balance, P&L and balance sheet are live — closing is a review, not a rebuild.', metric: 'Books balanced' },
+      { label: 'Close', detail: 'At period end everything is already posted. The trial balance, P&L and balance sheet are live, closing is a review, not a rebuild.', metric: 'Books balanced' },
     ],
   },
 
   ai: [
     { name: 'Draft with AI', desc: 'One click on a purchase order, customer statement or vendor query writes a contextual message using the record’s own history.' },
-    { name: 'Summarize', desc: 'Collapses a long customer or supplier account — orders, payments, disputes — into a few lines so anyone picking it up is caught up instantly.' },
+    { name: 'Summarize', desc: 'Collapses a long customer or supplier account, orders, payments, disputes, into a few lines so anyone picking it up is caught up instantly.' },
     { name: 'Ask AI', desc: 'A sidebar assistant that answers plain-English questions about stock levels, overdue receivables and sales trends, within each user’s company and role access.' },
     { name: 'Anomaly flags', desc: 'Quietly marks invoices and journal entries that sit outside the normal range for that supplier or account, for a human to check.' },
   ],

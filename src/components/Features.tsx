@@ -11,12 +11,12 @@ const features = [
   },
   {
     title: 'Private Knowledge',
-    desc: 'Connect business documents, databases, and internal knowledge to AI — so it answers from your data, not the internet.',
+    desc: 'Connect business documents, databases, and internal knowledge to AI, so it answers from your data, not the internet.',
     visual: 'rag',
   },
   {
     title: 'Business Automation',
-    desc: 'Turn repetitive workflows into intelligent automated processes — from document handling to approvals and reporting.',
+    desc: 'Turn repetitive workflows into intelligent automated processes, from document handling to approvals and reporting.',
     visual: 'eval',
   },
   {
@@ -36,7 +36,7 @@ const features = [
   },
   {
     title: 'Integrations',
-    desc: 'Connect AI to CRM, ERP, WhatsApp, APIs, databases, and cloud platforms — where your business already operates.',
+    desc: 'Connect AI to CRM, ERP, WhatsApp, APIs, databases, and cloud platforms, where your business already operates.',
     visual: 'integrations',
   },
 ];

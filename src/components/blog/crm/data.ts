@@ -25,7 +25,7 @@ export const CRM_PLANS: CrmPlan[] = [
     perUserMo: 0,
     flatYr: 340,
     ai: true,
-    aiNote: 'Draft · Summarize · Ask — built in, ~$3–5/mo in usage',
+    aiNote: 'Draft · Summarize · Ask, built in, ~$3–5/mo in usage',
     brand: 'guava',
   },
   { key: 'zoho-ent', name: 'Zoho CRM · Enterprise', perUserMo: 40, ai: true, aiNote: 'Zia', brand: 'zoho' },
@@ -52,7 +52,7 @@ export const CRM_COST_LADDER: {
   vsOurs: string;
   ours?: boolean;
 }[] = [
-  { vendor: 'GuavaCRM', tier: 'Azure server + AI usage', perUserMo: null, tenUsersMo: 28, tenUsersYr: 340, ai: 'yes', aiNote: 'Draft, Summarize, Ask', vsOurs: '—', ours: true },
+  { vendor: 'GuavaCRM', tier: 'Azure server + AI usage', perUserMo: null, tenUsersMo: 28, tenUsersYr: 340, ai: 'yes', aiNote: 'Draft, Summarize, Ask', vsOurs: 'N/A', ours: true },
   { vendor: 'Zoho CRM', tier: 'Standard', perUserMo: 14, tenUsersMo: 140, tenUsersYr: 1680, ai: 'no', vsOurs: '5×' },
   { vendor: 'Zoho CRM', tier: 'Professional', perUserMo: 23, tenUsersMo: 230, tenUsersYr: 2760, ai: 'no', aiNote: 'no Zia', vsOurs: '8×' },
   { vendor: 'Zoho CRM', tier: 'Enterprise', perUserMo: 40, tenUsersMo: 400, tenUsersYr: 4800, ai: 'yes', aiNote: 'Zia', vsOurs: '14×' },
@@ -87,10 +87,10 @@ export const CRM_MATRIX: MatrixGroup[] = [
   {
     group: 'Core records & pipeline',
     rows: [
-      { capability: 'Leads, Deals, Contacts, Organizations', elsewhere: 'Every paid plan', note: 'The four objects every sales team lives in — unlimited records.' },
+      { capability: 'Leads, Deals, Contacts, Organizations', elsewhere: 'Every paid plan', note: 'The four objects every sales team lives in, unlimited records.' },
       { capability: 'Kanban board with drag-and-drop stages', elsewhere: 'Every paid plan' },
       { capability: 'Multiple pipelines & custom stages', elsewhere: 'Zoho Professional+ / Salesforce Enterprise' },
-      { capability: 'Saved views — filters, sort, columns, shared or private', elsewhere: 'Every paid plan' },
+      { capability: 'Saved views, filters, sort, columns, shared or private', elsewhere: 'Every paid plan' },
       { capability: 'Multi-currency with dated exchange rates', elsewhere: 'Zoho Enterprise / Salesforce Enterprise' },
     ],
   },
@@ -110,7 +110,7 @@ export const CRM_MATRIX: MatrixGroup[] = [
     rows: [
       { capability: 'Round-robin / load-balanced lead assignment', elsewhere: 'Zoho Professional+ / Salesforce Enterprise' },
       { capability: 'Workflow rules & state machine', elsewhere: 'Zoho Professional+ / Salesforce Enterprise' },
-      { capability: 'SLA — response & resolution tracking', elsewhere: 'Zoho Enterprise / Salesforce Enterprise' },
+      { capability: 'SLA, response & resolution tracking', elsewhere: 'Zoho Enterprise / Salesforce Enterprise' },
       { capability: 'Web-to-lead capture forms', elsewhere: 'Every paid plan' },
     ],
   },
@@ -119,13 +119,13 @@ export const CRM_MATRIX: MatrixGroup[] = [
     rows: [
       { capability: 'AI email drafting on any lead or deal', elsewhere: 'Zoho Enterprise ($4,800/yr) / Salesforce Einstein add-on', note: 'Built onto GuavaCRM as a custom module. "Draft with AI" button, gpt-4o-mini.' },
       { capability: 'One-click record summaries', elsewhere: 'Zoho Enterprise / Salesforce Einstein Copilot' },
-      { capability: 'Ask AI — plain-English questions over your data', elsewhere: 'Zoho Enterprise (Ask Zia) / Salesforce', note: 'Sidebar assistant. Respects each user’s permissions.' },
+      { capability: 'Ask AI, plain-English questions over your data', elsewhere: 'Zoho Enterprise (Ask Zia) / Salesforce', note: 'Sidebar assistant. Respects each user’s permissions.' },
     ],
   },
   {
     group: 'Reporting',
     rows: [
-      { capability: 'Dashboard — deals by stage, leads by source', elsewhere: 'Every paid plan' },
+      { capability: 'Dashboard, deals by stage, leads by source', elsewhere: 'Every paid plan' },
       { capability: 'Report builder with CSV / Excel export', elsewhere: 'Every paid plan' },
     ],
   },
@@ -133,7 +133,7 @@ export const CRM_MATRIX: MatrixGroup[] = [
     group: 'Customization & data',
     rows: [
       { capability: 'Custom fields on every object', elsewhere: 'Every paid plan' },
-      { capability: 'Custom objects & modules', elsewhere: 'Zoho Enterprise / Salesforce Enterprise', note: 'Full application framework underneath — build whatever object your business needs.' },
+      { capability: 'Custom objects & modules', elsewhere: 'Zoho Enterprise / Salesforce Enterprise', note: 'Full application framework underneath, build whatever object your business needs.' },
       { capability: 'Bulk email / newsletter with unsubscribe tracking', elsewhere: 'Zoho Enterprise / Salesforce Marketing Cloud (separate product)' },
       { capability: 'Data import / export', elsewhere: 'Every paid plan' },
       { capability: 'Full audit trail & version history on every record', elsewhere: 'Zoho Enterprise / Salesforce Enterprise' },

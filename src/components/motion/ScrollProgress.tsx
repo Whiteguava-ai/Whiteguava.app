@@ -4,7 +4,7 @@ import { m, useScroll, useSpring } from 'framer-motion';
 
 /**
  * A thin accent bar pinned to the top of the viewport that fills as the page
- * scrolls — the "you are here in the film" cue. Driven by document scroll
+ * scrolls, the "you are here in the film" cue. Driven by document scroll
  * progress through a spring so it eases rather than tracks 1:1. It reads as
  * direct scroll feedback (like a scrollbar) so it stays on under reduced
  * motion, just without the spring overshoot mattering.

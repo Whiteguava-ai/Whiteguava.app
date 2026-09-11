@@ -1,7 +1,7 @@
 import type { ProductDef } from '../types';
 
 /**
- * GuavaHR — employees, attendance, payroll and HR processes you own.
+ * GuavaHR, employees, attendance, payroll and HR processes you own.
  * Competitor list pricing, September 2026:
  *   BambooHR Core $10, Pro $17, Elite $25 per employee per month; teams of 25 or
  *   fewer are billed a flat rate starting at $250/month.
@@ -34,7 +34,7 @@ export const hr: ProductDef = {
   ],
 
   ladder: [
-    { vendor: 'GuavaHR', tier: 'server + AI usage', perUserMo: null, tenUsersYr: 400, ai: 'yes', aiNote: 'Draft, Summarize, Ask', vsOurs: '—', ours: true },
+    { vendor: 'GuavaHR', tier: 'server + AI usage', perUserMo: null, tenUsersYr: 400, ai: 'yes', aiNote: 'Draft, Summarize, Ask', vsOurs: 'N/A', ours: true },
     { vendor: 'Zoho People', tier: 'Professional', perUserMo: 4.5, tenUsersYr: 540, ai: 'partial', aiNote: 'Zia', vsOurs: '1.4×' },
     { vendor: 'BambooHR', tier: 'Core', perUserMo: 10, tenUsersYr: 1_200, ai: 'no', vsOurs: '3×' },
     { vendor: 'Rippling', tier: 'HR Cloud', perUserMo: 10, tenUsersYr: 1_200, ai: 'partial', vsOurs: '3×' },
@@ -83,9 +83,9 @@ export const hr: ProductDef = {
     {
       group: 'AI assistant',
       rows: [
-        { capability: 'Draft — offer letters, policy answers, review summaries', elsewhere: 'Ask BambooHR / Zia on higher tiers' },
-        { capability: 'Summarize — an employee record or appraisal history', elsewhere: 'Higher tier only' },
-        { capability: 'Ask AI — leave balances, headcount, who is on leave today', elsewhere: 'Enterprise AI tier', note: 'Answers only within the asker’s HR permissions.' },
+        { capability: 'Draft, offer letters, policy answers, review summaries', elsewhere: 'Ask BambooHR / Zia on higher tiers' },
+        { capability: 'Summarize, an employee record or appraisal history', elsewhere: 'Higher tier only' },
+        { capability: 'Ask AI, leave balances, headcount, who is on leave today', elsewhere: 'Enterprise AI tier', note: 'Answers only within the asker’s HR permissions.' },
         { capability: 'Applicant screening and shortlist assistance', elsewhere: 'Recruiting add-on' },
       ],
     },
@@ -101,8 +101,8 @@ export const hr: ProductDef = {
   ],
 
   diffs: [
-    { icon: 'infinity', title: 'Every employee, not every "seat"', body: 'HR software is priced per person on payroll — the one number that only goes up. GuavaHR costs the same at 12 people or 1,200, because the price is the server, not the headcount.' },
-    { icon: 'lock', title: 'The most sensitive data you hold, on your cloud', body: 'Salaries, IDs, reviews and medical notes sit in a database on **your** cloud subscription — not a vendor’s multi-tenant system in another jurisdiction.' },
+    { icon: 'infinity', title: 'Every employee, not every "seat"', body: 'HR software is priced per person on payroll, the one number that only goes up. GuavaHR costs the same at 12 people or 1,200, because the price is the server, not the headcount.' },
+    { icon: 'lock', title: 'The most sensitive data you hold, on your cloud', body: 'Salaries, IDs, reviews and medical notes sit in a database on **your** cloud subscription, not a vendor’s multi-tenant system in another jurisdiction.' },
     { icon: 'code', title: 'Your policies, not the vendor’s defaults', body: 'Leave rules, payroll components, approval chains and appraisal forms are configured to how **you** actually run HR, with room to build anything the standard forms cannot express.' },
     { icon: 'sparkles', title: 'AI without an "Ask HR" upgrade', body: 'Drafting letters, summarising records and answering headcount questions cost **a few dollars a month**. BambooHR and Zoho gate their assistants behind their upper tiers.' },
     { icon: 'wallet', title: 'Payroll included, not a bolt-on', body: 'Salary structures and payroll runs ship in the box. Most HR platforms sell payroll as a separate product or a per-employee add-on.' },
@@ -141,7 +141,7 @@ export const hr: ProductDef = {
   modules: [
     { name: 'Employee records', tag: 'Foundation', blurb: 'One place for everything about a person, from joining documents to the org chart.', points: ['Personal, job, salary and bank details with history', 'Document library with expiry reminders', 'Org chart and reporting lines', 'Custom fields, grades and pay bands'] },
     { name: 'Leave & attendance', tag: 'Time', blurb: 'Leave policies, accruals and attendance that managers approve from their phone.', points: ['Leave types with accrual, carry-forward and encashment rules', 'Attendance, shift rosters and overtime', 'Geolocation check-in and biometric import', 'Location-specific holiday calendars'] },
-    { name: 'Payroll', tag: 'Pay', blurb: 'Salary structures and payroll runs that produce payslips and bank files — in the box.', points: ['Earning and deduction components with formulas', 'Payroll entry with review and lock', 'Payslips, tax statements and bank advice files', 'Loans, advances and recurring deductions'] },
+    { name: 'Payroll', tag: 'Pay', blurb: 'Salary structures and payroll runs that produce payslips and bank files, in the box.', points: ['Earning and deduction components with formulas', 'Payroll entry with review and lock', 'Payslips, tax statements and bank advice files', 'Loans, advances and recurring deductions'] },
     { name: 'Recruitment', tag: 'Talent', blurb: 'A hiring pipeline from job opening to offer, with the offer letter drafted for you.', points: ['Job openings tied to headcount plans', 'Applicant pipeline with stages and scorecards', 'Interview scheduling and feedback', 'Offer letters and conversion to employee'] },
     { name: 'Onboarding & appraisals', tag: 'Talent', blurb: 'Structured checklists for joining and leaving, and reviews that actually get done.', points: ['Onboarding and offboarding task templates', 'Goals, KRAs and weighted appraisal cycles', '360 and peer feedback', 'Training records and skill maps'] },
     { name: 'HR analytics', tag: 'Insight', blurb: 'Headcount, attrition, cost and leave trends without exporting to a spreadsheet.', points: ['Headcount and attrition dashboards', 'Payroll cost by department and cost centre', 'Leave liability and attendance trends', 'Scheduled reports to leadership'] },
@@ -149,21 +149,21 @@ export const hr: ProductDef = {
 
   lifecycle: {
     title: 'Hire to exit',
-    caption: 'The full employee lifecycle in GuavaHR. Click a stage — every one writes to the same employee record, so nothing is re-keyed.',
+    caption: 'The full employee lifecycle in GuavaHR. Click a stage, every one writes to the same employee record, so nothing is re-keyed.',
     steps: [
       { label: 'Recruit', detail: 'A job opening moves applicants through stages to an offer. AI drafts the offer letter from the role and package.', metric: 'Pipeline → offer' },
-      { label: 'Onboard', detail: 'Accepting the offer creates the employee and kicks off the onboarding checklist — documents, assets, access, introductions.', metric: 'Day-one ready' },
+      { label: 'Onboard', detail: 'Accepting the offer creates the employee and kicks off the onboarding checklist, documents, assets, access, introductions.', metric: 'Day-one ready' },
       { label: 'Serve', detail: 'The employee books leave, logs attendance, claims expenses and updates details from self-service; managers approve in a tap.', metric: 'Self-service running' },
       { label: 'Appraise', detail: 'Review cycles open with goals and feedback. AI summarises a year of activity so the conversation starts from facts.', metric: 'Reviews completed' },
       { label: 'Pay', detail: 'Payroll pulls attendance, leave, claims and structures, produces payslips and bank files, and posts the cost to finance.', metric: 'Payslips issued' },
-      { label: 'Offboard', detail: 'Exit runs the reverse checklist — final settlement, asset return, access removal — with a full audit trail retained.', metric: 'Clean exit' },
+      { label: 'Offboard', detail: 'Exit runs the reverse checklist, final settlement, asset return, access removal, with a full audit trail retained.', metric: 'Clean exit' },
     ],
   },
 
   ai: [
     { name: 'Draft with AI', desc: 'Writes offer letters, policy answers and appraisal summaries from the employee’s own record and your policy set.' },
     { name: 'Summarize', desc: 'Condenses a long employee history or a full appraisal cycle into a few lines for a manager or HR partner.' },
-    { name: 'Ask AI', desc: 'Answers plain-English questions — leave balances, who is off this week, headcount by team — only within the asker’s HR permissions.' },
+    { name: 'Ask AI', desc: 'Answers plain-English questions, leave balances, who is off this week, headcount by team, only within the asker’s HR permissions.' },
     { name: 'Screening assist', desc: 'Ranks and shortlists applicants against a role’s requirements, with the reasoning shown for a recruiter to check.' },
   ],
 };

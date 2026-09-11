@@ -1,7 +1,7 @@
 import type { ProductDef } from '../types';
 
 /**
- * GuavaLend — loans, repayments and borrower accounts on a platform you own.
+ * GuavaLend, loans, repayments and borrower accounts on a platform you own.
  * The loan-management market publishes very little pricing. Independent 2026
  * comparisons and reseller quotes put the picture at roughly:
  *   Bryt from around $27/month for very small lenders.
@@ -33,7 +33,7 @@ export const lend: ProductDef = {
   ],
 
   ladder: [
-    { vendor: 'GuavaLend', tier: 'server + AI usage', perUserMo: null, tenUsersYr: 520, ai: 'yes', aiNote: 'Draft, Summarize, Ask, risk flags', vsOurs: '—', ours: true },
+    { vendor: 'GuavaLend', tier: 'server + AI usage', perUserMo: null, tenUsersYr: 520, ai: 'yes', aiNote: 'Draft, Summarize, Ask, risk flags', vsOurs: 'N/A', ours: true },
     { vendor: 'Bryt', tier: 'small lenders', perUserMo: null, tenUsersYr: 324, ai: 'no', vsOurs: '0.6×' },
     { vendor: 'LoanPro', tier: 'base (est.)', perUserMo: null, tenUsersYr: 18_000, ai: 'partial', aiNote: '+ per active loan', vsOurs: '35×' },
     { vendor: 'TurnKey Lender', tier: 'small-to-mid (est.)', perUserMo: null, tenUsersYr: 36_000, ai: 'partial', aiNote: 'decisioning AI', vsOurs: '69×' },
@@ -63,7 +63,7 @@ export const lend: ProductDef = {
     {
       group: 'Servicing',
       rows: [
-        { capability: 'Repayment schedules — EMI, bullet, step-up, custom', elsewhere: 'Every lending platform' },
+        { capability: 'Repayment schedules, EMI, bullet, step-up, custom', elsewhere: 'Every lending platform' },
         { capability: 'Daily interest and penalty accrual to a ledger', elsewhere: 'Core servicing' },
         { capability: 'Part-payment, prepayment and restructuring', elsewhere: 'Higher tiers' },
         { capability: 'Foreclosure and write-off handling', elsewhere: 'Higher tiers' },
@@ -74,16 +74,16 @@ export const lend: ProductDef = {
       rows: [
         { capability: 'Ageing buckets and delinquency dashboards', elsewhere: 'Collections module' },
         { capability: 'Follow-up queues with call and promise logging', elsewhere: 'Collections module' },
-        { capability: 'Borrower portal — statements, payments, requests', elsewhere: 'Higher tiers / add-on' },
+        { capability: 'Borrower portal, statements, payments, requests', elsewhere: 'Higher tiers / add-on' },
         { capability: 'Reminder messages by SMS, email and WhatsApp', elsewhere: 'Add-on' },
       ],
     },
     {
       group: 'AI assistant',
       rows: [
-        { capability: 'Draft — borrower notices, reminders and responses', elsewhere: 'Rarely available' },
-        { capability: 'Summarize — a borrower account and its risk picture', elsewhere: 'Not offered' },
-        { capability: 'Ask AI — portfolio questions on overdue, exposure, concentration', elsewhere: 'Enterprise analytics tier' },
+        { capability: 'Draft, borrower notices, reminders and responses', elsewhere: 'Rarely available' },
+        { capability: 'Summarize, a borrower account and its risk picture', elsewhere: 'Not offered' },
+        { capability: 'Ask AI, portfolio questions on overdue, exposure, concentration', elsewhere: 'Enterprise analytics tier' },
         { capability: 'Repayment-risk flags on accounts trending to default', elsewhere: 'Enterprise decisioning' },
       ],
     },
@@ -100,8 +100,8 @@ export const lend: ProductDef = {
 
   diffs: [
     { icon: 'infinity', title: 'No per-loan or per-user meter', body: 'Hosted lending platforms bill a base fee plus a charge per active loan or per user. GuavaLend costs the same whether the book is 500 loans or 50,000.' },
-    { icon: 'lock', title: 'Your loan book stays on your cloud', body: 'Borrower data, the loan ledger and every account event sit on **your** cloud subscription — critical when a regulator asks where the data lives.' },
-    { icon: 'code', title: 'Built to your product rules and your regulator', body: 'Rate rules, accrual conventions, sanction formats and report templates are configured to how **you** lend and where — not squeezed into a US-shaped hosted product.' },
+    { icon: 'lock', title: 'Your loan book stays on your cloud', body: 'Borrower data, the loan ledger and every account event sit on **your** cloud subscription, critical when a regulator asks where the data lives.' },
+    { icon: 'code', title: 'Built to your product rules and your regulator', body: 'Rate rules, accrual conventions, sanction formats and report templates are configured to how **you** lend and where, not squeezed into a US-shaped hosted product.' },
     { icon: 'sparkles', title: 'AI on the portfolio without an analytics tier', body: 'Borrower summaries, portfolio Q&A and risk flags run on **a few dollars a month** in usage, not a six-figure decisioning or analytics module.' },
     { icon: 'wallet', title: 'Borrower portal and messaging included', body: 'Statements, online payments and reminder messages ship in the box. Hosted platforms sell the portal and the messaging as add-ons.' },
     { icon: 'shield', title: 'No renewal, no repricing as the book grows', body: 'Doubling originations does not double the software bill. You own GuavaLend; the server is the only fixed cost.' },
@@ -137,17 +137,17 @@ export const lend: ProductDef = {
   },
 
   modules: [
-    { name: 'Loan products', tag: 'Setup', blurb: 'Define every kind of loan you offer once, with the rules that govern it.', points: ['Rate, tenure, fee and charge configuration', 'Repayment methods — EMI, bullet, step-up, custom', 'Eligibility and limit rules', 'Product-specific document checklists'] },
+    { name: 'Loan products', tag: 'Setup', blurb: 'Define every kind of loan you offer once, with the rules that govern it.', points: ['Rate, tenure, fee and charge configuration', 'Repayment methods, EMI, bullet, step-up, custom', 'Eligibility and limit rules', 'Product-specific document checklists'] },
     { name: 'Origination', tag: 'Onboard', blurb: 'From enquiry to a completed application ready for a decision.', points: ['Application capture with co-borrowers and guarantors', 'Collateral and security records', 'Document upload against a checklist', 'Branch, agent and channel attribution'] },
     { name: 'Underwriting', tag: 'Decide', blurb: 'Score, review and approve with a trail behind every decision.', points: ['Scorecards and rule-based decisioning', 'Bureau and bank-statement data hooks', 'Approval workflow with limits and overrides', 'Sanction letter generation'] },
-    { name: 'Servicing', tag: 'Run', blurb: 'The daily engine — schedules, accrual and every change to a live loan.', points: ['Disbursement, full or tranche', 'Daily interest and penalty accrual to a ledger', 'Part-payment, prepayment and restructuring', 'Foreclosure and write-off handling'] },
+    { name: 'Servicing', tag: 'Run', blurb: 'The daily engine, schedules, accrual and every change to a live loan.', points: ['Disbursement, full or tranche', 'Daily interest and penalty accrual to a ledger', 'Part-payment, prepayment and restructuring', 'Foreclosure and write-off handling'] },
     { name: 'Collections', tag: 'Recover', blurb: 'See what is overdue and work it systematically.', points: ['Ageing buckets and delinquency dashboards', 'Follow-up queues with call and promise-to-pay logging', 'Automated reminders by SMS, email and WhatsApp', 'Legal and settlement tracking'] },
-    { name: 'Borrower portal & reports', tag: 'Serve & report', blurb: 'A self-service front for borrowers and a reporting back for regulators.', points: ['Statements, schedules and online payment', 'Requests — statement, foreclosure quote, restructuring', 'Regulatory and portfolio report templates', 'Full audit trail and data export'] },
+    { name: 'Borrower portal & reports', tag: 'Serve & report', blurb: 'A self-service front for borrowers and a reporting back for regulators.', points: ['Statements, schedules and online payment', 'Requests, statement, foreclosure quote, restructuring', 'Regulatory and portfolio report templates', 'Full audit trail and data export'] },
   ],
 
   lifecycle: {
     title: 'Apply to close',
-    caption: 'The life of a loan in GuavaLend. Click a step — every event posts to the same ledger, so the book is always current.',
+    caption: 'The life of a loan in GuavaLend. Click a step, every event posts to the same ledger, so the book is always current.',
     steps: [
       { label: 'Apply', detail: 'An application is captured with borrowers, collateral and documents, from the portal or a loan officer.', metric: 'Application logged' },
       { label: 'Underwrite', detail: 'Scorecards and bureau data produce a recommendation; a reviewer approves, adjusts or declines with a reason.', metric: 'Decision recorded' },
@@ -160,8 +160,8 @@ export const lend: ProductDef = {
 
   ai: [
     { name: 'Draft with AI', desc: 'Writes borrower notices, overdue reminders and responses to portal requests from the account’s own history.' },
-    { name: 'Summarize', desc: 'Collapses a borrower account — loans, payments, promises, disputes — and its current risk picture into a short brief.' },
-    { name: 'Ask AI', desc: 'Answers portfolio questions in plain English — total overdue, exposure by product, concentration by region — within each user’s branch and product access.' },
+    { name: 'Summarize', desc: 'Collapses a borrower account, loans, payments, promises, disputes, and its current risk picture into a short brief.' },
+    { name: 'Ask AI', desc: 'Answers portfolio questions in plain English, total overdue, exposure by product, concentration by region, within each user’s branch and product access.' },
     { name: 'Risk flags', desc: 'Marks accounts whose payment behaviour is trending toward default, with the signals shown, for a collections officer to act on.' },
   ],
 };

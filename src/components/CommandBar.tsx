@@ -5,7 +5,7 @@ import { ArrowUpRight, Loader2, Search, Sparkles } from 'lucide-react';
 import { Modal } from '@/components/ui/modal';
 
 /**
- * "Ask WhiteGuava" — a ⌘K / Ctrl+K command bar that answers visitor
+ * "Ask WhiteGuava", a ⌘K / Ctrl+K command bar that answers visitor
  * questions from the site's own content (see `lib/ai/knowledge.ts`), instead
  * of yet another floating chat bubble. Mounted once in the root layout;
  * `Navbar`'s trigger button opens it by dispatching the `ask-whiteguava:open`
@@ -81,10 +81,10 @@ export default function CommandBar() {
     }
   };
 
-  // A grounded answer may end with one bare source URL — render it as a chip
+  // A grounded answer may end with one bare source URL, render it as a chip
   // instead of raw text. `\S+` is greedy, so a URL immediately followed by
   // sentence punctuation ("...here: https://example.com/page.") swallows
-  // that punctuation into the match too — strip it back off before it ends
+  // that punctuation into the match too, strip it back off before it ends
   // up baked into the href (and 404s on a slug that never existed).
   const urlMatch = answer?.match(/(https?:\/\/\S+)\s*$/);
   const answerText = urlMatch ? answer!.slice(0, urlMatch.index).trim() : answer;

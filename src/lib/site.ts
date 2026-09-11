@@ -53,12 +53,12 @@ export const SERVICE_LINKS = [
 ] as const;
 
 /**
- * The Guava Product Suite — ready business applications sold one-time and owned
+ * The Guava Product Suite, ready business applications sold one-time and owned
  * by the client. Each links to its full breakdown on the blog. Surfaced in the
  * footer and on the AI Software Development service page.
  */
 // Label pairs the brand name with the generic category term someone actually
-// searches (e.g. "ERP", "CRM software") — this list renders in the footer on
+// searches (e.g. "ERP", "CRM software"), this list renders in the footer on
 // every page, so the anchor text carries that keyword sitewide instead of
 // only reinforcing the brand name, which needs no ranking help of its own.
 export const PRODUCT_LINKS = [
@@ -84,10 +84,10 @@ export const SOCIAL_PROFILES = [
 export const SOCIAL_LINKS = SOCIAL_PROFILES.map((profile) => profile.href);
 
 /**
- * IndexNow key — must match the filename of the key file in `public/`
+ * IndexNow key, must match the filename of the key file in `public/`
  * (`public/<key>.txt`, served at `${SITE_URL}/<key>.txt`). IndexNow checks
  * that file is live and reachable before honoring any submission, so this
- * only works once deployed — never against localhost.
+ * only works once deployed, never against localhost.
  */
 export const INDEXNOW_KEY = '7b078e44e357d0248f0dffd5d8a3a5d2';
 

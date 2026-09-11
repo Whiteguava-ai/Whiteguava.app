@@ -25,7 +25,7 @@ export function ProductModuleExplorer({ product }: { product?: string }) {
         <span className={styles.kicker}>What ships in the box</span>
         <h3 className={styles.wTitle}>{modules.length} modules, one setup fee</h3>
         <p className={styles.wNote}>
-          Every module below is part of {def.name} from day one — no tier to unlock it, no add-on to
+          Every module below is part of {def.name} from day one, no tier to unlock it, no add-on to
           buy. Pick one to see what it covers.
         </p>
       </div>

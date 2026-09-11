@@ -16,7 +16,7 @@ import { cn } from '@/lib/cn';
  * Aceternity "3D Card Effect", ported to this codebase: a perspective container
  * that tracks pointer position and, via context, lets any number of child
  * `CardItem`s float at independent depths (`translateZ`) as the pointer moves.
- * No-op on touch devices — there is no mousemove to react to.
+ * No-op on touch devices, there is no mousemove to react to.
  */
 const MouseContext = createContext<{
   mouseX: number;

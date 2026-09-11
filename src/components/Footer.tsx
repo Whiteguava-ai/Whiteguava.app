@@ -63,7 +63,7 @@ export default function Footer() {
           </nav>
 
           <a className={styles.navGroupLabel} href="/guava">
-            Guava Product Suite — buy once, own it
+            Guava Product Suite, buy once, own it
           </a>
           <nav className={styles.serviceNav} aria-label="Guava Product Suite">
             {PRODUCT_LINKS.map((link) => (

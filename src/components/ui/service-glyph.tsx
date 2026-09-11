@@ -9,7 +9,7 @@ import { m, useReducedMotion } from 'framer-motion';
  * floating glow core holding the icon. Gives each panel in the services
  * sticky-scroll its own distinct visual instead of one generic dot.
  *
- * `dark` (default `true`) picks the ring/core colors for a dark backdrop —
+ * `dark` (default `true`) picks the ring/core colors for a dark backdrop,
  * pass `dark={false}` to use it on a light card instead (dark dashed ring,
  * white core, accent-colored icon rather than white-on-glass).
  */

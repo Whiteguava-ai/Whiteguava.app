@@ -1,19 +1,19 @@
 # WhiteGuava
 
-> WhiteGuava is an AI software development company in Bengaluru, India. We build AI agents, automation, WhatsApp AI, and custom business software — and we deploy the Guava Product Suite: business applications you buy once and own outright on your own cloud, with AI built in, instead of per-user subscriptions.
+> WhiteGuava is an AI software development company in Bengaluru, India. We build AI agents, automation, WhatsApp AI, and custom business software, and we deploy the Guava Product Suite: business applications you buy once and own outright on your own cloud, with AI built in, instead of per-user subscriptions.
 
 ## Guava Product Suite (buy once, own it)
 
-- [GuavaCRM — one-time-payment CRM you own](https://www.thewhiteguava.in/blog/one-time-payment-crm): Leads, deals, pipeline, email and AI on your own cloud instead of a per-user Salesforce or Zoho subscription.
-- [GuavaERP — self-hosted ERP you own](https://www.thewhiteguava.in/blog/one-time-payment-erp): Accounting, inventory, purchasing, manufacturing and projects on one ledger instead of NetSuite, SAP or Dynamics 365.
-- [GuavaHR — HR software you own](https://www.thewhiteguava.in/blog/one-time-payment-hr-software): Records, leave, attendance, payroll, recruitment and appraisals instead of per-employee BambooHR or Workday.
-- [GuavaLearn — self-hosted LMS you own](https://www.thewhiteguava.in/blog/one-time-payment-lms): Courses, assessments, certifications, cohorts and paid enrolment instead of per-learner Docebo or TalentLMS.
-- [GuavaInsights — BI dashboards you own](https://www.thewhiteguava.in/blog/one-time-payment-bi-dashboards): Dashboards, SQL, alerts and unlimited viewers instead of per-seat Tableau or Power BI.
-- [GuavaDesk — helpdesk you own](https://www.thewhiteguava.in/blog/one-time-payment-helpdesk): Tickets, knowledge base, SLAs, routing and an AI copilot instead of per-agent Zendesk or Freshdesk.
-- [GuavaBuilder — website builder you own](https://www.thewhiteguava.in/blog/one-time-payment-website-builder): A visual canvas, design system and CMS with unlimited sites and editors instead of per-site Webflow or Wix Studio.
-- [GuavaLend — loan management software you own](https://www.thewhiteguava.in/blog/one-time-payment-loan-management): Origination, underwriting, servicing, accrual and collections instead of a base fee plus a per-loan meter.
-- [GuavaPlan — project management tool you own](https://www.thewhiteguava.in/blog/one-time-payment-project-management): Projects, updates, tasks, docs and a daily digest for the whole company instead of per-seat Asana or monday.com.
-- [GuavaFramework — low-code platform you own](https://www.thewhiteguava.in/blog/one-time-payment-app-platform): Data model, forms, permissions, workflow and an auto REST API with unlimited builders and users instead of per-builder OutSystems or Retool.
+- [GuavaCRM, one-time-payment CRM you own](https://www.thewhiteguava.in/blog/one-time-payment-crm): Leads, deals, pipeline, email and AI on your own cloud instead of a per-user Salesforce or Zoho subscription.
+- [GuavaERP, self-hosted ERP you own](https://www.thewhiteguava.in/blog/one-time-payment-erp): Accounting, inventory, purchasing, manufacturing and projects on one ledger instead of NetSuite, SAP or Dynamics 365.
+- [GuavaHR, HR software you own](https://www.thewhiteguava.in/blog/one-time-payment-hr-software): Records, leave, attendance, payroll, recruitment and appraisals instead of per-employee BambooHR or Workday.
+- [GuavaLearn, self-hosted LMS you own](https://www.thewhiteguava.in/blog/one-time-payment-lms): Courses, assessments, certifications, cohorts and paid enrolment instead of per-learner Docebo or TalentLMS.
+- [GuavaInsights, BI dashboards you own](https://www.thewhiteguava.in/blog/one-time-payment-bi-dashboards): Dashboards, SQL, alerts and unlimited viewers instead of per-seat Tableau or Power BI.
+- [GuavaDesk, helpdesk you own](https://www.thewhiteguava.in/blog/one-time-payment-helpdesk): Tickets, knowledge base, SLAs, routing and an AI copilot instead of per-agent Zendesk or Freshdesk.
+- [GuavaBuilder, website builder you own](https://www.thewhiteguava.in/blog/one-time-payment-website-builder): A visual canvas, design system and CMS with unlimited sites and editors instead of per-site Webflow or Wix Studio.
+- [GuavaLend, loan management software you own](https://www.thewhiteguava.in/blog/one-time-payment-loan-management): Origination, underwriting, servicing, accrual and collections instead of a base fee plus a per-loan meter.
+- [GuavaPlan, project management tool you own](https://www.thewhiteguava.in/blog/one-time-payment-project-management): Projects, updates, tasks, docs and a daily digest for the whole company instead of per-seat Asana or monday.com.
+- [GuavaFramework, low-code platform you own](https://www.thewhiteguava.in/blog/one-time-payment-app-platform): Data model, forms, permissions, workflow and an auto REST API with unlimited builders and users instead of per-builder OutSystems or Retool.
 
 ## Services
 

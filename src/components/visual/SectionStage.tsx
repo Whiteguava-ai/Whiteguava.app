@@ -13,7 +13,7 @@ export default function SectionStage({
   /**
    * The stage clips its contents by default (keeps the ambient blobs inside the
    * rounded card). Set `false` when a descendant needs `position: sticky` to
-   * track the viewport — `overflow: hidden` traps sticky inside the stage.
+   * track the viewport, `overflow: hidden` traps sticky inside the stage.
    */
   clip?: boolean;
 }) {

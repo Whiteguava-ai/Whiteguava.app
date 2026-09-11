@@ -8,7 +8,7 @@ import { m, useReducedMotion, useScroll, useTransform } from 'framer-motion';
  * scrolls up from just below the viewport into its resting reading
  * position, it rotates in from a slight 3D tilt to flat.
  *
- * Only `transform` is animated — never opacity — so content stays fully
+ * Only `transform` is animated, never opacity, so content stays fully
  * visible at every scroll position, including for anything that doesn't
  * execute JS (which just sees whichever transform state scroll position 0
  * computes to: a static, still fully-readable tilt, never a hidden/blank
@@ -29,7 +29,7 @@ export function Scroll3D({
   style?: CSSProperties;
   /** Which axis the tilt rotates in from. */
   direction?: 'up' | 'left' | 'right';
-  /** Multiplier on the rotation/lift amount — use <1 for subtler sections. */
+  /** Multiplier on the rotation/lift amount, use <1 for subtler sections. */
   intensity?: number;
 }) {
   const ref = useRef<HTMLDivElement>(null);
