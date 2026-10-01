@@ -9,6 +9,8 @@ import { siteGraph } from '@/lib/schema';
 import { SITE_DESCRIPTION, SITE_NAME, SITE_URL } from '@/lib/site';
 import { satoshi } from '@/lib/fonts';
 import './globals.css';
+import ClarityAnalytics from '@/components/ClarityAnalytics';
+
 
 export const viewport: Viewport = {
   width: 'device-width',
@@ -73,6 +75,7 @@ export default function RootLayout({
         />
       </head>
       <body suppressHydrationWarning>
+        <ClarityAnalytics />
         <Script id="strip-extension-attrs" strategy="beforeInteractive">
           {`(function(){var a=["bis_skin_checked","bis_register"];function c(e){if(!e||e.nodeType!==1)return;for(var i=0;i<a.length;i++)e.removeAttribute(a[i]);}function w(r){c(r);if(!r.querySelectorAll)return;var n=r.querySelectorAll("["+a.join("],[")+"]");for(var i=0;i<n.length;i++)c(n[i]);}try{new MutationObserver(function(ms){for(var i=0;i<ms.length;i++){var m=ms[i];if(m.type==="attributes")c(m.target);for(var j=0;j<m.addedNodes.length;j++)w(m.addedNodes[j]);}}).observe(document.documentElement,{subtree:true,childList:true,attributes:true,attributeFilter:a});w(document.documentElement);}catch(e){}})();`}
         </Script>
