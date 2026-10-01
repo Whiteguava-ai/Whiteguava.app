@@ -6,6 +6,7 @@ import { CinematicText } from '@/components/motion/CinematicText';
 import { Reveal } from '@/components/motion/Reveal';
 import SectionStage from '@/components/visual/SectionStage';
 import { CONTACT_EMAILS } from '@/lib/site';
+import { clarityEvent, clarityUpgrade } from '@/lib/clarity';
 import styles from './Contact.module.css';
 
 const emptyForm = {
@@ -45,6 +46,8 @@ export default function Contact() {
       }
       setStatus('sent');
       setForm(emptyForm);
+      clarityEvent('contact_form_submitted');
+      clarityUpgrade('contact_lead');
     } catch (err) {
       setStatus('error');
       setError(

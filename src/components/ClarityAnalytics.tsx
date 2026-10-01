@@ -1,16 +1,23 @@
 'use client';
 
 import { useEffect } from 'react';
-import Clarity from '@microsoft/clarity';
-
-const projectId = process.env.NEXT_PUBLIC_CLARITY_PROJECT_ID || 'yqshy6xy2n';
+import { usePathname } from 'next/navigation';
+import { initClarity, clarityTag } from '@/lib/clarity';
 
 export default function ClarityAnalytics() {
+  const pathname = usePathname();
+
+  // Initialize Clarity once on mount
   useEffect(() => {
-    if (typeof window !== 'undefined' && projectId) {
-      Clarity.init(projectId);
-    }
+    initClarity();
   }, []);
+
+  // Update page_path tag on SPA navigation
+  useEffect(() => {
+    if (pathname) {
+      clarityTag('page_path', pathname);
+    }
+  }, [pathname]);
 
   return null;
 }
