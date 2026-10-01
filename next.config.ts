@@ -16,11 +16,11 @@ const isDev = process.env.NODE_ENV === 'development';
 
 const contentSecurityPolicy = [
   "default-src 'self'",
-  `script-src 'self' 'unsafe-inline' ${isDev ? "'unsafe-eval' " : ''}https://analytics.ahrefs.com`,
+  `script-src 'self' 'unsafe-inline' ${isDev ? "'unsafe-eval' " : ''}https://analytics.ahrefs.com https://www.clarity.ms https://*.clarity.ms https://c.bing.com`,
   "style-src 'self' 'unsafe-inline'",
-  "img-src 'self' data: https://images.pexels.com https://images.unsplash.com",
+  "img-src 'self' data: https://images.pexels.com https://images.unsplash.com https://www.clarity.ms https://*.clarity.ms https://c.bing.com",
   "font-src 'self' data:",
-  "connect-src 'self' https://analytics.ahrefs.com",
+  "connect-src 'self' https://analytics.ahrefs.com https://www.clarity.ms https://*.clarity.ms https://c.bing.com",
   "frame-ancestors 'self'",
   "base-uri 'self'",
   "form-action 'self'",
