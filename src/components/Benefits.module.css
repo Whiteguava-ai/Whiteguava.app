@@ -19,37 +19,58 @@
   color: #1A1A1A;
 }
 
-.grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px;
-}
-
-.card {
-  background: linear-gradient(180deg, rgba(255,255,255,0.82) 0%, rgba(240,240,240,0.7) 100%);
-  border: 1px solid rgba(255,255,255,0.9);
-  border-radius: 28px;
-  padding: 36px;
+/* An alternating editorial layout instead of a boxed 2x2 card grid: each
+   reason gets a full-width row, illustration and copy swapping sides every
+   other row, with no card border, letting the illustration float directly
+   on the page. Deliberately different from the bordered-card language used
+   elsewhere on the page, for visual variety across the homepage. */
+.list {
   display: flex;
   flex-direction: column;
-  gap: 20px;
-  transition: transform 0.35s ease, box-shadow 0.35s ease;
-  transform-style: preserve-3d;
-  box-shadow:
-    0 1px 0 rgba(255,255,255,0.95) inset,
-    0 14px 32px rgba(0,0,0,0.06);
+  gap: 96px;
 }
 
-.card:hover {
-  transform: translateY(-8px) rotateX(3deg);
-  box-shadow: 0 24px 56px rgba(0,0,0,0.12);
+.row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 64px;
 }
 
-.cardIllustration {
-  height: 180px;
+.row:nth-child(even) > .illustration {
+  order: 2;
+}
+
+.copy {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  align-items: flex-start;
+}
+
+.rowNum {
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  color: var(--accent);
+}
+
+.illustration {
+  height: 280px;
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
+}
+
+.illustration::before {
+  content: '';
+  position: absolute;
+  inset: 10% 16%;
+  background: radial-gradient(ellipse at center, rgba(0,0,0,0.05), transparent 70%);
+  z-index: -1;
+  border-radius: 50%;
+  filter: blur(20px);
 }
 
 /* Metrics viz */
@@ -218,20 +239,29 @@
 }
 
 .cardTitle {
-  font-size: 22px;
-  font-weight: 700;
+  font-size: clamp(26px, 3vw, 36px);
+  font-weight: 800;
   color: #1A1A1A;
-  letter-spacing: -0.5px;
+  letter-spacing: -0.03em;
+  line-height: 1.15;
 }
 
 .cardDesc {
-  font-size: 15px;
-  line-height: 1.7;
+  font-size: 16px;
+  line-height: 1.75;
   color: #666;
+  max-width: 420px;
 }
 
 @media (max-width: 900px) {
-  .grid { grid-template-columns: 1fr; }
-  .card { padding: 24px; }
+  .list { gap: 56px; }
+  .row {
+    grid-template-columns: 1fr;
+    gap: 28px;
+    text-align: left;
+  }
+  .row:nth-child(even) > .illustration { order: 0; }
+  .illustration { height: 220px; }
+  .copy { align-items: flex-start; }
   .top { margin-bottom: 36px; }
 }

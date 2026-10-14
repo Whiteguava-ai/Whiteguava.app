@@ -3,24 +3,38 @@
   padding: 0;
 }
 
-.top {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  gap: 16px;
-  margin-bottom: 32px;
+/* A sticky intro column beside the accordion instead of a centered stack
+   above it — gives the section real structure and a place for a direct
+   "still stuck?" CTA, rather than floating alone under a heading. */
+.layout {
+  display: grid;
+  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.3fr);
+  gap: 56px;
+  align-items: start;
 }
 
-.top :global(.section-badge) {
-  align-self: center;
+.side {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+  position: sticky;
+  top: 120px;
 }
 
 .headline {
-  font-size: clamp(36px, 5vw, 56px);
+  font-size: clamp(34px, 4.2vw, 52px);
   font-weight: 800;
   letter-spacing: -0.04em;
-  text-align: center;
+  line-height: 1.05;
+  color: var(--text-primary);
+}
+
+.sideDesc {
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--text-secondary);
+  max-width: 340px;
 }
 
 .list {
@@ -44,6 +58,7 @@
 .trigger {
   display: flex;
   align-items: center;
+  gap: 16px;
   width: 100%;
   min-height: 48px;
   background: none;
@@ -62,10 +77,18 @@
   box-shadow: 0 16px 40px rgba(0,0,0,0.18);
 }
 
+.qNum {
+  flex-shrink: 0;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: var(--accent);
+  opacity: 0.7;
+}
+.open .qNum { color: rgba(255,255,255,0.4); }
+
 .q {
-  display: flex;
-  justify-content: space-between;
-  gap: 16px;
+  flex: 1;
   font-size: 17px;
   font-weight: 700;
   color: #161616;
@@ -74,16 +97,22 @@
 .open .q { color: white; }
 
 .icon {
-  font-size: 22px;
-  line-height: 1;
+  flex-shrink: 0;
+  width: 18px;
+  height: 18px;
   color: #999;
+  transition: transform 0.3s var(--ease-out), color 0.3s var(--ease-out);
 }
-.open .icon { color: rgba(255,255,255,0.5); }
+.open .icon {
+  color: rgba(255,255,255,0.6);
+  transform: rotate(45deg);
+}
 
 .a {
   max-height: 0;
   overflow: hidden;
   padding-bottom: 22px;
+  padding-left: 42px;
   color: rgba(255,255,255,0.6);
   font-size: 14px;
   line-height: 1.7;
@@ -95,9 +124,15 @@
   margin-top: 12px;
 }
 
+@media (max-width: 900px) {
+  .layout { grid-template-columns: 1fr; gap: 32px; }
+  .side { position: static; align-items: center; text-align: center; }
+  .sideDesc { max-width: 100%; }
+}
+
 @media (max-width: 600px) {
   .item { padding: 0 16px; border-radius: 18px; }
-  .trigger { padding: 18px 0; }
-  .a { padding-bottom: 18px; }
-  .q { font-size: 15px; gap: 10px; }
+  .trigger { padding: 18px 0; gap: 12px; }
+  .a { padding-bottom: 18px; padding-left: 0; }
+  .q { font-size: 15px; }
 }

@@ -1,7 +1,10 @@
 import { Parallax } from '@/components/motion/Parallax';
 import { Reveal } from '@/components/motion/Reveal';
-import { FOOTER_LINKS, LEGAL_LINKS, PRODUCT_LINKS, SERVICE_LINKS } from '@/lib/site';
+import { FOOTER_LINKS, LEGAL_LINKS, PRODUCT_LINKS, SERVICE_LINKS, SOCIAL_PROFILES } from '@/lib/site';
 import styles from './Footer.module.css';
+
+// Read from site.ts so these links always match the Organization sameAs.
+const social = Object.fromEntries(SOCIAL_PROFILES.map((p) => [p.name, p.href]));
 
 export default function Footer() {
   return (
@@ -22,7 +25,7 @@ export default function Footer() {
           <p className={styles.socialSubtitle}>Get connected with WhiteGuava on social</p>
 
           <div className={styles.socialGrid}>
-            <a href="https://www.linkedin.com/company/whiteguava" className={styles.socialBtn} target="_blank" rel="me noopener noreferrer">
+            <a href={social.LinkedIn} className={styles.socialBtn} target="_blank" rel="me noopener noreferrer">
               <span>LinkedIn</span>
               <span className={styles.socialCircle}>
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="white">
@@ -30,7 +33,7 @@ export default function Footer() {
                 </svg>
               </span>
             </a>
-            <a href="https://www.instagram.com/whiteguava.ai" className={styles.socialBtn} target="_blank" rel="me noopener noreferrer">
+            <a href={social.Instagram} className={styles.socialBtn} target="_blank" rel="me noopener noreferrer">
               <span>Instagram</span>
               <span className={styles.socialCircle}>
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="white">
@@ -38,7 +41,7 @@ export default function Footer() {
                 </svg>
               </span>
             </a>
-            <a href="https://x.com/wearewhiteguava" className={styles.socialBtn} target="_blank" rel="me noopener noreferrer">
+            <a href={social.X} className={styles.socialBtn} target="_blank" rel="me noopener noreferrer">
               <span>Twitter / X</span>
               <span className={styles.socialCircle}>
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="white">
@@ -46,7 +49,7 @@ export default function Footer() {
                 </svg>
               </span>
             </a>
-            <a href="https://www.facebook.com/profile.php?id=61593178927500" className={styles.socialBtn} target="_blank" rel="me noopener noreferrer">
+            <a href={social.Facebook} className={styles.socialBtn} target="_blank" rel="me noopener noreferrer">
               <span>Facebook</span>
               <span className={styles.socialCircle}>
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="white">

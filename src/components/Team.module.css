@@ -50,22 +50,38 @@
 }
 
 .featuredInfo {
-  padding: 28px;
+  padding: 40px 36px;
+  min-height: 360px;
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  justify-content: space-between;
+}
+
+.featuredLocation {
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: rgba(255,255,255,0.4);
+  text-transform: uppercase;
+  margin-bottom: 20px;
 }
 
 .featuredName {
-  font-size: 24px;
+  font-size: 28px;
   font-weight: 800;
+  line-height: 1.3;
   color: white;
 }
 
 .featuredRole {
-  font-size: 14px;
-  color: rgba(255,255,255,0.5);
-  margin-bottom: 12px;
+  font-size: 15px;
+  line-height: 1.65;
+  color: rgba(255,255,255,0.55);
+  margin-top: 20px;
+}
+
+.featuredSocials {
+  margin-top: 24px;
 }
 
 /* Sub grid */
@@ -96,6 +112,19 @@
   align-items: flex-start;
   justify-content: space-between;
   margin-bottom: 8px;
+}
+
+.memberNum {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: linear-gradient(180deg, rgba(255,255,255,0.18) 0%, rgba(255,255,255,0.06) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: 700;
+  color: rgba(255,255,255,0.7);
 }
 
 .memberImg {

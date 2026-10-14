@@ -1,11 +1,13 @@
 import type { BlogPost } from '@/data/blog';
 import type { ServiceContent } from '@/data/services';
 import {
+  BRAND_ALTERNATE_NAMES,
   BRAND_KNOWS_ABOUT,
   CONTACT_EMAILS,
   SERVICE_LINKS,
   SITE_DESCRIPTION,
   SITE_NAME,
+  SITE_TAGLINE,
   SITE_URL,
   SOCIAL_LINKS,
 } from '@/lib/site';
@@ -19,6 +21,10 @@ export function organizationSchema() {
     '@type': ['Organization', 'ProfessionalService'],
     '@id': ORG_ID,
     name: SITE_NAME,
+    // "whiteguava" on its own returns the fruit; these tie the spellings
+    // people actually type back to this entity.
+    alternateName: [...BRAND_ALTERNATE_NAMES],
+    slogan: SITE_TAGLINE,
     url: `${SITE_URL}/`,
     description: SITE_DESCRIPTION,
     email: CONTACT_EMAILS[0],
@@ -35,10 +41,11 @@ export function organizationSchema() {
       addressRegion: 'Karnataka',
       addressCountry: 'IN',
     },
-    areaServed: {
-      '@type': 'Place',
-      name: 'Worldwide',
-    },
+    areaServed: [
+      { '@type': 'City', name: 'Bengaluru' },
+      { '@type': 'Country', name: 'India' },
+      { '@type': 'Place', name: 'Worldwide' },
+    ],
     contactPoint: {
       '@type': 'ContactPoint',
       contactType: 'sales',
@@ -257,10 +264,10 @@ export function softwareApplicationSchema(post: BlogPost) {
     author: { '@id': ORG_ID },
     publisher: { '@id': ORG_ID },
     provider: { '@id': ORG_ID },
+    // No `price`: Google reads price 0 as "free", and the setup is paid and
+    // quoted per project.
     offers: {
       '@type': 'Offer',
-      priceCurrency: 'USD',
-      price: '0',
       description:
         'One-time setup engagement, then a self-hosted server cost only, no per-user licence or subscription.',
       seller: { '@id': ORG_ID },

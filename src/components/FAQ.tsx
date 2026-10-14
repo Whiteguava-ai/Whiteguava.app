@@ -1,6 +1,7 @@
 'use client';
 import { useState } from 'react';
 import { AnimatePresence, m, useReducedMotion } from 'framer-motion';
+import { Plus } from 'lucide-react';
 import { CinematicText } from '@/components/motion/CinematicText';
 import { Reveal } from '@/components/motion/Reveal';
 import { useMounted } from '@/lib/motion/useMounted';
@@ -22,58 +23,66 @@ export default function FAQ({ items = homepageFaqs }: { items?: FaqItem[] }) {
     <section id="faq" className={styles.faq}>
       <SectionStage>
       <div className="container">
-        <Reveal className={styles.top} stagger>
-          <div className="section-badge">
-            <span className="section-badge-dot" />
-            FAQs
-          </div>
-          <h2 className={styles.headline}>
-            <CinematicText>Frequently Asked Questions</CinematicText>
-          </h2>
-        </Reveal>
-        <Reveal className={styles.list} stagger staggerDelay={0.06}>
-          {items.map((item, i) => {
-            const isOpen = open === i;
-            const answer = (
-              <div className={styles.a} style={{ maxHeight: 'none', marginTop: 12 }}>
-                {item.a}
-              </div>
-            );
-            return (
-              <div key={item.q} className={`${styles.item} ${isOpen ? styles.open : ''}`}>
-                <button
-                  type="button"
-                  className={styles.trigger}
-                  onClick={() => setOpen(isOpen ? -1 : i)}
-                  aria-expanded={isOpen}
-                >
-                  <span className={styles.q}>
-                    <span>{item.q}</span>
-                    <span className={styles.icon}>{isOpen ? '–' : '+'}</span>
-                  </span>
-                </button>
-                {!animateAccordion ? (
-                  isOpen && answer
-                ) : (
-                  <AnimatePresence initial={false}>
-                    {isOpen && (
-                      <m.div
-                        key="answer"
-                        initial={{ height: 0, opacity: 0 }}
-                        animate={{ height: 'auto', opacity: 1 }}
-                        exit={{ height: 0, opacity: 0 }}
-                        transition={{ duration: 0.32, ease: EASE }}
-                        style={{ overflow: 'hidden' }}
-                      >
-                        {answer}
-                      </m.div>
-                    )}
-                  </AnimatePresence>
-                )}
-              </div>
-            );
-          })}
-        </Reveal>
+        <div className={styles.layout}>
+          <Reveal className={styles.side} stagger>
+            <div className="section-badge">
+              <span className="section-badge-dot" />
+              FAQs
+            </div>
+            <h2 className={styles.headline}>
+              <CinematicText>Questions, answered.</CinematicText>
+            </h2>
+            <p className={styles.sideDesc}>
+              Can&apos;t find what you&apos;re looking for? We&apos;re happy to talk through your specific situation directly.
+            </p>
+            <a href="/#contact" className="btn-outline">
+              <span>Ask us directly</span>
+            </a>
+          </Reveal>
+
+          <Reveal className={styles.list} stagger staggerDelay={0.05}>
+            {items.map((item, i) => {
+              const isOpen = open === i;
+              const answer = (
+                <div className={styles.a} style={{ maxHeight: 'none', marginTop: 12 }}>
+                  {item.a}
+                </div>
+              );
+              return (
+                <div key={item.q} className={`${styles.item} ${isOpen ? styles.open : ''}`}>
+                  <button
+                    type="button"
+                    className={styles.trigger}
+                    onClick={() => setOpen(isOpen ? -1 : i)}
+                    aria-expanded={isOpen}
+                  >
+                    <span className={styles.qNum}>{String(i + 1).padStart(2, '0')}</span>
+                    <span className={styles.q}>{item.q}</span>
+                    <Plus className={styles.icon} strokeWidth={2.25} aria-hidden="true" />
+                  </button>
+                  {!animateAccordion ? (
+                    isOpen && answer
+                  ) : (
+                    <AnimatePresence initial={false}>
+                      {isOpen && (
+                        <m.div
+                          key="answer"
+                          initial={{ height: 0, opacity: 0 }}
+                          animate={{ height: 'auto', opacity: 1 }}
+                          exit={{ height: 0, opacity: 0 }}
+                          transition={{ duration: 0.32, ease: EASE }}
+                          style={{ overflow: 'hidden' }}
+                        >
+                          {answer}
+                        </m.div>
+                      )}
+                    </AnimatePresence>
+                  )}
+                </div>
+              );
+            })}
+          </Reveal>
+        </div>
       </div>
       </SectionStage>
     </section>

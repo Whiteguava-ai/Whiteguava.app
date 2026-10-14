@@ -5,7 +5,7 @@ import { homepageFaqs } from '@/data/faqs';
 import { faqPageSchema } from '@/lib/schema';
 import { SITE_DESCRIPTION, SITE_URL } from '@/lib/site';
 
-const title = 'WhiteGuava | AI Agents, Automation & Software';
+const title = 'WhiteGuava | AI Development Company in Bengaluru, India';
 
 export const metadata: Metadata = {
   title: {

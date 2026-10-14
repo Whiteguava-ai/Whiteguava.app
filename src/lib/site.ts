@@ -76,7 +76,7 @@ export const PRODUCT_LINKS = [
 
 export const SOCIAL_PROFILES = [
   { name: 'LinkedIn', href: 'https://www.linkedin.com/company/whiteguava' },
-  { name: 'Instagram', href: 'https://www.instagram.com/whiteguava.ai' },
+  { name: 'Instagram', href: 'https://www.instagram.com/thewhiteguava.in/' },
   { name: 'X', href: 'https://x.com/wearewhiteguava' },
   { name: 'Facebook', href: 'https://www.facebook.com/profile.php?id=61593178927500' },
 ] as const;
@@ -96,12 +96,20 @@ export const CONTACT_EMAILS = [
   'murugavelj@thewhiteguava.in',
 ] as const;
 
+export const BRAND_ALTERNATE_NAMES = ['White Guava', 'TheWhiteGuava', 'WhiteGuava AI'] as const;
+
 export const BRAND_KNOWS_ABOUT = [
   'AI agents',
   'AI automation',
   'WhatsApp AI',
+  'WhatsApp Business API',
   'Document AI',
+  'Intelligent document processing',
   'RAG',
   'AI software development',
   'AI integration',
+  'Self-hosted business software',
+  'CRM software',
+  'ERP software',
+  'HR software',
 ] as const;

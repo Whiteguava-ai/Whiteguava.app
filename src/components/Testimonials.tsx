@@ -3,50 +3,44 @@ import { Reveal } from '@/components/motion/Reveal';
 import SectionStage from '@/components/visual/SectionStage';
 import styles from './Testimonials.module.css';
 
+/**
+ * A bold, full-bleed statement instead of a boxed "testimonial" card dressed
+ * up with a fake avatar and star rating for a quote that is, honestly, just
+ * WhiteGuava's own pitch. Leaning into that directly (this is a claim,
+ * not a customer quote) is more honest than pretending otherwise, and the
+ * giant editorial typography gives the homepage a real visual beat instead
+ * of another bordered card.
+ */
 export default function Testimonials() {
   return (
     <section className={styles.testimonials}>
-      <SectionStage>
+      <SectionStage dark>
       <div className="container">
         <Reveal className={styles.header} stagger>
-          <div className="section-badge">
+          <div className="section-badge section-badge-dark">
             <span className="section-badge-dot" />
             Work With Us
           </div>
-          <h2 className={styles.headline}>
-            <CinematicText>Have a Problem Worth Solving?</CinematicText>
-          </h2>
         </Reveal>
 
-        <Reveal className={styles.stage} direction="scale" duration={0.8}>
-          <div className={styles.card}>
-            <p className={styles.quote}>
-              Tell us what you&apos;re trying to build, automate, or improve. We&apos;ll help you identify the right technical approach and turn it into a working solution.
-            </p>
+        <Reveal direction="scale" duration={0.8}>
+          <p className={styles.statement}>
+            <CinematicText as="span">
+              Tell us what you&apos;re trying to build, automate, or improve.
+            </CinematicText>{' '}
+            <span className={styles.statementDim}>
+              We&apos;ll help you identify the right technical approach and turn it into a working solution.
+            </span>
+          </p>
+
+          <div className={styles.footer}>
             <div className={styles.meta}>
               <strong>WhiteGuava</strong>
               <span>AI + Software + Automation · Bengaluru, India</span>
             </div>
-            <div className={styles.counter}>
-              <a href="/#contact" style={{
-                display: 'inline-flex',
-                alignItems: 'center',
-                gap: '8px',
-                padding: '12px 24px',
-                background: '#1A1A1A',
-                color: '#fff',
-                borderRadius: '100px',
-                fontWeight: 600,
-                fontSize: '14px',
-                textDecoration: 'none',
-                letterSpacing: '0.01em',
-              }}>
-                Start a Project →
-              </a>
-            </div>
-          </div>
-          <div className={styles.nav}>
-            <a href="/#contact" className={styles.navBtn} aria-label="Start a project"><span>→</span></a>
+            <a href="/#contact" className="btn-accent">
+              <span>Start a Project →</span>
+            </a>
           </div>
         </Reveal>
       </div>

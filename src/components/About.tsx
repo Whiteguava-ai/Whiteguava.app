@@ -56,16 +56,7 @@ export default function About() {
                 </div>
                 <div className={styles.stars}>
                   {['AI','SW','AUTO','DATA','CLOUD'].map(tag => (
-                    <span key={tag} style={{
-                      display: 'inline-block',
-                      fontSize: '10px',
-                      fontWeight: 700,
-                      letterSpacing: '0.05em',
-                      padding: '3px 8px',
-                      border: '1px solid #1A1A1A',
-                      borderRadius: '4px',
-                      marginRight: '4px',
-                    }}>{tag}</span>
+                    <span key={tag} className={styles.tagChip}>{tag}</span>
                   ))}
                 </div>
               </CardItem>

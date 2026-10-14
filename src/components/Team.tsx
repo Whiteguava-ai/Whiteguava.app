@@ -45,19 +45,17 @@ export default function Team() {
         <div className={styles.grid}>
           {/* Featured, brand statement */}
           <Reveal className={styles.featuredCard} direction="left">
-            <div className={styles.featuredInfo} style={{ padding: '40px 36px', minHeight: '360px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+            <div className={styles.featuredInfo}>
               <div>
-                <p style={{ fontSize: '13px', fontWeight: 600, letterSpacing: '0.08em', color: 'rgba(255,255,255,0.4)', textTransform: 'uppercase', marginBottom: '20px' }}>
-                  Bengaluru, Karnataka, India
-                </p>
-                <h3 className={styles.featuredName} style={{ fontSize: '28px', lineHeight: 1.3 }}>
+                <p className={styles.featuredLocation}>Bengaluru, Karnataka, India</p>
+                <h3 className={styles.featuredName}>
                   A team of engineers, AI specialists, and product builders.
                 </h3>
               </div>
-              <p className={styles.featuredRole} style={{ fontSize: '15px', lineHeight: 1.65, color: 'rgba(255,255,255,0.55)', marginTop: '20px' }}>
+              <p className={styles.featuredRole}>
                 We combine deep technical expertise with practical business thinking to build AI and software solutions that actually work, not just in demos, but in production.
               </p>
-              <div className={styles.socials} style={{ marginTop: '24px' }}>
+              <div className={`${styles.socials} ${styles.featuredSocials}`}>
                 <SocialBtn type="linkedin" />
                 <SocialBtn type="twitter" />
                 <SocialBtn type="github" />
@@ -88,16 +86,7 @@ export default function Team() {
                 <CardContainer containerClassName="h-full">
                   <CardBody className={`${styles.memberCard} h-full`}>
                     <CardItem translateZ={25} className={styles.memberTop}>
-                      <div className={styles.socials}>
-                        <span style={{
-                          width: 40, height: 40, borderRadius: '50%',
-                          background: 'linear-gradient(180deg, rgba(255,255,255,0.18) 0%, rgba(255,255,255,0.06) 100%)',
-                          display: 'flex', alignItems: 'center', justifyContent: 'center',
-                          fontSize: '14px', fontWeight: 700, color: 'rgba(255,255,255,0.7)',
-                        }}>
-                          {String(i + 1).padStart(2, '0')}
-                        </span>
-                      </div>
+                      <span className={styles.memberNum}>{String(i + 1).padStart(2, '0')}</span>
                     </CardItem>
                     <CardItem translateZ={15} as="h4" className={styles.memberName}>{c.area}</CardItem>
                     <CardItem translateZ={10} as="p" className={styles.memberRole}>{c.desc}</CardItem>

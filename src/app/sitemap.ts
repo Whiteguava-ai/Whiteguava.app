@@ -13,7 +13,7 @@ import { SERVICE_LINKS, SITE_URL } from '@/lib/site';
 const HOME_LAST_MODIFIED = new Date('2026-09-11');
 const ABOUT_LAST_MODIFIED = new Date('2026-08-23');
 const CONTACT_LAST_MODIFIED = new Date('2026-08-23');
-const SERVICES_LAST_MODIFIED = new Date('2026-09-10');
+const SERVICES_LAST_MODIFIED = new Date('2026-10-14');
 const LEGAL_LAST_MODIFIED = new Date('2026-08-23');
 const BLOG_INDEX_LAST_MODIFIED = new Date('2026-09-10');
 
